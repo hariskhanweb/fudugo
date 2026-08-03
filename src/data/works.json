@@ -1,0 +1,77 @@
+{
+  "id": "works",
+  "eyebrow": "(Our Works)",
+  "title": "Latest Work",
+  "description": "Consectetur adipiscing elit ut elit tellus luctus nec ullamcorper mattis pulvinar dapibus leo.",
+  "cta": {
+    "label": "View all Project",
+    "href": "#"
+  },
+  "projects": [
+    {
+      "id": "nexus-x1",
+      "title": "Nexus X1 — Product Launch Film",
+      "year": "2026",
+      "href": "#",
+      "metaPosition": "bottom",
+      "media": {
+        "type": "image",
+        "src": "https://img.youtube.com/vi/steaLQu5RFw/maxresdefault.jpg",
+        "alt": "Nexus X1 — Product Launch Film"
+      },
+      "badge": {
+        "number": "1",
+        "label": "Product Launch",
+        "author": "Khairul Fayyad"
+      }
+    },
+    {
+      "id": "pulse",
+      "title": "Pulse — Brand Motion System",
+      "year": "2026",
+      "href": "#",
+      "metaPosition": "top",
+      "media": {
+        "type": "video",
+        "videoId": "dL1OxvwvMLo"
+      },
+      "badge": {
+        "number": "2",
+        "label": "Brand Motion",
+        "author": "Khairul Fayyad"
+      }
+    },
+    {
+      "id": "horizon",
+      "title": "Horizon — Brand Anthem",
+      "year": "2026",
+      "href": "#",
+      "metaPosition": "bottom",
+      "media": {
+        "type": "video",
+        "videoId": "qE_W2lr3omQ"
+      },
+      "badge": {
+        "number": "3",
+        "label": "Brand Anthem",
+        "author": "Khairul Fayyad"
+      }
+    },
+    {
+      "id": "coreai",
+      "title": "CoreAI — Product Explainer",
+      "year": "2026",
+      "href": "#",
+      "metaPosition": "top",
+      "media": {
+        "type": "video",
+        "videoId": "mMMknEa2-E0"
+      },
+      "badge": {
+        "number": "4",
+        "label": "Product Explainer",
+        "author": "Khairul Fayyad"
+      }
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "eyebrow": "(Client Stories)",
+  "title": "Don't Take Our Word for It.",
+  "items": [
+    {
+      "quote": "Motex didn't just deliver a video they delivered something we couldn't have imagined ourselves. The 3D product launch film they created for us exceeded every expectation.",
+      "rating": 5,
+      "author": {
+        "name": "James Rourke",
+        "role": "Noxus Technologies",
+        "avatar": "https://pawzia.foxcreation.online/motex/wp-content/uploads/sites/13/2026/05/Image-8.jpg"
+      }
+    },
+    {
+      "quote": "What sets Motex apart isn't just the quality it's the process. They ask the right questions, push back when needed, and deliver on time, every time.",
+      "rating": 5,
+      "author": {
+        "name": "Sarah Lin",
+        "role": "Head of Growth",
+        "avatar": "https://pawzia.foxcreation.online/motex/wp-content/uploads/sites/13/2026/05/Image-7.jpg"
+      }
+    },
+    {
+      "quote": "Our brand motion system has become the backbone of everything we produce. Incredible attention to detail and world-class renders.",
+      "rating": 5,
+      "author": {
+        "name": "Daniel Müller",
+        "role": "Creative Director",
+        "avatar": "https://pawzia.foxcreation.online/motex/wp-content/uploads/sites/13/2026/05/Image-9.jpg"
+      }
+    }
+  ]
+}

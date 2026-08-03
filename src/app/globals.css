@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Surfaces */
+    --background: #0d0d0d;
+    --header: #0a0a0a;
+    --panel: #111111;
+    --surface: #141414;
+    --surface-hover: #1c1c1c;
+    --input: #1a1a1a;
+
+    /* Text */
+    --foreground: #ffffff;
+    --muted: #a1a1a1;
+    --muted-light: #afafaf;
+    --muted-soft: rgba(255, 255, 255, 0.5);
+
+    /* Borders */
+    --border: #333333;
+    --border-hover: #555555;
+    --border-soft: rgba(255, 255, 255, 0.1);
+
+    /* Accents */
+    --accent: #00d084;
+    --accent-alt: #ff4d2d;
+    --accent-glow: rgba(0, 208, 132, 0.15);
+
+    /* Cards */
+    --card: #141416;
+    --card-border: #222226;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-inter), sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-roboto-slab), serif;
+  }
+
+  a,
+  button:not(:disabled),
+  [role="button"],
+  summary {
+    cursor: pointer;
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-header: var(--header);
+  --color-panel: var(--panel);
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --color-input: var(--input);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-light: var(--muted-light);
+  --color-border: var(--border);
+  --color-border-hover: var(--border-hover);
+  --color-accent: var(--accent);
+  --color-accent-alt: var(--accent-alt);
+  --color-card: var(--card);
+  --color-card-border: var(--card-border);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--card-border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(20, 20, 22, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-soft);
+}
+
+/* Clients infinite marquee */
+@keyframes clients-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.clients-marquee {
+  animation: clients-marquee 40s linear infinite;
+  will-change: transform;
+}
+
+.clients-marquee-mask {
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 6%,
+    black 94%,
+    transparent
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .clients-marquee {
+    animation: none;
+  }
+}

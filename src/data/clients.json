@@ -1,0 +1,35 @@
+{
+  "label": "Trusted by leading brands worldwide",
+  "logos": [
+    {
+      "name": "Nexora",
+      "src": "/clients/Client-1.png",
+      "alt": "Nexora"
+    },
+    {
+      "name": "bravix",
+      "src": "/clients/Client-2.png",
+      "alt": "bravix"
+    },
+    {
+      "name": "Adstrix",
+      "src": "/clients/Client-3.png",
+      "alt": "Adstrix"
+    },
+    {
+      "name": "zenvix",
+      "src": "/clients/Client-4.png",
+      "alt": "zenvix"
+    },
+    {
+      "name": "Glovix",
+      "src": "/clients/Client-5.png",
+      "alt": "Glovix"
+    },
+    {
+      "name": "crevox",
+      "src": "/clients/Client-6.png",
+      "alt": "crevox"
+    }
+  ]
+}

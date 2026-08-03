@@ -1,0 +1,38 @@
+{
+  "links": [
+    { "label": "Home", "href": "/" },
+    { "label": "About", "href": "#about" },
+    { "label": "Services", "href": "#services" }
+  ],
+  "dropdowns": {
+    "portfolio": {
+      "label": "Portfolio",
+      "items": [
+        { "label": "Our Work", "href": "#works" },
+        { "label": "Single Portfolio", "href": "#" }
+      ]
+    },
+    "pages": {
+      "label": "Pages",
+      "items": [
+        { "label": "Our Process", "href": "#process" },
+        { "label": "Solutions", "href": "#" },
+        { "label": "Awards", "href": "#" },
+        { "label": "FAQ", "href": "#" },
+        { "label": "404 Error", "href": "#" },
+        { "label": "Contact", "href": "#contact" }
+      ]
+    },
+    "blog": {
+      "label": "Blog",
+      "items": [
+        { "label": "Our Blog", "href": "#blog" },
+        { "label": "Single Post", "href": "#" }
+      ]
+    }
+  },
+  "cta": {
+    "label": "Get a Quote",
+    "href": "#contact"
+  }
+}

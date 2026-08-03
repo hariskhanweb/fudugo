@@ -1,0 +1,28 @@
+{
+  "id": "process",
+  "eyebrow": "(Our Process)",
+  "title": "How We Work",
+  "icon": "https://pawzia.foxcreation.online/motex/wp-content/uploads/sites/13/2026/05/Play-Icon.png",
+  "steps": [
+    {
+      "step": "01",
+      "title": "Deep Discovery",
+      "description": "Lorem ipsum dolor sit amet adipiscing elit ut elit tellus luctus nec ullamco."
+    },
+    {
+      "step": "02",
+      "title": "Creative Concept",
+      "description": "Lorem ipsum dolor sit amet adipiscing elit ut elit tellus luctus nec ullamco."
+    },
+    {
+      "step": "03",
+      "title": "Full Production",
+      "description": "Lorem ipsum dolor sit amet adipiscing elit ut elit tellus luctus nec ullamco."
+    },
+    {
+      "step": "04",
+      "title": "Final Delivery",
+      "description": "Lorem ipsum dolor sit amet adipiscing elit ut elit tellus luctus nec ullamco."
+    }
+  ]
+}

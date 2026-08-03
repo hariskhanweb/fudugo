@@ -1,0 +1,47 @@
+{
+  "eyebrow": "(Results That Speak for Themselves.)",
+  "title": "By The Numbers",
+  "description": "Over a decade of delivering motion work that moves businesses forward the numbers tell the story.",
+  "meta": {
+    "verified": "All figures verified as of 2024",
+    "studio": "Motex Studio — Est. 2014"
+  },
+  "image": {
+    "src": "/Image-4.jpg",
+    "alt": "Abstract red light projection on a dark silhouette"
+  },
+  "items": [
+    {
+      "id": "years",
+      "number": "01",
+      "value": 10,
+      "suffix": "+",
+      "label": "Years Experience",
+      "description": "A decade of craft, storytelling, and relentless attention to detail."
+    },
+    {
+      "id": "clients",
+      "number": "02",
+      "value": 120,
+      "suffix": "+",
+      "label": "Happy Clients",
+      "description": "From startups to Fortune 500 companies across 18 countries."
+    },
+    {
+      "id": "satisfaction",
+      "number": "03",
+      "value": 98,
+      "suffix": "%",
+      "label": "Client Satisfaction",
+      "description": "Based on post-project surveys from all completed engagements."
+    },
+    {
+      "id": "projects",
+      "number": "04",
+      "value": 250,
+      "suffix": "+",
+      "label": "Project Delivery",
+      "description": "Across 3D animation, motion graphics, and brand film production."
+    }
+  ]
+}

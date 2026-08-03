@@ -1,0 +1,14 @@
+{
+  "id": "contact",
+  "eyebrow": "Ready To Start?",
+  "title": "Let's Build Something the World Won't Forget.",
+  "cta": {
+    "label": "Start a Project",
+    "href": "mailto:hello@motexstudio.com"
+  },
+  "perks": [
+    "Responds within 24 hours",
+    "NDA available on request",
+    "Free 30-min discovery call"
+  ]
+}

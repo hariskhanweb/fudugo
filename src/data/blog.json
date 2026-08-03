@@ -1,0 +1,32 @@
+{
+  "id": "blog",
+  "eyebrow": "(From The Studio)",
+  "title": "Insights & Stories",
+  "cta": {
+    "label": "View All Articles →",
+    "href": "#"
+  },
+  "posts": [
+    {
+      "title": "How We Designed the Motion Language for a Global Brand Rebrand",
+      "category": "Behind The Frame",
+      "date": "May 21, 2026",
+      "image": "https://pawzia.foxcreation.online/motex/wp-content/uploads/sites/13/2026/05/Image-19.jpg",
+      "href": "#"
+    },
+    {
+      "title": "From Awareness to Action: How to Use Motion at Every Stage of Your Funnel",
+      "category": "Motion & Business",
+      "date": "May 21, 2026",
+      "image": "https://pawzia.foxcreation.online/motex/wp-content/uploads/sites/13/2026/05/Image-18-1024x683.jpg",
+      "href": "#"
+    },
+    {
+      "title": "Character Rigging for Non-Technical Clients: Translating Vision into Movement",
+      "category": "The Craft",
+      "date": "May 21, 2026",
+      "image": "https://pawzia.foxcreation.online/motex/wp-content/uploads/sites/13/2026/05/Image-17-1024x683.jpg",
+      "href": "#"
+    }
+  ]
+}

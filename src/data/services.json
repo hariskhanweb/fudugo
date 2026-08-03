@@ -1,0 +1,60 @@
+{
+  "id": "services",
+  "eyebrow": "(Our Services)",
+  "title": "What We Do",
+  "description": "From concept to final render we deliver motion and 3D that performs, not just impresses.",
+  "items": [
+    {
+      "number": "01",
+      "title": "3D Animation",
+      "subtitle": "Render. Rig. Bring to life.",
+      "description": "Photorealistic 3D animation that brings products, environments, and ideas to life with cinematic precision.",
+      "image": "https://pawzia.foxcreation.online/motex/wp-content/uploads/sites/13/2026/05/Image-5-1024x683.jpg",
+      "categories": [
+        "Product Visualization",
+        "Architectural 3D",
+        "VFX",
+        "Character Animation"
+      ]
+    },
+    {
+      "number": "02",
+      "title": "Motion Graphics",
+      "subtitle": "Design that moves with purpose.",
+      "description": "Dynamic 2D motion design that transforms data, stories, and brand messages into compelling visual experiences.",
+      "image": "https://pawzia.foxcreation.online/motex/wp-content/uploads/sites/13/2026/05/Image-6-1024x683.jpg",
+      "categories": [
+        "Brand Motion",
+        "UI Animation",
+        "Infographic Video",
+        "Lower Thirds"
+      ]
+    },
+    {
+      "number": "03",
+      "title": "Explainer Video",
+      "subtitle": "Complex ideas, made simple.",
+      "description": "Clear, engaging explainer videos that simplify complex products and services into stories anyone can understand.",
+      "image": "https://pawzia.foxcreation.online/motex/wp-content/uploads/sites/13/2026/05/Image-2-1024x683.jpg",
+      "categories": [
+        "SaaS Explainer",
+        "Product Demo",
+        "Process Video",
+        "Onboarding"
+      ]
+    },
+    {
+      "number": "04",
+      "title": "Brand Film",
+      "subtitle": "Stories brands are proud of.",
+      "description": "Full-length brand films and campaign videos that define who you are, what you believe, and why it matters.",
+      "image": "https://pawzia.foxcreation.online/motex/wp-content/uploads/sites/13/2026/05/Image-3-1024x683.jpg",
+      "categories": [
+        "Brand Anthem",
+        "Commercials",
+        "Case Study Film",
+        "Interactive"
+      ]
+    }
+  ]
+}
