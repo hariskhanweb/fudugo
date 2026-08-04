@@ -1,9 +1,9 @@
 {
   "id": "blog",
   "eyebrow": "(From The Studio)",
-  "title": "Insights & Stories",
+  "title": "Insights, Stories & Motion Knowledge.",
   "cta": {
-    "label": "View All Articles →",
+    "label": "View All Articles",
     "href": "#"
   },
   "posts": [
@@ -11,22 +11,25 @@
       "title": "How We Designed the Motion Language for a Global Brand Rebrand",
       "category": "Behind The Frame",
       "date": "May 21, 2026",
-      "image": "https://pawzia.foxcreation.online/motex/wp-content/uploads/sites/13/2026/05/Image-19.jpg",
-      "href": "#"
+      "image": "/Image-19.jpg",
+      "href": "#",
+      "featured": true
     },
     {
       "title": "From Awareness to Action: How to Use Motion at Every Stage of Your Funnel",
       "category": "Motion & Business",
       "date": "May 21, 2026",
-      "image": "https://pawzia.foxcreation.online/motex/wp-content/uploads/sites/13/2026/05/Image-18-1024x683.jpg",
-      "href": "#"
+      "image": "/Image-18.jpg",
+      "href": "#",
+      "excerpt": "Top of funnel, mid funnel, bottom of funnel each stage"
     },
     {
-      "title": "Character Rigging for Non-Technical Clients: Translating Vision into Movement",
+      "title": "Character Rigging for Non-Technical Clients: How We Translate Vision into Movement",
       "category": "The Craft",
       "date": "May 21, 2026",
-      "image": "https://pawzia.foxcreation.online/motex/wp-content/uploads/sites/13/2026/05/Image-17-1024x683.jpg",
-      "href": "#"
+      "image": "/Image-17.jpg",
+      "href": "#",
+      "excerpt": "Character animation starts long before any software opens. We walk"
     }
   ]
 }

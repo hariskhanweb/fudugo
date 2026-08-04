@@ -1,5 +1,5 @@
 {
-  "tagline": "Motex – Motion Graphics & 3D Animation Studio",
+  "tagline": "FuduGo – Motion Graphics & 3D Animation Studio",
   "officeLabel": "Our Office",
   "contactLabel": "Contact Us",
   "quickLinksTitle": "Quick Links",
@@ -13,7 +13,7 @@
   ],
   "newsletter": {
     "title": "Subscribe to our newsletter for the latest updates",
-    "placeholder": "hello@motexstudio.com",
+    "placeholder": "hello@fudugo.com",
     "button": "Subscribe Now"
   },
   "socialTitle": "Social Media",
@@ -53,7 +53,7 @@
   "awards": ["Telly Awards", "D&AD", "Motion Awards", "Clio"],
   "copyright": {
     "prefix": "Fox Creations © 2025",
-    "brand": "Motex®",
+    "brand": "FuduGo",
     "suffix": ". All rights reserved."
   },
   "legal": [

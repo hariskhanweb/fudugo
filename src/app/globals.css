@@ -1,34 +1,90 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant light (&:where(.light, .light *));
+
 @layer base {
-  :root {
-    /* Surfaces */
-    --background: #0d0d0d;
-    --header: #0a0a0a;
-    --panel: #111111;
-    --surface: #141414;
-    --surface-hover: #1c1c1c;
-    --input: #1a1a1a;
+  :root,
+  .dark {
+    color-scheme: dark;
+
+    /* Surfaces — cool navy cast from logo deep */
+    --background: #0b0c12;
+    --header: #08090f;
+    --panel: #10121a;
+    --surface: #13151e;
+    --surface-hover: #1a1d28;
+    --input: #161821;
 
     /* Text */
     --foreground: #ffffff;
-    --muted: #a1a1a1;
-    --muted-light: #afafaf;
+    --muted: #9aa0b0;
+    --muted-light: #b0b6c4;
     --muted-soft: rgba(255, 255, 255, 0.5);
 
     /* Borders */
-    --border: #333333;
-    --border-hover: #555555;
+    --border: #2a2e3d;
+    --border-hover: #3d4458;
     --border-soft: rgba(255, 255, 255, 0.1);
 
-    /* Accents */
-    --accent: #00d084;
-    --accent-alt: #ff4d2d;
-    --accent-glow: rgba(0, 208, 132, 0.15);
+    /* Accents — FuduGo logo shade ramp */
+    --accent-soft: #5ec8ee;
+    --accent-alt: #28abe2;
+    --accent: #2d368f;
+    --accent-deep: #29256a;
+    --accent-glow: rgba(40, 171, 226, 0.2);
 
     /* Cards */
-    --card: #141416;
-    --card-border: #222226;
+    --card: #13151c;
+    --card-border: #222536;
+    --card-shadow: 0 0 0 transparent;
+
+    /* Overlays / glass */
+    --glass: rgba(19, 21, 28, 0.72);
+    --cta-edge: #0b0c12;
+    --dropdown-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.55);
+  }
+
+  .light {
+    color-scheme: light;
+
+    /* Tinted page → lighter alt sections → white cards */
+    --background: #e6eaf4;
+    --header: #f4f6fb;
+    --panel: #d8deec;
+    --surface: #ffffff;
+    --surface-hover: #eef1f8;
+    --input: #dce2ef;
+
+    --foreground: #10131f;
+    --muted: #5a6478;
+    --muted-light: #4e586c;
+    --muted-soft: rgba(16, 19, 31, 0.55);
+
+    --border: #c5cede;
+    --border-hover: #9aa6bf;
+    --border-soft: rgba(16, 19, 31, 0.1);
+
+    /* Accents tuned for contrast on light surfaces */
+    --accent-soft: #1286b8;
+    --accent-alt: #1a9fd4;
+    --accent: #2d368f;
+    --accent-deep: #29256a;
+    --accent-glow: rgba(45, 54, 143, 0.14);
+
+    --card: #ffffff;
+    --card-border: #d0d7e6;
+    --card-shadow:
+      0 1px 2px rgba(16, 19, 31, 0.04),
+      0 10px 28px rgba(45, 54, 143, 0.07);
+
+    --glass: rgba(255, 255, 255, 0.86);
+    --cta-edge: #e6eaf4;
+    --dropdown-shadow: 0 18px 40px -12px rgba(16, 19, 31, 0.18);
+  }
+
+  html {
+    background-color: var(--background);
   }
 
   body {
@@ -36,6 +92,7 @@
     color: var(--foreground);
     font-family: var(--font-inter), sans-serif;
     overflow-x: hidden;
+    transition: background-color 0.25s ease, color 0.25s ease;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -62,8 +119,10 @@
   --color-muted-light: var(--muted-light);
   --color-border: var(--border);
   --color-border-hover: var(--border-hover);
+  --color-accent-soft: var(--accent-soft);
   --color-accent: var(--accent);
   --color-accent-alt: var(--accent-alt);
+  --color-accent-deep: var(--accent-deep);
   --color-card: var(--card);
   --color-card-border: var(--card-border);
 }
@@ -80,15 +139,35 @@
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--accent);
+  background: var(--accent-alt);
 }
 
 /* Glassmorphism utility */
 .glass-panel {
-  background: rgba(20, 20, 22, 0.7);
+  background: var(--glass);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--border-soft);
+}
+
+/* Raised cards — subtle in dark, clearer in light */
+.surface-card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--card-shadow);
+}
+
+.dark .surface-card {
+  border-color: transparent;
+}
+
+/* Client logos designed for dark — ink them in light mode */
+.light .client-logo {
+  filter: brightness(0);
+  opacity: 0.55;
+}
+.light .group:hover .client-logo {
+  opacity: 0.9;
 }
 
 /* Clients infinite marquee */

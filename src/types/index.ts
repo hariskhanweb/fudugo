@@ -64,7 +64,32 @@ export type StatItem = {
 export type ProcessStep = {
   step: string;
   title: string;
+  titleLines?: string[];
   description: string;
+};
+
+export type TestimonialSocial = {
+  label: string;
+  href: string;
+};
+
+export type TestimonialProfile = {
+  name: string;
+  role: string;
+  avatar: string;
+  socials: TestimonialSocial[];
+};
+
+export type TestimonialQuote = {
+  company: string;
+  rating: number;
+  text: string;
+};
+
+export type TestimonialColumn = {
+  order: Array<"profile" | "quote">;
+  profile: TestimonialProfile;
+  quote: TestimonialQuote;
 };
 
 export type Testimonial = {
@@ -83,6 +108,8 @@ export type BlogPost = {
   date: string;
   image: string;
   href: string;
+  excerpt?: string;
+  featured?: boolean;
 };
 
 export type SocialLink = {

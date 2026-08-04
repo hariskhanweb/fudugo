@@ -129,14 +129,14 @@ export default function HeroSection() {
 
           <div
             data-hero="intro"
-            className="flex max-w-md flex-col gap-7 self-end will-change-transform lg:ml-auto lg:pt-3"
+            className="flex max-w-md flex-col items-center gap-7 self-end will-change-transform lg:ml-auto lg:items-start lg:pt-3"
           >
-            <p className="text-center text-[15px] leading-relaxed text-muted-light lg:text-left lg:text-[20px]">
+            <p className="text-center text-[15px] leading-relaxed text-white/70 lg:text-left lg:text-[20px]">
               {data.description}
             </p>
             <a
               href={data.cta.href}
-              className="inline-flex w-fit items-center justify-center rounded-lg border border-border bg-surface px-6 py-3 text-sm font-medium text-foreground transition-colors hover:border-border-hover hover:bg-surface-hover"
+              className="inline-flex w-fit items-center justify-center rounded-lg border border-white/25 bg-white/10 px-6 py-3 text-sm font-medium text-white backdrop-blur-sm transition-colors hover:border-white/40 hover:bg-white/15"
             >
               {data.cta.label}
             </a>
@@ -148,8 +148,8 @@ export default function HeroSection() {
             data-hero="quote"
             className="hidden max-w-125 text-[36px] font-medium leading-snug tracking-tight will-change-transform lg:block"
           >
-            <span className="text-foreground">“{data.quote.highlight} </span>
-            <span data-hero="quote-muted" className="text-muted-light">
+            <span className="text-white">“{data.quote.highlight} </span>
+            <span data-hero="quote-muted" className="text-white/55">
               {data.quote.muted}”
             </span>
           </p>
@@ -168,8 +168,8 @@ export default function HeroSection() {
                   data-hero="badge"
                   className={`rounded-full border px-3.5 py-1.5 text-xs font-medium sm:text-[13px] ${
                     badge.accent
-                      ? "border-accent-alt/80 text-accent-alt"
-                      : "border-border text-muted"
+                      ? "border-[#28abe2]/80 text-[#5ec8ee]"
+                      : "border-white/25 text-white/65"
                   }`}
                 >
                   {badge.label}

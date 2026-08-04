@@ -104,8 +104,8 @@ function ServicePanel({
   return (
     <article
       className={cn(
-        "overflow-hidden rounded-2xl border border-transparent bg-[#141414] transition-colors duration-300",
-        isOpen ? "border-white/5" : "hover:bg-[#181818]",
+        "overflow-hidden rounded-2xl border border-border bg-surface shadow-[var(--card-shadow)] transition-colors duration-300",
+        isOpen ? "border-border" : "hover:bg-surface-hover",
       )}
     >
       <button
@@ -117,7 +117,7 @@ function ServicePanel({
         <span className="shrink-0 font-sans text-sm font-normal text-accent-alt sm:text-[15px]">
           ({item.number})
         </span>
-        <h3 className="min-w-0 flex-1 font-sans text-xl font-bold tracking-tight text-white sm:text-2xl lg:text-[28px]">
+        <h3 className="min-w-0 flex-1 font-sans text-xl font-bold tracking-tight text-foreground sm:text-2xl lg:text-[28px]">
           {item.title}
         </h3>
         <PlusMinusIcon open={isOpen} />
@@ -127,7 +127,7 @@ function ServicePanel({
         <div ref={innerRef} className="px-5 pb-6 sm:px-6 sm:pb-8 lg:px-8">
           <div
             ref={contentRef}
-            className="grid gap-6 border-t border-white/5 pt-6 sm:gap-8 lg:grid-cols-[minmax(180px,0.32fr)_minmax(0,0.4fr)_minmax(0,0.28fr)] lg:items-start lg:gap-10"
+            className="grid gap-6 border-t border-border pt-6 sm:gap-8 lg:grid-cols-[minmax(180px,0.32fr)_minmax(0,0.4fr)_minmax(0,0.28fr)] lg:items-start lg:gap-10"
           >
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-black sm:aspect-[16/11]">
               <Image
@@ -140,7 +140,7 @@ function ServicePanel({
             </div>
 
             <div className="space-y-3 lg:pt-1">
-              <h4 className="font-sans text-lg font-bold leading-snug text-white sm:text-xl">
+              <h4 className="font-sans text-lg font-bold leading-snug text-foreground sm:text-xl">
                 {item.subtitle}
               </h4>
               <p className="max-w-md font-sans text-sm leading-relaxed text-muted">
@@ -158,10 +158,10 @@ function ServicePanel({
                     key={category}
                     href="#"
                     className={cn(
-                      "rounded-full px-3.5 py-1.5 font-sans text-xs transition-colors sm:text-[13px]",
+                      "min-h-10 rounded-full px-3.5 py-2 font-sans text-xs transition-colors sm:text-[13px]",
                       index === 0
-                        ? "border border-accent-alt text-accent-alt hover:bg-accent-alt/10"
-                        : "text-muted hover:text-white",
+                        ? "border border-accent text-accent-soft hover:bg-accent/20"
+                        : "border border-transparent text-muted hover:border-border hover:text-foreground",
                     )}
                   >
                     {category}

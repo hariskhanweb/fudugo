@@ -32,13 +32,13 @@ function LogoCard({
   alt: string;
 }) {
   return (
-    <div className="group flex h-20 w-40 shrink-0 items-center justify-center rounded-2xl bg-[#111111] px-5 transition-colors duration-300 hover:bg-[#171717] sm:h-24 sm:w-50">
+    <div className="group flex h-20 w-40 shrink-0 items-center justify-center rounded-2xl border border-border bg-panel px-5 transition-colors duration-300 hover:bg-surface-hover sm:h-24 sm:w-50">
       <Image
         src={src}
         alt={alt}
         width={160}
         height={40}
-        className="h-7 w-auto max-w-full object-contain opacity-60 transition-opacity duration-300 group-hover:opacity-100 sm:h-8"
+        className="h-7 w-auto max-w-full object-contain opacity-60 transition-all duration-300 group-hover:opacity-100 sm:h-8 client-logo"
       />
       <span className="sr-only">{name}</span>
     </div>

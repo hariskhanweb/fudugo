@@ -11,10 +11,11 @@ type ButtonProps = {
 
 const variants = {
   primary:
-    "bg-[#00d084] text-black hover:bg-[#00e893] shadow-xl shadow-[#00d084]/25",
+    "bg-accent-alt text-white hover:bg-accent-soft shadow-xl shadow-[color-mix(in_srgb,var(--accent-alt)_28%,transparent)]",
   secondary:
-    "border border-white/10 bg-white/5 text-white hover:bg-[#00d084] hover:text-black",
-  ghost: "border border-white/20 bg-black text-white hover:border-white/40",
+    "border border-border bg-foreground/5 text-foreground hover:border-accent hover:bg-accent hover:text-white",
+  ghost:
+    "border border-border bg-panel text-foreground hover:border-accent-soft/50",
 };
 
 export default function Button({

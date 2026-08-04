@@ -103,10 +103,10 @@ export default function WorksSection() {
             data-works="heading"
             className="flex flex-wrap items-baseline gap-x-3 gap-y-2 sm:gap-x-4"
           >
-            <h2 className="font-sans text-[clamp(40px,7vw,72px)] font-bold leading-none tracking-tight text-white">
+            <h2 className="font-sans text-[clamp(40px,7vw,72px)] font-bold leading-none tracking-tight text-foreground">
               {data.title}
             </h2>
-            <span className="font-sans text-sm font-normal text-accent-alt sm:text-[15px]">
+            <span className="font-sans text-sm font-normal text-accent-soft sm:text-[15px]">
               {data.eyebrow}
             </span>
           </div>

@@ -73,43 +73,46 @@ export default function ServicesSection() {
         });
       });
 
-      // Horizontal scroll drift on separate transform layer
-      parallaxLayers.forEach((layer, index) => {
-        const isDriftLeft = index === 1;
-        const isDriftRight = index === 3;
+      // Horizontal scroll drift — desktop only (clips on narrow screens)
+      const mm = gsap.matchMedia();
+      mm.add("(min-width: 1024px)", () => {
+        parallaxLayers.forEach((layer, index) => {
+          const isDriftLeft = index === 1;
+          const isDriftRight = index === 3;
 
-        if (isDriftLeft || isDriftRight) {
+          if (isDriftLeft || isDriftRight) {
+            gsap.fromTo(
+              layer,
+              { x: isDriftLeft ? 72 : -72 },
+              {
+                x: isDriftLeft ? -80 : 80,
+                ease: "none",
+                scrollTrigger: {
+                  trigger: layer,
+                  start: "top bottom",
+                  end: "bottom top",
+                  scrub: 1.4,
+                },
+              },
+            );
+            return;
+          }
+
           gsap.fromTo(
             layer,
-            { x: isDriftLeft ? 72 : -72 },
+            { x: index === 0 ? -24 : 24 },
             {
-              x: isDriftLeft ? -80 : 80,
+              x: index === 0 ? 16 : -16,
               ease: "none",
               scrollTrigger: {
                 trigger: layer,
                 start: "top bottom",
                 end: "bottom top",
-                scrub: 1.4,
+                scrub: 1.6,
               },
             },
           );
-          return;
-        }
-
-        gsap.fromTo(
-          layer,
-          { x: index === 0 ? -24 : 24 },
-          {
-            x: index === 0 ? 16 : -16,
-            ease: "none",
-            scrollTrigger: {
-              trigger: layer,
-              start: "top bottom",
-              end: "bottom top",
-              scrub: 1.6,
-            },
-          },
-        );
+        });
       });
     }, section);
 
@@ -127,13 +130,13 @@ export default function ServicesSection() {
           <div className="space-y-3 sm:space-y-4">
             <p
               data-services="eyebrow"
-              className="font-sans text-sm font-normal text-accent-alt sm:text-[15px]"
+              className="font-sans text-sm font-normal text-accent-soft sm:text-[15px]"
             >
               {data.eyebrow}
             </p>
             <h2
               data-services="title"
-              className="font-sans text-[clamp(40px,7vw,72px)] font-bold leading-none tracking-tight text-white"
+              className="font-sans text-[clamp(40px,7vw,72px)] font-bold leading-none tracking-tight text-foreground"
             >
               {data.title}
             </h2>

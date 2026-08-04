@@ -27,16 +27,16 @@ export default function SectionHeading({
       )}
     >
       <div className={cn(align === "center" && "mx-auto")}>
-        <span className="text-xs font-semibold uppercase tracking-widest text-[#00d084]">
+        <span className="text-xs font-semibold uppercase tracking-widest text-accent-alt">
           {eyebrow}
         </span>
-        <h2 className="mt-2 font-serif text-4xl font-bold text-white sm:text-5xl">
+        <h2 className="mt-2 font-serif text-4xl font-bold text-foreground sm:text-5xl">
           {title}
         </h2>
         {description ? (
           <p
             className={cn(
-              "mt-3 max-w-lg text-sm text-gray-400",
+              "mt-3 max-w-lg text-sm text-muted",
               align === "center" && "mx-auto",
             )}
           >

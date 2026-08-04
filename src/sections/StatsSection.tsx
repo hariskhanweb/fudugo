@@ -159,16 +159,16 @@ export default function StatsSection() {
     >
       <Container className="px-5 sm:px-8 lg:px-10">
         <div className="mb-12 flex flex-col gap-8 lg:mb-16 lg:flex-row lg:items-start lg:justify-between lg:gap-10">
-          <div className="flex max-w-3xl items-start gap-x-3 gap-y-2 sm:gap-x-4">
+          <div className="flex w-full max-w-3xl flex-col items-start gap-2 sm:flex-row sm:gap-x-4 sm:gap-y-0">
             <h2
               data-stats="title"
-              className="font-sans text-[clamp(40px,6vw,120px)] font-bold leading-[0.95] tracking-tight text-white max"
+              className="min-w-0 font-sans text-[clamp(36px,8vw,72px)] font-bold leading-[0.95] tracking-tight text-foreground"
             >
               {data.title}
             </h2>
             <span
               data-stats="eyebrow"
-              className="shrink-0 pt-1 font-sans text-sm font-normal text-accent-alt sm:pt-2 sm:text-[15px]"
+              className="max-w-full font-sans text-sm font-normal text-accent-soft sm:max-w-44 sm:shrink-0 sm:pt-1.5 sm:text-[15px] lg:pt-2"
             >
               {data.eyebrow}
             </span>
@@ -186,7 +186,7 @@ export default function StatsSection() {
             className="space-y-1 font-sans text-sm lg:pt-2 lg:text-right"
           >
             <p className="text-muted">{data.meta.verified}</p>
-            <p className="text-accent-alt">{data.meta.studio}</p>
+            <p className="text-accent-soft">{data.meta.studio}</p>
           </div>
         </div>
 
@@ -208,7 +208,7 @@ export default function StatsSection() {
 
           <div
             data-stats="media"
-            className="relative min-h-72 overflow-hidden rounded-2xl bg-[#141414] sm:min-h-96 lg:min-h-full"
+            className="relative min-h-72 overflow-hidden rounded-2xl bg-surface sm:min-h-96 lg:min-h-full"
           >
             <div
               data-stats="parallax"

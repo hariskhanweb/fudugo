@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Roboto_Slab } from "next/font/google";
 import { Header, Footer } from "@/components/layout";
+import { ThemeProvider } from "@/components/theme";
+import { themeInitScript } from "@/components/theme/theme-script";
 import "./globals.css";
 
 const inter = Inter({
@@ -18,7 +20,7 @@ const robotoSlab = Roboto_Slab({
 });
 
 export const metadata: Metadata = {
-  title: "MOTEX - Motion Graphics & 3D Animation Studio",
+  title: "FuduGo - Motion Graphics & 3D Animation Studio",
   description:
     "Award-winning motion graphics & 3D animation studio. We transform complex ideas into stunning visual stories that captivate audiences and drive results.",
 };
@@ -29,13 +31,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en-US" className={`${inter.variable} ${robotoSlab.variable}`}>
-      <body className="bg-background font-sans text-foreground antialiased selection:bg-accent selection:text-black">
-        <div className="flex min-h-screen flex-col">
-          <Header />
-          <main className="flex-1">{children}</main>
-          <Footer />
-        </div>
+    <html
+      lang="en-US"
+      className={`${inter.variable} ${robotoSlab.variable} dark`}
+      suppressHydrationWarning
+    >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
+      <body className="bg-background font-sans text-foreground antialiased selection:bg-accent-alt selection:text-white">
+        <ThemeProvider>
+          <div className="flex min-h-screen flex-col">
+            <Header />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -14,8 +14,8 @@ export default function GlassCard({
   return (
     <div
       className={cn(
-        "glass-panel overflow-hidden rounded-3xl border border-white/10",
-        hover && "transition-all duration-500 hover:border-[#00d084]/50",
+        "glass-panel overflow-hidden rounded-3xl border border-border",
+        hover && "transition-all duration-500 hover:border-accent-soft/40",
         className,
       )}
     >

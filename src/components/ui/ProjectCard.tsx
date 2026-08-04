@@ -48,10 +48,10 @@ function MetaBar({
   href?: string;
 }) {
   return (
-    <div className="flex items-center justify-between gap-4 rounded-2xl bg-[#1a1a1a] px-5 py-4 sm:px-6 sm:py-6">
+    <div className="flex items-center justify-between gap-4 rounded-2xl surface-card px-5 py-4 sm:px-6 sm:py-6">
       <a
         href={href}
-        className="truncate font-sans text-[15px] font-medium text-white transition-colors hover:text-accent-alt sm:text-[18px]"
+        className="truncate font-sans text-[15px] font-medium text-foreground transition-colors hover:text-accent-soft sm:text-[18px]"
       >
         {title}
       </a>
@@ -131,7 +131,7 @@ function MediaSurface({ project }: { project: Project }) {
       <div className="absolute bottom-3 left-3 z-10 sm:bottom-4 sm:left-4">
         <a
           href={href}
-          className="inline-flex h-9 w-9 items-center justify-center rounded-full text-white/90 transition-colors hover:text-white"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-full text-white/90 transition-colors hover:text-white"
           aria-label={`Open ${title}`}
         >
           <LinkIcon className="h-5 w-5" />
@@ -144,7 +144,7 @@ function MediaSurface({ project }: { project: Project }) {
             href={youtubeUrl}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex h-9 w-9 items-center justify-center rounded-full text-white/90 transition-colors hover:text-white"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full text-white/90 transition-colors hover:text-white"
             aria-label={`Watch ${title} on YouTube`}
           >
             <YouTubeIcon className="h-5 w-5" />

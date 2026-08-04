@@ -2,27 +2,36 @@
   "id": "process",
   "eyebrow": "(Our Process)",
   "title": "How We Work",
-  "icon": "https://pawzia.foxcreation.online/motex/wp-content/uploads/sites/13/2026/05/Play-Icon.png",
+  "media": {
+    "image": "/Image-1.jpg",
+    "alt": "Cinematic forest process film still",
+    "href": "#",
+    "playIcon": "/Play-Icon.png"
+  },
   "steps": [
     {
       "step": "01",
       "title": "Deep Discovery",
-      "description": "Lorem ipsum dolor sit amet adipiscing elit ut elit tellus luctus nec ullamco."
+      "titleLines": ["Deep", "Discovery"],
+      "description": "Lorem ipsum dolor sit amet adipiscing elit ut elit tellus luctus nec ullamco mattis pulvinar dapibus leo."
     },
     {
       "step": "02",
       "title": "Creative Concept",
-      "description": "Lorem ipsum dolor sit amet adipiscing elit ut elit tellus luctus nec ullamco."
+      "titleLines": ["Creative", "Concept"],
+      "description": "Lorem ipsum dolor sit amet adipiscing elit ut elit tellus luctus nec ullamco mattis pulvinar dapibus leo."
     },
     {
       "step": "03",
       "title": "Full Production",
-      "description": "Lorem ipsum dolor sit amet adipiscing elit ut elit tellus luctus nec ullamco."
+      "titleLines": ["Full", "Production"],
+      "description": "Lorem ipsum dolor sit amet adipiscing elit ut elit tellus luctus nec ullamco mattis pulvinar dapibus leo."
     },
     {
       "step": "04",
       "title": "Final Delivery",
-      "description": "Lorem ipsum dolor sit amet adipiscing elit ut elit tellus luctus nec ullamco."
+      "titleLines": ["Final", "Delivery"],
+      "description": "Lorem ipsum dolor sit amet adipiscing elit ut elit tellus luctus nec ullamco mattis pulvinar dapibus leo."
     }
   ]
 }
