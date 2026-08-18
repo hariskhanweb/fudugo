@@ -2,58 +2,84 @@
   "id": "services",
   "eyebrow": "(Our Services)",
   "title": "What We Do",
-  "description": "From concept to final render we deliver motion and 3D that performs, not just impresses.",
+  "description": "We combine smart technology and AI to build the systems your business runs on, from idea to impact.",
   "items": [
     {
       "number": "01",
-      "title": "3D Animation",
-      "subtitle": "Render. Rig. Bring to life.",
-      "description": "Photorealistic 3D animation that brings products, environments, and ideas to life with cinematic precision.",
-      "image": "https://pawzia.foxcreation.online/motex/wp-content/uploads/sites/13/2026/05/Image-5-1024x683.jpg",
+      "title": "Web Solutions",
+      "subtitle": "Build. Launch. Grow.",
+      "description": "We build fast, easy-to-use websites that show up on Google and turn visitors into customers from day one.",
+      "image": "/Image-17.jpg",
       "categories": [
-        "Product Visualization",
-        "Architectural 3D",
-        "VFX",
-        "Character Animation"
+        "Next.js & React",
+        "Headless CMS",
+        "E-Commerce",
+        "SEO & Performance"
       ]
     },
     {
       "number": "02",
-      "title": "Motion Graphics",
-      "subtitle": "Design that moves with purpose.",
-      "description": "Dynamic 2D motion design that transforms data, stories, and brand messages into compelling visual experiences.",
-      "image": "https://pawzia.foxcreation.online/motex/wp-content/uploads/sites/13/2026/05/Image-6-1024x683.jpg",
+      "title": "Mobile Apps",
+      "subtitle": "Design. Develop. Deploy.",
+      "description": "We build apps that work great on any phone, are easy to use, and keep your customers coming back.",
+      "image": "/Image-18.jpg",
       "categories": [
-        "Brand Motion",
-        "UI Animation",
-        "Infographic Video",
-        "Lower Thirds"
+        "iOS & Android",
+        "Cross-Platform",
+        "UI/UX Design",
+        "App Store Launch"
       ]
     },
     {
       "number": "03",
-      "title": "Explainer Video",
-      "subtitle": "Complex ideas, made simple.",
-      "description": "Clear, engaging explainer videos that simplify complex products and services into stories anyone can understand.",
-      "image": "https://pawzia.foxcreation.online/motex/wp-content/uploads/sites/13/2026/05/Image-2-1024x683.jpg",
+      "title": "Business Software",
+      "subtitle": "Automate. Streamline. Scale.",
+      "description": "Custom software solutions that eliminate manual work and give your business the tools to operate smarter.",
+      "image": "/Image-19.jpg",
       "categories": [
-        "SaaS Explainer",
-        "Product Demo",
-        "Process Video",
-        "Onboarding"
+        "CRM & ERP",
+        "Workflow Automation",
+        "API Integrations",
+        "Dashboards & Analytics"
       ]
     },
     {
       "number": "04",
-      "title": "Brand Film",
-      "subtitle": "Stories brands are proud of.",
-      "description": "Full-length brand films and campaign videos that define who you are, what you believe, and why it matters.",
-      "image": "https://pawzia.foxcreation.online/motex/wp-content/uploads/sites/13/2026/05/Image-3-1024x683.jpg",
+      "title": "Cloud & Infrastructure",
+      "subtitle": "Deploy. Secure. Scale.",
+      "description": "We set up your systems to run fast and reliably, so your business can grow without any tech headaches.",
+      "image": "/Image-20.jpg",
       "categories": [
-        "Brand Anthem",
-        "Commercials",
-        "Case Study Film",
-        "Interactive"
+        "AWS & Azure",
+        "CI/CD Pipelines",
+        "DevOps",
+        "Security & Monitoring"
+      ]
+    },
+    {
+      "number": "05",
+      "title": "Branding & Design",
+      "subtitle": "Craft. Refine. Elevate.",
+      "description": "Unique visual identities and design systems that make your brand easy to recognize and remember.",
+      "image": "/Image-21.jpg",
+      "categories": [
+        "Logo & Identity",
+        "Design Systems",
+        "Brand Strategy",
+        "Packaging & Print"
+      ]
+    },
+    {
+      "number": "06",
+      "title": "Digital Marketing",
+      "subtitle": "Target. Convert. Grow.",
+      "description": "We help more people find your business online and turn that attention into real, measurable growth.",
+      "image": "/Image-22.jpg",
+      "categories": [
+        "SEO & Content",
+        "Paid Ads (PPC)",
+        "Social Media",
+        "Email & Automation"
       ]
     }
   ]

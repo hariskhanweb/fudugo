@@ -164,8 +164,11 @@ export default function CtaSection() {
             <div data-cta="title" className="max-w-xl">
               <div className="border-l-2 border-accent pl-5 sm:pl-6">
                 <h2 className="font-sans text-[clamp(48px,8vw,88px)] font-bold leading-[0.92] tracking-tight text-white">
-                  <span className="block">Ready To</span>
-                  <span className="block">Start?</span>
+                  {(data.headlineLines ?? ["Ready To", "Start?"]).map((line) => (
+                    <span key={line} className="block">
+                      {line}
+                    </span>
+                  ))}
                 </h2>
               </div>
             </div>

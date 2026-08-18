@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Roboto_Slab } from "next/font/google";
 import { Header, Footer } from "@/components/layout";
+import LenisProvider from "@/components/theme/LenisProvider";
 import { ThemeProvider } from "@/components/theme";
 import { themeInitScript } from "@/components/theme/theme-script";
 import "./globals.css";
@@ -41,11 +42,13 @@ export default function RootLayout({
       </head>
       <body className="bg-background font-sans text-foreground antialiased selection:bg-accent-alt selection:text-white">
         <ThemeProvider>
-          <div className="flex min-h-screen flex-col">
-            <Header />
-            <main className="flex-1">{children}</main>
-            <Footer />
-          </div>
+          <LenisProvider>
+            <div className="flex min-h-screen flex-col">
+              <Header />
+              <main className="flex-1">{children}</main>
+              <Footer />
+            </div>
+          </LenisProvider>
         </ThemeProvider>
       </body>
     </html>

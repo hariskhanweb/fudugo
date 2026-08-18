@@ -11,27 +11,27 @@
   "steps": [
     {
       "step": "01",
-      "title": "Deep Discovery",
-      "titleLines": ["Deep", "Discovery"],
-      "description": "Lorem ipsum dolor sit amet adipiscing elit ut elit tellus luctus nec ullamco mattis pulvinar dapibus leo."
+      "title": "Discovery and Planning",
+      "titleLines": ["Discovery", "and", "Planning"],
+      "description": "We learn about your business, your users, and your goals before writing a single line of code."
     },
     {
       "step": "02",
-      "title": "Creative Concept",
-      "titleLines": ["Creative", "Concept"],
-      "description": "Lorem ipsum dolor sit amet adipiscing elit ut elit tellus luctus nec ullamco mattis pulvinar dapibus leo."
+      "title": "Design and Prototype",
+      "titleLines": ["Design", "and", "Prototype"],
+      "description": "We turn ideas into wireframes and clickable prototypes you can see and test early."
     },
     {
       "step": "03",
-      "title": "Full Production",
-      "titleLines": ["Full", "Production"],
-      "description": "Lorem ipsum dolor sit amet adipiscing elit ut elit tellus luctus nec ullamco mattis pulvinar dapibus leo."
+      "title": "Development and QA",
+      "titleLines": ["Development", "and", "QA"],
+      "description": "Our team builds, tests, and refines your site or app until it works the way it should."
     },
     {
       "step": "04",
-      "title": "Final Delivery",
-      "titleLines": ["Final", "Delivery"],
-      "description": "Lorem ipsum dolor sit amet adipiscing elit ut elit tellus luctus nec ullamco mattis pulvinar dapibus leo."
+      "title": "Launch and Support",
+      "titleLines": ["Launch", "and", "Support"],
+      "description": "We deploy your project and stay on for updates, fixes, and ongoing support."
     }
   ]
 }

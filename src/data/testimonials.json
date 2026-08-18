@@ -1,13 +1,13 @@
 {
   "id": "testimonials",
   "eyebrow": "(Client Stories)",
-  "title": "Don't Take Our Word for It.",
+  "title": "Their trust. Our proof.",
   "columns": [
     {
       "order": ["profile", "quote"],
       "profile": {
-        "name": "James Rourke",
-        "role": "James Rourke",
+        "name": "Nathan Diamond",
+        "role": "Waymart",
         "avatar": "https://pawzia.foxcreation.online/motex/wp-content/uploads/sites/13/2026/05/Image-8.jpg",
         "socials": [
           { "label": "Instagram", "href": "#" },
@@ -17,16 +17,16 @@
         ]
       },
       "quote": {
-        "company": "Noxus Technologies",
+        "company": "Waymart",
         "rating": 5,
-        "text": "FuduGo didn't just deliver a video they delivered something we couldn't have imagined ourselves. The 3D product launch film they created for us exceeded every expectation. Our launch day engagement tripled compared."
+        "text": "I think I should be allowed to add 100 stars for this one. Five stars just isn't enough - this has been a wonderful experience with the team at FuduGo."
       }
     },
     {
       "order": ["quote", "profile"],
       "profile": {
-        "name": "Sarah Lin",
-        "role": "Head of Growth",
+        "name": "Elie Atalla",
+        "role": "President, Divergent Devices",
         "avatar": "https://pawzia.foxcreation.online/motex/wp-content/uploads/sites/13/2026/05/Image-7.jpg",
         "socials": [
           { "label": "Instagram", "href": "#" },
@@ -36,16 +36,16 @@
         ]
       },
       "quote": {
-        "company": "CoreAI Labs",
+        "company": "Divergent Devices",
         "rating": 5,
-        "text": "We came to FuduGo with a complex SaaS product that was nearly impossible to explain in a demo. They turned it into a 90-second explainer that our sales team now uses in every pitch. Close rates went up 40% the month after launch."
+        "text": "FuduGo Solutions has creative and smart web developers who aim to please and take great pride in their work."
       }
     },
     {
       "order": ["profile", "quote"],
       "profile": {
-        "name": "Daniel Müller",
-        "role": "Creative Director",
+        "name": "Chuck Michel",
+        "role": "Senior Partner, Michel & Associates",
         "avatar": "https://pawzia.foxcreation.online/motex/wp-content/uploads/sites/13/2026/05/Image-9.jpg",
         "socials": [
           { "label": "Instagram", "href": "#" },
@@ -55,9 +55,9 @@
         ]
       },
       "quote": {
-        "company": "Pulse Finance",
+        "company": "Michel & Associates",
         "rating": 5,
-        "text": "What sets FuduGo apart isn't just the quality it's the process. They ask the right questions, push back when needed, and deliver on time, every time. Our brand motion system has become the backbone of everything we produce."
+        "text": "FuduGo Solutions are true WordPress experts, capable of complex theme edits, with an extensive skill set that's hard to find."
       }
     }
   ],
@@ -65,17 +65,17 @@
     "rating": "4.9",
     "ratingMax": "5",
     "stars": 5,
-    "ratingLabel": "Average rating from 120+ clients",
+    "ratingLabel": "Average rating from 800+ clients",
     "avatars": [
       "https://pawzia.foxcreation.online/motex/wp-content/uploads/sites/13/2026/05/Image-10.jpg",
       "https://pawzia.foxcreation.online/motex/wp-content/uploads/sites/13/2026/05/Image-7.jpg",
       "https://pawzia.foxcreation.online/motex/wp-content/uploads/sites/13/2026/05/Image-8.jpg",
       "https://pawzia.foxcreation.online/motex/wp-content/uploads/sites/13/2026/05/Image-9.jpg"
     ],
-    "clientsCount": "45+",
-    "trustLabel": "Trusted by Client World Wide",
+    "clientsCount": "800+",
+    "trustLabel": "Trusted by clients worldwide",
     "cta": {
-      "label": "Leave a Reviews",
+      "label": "Leave a review.",
       "href": "#"
     }
   }

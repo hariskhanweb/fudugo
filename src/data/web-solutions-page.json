@@ -1,0 +1,196 @@
+{
+  "backLabel": "Back to all services",
+  "backHref": "/services",
+  "title": "Web Solutions",
+  "tags": ["Next.js", "Headless CMS", "API", "Integrations", "Performance"],
+  "lead": "Accelerating business growth through elegant web design, creative content and performance.",
+  "intro": [
+    "Website design is the base of a strong strategy that details clear brand goals and a surefire way to achieve them. Creative success isn't accidental — it's the product of researched planning and forward-thinking strategies that simplify and clarify.",
+    "Depending on the needs of your business, we mostly use a headless CMS or a modern app framework. This way you can keep your website up-to-date with a system that works best for your team."
+  ],
+  "pillars": [
+    {
+      "id": "experience",
+      "title": "Customer experience & web design",
+      "subtitle": "A customer-first approach.",
+      "description": "Our team collaborates with you to elevate your brand and provide a seamless user flow. We utilize UX audits, SEO, and behavior analytics to produce data-driven, on-brand creative solutions.",
+      "items": [
+        "UX Audits",
+        "User-flow",
+        "Visual Design",
+        "Creative Direction",
+        "Branding & Strategy",
+        "Prototyping",
+        "Style Guides",
+        "Customer Research"
+      ]
+    },
+    {
+      "id": "technology",
+      "title": "Technology & web development",
+      "subtitle": "Our technology stack",
+      "description": "We use powerful platforms such as Next.js, headless CMS, Shopify, and custom APIs. We work alongside your team to evaluate platforms and come up with the best solution for your business.",
+      "items": [
+        "Web Development",
+        "Platform Evaluation",
+        "Tech-stack (headless, SPA, SSR)",
+        "CMS Architecture",
+        "Replatform & Migrations",
+        "Solution Architecture",
+        "CI/CD Integration",
+        "API Integrations"
+      ]
+    },
+    {
+      "id": "content",
+      "title": "Content creation & SEO strategy",
+      "subtitle": "Helping your brand communicate.",
+      "description": "Beautifully designed websites need engaging content — from product photography to brand films and copywriting. We deliver on-brand, high-quality content that engages your audience.",
+      "items": [
+        "Photography direction",
+        "Motion & videography",
+        "Professional copywriting",
+        "Content Strategy",
+        "SEO Keyword research",
+        "Competitive analysis",
+        "On-page SEO",
+        "Content systems"
+      ]
+    },
+    {
+      "id": "support",
+      "title": "Optimization & support",
+      "subtitle": "Consulting to maximize profitability.",
+      "description": "We'll always be here for you. Flexible solutions for different budgets — from general maintenance to high-growth dedicated support.",
+      "items": [
+        "Conversion Rate Optimization",
+        "A/B Testing",
+        "Analytics & Heatmapping",
+        "Tag Manager / Ads pixels",
+        "Design & development support",
+        "Web consulting",
+        "Performance monitoring",
+        "Security updates"
+      ]
+    }
+  ],
+  "spotlight": {
+    "eyebrow": "Website Design",
+    "title": "We don't just build websites — we create digital experiences for forward-thinking brands.",
+    "description": "Standing out through web design, creative content, and growth optimization. Our sites deliver engaging experiences to visitors while guaranteeing long-term profitability for our clients.",
+    "ctaLabel": "Get in touch",
+    "ctaHref": "#contact",
+    "image": "/web-service.webp",
+    "imageAlt": "Web design showcase"
+  },
+  "inlineCta": {
+    "eyebrow": "Let's talk",
+    "title": "Accelerating business growth through elegant web design, creative content and performance.",
+    "description": "Website design is the base of a strong strategy that details clear brand goals and a surefire way to achieve them. Our websites deliver engaging experiences to visitors, while guaranteeing long-term profitability for our clients.",
+    "ctaLabel": "Get in touch",
+    "ctaHref": "#contact"
+  },
+  "process": {
+    "eyebrow": "Our web design process",
+    "title": "Together we'll find the best digital solution for your business.",
+    "steps": [
+      {
+        "step": "01",
+        "title": "Planning & Strategy",
+        "description": "We start with a deep dive into your business to learn more about your goals — not only what you want, but what your clients actually need.",
+        "items": [
+          "Kickoff meeting",
+          "Brainstorm workshop",
+          "Solution architecture",
+          "Integration planning",
+          "Sitemap & content mapping",
+          "Timeline planning"
+        ]
+      },
+      {
+        "step": "02",
+        "title": "Design & Development",
+        "description": "Designers craft on-brand, conversion-optimized wireframes for desktop and mobile. Developers work side by side so everything is built perfectly.",
+        "items": [
+          "UX/UI design mockups",
+          "Next.js / headless build",
+          "Accessibility testing",
+          "SEO & page speed",
+          "Data migration",
+          "API integrations"
+        ]
+      },
+      {
+        "step": "03",
+        "title": "Deployment & Support",
+        "description": "During development your project is visible on a private staging server. Follow progress, give live feedback, then deploy to your preferred environment.",
+        "items": [
+          "Staging server",
+          "QA testing",
+          "Live deployment",
+          "DNS & caching setup",
+          "301 redirect mapping",
+          "Backups & uptime"
+        ]
+      },
+      {
+        "step": "04",
+        "title": "Aftercare",
+        "description": "We act as a strategic partner for long-term growth — monitoring analytics and performance so your brand keeps growing online.",
+        "items": [
+          "Monthly support",
+          "Performance reporting",
+          "SEO follow-up",
+          "Stack consulting",
+          "Feature iterations",
+          "Security & updates"
+        ]
+      }
+    ]
+  },
+  "help": {
+    "eyebrow": "How can we help?",
+    "title": "I need a",
+    "options": [
+      "Full Website",
+      "Web Design",
+      "Development",
+      "Replatform",
+      "SEO",
+      "API Integration",
+      "Automations",
+      "Maintenance",
+      "Hosting",
+      "Second Opinion"
+    ],
+    "ctaLabel": "Start the conversation",
+    "ctaHref": "#contact"
+  },
+  "projects": {
+    "eyebrow": "Selected work",
+    "title": "Some web development projects",
+    "items": [
+      {
+        "title": "Nexus Product Site",
+        "category": "Web Solutions",
+        "description": "A high-performance product marketing site with motion-led storytelling and conversion-focused landing flows.",
+        "image": "/Image-17.jpg",
+        "href": "#works"
+      },
+      {
+        "title": "Pulse Brand Platform",
+        "category": "Web Solutions",
+        "description": "A modular brand platform with CMS-driven pages, reusable components, and lightning-fast Core Web Vitals.",
+        "image": "/Image-18.jpg",
+        "href": "#works"
+      },
+      {
+        "title": "Studio Portfolio",
+        "category": "Web Solutions",
+        "description": "An editorial portfolio experience built for case studies, filters, and immersive project storytelling.",
+        "image": "/Image-19.jpg",
+        "href": "#works"
+      }
+    ]
+  }
+}

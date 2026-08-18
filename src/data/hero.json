@@ -1,22 +1,22 @@
 {
-  "title": "FuduGo®",
-  "titleAccent": "Studio",
-  "description": "Award-winning motion graphics & 3D animation studio. We transform complex ideas into stunning visual stories that captivate audiences and drive results.",
+  "title": "BUILD",
+  "titleAccent": "AI-First Digital Solutions That Grow Businesses ",
+  "description": "From designing and building your online presence to helping people find it, we help your business grow with confidence.",
   "cta": {
-    "label": "Start a Project",
+    "label": "Get Started",
     "href": "#contact"
   },
   "quote": {
-    "highlight": "From explainer videos to full 3D productions",
-    "muted": "we help brands communicate better through motion."
+    "highlight": "Businesses don't need more technology.",
+    "muted": "They need technology that delivers results."
   },
   "meta": "2026 FuduGo® Studio",
   "video": "/video/3D_animation.mp4",
   "badges": [
-    { "label": "3D Animation", "accent": true },
-    { "label": "Motion Graphics", "accent": false },
-    { "label": "Visual Effects", "accent": false },
-    { "label": "Brand Films", "accent": false },
-    { "label": "Explainer Video", "accent": true }
+    { "label": "Web Development", "accent": true },
+    { "label": "Web Design", "accent": false },
+    { "label": "Mobile Apps", "accent": false },
+    { "label": "E-Commerce", "accent": false },
+    { "label": "Digital Marketing", "accent": true }
   ]
 }

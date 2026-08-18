@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { BlogPost } from "@/types";
 import { cn } from "@/lib/utils";
 
@@ -18,7 +19,7 @@ function CategoryPill({ label }: { label: string }) {
 export default function BlogCard({ post, className }: BlogCardProps) {
   if (post.featured) {
     return (
-      <a
+      <Link
         href={post.href}
         data-blog="card"
         className={cn(
@@ -54,12 +55,12 @@ export default function BlogCard({ post, className }: BlogCardProps) {
             </h3>
           </div>
         </div>
-      </a>
+      </Link>
     );
   }
 
   return (
-    <a
+    <Link
       href={post.href}
       data-blog="card"
       className={cn(
@@ -95,6 +96,6 @@ export default function BlogCard({ post, className }: BlogCardProps) {
           </p>
         ) : null}
       </div>
-    </a>
+    </Link>
   );
 }

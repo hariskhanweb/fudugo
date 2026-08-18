@@ -104,7 +104,7 @@ function ServicePanel({
   return (
     <article
       className={cn(
-        "overflow-hidden rounded-2xl border border-border bg-surface shadow-[var(--card-shadow)] transition-colors duration-300",
+        "overflow-hidden rounded-2xl border border-border bg-surface shadow-(--card-shadow) transition-colors duration-300",
         isOpen ? "border-border" : "hover:bg-surface-hover",
       )}
     >
@@ -129,7 +129,7 @@ function ServicePanel({
             ref={contentRef}
             className="grid gap-6 border-t border-border pt-6 sm:gap-8 lg:grid-cols-[minmax(180px,0.32fr)_minmax(0,0.4fr)_minmax(0,0.28fr)] lg:items-start lg:gap-10"
           >
-            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-black sm:aspect-[16/11]">
+            <div className="relative aspect-4/3 overflow-hidden rounded-2xl bg-black sm:aspect-16/11">
               <Image
                 src={item.image}
                 alt={item.title}

@@ -1,14 +1,14 @@
 {
-  "tagline": "FuduGo – Motion Graphics & 3D Animation Studio",
+  "tagline": "FuduGo - Motion Graphics & 3D Animation Studio",
   "officeLabel": "Our Office",
   "contactLabel": "Contact Us",
   "quickLinksTitle": "Quick Links",
   "quickLinks": [
     { "label": "Home", "href": "/" },
-    { "label": "About Us", "href": "#about" },
-    { "label": "Services", "href": "#services" },
+    { "label": "About Us", "href": "/about" },
+    { "label": "Services", "href": "/services" },
     { "label": "Project", "href": "#works" },
-    { "label": "Blog", "href": "#blog" },
+    { "label": "Blog", "href": "/blog" },
     { "label": "Contact", "href": "#contact" }
   ],
   "newsletter": {
@@ -52,7 +52,7 @@
   "awardsTitle": "Recognized by",
   "awards": ["Telly Awards", "D&AD", "Motion Awards", "Clio"],
   "copyright": {
-    "prefix": "Fox Creations © 2025",
+    "prefix": "© 2026",
     "brand": "FuduGo",
     "suffix": ". All rights reserved."
   },

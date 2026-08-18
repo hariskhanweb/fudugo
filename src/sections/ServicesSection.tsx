@@ -73,42 +73,31 @@ export default function ServicesSection() {
         });
       });
 
-      // Horizontal scroll drift — desktop only (clips on narrow screens)
+      // Horizontal scroll drift — desktop only
       const mm = gsap.matchMedia();
       mm.add("(min-width: 1024px)", () => {
+        const drifts = [
+          { from: -24, to: 16, scrub: 1.6 },
+          { from: 72, to: -80, scrub: 1.4 },
+          { from: -24, to: 16, scrub: 1.6 },
+          { from: -72, to: 80, scrub: 1.4 },
+          { from: 48, to: -56, scrub: 1.5 },
+          { from: -48, to: 56, scrub: 1.5 },
+        ];
+
         parallaxLayers.forEach((layer, index) => {
-          const isDriftLeft = index === 1;
-          const isDriftRight = index === 3;
-
-          if (isDriftLeft || isDriftRight) {
-            gsap.fromTo(
-              layer,
-              { x: isDriftLeft ? 72 : -72 },
-              {
-                x: isDriftLeft ? -80 : 80,
-                ease: "none",
-                scrollTrigger: {
-                  trigger: layer,
-                  start: "top bottom",
-                  end: "bottom top",
-                  scrub: 1.4,
-                },
-              },
-            );
-            return;
-          }
-
+          const drift = drifts[index % drifts.length];
           gsap.fromTo(
             layer,
-            { x: index === 0 ? -24 : 24 },
+            { x: drift.from },
             {
-              x: index === 0 ? 16 : -16,
+              x: drift.to,
               ease: "none",
               scrollTrigger: {
                 trigger: layer,
                 start: "top bottom",
                 end: "bottom top",
-                scrub: 1.6,
+                scrub: drift.scrub,
               },
             },
           );

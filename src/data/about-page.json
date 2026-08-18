@@ -1,0 +1,154 @@
+{
+  "hero": {
+    "title": "About",
+    "eyebrow": "(About FuduGo)",
+    "quote": "Motion is not decoration. It's the language brands use when words are not enough and we've spent years mastering every sentence of it.",
+    "image": "/Image-1.jpg",
+    "imageAlt": "FuduGo studio at work"
+  },
+  "awards": {
+    "title": "Awards.",
+    "eyebrow": "(Award & Recognition)",
+    "items": [
+      {
+        "organization": "Telly Awards",
+        "title": "Outstanding Achievement in 3D Animation",
+        "category": "3D Animation",
+        "type": "Branded Content",
+        "year": "2024"
+      },
+      {
+        "organization": "D&AD",
+        "title": "Craft in Motion Design",
+        "category": "Graphic Design",
+        "type": "Motion",
+        "year": "2024"
+      },
+      {
+        "organization": "Motion Awards",
+        "title": "Best Visual Effects",
+        "category": "Visual Effects",
+        "type": "Commercial",
+        "year": "2024"
+      },
+      {
+        "organization": "Telly Awards",
+        "title": "Best Branded Motion Content",
+        "category": "Motion Graphics",
+        "type": "Branded Series",
+        "year": "2024"
+      },
+      {
+        "organization": "Clio",
+        "title": "Excellence in Animation",
+        "category": "Animation",
+        "type": "Campaign Film",
+        "year": "2023"
+      }
+    ]
+  },
+  "industries": {
+    "title": "Industries We Serve.",
+    "eyebrow": "(Industries)",
+    "description": "We've built motion for brands across 18 countries and dozens of industries.",
+    "items": [
+      {
+        "icon": "saas",
+        "title": "SaaS & Technology",
+        "description": "Explainer videos, product demos, UI animation lorem ipsum dolor."
+      },
+      {
+        "icon": "health",
+        "title": "Healthcare & Medtech",
+        "description": "Patient education, device visualization, brand films lorem."
+      },
+      {
+        "icon": "finance",
+        "title": "Finance & FinTech",
+        "description": "Data storytelling, product explainers, investor videos lorem ipsum."
+      },
+      {
+        "icon": "retail",
+        "title": "E-commerce & Retail",
+        "description": "Product visualization, social motion, launch films, lorem ipsum."
+      },
+      {
+        "icon": "education",
+        "title": "Education & EdTech",
+        "description": "Course content, explainers, brand identity films lorem ipsum."
+      },
+      {
+        "icon": "enterprise",
+        "title": "Enterprise & B2B",
+        "description": "Internal comms, brand motion systems, event films, lorem."
+      }
+    ]
+  },
+  "solutions": {
+    "eyebrow": "(5 Solutions)",
+    "title": "Every Challenge Covered.",
+    "description": "Each solution is built around a specific business goal choose the one that matches your situation.",
+    "image": "/Image-17.jpg",
+    "imageAlt": "Team collaboration at FuduGo",
+    "challengeCta": {
+      "label": "Not Sure Which Solution Is Right for You?",
+      "link": "Tell Us Your Challenge",
+      "href": "#contact"
+    },
+    "items": [
+      {
+        "number": "01",
+        "title": "Explain the Unexplainable",
+        "description": "We create explainer videos that simplify your most complex ideas into stories anyone can understand",
+        "href": "#contact"
+      },
+      {
+        "number": "02",
+        "title": "Build a Brand Motion Identity",
+        "description": "We create explainer videos that simplify your most complex ideas into stories anyone can understand",
+        "href": "#contact"
+      },
+      {
+        "number": "03",
+        "title": "Launch a Product with Impact",
+        "description": "We create explainer videos that simplify your most complex ideas into stories anyone can understand",
+        "href": "#contact"
+      },
+      {
+        "number": "04",
+        "title": "Turn Data into Compelling Stories",
+        "description": "We create explainer videos that simplify your most complex ideas into stories anyone can understand",
+        "href": "#contact"
+      },
+      {
+        "number": "05",
+        "title": "Win on Social with Motion",
+        "description": "We create explainer videos that simplify your most complex ideas into stories anyone can understand",
+        "href": "#contact"
+      }
+    ],
+    "results": {
+      "title": "Typical Results",
+      "items": [
+        {
+          "id": "close-rate",
+          "value": 40,
+          "suffix": "%",
+          "label": "Avg. Increase in Close Rate"
+        },
+        {
+          "id": "product-page",
+          "value": 3,
+          "suffix": "+",
+          "label": "More Time on Product Page"
+        },
+        {
+          "id": "delivery",
+          "value": 90,
+          "suffix": "s",
+          "label": "average delivery length"
+        }
+      ]
+    }
+  }
+}

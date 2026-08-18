@@ -1,8 +1,8 @@
 {
   "id": "works",
   "eyebrow": "(Our Works)",
-  "title": "Latest Work",
-  "description": "Consectetur adipiscing elit ut elit tellus luctus nec ullamcorper mattis pulvinar dapibus leo.",
+  "title": "What We've Built",
+  "description": "Explore the digital products, platforms, and experiences we've created for businesses across industries.",
   "cta": {
     "label": "View all Project",
     "href": "#"

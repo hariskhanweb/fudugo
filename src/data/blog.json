@@ -4,32 +4,128 @@
   "title": "Insights, Stories & Motion Knowledge.",
   "cta": {
     "label": "View All Articles",
-    "href": "#"
+    "href": "/blog"
   },
   "posts": [
     {
+      "slug": "motion-language-global-brand-rebrand",
       "title": "How We Designed the Motion Language for a Global Brand Rebrand",
       "category": "Behind The Frame",
       "date": "May 21, 2026",
       "image": "/Image-19.jpg",
-      "href": "#",
-      "featured": true
+      "href": "/blog/motion-language-global-brand-rebrand",
+      "excerpt": "A look inside the strategy, systems, and motion decisions that helped turn a rebrand into a consistent digital experience across every touchpoint.",
+      "content": {
+        "intro": "A rebrand only works when it behaves consistently everywhere. For this project, motion became the connective tissue between identity, product, and campaign.",
+        "sections": [
+          {
+            "heading": "Start with rules, not references",
+            "paragraphs": [
+              "Before touching animation curves, we translated the brand strategy into motion principles: how the brand enters, how it pauses, and how it exits. That gave every designer and editor the same visual grammar.",
+              "Instead of building one-off effects, we focused on reusable transitions that could scale across landing pages, product demos, paid ads, and launch content."
+            ]
+          },
+          {
+            "heading": "Design for teams that ship fast",
+            "paragraphs": [
+              "The real challenge was not creating a beautiful hero animation. It was creating a system the internal team could use without slowing down delivery.",
+              "So we documented timing, easing, layering, and composition patterns in a lightweight playbook that made future rollout faster and more consistent."
+            ]
+          }
+        ]
+      }
     },
     {
+      "slug": "motion-at-every-stage-of-your-funnel",
       "title": "From Awareness to Action: How to Use Motion at Every Stage of Your Funnel",
       "category": "Motion & Business",
       "date": "May 21, 2026",
       "image": "/Image-18.jpg",
-      "href": "#",
-      "excerpt": "Top of funnel, mid funnel, bottom of funnel each stage"
+      "href": "/blog/motion-at-every-stage-of-your-funnel",
+      "excerpt": "Top of funnel, mid funnel, bottom of funnel each stage needs a different kind of motion to move people closer to action.",
+      "content": {
+        "intro": "Not all motion should do the same job. Awareness content, product education, and conversion assets each need different pacing and different levels of detail.",
+        "sections": [
+          {
+            "heading": "Top of funnel: earn attention quickly",
+            "paragraphs": [
+              "At the awareness stage, motion should simplify and sharpen the message. Fast hooks, clear contrast, and confident pacing help a brand stand out in crowded feeds.",
+              "This is where motion acts like a headline. It should be immediately legible and easy to remember."
+            ]
+          },
+          {
+            "heading": "Mid and bottom funnel: reduce friction",
+            "paragraphs": [
+              "As prospects get closer to buying, motion should answer questions instead of adding style for style's sake.",
+              "Product walkthroughs, UI states, and feature comparisons can all reduce uncertainty and help customers understand value faster."
+            ]
+          }
+        ]
+      }
     },
     {
+      "slug": "character-rigging-for-non-technical-clients",
       "title": "Character Rigging for Non-Technical Clients: How We Translate Vision into Movement",
       "category": "The Craft",
       "date": "May 21, 2026",
       "image": "/Image-17.jpg",
-      "href": "#",
-      "excerpt": "Character animation starts long before any software opens. We walk"
+      "href": "/blog/character-rigging-for-non-technical-clients",
+      "excerpt": "Character animation starts long before any software opens. We walk clients from abstract ideas to clear performance decisions.",
+      "content": {
+        "intro": "Great character work depends on trust. Clients often know the feeling they want, but not the rigging or pose logic required to create it.",
+        "sections": [
+          {
+            "heading": "Translate emotion into constraints",
+            "paragraphs": [
+              "We start by turning vague words like friendly, premium, or energetic into movement choices the team can actually build around.",
+              "That means choosing how elastic a character should feel, how facial poses should land, and how much exaggeration the style can support."
+            ]
+          },
+          {
+            "heading": "Keep feedback visual and practical",
+            "paragraphs": [
+              "Non-technical stakeholders respond best when they can compare options. So we present motion tests in a way that makes differences obvious instead of technical.",
+              "This shortens review cycles and helps the final animation feel intentional, not accidental."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "slug": "whats-new-in-web-apps-and-marketing",
+      "title": "What's New in Web, Apps & Marketing.",
+      "category": "Product Growth",
+      "date": "Aug 18, 2026",
+      "image": "/Image-20.jpg",
+      "href": "/blog/whats-new-in-web-apps-and-marketing",
+      "excerpt": "From AI-assisted product design to faster web stacks and smarter growth loops, here's what teams should actually pay attention to right now.",
+      "featured": true,
+      "content": {
+        "intro": "The tools are changing fast, but the winners are still the teams who stay focused on business outcomes. The biggest shift is not just speed. It is clarity.",
+        "sections": [
+          {
+            "heading": "Web is getting faster to ship",
+            "paragraphs": [
+              "Modern stacks now make it easier to launch performant sites without sacrificing flexibility. Teams can move from prototype to production much faster than they could even a year ago.",
+              "The opportunity is not simply shipping more pages. It is shipping clearer experiences that load quickly, rank well, and convert better."
+            ]
+          },
+          {
+            "heading": "Apps need tighter product feedback loops",
+            "paragraphs": [
+              "The best mobile products are combining analytics, experimentation, and better onboarding to improve retention from the first session.",
+              "This means product decisions are increasingly shaped by real user behavior rather than assumptions made at kickoff."
+            ]
+          },
+          {
+            "heading": "Marketing is becoming more operational",
+            "paragraphs": [
+              "Growth teams are using AI for research, creative iteration, and workflow speed, but results still depend on positioning, offer quality, and measurement.",
+              "Businesses that connect product, website, and marketing data are the ones most likely to turn attention into real pipeline."
+            ]
+          }
+        ]
+      }
     }
   ]
 }

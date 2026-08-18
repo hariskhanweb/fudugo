@@ -33,6 +33,11 @@ export default function HeroSection() {
         section.querySelectorAll("[data-hero='badge']"),
       );
 
+      if (quote) gsap.set(quote, { autoAlpha: 1 });
+      if (quoteMuted) gsap.set(quoteMuted, { opacity: 0.55 });
+      if (meta) gsap.set(meta, { opacity: 1 });
+      badges.forEach((badge) => gsap.set(badge, { opacity: 1 }));
+
       // Main scroll story — tied to user scroll through the hero
       const scrollTl = gsap.timeline({
         defaults: { ease: "none" },
@@ -56,16 +61,12 @@ export default function HeroSection() {
         )
         // Intro drifts the other way for depth
         .to(intro, { y: -40, opacity: 0, x: 24 }, 0)
-        // Quote brightens then exits
-        .to(quoteMuted, { color: "#ffffff" }, 0)
-        .to(quote, { y: -110, opacity: 0 }, 0.15)
-        // Meta / badges rise away
-        .to(meta, { y: -80, opacity: 0 }, 0.05)
-        .to(
-          badges,
-          { y: -60, opacity: 0, stagger: 0.03 },
-          0.08,
-        );
+        // Quote brightens (real opacity, not color-alpha) then exits
+        .to(quoteMuted, { opacity: 1 }, 0)
+        .to(quote, { y: -110, autoAlpha: 0 }, 0.15)
+        // Meta / badges — drift only, keep full opacity on mobile & desktop
+        .to(meta, { y: -80 }, 0.05)
+        .to(badges, { y: -60, stagger: 0.03 }, 0.08);
 
       // Badge hover micro-interaction
       const cleanups: Array<() => void> = [];
@@ -146,10 +147,10 @@ export default function HeroSection() {
         <div className="grid gap-10 lg:grid-cols-2 lg:items-end lg:gap-16">
           <p
             data-hero="quote"
-            className="hidden max-w-125 text-[36px] font-medium leading-snug tracking-tight will-change-transform lg:block"
+            className="hidden max-w-125 text-[36px] font-medium leading-snug tracking-tight text-white will-change-[transform,opacity] lg:block"
           >
-            <span className="text-white">“{data.quote.highlight} </span>
-            <span data-hero="quote-muted" className="text-white/55">
+            <span>“{data.quote.highlight} </span>
+            <span data-hero="quote-muted" className="will-change-opacity">
               {data.quote.muted}”
             </span>
           </p>

@@ -1,10 +1,10 @@
 {
   "eyebrow": "(Results That Speak for Themselves.)",
-  "title": "By The Numbers",
-  "description": "Over a decade of delivering motion work that moves businesses forward the numbers tell the story.",
+  "title": "Our Track Record",
+  "description": "For over eight years, businesses have trusted us to build websites and apps that don't just launch; they keep performing long after.",
   "meta": {
-    "verified": "All figures verified as of 2024",
-    "studio": "FuduGo — Est. 2014"
+    "verified": "All figures verified as of 2026.",
+    "studio": "FuduGo Solutions - Est. 2018*"
   },
   "image": {
     "src": "/Image-4.jpg",
@@ -14,34 +14,34 @@
     {
       "id": "years",
       "number": "01",
-      "value": 10,
+      "value": 8,
       "suffix": "+",
-      "label": "Years Experience",
-      "description": "A decade of craft, storytelling, and relentless attention to detail."
+      "label": "Years in Business",
+      "description": "Building websites and apps since 2018; long enough to know what works."
     },
     {
       "id": "clients",
       "number": "02",
-      "value": 120,
+      "value": 800,
       "suffix": "+",
-      "label": "Happy Clients",
-      "description": "From startups to Fortune 500 companies across 18 countries."
+      "label": "Businesses we've helped",
+      "description": "From first-time startups to global brands: real results, not promises."
     },
     {
       "id": "satisfaction",
       "number": "03",
-      "value": 98,
-      "suffix": "%",
-      "label": "Client Satisfaction",
-      "description": "Based on post-project surveys from all completed engagements."
+      "value": 1400,
+      "suffix": "+",
+      "label": "Websites Launched",
+      "description": "Live, working sites - not mockups that never make it out the door."
     },
     {
       "id": "projects",
       "number": "04",
-      "value": 250,
+      "value": 300,
       "suffix": "+",
-      "label": "Project Delivery",
-      "description": "Across 3D animation, motion graphics, and brand film production."
+      "label": "Apps in the App Store",
+      "description": "Real apps people can download today - not prototypes stuck in dev."
     }
   ]
 }

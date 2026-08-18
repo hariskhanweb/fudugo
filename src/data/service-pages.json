@@ -1,0 +1,280 @@
+{
+  "services": [
+    {
+      "slug": "web-solutions",
+      "title": "Web Solutions",
+      "shortTitle": "Web",
+      "eyebrow": "(01 — Web Solutions)",
+      "tagline": "Sites that perform, not just impress.",
+      "description": "From marketing sites to complex web platforms, we design and build experiences that load fast, convert visitors, and scale with your business.",
+      "heroImage": "/Image-17.jpg",
+      "heroImagePosition": "center",
+      "layout": "web-solutions",
+      "ctaLabel": "Start a web project",
+      "highlights": [
+        { "label": "Avg. Lighthouse", "value": "95+" },
+        { "label": "Launch window", "value": "4–8 wks" },
+        { "label": "Stack", "value": "Next.js" }
+      ],
+      "capabilities": [
+        {
+          "title": "Marketing websites",
+          "description": "Brand-forward sites with motion, SEO foundations, and clear conversion paths."
+        },
+        {
+          "title": "Product & SaaS platforms",
+          "description": "App-like web experiences with auth, dashboards, and role-based access."
+        },
+        {
+          "title": "E-commerce experiences",
+          "description": "Storefronts optimized for discovery, trust, and checkout completion."
+        },
+        {
+          "title": "CMS & content systems",
+          "description": "Editable content architectures your team can update without a developer."
+        }
+      ],
+      "process": [
+        { "step": "01", "title": "Discovery", "description": "Goals, audience, and technical constraints mapped into a clear brief." },
+        { "step": "02", "title": "Design system", "description": "UI language, components, and responsive patterns before build." },
+        { "step": "03", "title": "Build & QA", "description": "Performance-first engineering with accessibility and cross-browser checks." },
+        { "step": "04", "title": "Launch & iterate", "description": "Deploy, measure, and refine based on real user behavior." }
+      ],
+      "outcomes": [
+        "Faster page loads and stronger Core Web Vitals",
+        "Cleaner IA that guides users to action",
+        "Maintainable code your team can own"
+      ]
+    },
+    {
+      "slug": "mobile-apps",
+      "title": "Mobile Apps",
+      "shortTitle": "Mobile",
+      "eyebrow": "(02 — Mobile Apps)",
+      "tagline": "Native feel. Cross-platform reach.",
+      "description": "We craft iOS and Android apps that feel native, ship reliably, and keep users coming back — from MVP to App Store polish.",
+      "heroImage": "/Image-18.jpg",
+      "heroImagePosition": "center top",
+      "layout": "device",
+      "ctaLabel": "Plan your app",
+      "highlights": [
+        { "label": "Platforms", "value": "iOS · Android" },
+        { "label": "Typical MVP", "value": "8–14 wks" },
+        { "label": "Framework", "value": "React Native" }
+      ],
+      "capabilities": [
+        {
+          "title": "Consumer apps",
+          "description": "Onboarding, retention loops, and delightful micro-interactions."
+        },
+        {
+          "title": "Business & field apps",
+          "description": "Offline-ready tools for teams who work beyond the desk."
+        },
+        {
+          "title": "App redesigns",
+          "description": "Modernize legacy apps without losing your users or ratings."
+        },
+        {
+          "title": "API & backend pairing",
+          "description": "Secure integrations, push notifications, and analytics baked in."
+        }
+      ],
+      "process": [
+        { "step": "01", "title": "Product framing", "description": "Define the core job-to-be-done and MVP scope." },
+        { "step": "02", "title": "UX flows", "description": "Wireframes and interactive prototypes for key journeys." },
+        { "step": "03", "title": "Build sprints", "description": "Feature slices with continuous TestFlight / Play builds." },
+        { "step": "04", "title": "Store launch", "description": "Submission, ASO basics, and post-launch iteration." }
+      ],
+      "outcomes": [
+        "Smooth 60fps interactions on real devices",
+        "Clear retention and activation metrics",
+        "A roadmap beyond v1.0"
+      ]
+    },
+    {
+      "slug": "business-software",
+      "title": "Business Software",
+      "shortTitle": "Software",
+      "eyebrow": "(03 — Business Software)",
+      "tagline": "Internal tools that feel like products.",
+      "description": "Custom software for operations, workflows, and teams — replacing spreadsheets and brittle tools with systems people actually want to use.",
+      "heroImage": "/Image-19.jpg",
+      "heroImagePosition": "center",
+      "layout": "bento",
+      "ctaLabel": "Map your workflow",
+      "highlights": [
+        { "label": "Focus", "value": "Ops · CRM · ERP" },
+        { "label": "Delivery", "value": "Modular" },
+        { "label": "Access", "value": "Role-based" }
+      ],
+      "capabilities": [
+        {
+          "title": "Internal dashboards",
+          "description": "Live operational views with filters, exports, and alerts."
+        },
+        {
+          "title": "Workflow automation",
+          "description": "Approvals, assignments, and status pipelines without the chaos."
+        },
+        {
+          "title": "Customer portals",
+          "description": "Self-serve hubs for clients, partners, and vendors."
+        },
+        {
+          "title": "System integrations",
+          "description": "Connect CRMs, ERPs, billing, and messaging into one flow."
+        }
+      ],
+      "process": [
+        { "step": "01", "title": "Process audit", "description": "Document how work actually happens today." },
+        { "step": "02", "title": "Module plan", "description": "Prioritize the highest-ROI workflows first." },
+        { "step": "03", "title": "Pilot build", "description": "Ship a focused module to a real team cohort." },
+        { "step": "04", "title": "Scale out", "description": "Expand modules, permissions, and reporting." }
+      ],
+      "outcomes": [
+        "Fewer manual handoffs and errors",
+        "Visible ownership across the workflow",
+        "Software that matches how your org works"
+      ]
+    },
+    {
+      "slug": "cloud-infrastructure",
+      "title": "Cloud & Infrastructure",
+      "shortTitle": "Cloud",
+      "eyebrow": "(04 — Cloud & Infrastructure)",
+      "tagline": "Reliable foundations for growth.",
+      "description": "Cloud architecture, DevOps, and infrastructure that keep products fast, secure, and ready to scale — without surprise outages or runaway costs.",
+      "heroImage": "/Image-4.jpg",
+      "heroImagePosition": "center",
+      "layout": "stack",
+      "ctaLabel": "Review your stack",
+      "highlights": [
+        { "label": "Uptime target", "value": "99.9%" },
+        { "label": "Cloud", "value": "AWS · GCP · Azure" },
+        { "label": "Delivery", "value": "CI/CD" }
+      ],
+      "capabilities": [
+        {
+          "title": "Cloud architecture",
+          "description": "Right-sized environments with clear networking and security boundaries."
+        },
+        {
+          "title": "CI/CD pipelines",
+          "description": "Automated builds, tests, and safe releases on every merge."
+        },
+        {
+          "title": "Observability",
+          "description": "Logging, metrics, and alerts so issues surface before users do."
+        },
+        {
+          "title": "Cost & performance",
+          "description": "Tune spend, caching, and scaling policies for real traffic."
+        }
+      ],
+      "process": [
+        { "step": "01", "title": "Assess", "description": "Audit current infra, risks, and cost drivers." },
+        { "step": "02", "title": "Blueprint", "description": "Target architecture with migration phases." },
+        { "step": "03", "title": "Harden", "description": "Security, backups, and disaster recovery in place." },
+        { "step": "04", "title": "Operate", "description": "Runbooks, monitoring, and continuous improvement." }
+      ],
+      "outcomes": [
+        "Predictable deploys with rollback paths",
+        "Clear visibility into health and spend",
+        "Infrastructure that grows with product demand"
+      ]
+    },
+    {
+      "slug": "branding-design",
+      "title": "Branding & Design",
+      "shortTitle": "Brand",
+      "eyebrow": "(05 — Branding & Design)",
+      "tagline": "Identity that moves with your product.",
+      "description": "Visual systems, brand identities, and product UI that feel cohesive across every touchpoint — from logo to motion language.",
+      "heroImage": "/Image-1.jpg",
+      "heroImagePosition": "center",
+      "layout": "gallery",
+      "ctaLabel": "Book a brand session",
+      "highlights": [
+        { "label": "Deliverables", "value": "Systems" },
+        { "label": "Includes", "value": "Motion" },
+        { "label": "Format", "value": "Digital-first" }
+      ],
+      "capabilities": [
+        {
+          "title": "Brand identity",
+          "description": "Logo, type, color, and voice that hold up at every scale."
+        },
+        {
+          "title": "Design systems",
+          "description": "Reusable UI kits that keep product and marketing aligned."
+        },
+        {
+          "title": "Motion branding",
+          "description": "Animation rules that make your brand feel alive and consistent."
+        },
+        {
+          "title": "Campaign creatives",
+          "description": "Launch assets built for web, social, and product moments."
+        }
+      ],
+      "process": [
+        { "step": "01", "title": "Brand audit", "description": "What resonates, what feels dated, what competitors own." },
+        { "step": "02", "title": "Direction", "description": "Mood, concepts, and a clear creative north star." },
+        { "step": "03", "title": "System build", "description": "Identity assets, guidelines, and component library." },
+        { "step": "04", "title": "Apply & train", "description": "Rollout across key surfaces with team enablement." }
+      ],
+      "outcomes": [
+        "A brand system teams can actually use",
+        "Stronger recognition across channels",
+        "Design quality that scales with growth"
+      ]
+    },
+    {
+      "slug": "digital-marketing",
+      "title": "Digital Marketing",
+      "shortTitle": "Marketing",
+      "eyebrow": "(06 — Digital Marketing)",
+      "tagline": "Growth with creative that converts.",
+      "description": "Strategy, campaigns, and performance creative that turn attention into pipeline — measured, iterated, and built for modern channels.",
+      "heroImage": "/Image-4-1.jpg",
+      "heroImagePosition": "center",
+      "layout": "funnel",
+      "ctaLabel": "Grow with us",
+      "highlights": [
+        { "label": "Channels", "value": "Paid · Organic" },
+        { "label": "Focus", "value": "Pipeline" },
+        { "label": "Cadence", "value": "Weekly" }
+      ],
+      "capabilities": [
+        {
+          "title": "Campaign strategy",
+          "description": "Positioning, messaging, and channel plans tied to revenue goals."
+        },
+        {
+          "title": "Performance creative",
+          "description": "Ads, landing pages, and motion assets built to test and win."
+        },
+        {
+          "title": "SEO & content",
+          "description": "Search-led content systems that compound over time."
+        },
+        {
+          "title": "Analytics & CRO",
+          "description": "Funnel insights and experiments that lift conversion rates."
+        }
+      ],
+      "process": [
+        { "step": "01", "title": "Baseline", "description": "Audit channels, creative, and conversion paths." },
+        { "step": "02", "title": "Playbook", "description": "Prioritized tests and a 90-day growth plan." },
+        { "step": "03", "title": "Launch loops", "description": "Ship creative, measure, and iterate weekly." },
+        { "step": "04", "title": "Scale winners", "description": "Double down on what converts; cut what does not." }
+      ],
+      "outcomes": [
+        "Clear attribution from spend to pipeline",
+        "Creative systems that keep testing fresh",
+        "Sustainable growth — not one-off spikes"
+      ]
+    }
+  ]
+}

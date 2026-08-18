@@ -1,10 +1,21 @@
 {
   "links": [
     { "label": "Home", "href": "/" },
-    { "label": "About", "href": "#about" },
-    { "label": "Services", "href": "#services" }
+    { "label": "About", "href": "/about" }
   ],
   "dropdowns": {
+    "services": {
+      "label": "Services",
+      "items": [
+        { "label": "All Services", "href": "/services" },
+        { "label": "Web Solutions", "href": "/services/web-solutions" },
+        { "label": "Mobile Apps", "href": "/services/mobile-apps" },
+        { "label": "Business Software", "href": "/services/business-software" },
+        { "label": "Cloud & Infrastructure", "href": "/services/cloud-infrastructure" },
+        { "label": "Branding & Design", "href": "/services/branding-design" },
+        { "label": "Digital Marketing", "href": "/services/digital-marketing" }
+      ]
+    },
     "portfolio": {
       "label": "Portfolio",
       "items": [
@@ -26,8 +37,8 @@
     "blog": {
       "label": "Blog",
       "items": [
-        { "label": "Our Blog", "href": "#blog" },
-        { "label": "Single Post", "href": "#" }
+        { "label": "Our Blog", "href": "/blog" },
+        { "label": "Single Post", "href": "/blog/whats-new-in-web-apps-and-marketing" }
       ]
     }
   },

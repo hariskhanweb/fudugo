@@ -1,19 +1,20 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import data from "@/data/blog.json";
-import type { BlogPost } from "@/types";
 import { BlogCard, Container } from "@/components/ui";
+import { getRecentBlogPosts } from "@/lib/blog";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function BlogSection() {
   const sectionRef = useRef<HTMLElement>(null);
-  const posts = data.posts as BlogPost[];
-  const featured = posts.find((post) => post.featured) ?? posts[0];
-  const secondary = posts.filter((post) => post !== featured);
+  const posts = getRecentBlogPosts(3);
+  const featured = posts[0];
+  const secondary = posts.slice(1);
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -145,19 +146,19 @@ export default function BlogSection() {
               data-blog="divider"
               className="hidden h-px flex-1 origin-left bg-foreground/10 sm:block"
             />
-            <a
+            <Link
               data-blog="cta"
               href={data.cta.href}
               className="inline-flex min-h-11 shrink-0 items-center justify-center rounded-full border border-border bg-transparent px-5 py-3 font-sans text-sm font-medium text-foreground transition-colors duration-300 hover:border-border-hover hover:bg-foreground/5 sm:px-6"
             >
               {data.cta.label}
-            </a>
+            </Link>
           </div>
         </div>
 
         <div className="grid gap-4 lg:grid-cols-4 lg:gap-5">
           <div data-blog="featured" className="min-h-full lg:col-span-2">
-            <BlogCard post={featured} className="h-full" />
+            <BlogCard post={{ ...featured, featured: true }} className="h-full" />
           </div>
 
           {secondary.map((post) => (

@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import site from "@/data/site.json";
 import navigation from "@/data/navigation.json";
-import { ThemeToggle } from "@/components/theme";
 
 type DropdownKey = keyof typeof navigation.dropdowns;
 
@@ -90,18 +89,19 @@ export default function Header() {
           className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-8 lg:flex xl:gap-10"
         >
           {navigation.links.map((link) => (
-            <a
+            <Link
               key={link.label}
               href={link.href}
               className="text-[15px] font-semibold text-foreground transition-opacity hover:opacity-70"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
 
           {dropdownKeys.map((key) => {
             const menu = navigation.dropdowns[key];
             const isOpen = openDropdown === key;
+            const wide = key === "services";
             return (
               <div
                 key={key}
@@ -123,21 +123,23 @@ export default function Header() {
                   />
                 </button>
                 <div
-                  className={`absolute left-1/2 top-full z-50 w-48 -translate-x-1/2 pt-1 transition-all duration-200 ${
+                  className={`absolute left-1/2 top-full z-50 -translate-x-1/2 pt-1 transition-all duration-200 ${
+                    wide ? "w-56" : "w-48"
+                  } ${
                     isOpen
                       ? "pointer-events-auto translate-y-0 opacity-100"
                       : "pointer-events-none -translate-y-1 opacity-0"
                   }`}
                 >
-                  <div className="rounded-lg border border-border bg-panel py-2 shadow-[var(--dropdown-shadow)]">
+                  <div className="rounded-lg border border-border bg-panel py-2 shadow-(--dropdown-shadow)">
                     {menu.items.map((item) => (
-                      <a
+                      <Link
                         key={item.label}
                         href={item.href}
                         className="block px-4 py-2 text-sm font-medium text-muted transition-colors hover:bg-foreground/5 hover:text-foreground"
                       >
                         {item.label}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 </div>
@@ -146,8 +148,7 @@ export default function Header() {
           })}
         </nav>
 
-        <div className="hidden items-center gap-4 lg:flex xl:gap-6">
-          <ThemeToggle />
+        <div className="hidden items-center gap-6 lg:flex xl:gap-6">
           <a
             href={`mailto:${site.email}`}
             className="flex items-center gap-2.5 text-sm font-normal text-muted transition-colors hover:text-foreground"
@@ -164,25 +165,22 @@ export default function Header() {
           </a>
         </div>
 
-        <div className="relative z-10 flex items-center gap-2 lg:hidden">
-          <ThemeToggle />
-          <button
-            type="button"
-            onClick={() => setMobileMenuOpen((o) => !o)}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-lg text-foreground transition-colors hover:bg-foreground/5"
-            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
-            aria-expanded={mobileMenuOpen}
-            aria-controls="mobile-nav"
-          >
-            <svg className="h-6 w-6 fill-current" viewBox="0 0 1000 1000">
-              {mobileMenuOpen ? (
-                <path d="M742 167L500 408 258 167C246 154 233 150 217 150 196 150 179 158 167 167 154 179 150 196 150 212 150 229 154 242 171 254L408 500 167 742C138 771 138 800 167 829 196 858 225 858 254 829L496 587 738 829C750 842 767 846 783 846 800 846 817 842 829 829 842 817 846 804 846 783 846 767 842 750 829 737L588 500 833 258C863 229 863 200 833 171 804 137 775 137 742 167Z" />
-              ) : (
-                <path d="M104 333H896C929 333 958 304 958 271S929 208 896 208H104C71 208 42 237 42 271S71 333 104 333ZM104 583H896C929 583 958 554 958 521S929 458 896 458H104C71 458 42 487 42 521S71 583 104 583ZM104 833H896C929 833 958 804 958 771S929 708 896 708H104C71 708 42 737 42 771S71 833 104 833Z" />
-              )}
-            </svg>
-          </button>
-        </div>
+        <button
+          type="button"
+          onClick={() => setMobileMenuOpen((o) => !o)}
+          className="relative z-10 -mr-1 inline-flex h-10 w-10 items-center justify-center rounded-lg text-foreground transition-colors hover:bg-foreground/5 lg:hidden"
+          aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={mobileMenuOpen}
+          aria-controls="mobile-nav"
+        >
+          <svg className="h-6 w-6 fill-current" viewBox="0 0 1000 1000">
+            {mobileMenuOpen ? (
+              <path d="M742 167L500 408 258 167C246 154 233 150 217 150 196 150 179 158 167 167 154 179 150 196 150 212 150 229 154 242 171 254L408 500 167 742C138 771 138 800 167 829 196 858 225 858 254 829L496 587 738 829C750 842 767 846 783 846 800 846 817 842 829 829 842 817 846 804 846 783 846 767 842 750 829 737L588 500 833 258C863 229 863 200 833 171 804 137 775 137 742 167Z" />
+            ) : (
+              <path d="M104 333H896C929 333 958 304 958 271S929 208 896 208H104C71 208 42 237 42 271S71 333 104 333ZM104 583H896C929 583 958 554 958 521S929 458 896 458H104C71 458 42 487 42 521S71 583 104 583ZM104 833H896C929 833 958 804 958 771S929 708 896 708H104C71 708 42 737 42 771S71 833 104 833Z" />
+            )}
+          </svg>
+        </button>
       </div>
 
       <div
@@ -198,14 +196,14 @@ export default function Header() {
           className="flex max-h-[min(calc(100dvh-88px),680px)] flex-col gap-1 overflow-y-auto px-5 py-4 font-sans"
         >
           {navigation.links.map((link) => (
-            <a
+            <Link
               key={link.label}
               href={link.href}
               onClick={closeMobile}
               className="rounded-lg px-3 py-3 text-base font-semibold text-foreground transition-colors hover:bg-foreground/5"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
 
           {dropdownKeys.map((key) => {
@@ -236,14 +234,14 @@ export default function Header() {
                   <div className="overflow-hidden">
                     <div className="mb-1 ml-2 space-y-0.5 border-l border-border py-1 pl-3">
                       {menu.items.map((item) => (
-                        <a
+                        <Link
                           key={item.label}
                           href={item.href}
                           onClick={closeMobile}
                           className="block rounded-md px-3 py-2.5 text-sm font-medium text-muted transition-colors hover:bg-foreground/5 hover:text-foreground"
                         >
                           {item.label}
-                        </a>
+                        </Link>
                       ))}
                     </div>
                   </div>

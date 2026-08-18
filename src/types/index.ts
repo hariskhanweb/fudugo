@@ -103,6 +103,7 @@ export type Testimonial = {
 };
 
 export type BlogPost = {
+  slug: string;
   title: string;
   category: string;
   date: string;
@@ -110,6 +111,13 @@ export type BlogPost = {
   href: string;
   excerpt?: string;
   featured?: boolean;
+  content?: {
+    intro?: string;
+    sections: {
+      heading: string;
+      paragraphs: string[];
+    }[];
+  };
 };
 
 export type SocialLink = {
@@ -117,4 +125,123 @@ export type SocialLink = {
   href: string;
   viewBox: string;
   path: string;
+};
+
+export type AwardItem = {
+  organization: string;
+  title: string;
+  category: string;
+  type: string;
+  year: string;
+};
+
+export type AwardSummary = {
+  id: string;
+  label: string;
+  value: number;
+  suffix: string;
+};
+
+export type IndustryItem = {
+  icon?: string;
+  title: string;
+  description: string;
+};
+
+export type SolutionItem = {
+  number: string;
+  title: string;
+  description: string;
+  href: string;
+};
+
+export type ResultStatItem = {
+  id: string;
+  value: number;
+  suffix: string;
+  label: string;
+};
+
+export type PageHeroContent = {
+  title: string;
+  eyebrow: string;
+  quote: string;
+  image: string;
+  imageAlt: string;
+  /** CSS object-position value, e.g. "center", "bottom center", "50% 80%" */
+  imagePosition?: string;
+};
+
+export type AwardsSectionContent = {
+  title: string;
+  eyebrow: string;
+  items: AwardItem[];
+};
+
+export type IndustriesSectionContent = {
+  title: string;
+  eyebrow: string;
+  description: string;
+  items: IndustryItem[];
+};
+
+export type SolutionsSectionContent = {
+  eyebrow: string;
+  title: string;
+  description: string;
+  image: string;
+  imageAlt: string;
+  challengeCta: {
+    label: string;
+    link: string;
+    href: string;
+  };
+  items: SolutionItem[];
+  results: {
+    title: string;
+    items: ResultStatItem[];
+  };
+  linkLabel?: string;
+};
+
+export type ServiceHighlight = {
+  label: string;
+  value: string;
+};
+
+export type ServiceCapability = {
+  title: string;
+  description: string;
+};
+
+export type ServiceProcessStep = {
+  step: string;
+  title: string;
+  description: string;
+};
+
+export type ServiceLayout =
+  | "editorial"
+  | "device"
+  | "bento"
+  | "stack"
+  | "gallery"
+  | "funnel"
+  | "web-solutions";
+
+export type ServicePageContent = {
+  slug: string;
+  title: string;
+  shortTitle: string;
+  eyebrow: string;
+  tagline: string;
+  description: string;
+  heroImage: string;
+  heroImagePosition?: string;
+  layout: ServiceLayout;
+  ctaLabel: string;
+  highlights: ServiceHighlight[];
+  capabilities: ServiceCapability[];
+  process: ServiceProcessStep[];
+  outcomes: string[];
 };

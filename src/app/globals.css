@@ -85,6 +85,7 @@
 
   html {
     background-color: var(--background);
+    scroll-behavior: auto;
   }
 
   body {
@@ -107,7 +108,30 @@
   }
 }
 
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: clip;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
 @theme inline {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-roboto-slab), ui-serif, Georgia, serif;
   --color-background: var(--background);
   --color-header: var(--header);
   --color-panel: var(--panel);
@@ -196,7 +220,31 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   .clients-marquee {
     animation: none;
   }
+
+  .animate-help-pop {
+    animation: none;
+  }
+}
+
+@keyframes help-pop {
+  0% {
+    transform: scale(0.98);
+  }
+  55% {
+    transform: scale(1.015);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-help-pop {
+  animation: help-pop 420ms ease-out;
 }

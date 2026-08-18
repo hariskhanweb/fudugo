@@ -1,15 +1,16 @@
 {
   "id": "contact",
-  "eyebrow": "Ready To Start?",
-  "title": "Let's Build Something the World Won't Forget.",
+  "eyebrow": "Ready To Build?",
+  "headlineLines": ["Ready To", "Build?"],
+  "title": "Let's Turn Your Idea Into a Product People Use.",
   "image": "/Image-4-1.jpg",
   "cta": {
     "label": "Start a Project",
-    "href": "mailto:hello@motexstudio.com"
+    "href": "mailto:hello@fudugo.com"
   },
   "perks": [
-    "Responds within 24 hours",
-    "NDA available on request",
-    "Free 30-min discovery call"
+    "End-to-End Technology Partner",
+    "AI-Powered Innovation",
+    "Trusted by Businesses Worldwide"
   ]
 }

@@ -5,10 +5,6 @@ type ProcessStepProps = {
 };
 
 export default function ProcessStep({ step }: ProcessStepProps) {
-  const lines = step.titleLines?.length
-    ? step.titleLines
-    : step.title.split(" ");
-
   return (
     <article className="group flex h-full min-h-72 flex-col rounded-2xl surface-card p-5 transition-colors duration-300 hover:bg-surface-hover sm:min-h-80 sm:p-6 lg:p-7">
       <div
@@ -28,11 +24,7 @@ export default function ProcessStep({ step }: ProcessStepProps) {
           data-process="part"
           className="font-sans text-[clamp(26px,2.8vw,34px)] font-bold leading-[1.06] tracking-tight text-foreground"
         >
-          {lines.map((line) => (
-            <span key={line} className="block">
-              {line}
-            </span>
-          ))}
+          {step.title}
         </h3>
       </div>
 
