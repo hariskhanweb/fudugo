@@ -5,11 +5,12 @@ import * as THREE from "three";
 import { cn } from "@/lib/utils";
 
 const IMAGE_PATHS = [
-  "/ribbon/0.jpeg",
-  "/ribbon/1.jpeg",
-  "/ribbon/2.jpeg",
-  "/ribbon/3.jpeg",
-  "/ribbon/4.jpeg",
+  "/ribbon/1.webp",
+  "/ribbon/2.webp",
+  "/ribbon/3.webp",
+  "/ribbon/4.webp",
+  "/ribbon/5.webp",
+  "/ribbon/6.webp",
 ];
 
 const COUNT = 12;
