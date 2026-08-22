@@ -1,22 +1,9 @@
 {
   "title": "BUILD",
-  "titleAccent": "AI-First Digital Solutions That Grow Businesses ",
+  "titleAccent": "AI-First Digital Solutions That Grow Businesses",
   "description": "From designing and building your online presence to helping people find it, we help your business grow with confidence.",
   "cta": {
     "label": "Get Started",
     "href": "#contact"
-  },
-  "quote": {
-    "highlight": "Businesses don't need more technology.",
-    "muted": "They need technology that delivers results."
-  },
-  "meta": "2026 FuduGo® Studio",
-  "video": "/video/3D_animation.mp4",
-  "badges": [
-    { "label": "Web Development", "accent": true },
-    { "label": "Web Design", "accent": false },
-    { "label": "Mobile Apps", "accent": false },
-    { "label": "E-Commerce", "accent": false },
-    { "label": "Digital Marketing", "accent": true }
-  ]
+  }
 }

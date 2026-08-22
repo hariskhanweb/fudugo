@@ -95,7 +95,7 @@ export default function WorksSection() {
     <section
       ref={sectionRef}
       id={data.id}
-      className="bg-header pb-20 sm:pb-24 lg:pb-28"
+      className="bg-header pb-20 sm:pb-24 lg:pb-28 pt-20 sm:pt-24 lg:pt-28"
     >
       <Container className="px-5 sm:px-8 lg:px-10">
         <div className="mb-12 flex flex-col gap-6 sm:mb-16 lg:mb-20 lg:flex-row lg:items-start lg:justify-between lg:gap-12">

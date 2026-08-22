@@ -1,5 +1,40 @@
 {
   "id": "about",
-  "eyebrow": "(About FuduGo)",
-  "quote": "Code is not the hard part anymore. Knowing what to build is. FUDUGO combines AI-driven insight with 8+ years of engineering to build products that actually move business metrics."
+  "brand": "fuduGo",
+  "slides": [
+    {
+      "value": "15+",
+      "label": "Founder-led brands from disruptive creative agencies to consumer brands"
+    },
+    {
+      "value": "30+",
+      "label": "Globally recognized awards (Awwwards, FWA, CSSDA)"
+    }
+  ],
+  "body": [
+    {
+      "parts": [
+        {
+          "text": "Code is not the hard part anymore. Knowing what to build is. ",
+          "dim": false
+        },
+        {
+          "text": "FUDUGO combines AI-driven insight with 8+ years of engineering to build products that actually move business metrics.",
+          "dim": true
+        }
+      ]
+    },
+    {
+      "parts": [
+        {
+          "text": "That gap costs more than revenue. ",
+          "dim": false
+        },
+        {
+          "text": "It costs the certainty that your product is finally being understood.",
+          "dim": true
+        }
+      ]
+    }
+  ]
 }
