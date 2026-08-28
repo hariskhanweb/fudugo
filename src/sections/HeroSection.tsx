@@ -89,8 +89,8 @@ export default function HeroSection() {
       />
 
       {/* Main Hero Content */}
-      <div className="pointer-events-none relative z-10 mx-auto flex min-h-svh max-w-7xl items-center px-6 py-28 sm:px-10 sm:py-32 lg:px-14">
-        <div className="pointer-events-auto max-w-2xl lg:max-w-3xl">
+      <div className="pointer-events-none relative z-10 mx-auto flex min-h-svh max-w-360 items-center px-5 pt-32 pb-16 sm:px-8 sm:py-32 lg:px-12">
+        <div className="pointer-events-auto max-w-xl w-full">
           {/* Category kicker */}
           <div data-hero-el className="mb-4">
             <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3.5 py-1 backdrop-blur-md">

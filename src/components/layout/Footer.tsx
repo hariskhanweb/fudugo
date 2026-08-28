@@ -26,7 +26,7 @@ export default function Footer() {
 
   return (
     <footer className="border-t border-border bg-header text-foreground">
-      <div className="mx-auto max-w-375 px-5 pb-8 pt-16 sm:px-8 sm:pt-20 lg:px-10 lg:pt-24">
+      <div className="mx-auto max-w-360 px-5 pb-8 pt-16 sm:px-8 sm:pt-20 lg:px-12 lg:pt-24">
         <div className="grid grid-cols-1 gap-12 pb-12 md:grid-cols-2 lg:grid-cols-12 lg:gap-x-10 lg:gap-y-12 xl:gap-x-14">
           {/* Brand + contact */}
           <div className="space-y-7 lg:col-span-4">

@@ -72,7 +72,7 @@ export default function Header() {
           : "bg-transparent"
       }`}
     >
-      <div className="mx-auto flex h-20 max-w-375 items-center justify-between gap-6 px-5 font-sans sm:px-8 lg:h-22 lg:px-10">
+      <div className="mx-auto flex h-20 max-w-360 items-center justify-between gap-6 px-5 font-sans sm:px-8 lg:h-22 lg:px-12">
         <Link href="/" className="relative z-10 shrink-0" onClick={closeMobile}>
           <Image
             src={site.logo}
