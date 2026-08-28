@@ -84,12 +84,15 @@ export default function HeroSection() {
 
       {/* Main Hero Content */}
       <div className="pointer-events-none relative z-10 mx-auto flex min-h-svh max-w-360 items-center px-5 pt-32 pb-16 sm:px-8 sm:py-32 lg:px-12">
-        <div className="pointer-events-auto max-w-xl w-full">
+        <div className="pointer-events-auto max-w-2xl w-full">
           {/* Category kicker */}
-          <div data-hero-el className="mb-4">
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3.5 py-1 backdrop-blur-md">
-              <span className="h-1.5 w-1.5 rounded-full bg-accent-soft" />
-              <span className="font-mono text-xs font-semibold uppercase tracking-wider text-white/80">
+          <div data-hero-el className="mb-4 sm:mb-5">
+            <div className="inline-flex items-center gap-2.5 rounded-full border border-white/12 bg-white/5 px-4 py-1.5 backdrop-blur-md">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-soft opacity-75" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-accent-soft" />
+              </span>
+              <span className="font-mono text-xs font-semibold uppercase tracking-wider text-white/90">
                 Digital Product & AI Engineering
               </span>
             </div>
@@ -98,14 +101,14 @@ export default function HeroSection() {
           {/* Headline */}
           <h1
             data-hero-el
-            className="font-sans text-[clamp(54px,8vw,112px)] font-black tracking-tight text-white leading-[0.94]"
+            className="font-sans text-[clamp(52px,9vw,118px)] font-black tracking-tight text-white leading-[0.92]"
           >
             {data.title}
           </h1>
 
           <p
             data-hero-el
-            className="mt-3 font-sans text-[clamp(20px,2.6vw,32px)] font-semibold tracking-tight text-white/90 leading-snug sm:mt-4"
+            className="mt-3 font-sans text-[clamp(20px,2.8vw,34px)] font-semibold tracking-tight text-white/90 leading-snug sm:mt-4"
           >
             {data.titleAccent}
           </p>
@@ -113,7 +116,7 @@ export default function HeroSection() {
           {/* Body Description */}
           <p
             data-hero-el
-            className="mt-6 max-w-xl font-sans text-[15px] leading-relaxed text-white/65 sm:text-[17px]"
+            className="mt-5 max-w-xl font-sans text-[15.5px] leading-relaxed text-white/70 sm:mt-6 sm:text-[17.5px]"
           >
             {data.description}
           </p>
@@ -134,11 +137,11 @@ export default function HeroSection() {
 
             <a
               href="#services"
-              className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white/80 backdrop-blur-sm transition-all duration-300 hover:border-white/30 hover:bg-white/10 hover:text-white"
+              className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white/85 backdrop-blur-md transition-all duration-300 hover:border-white/30 hover:bg-white/10 hover:text-white"
             >
-              Explore Solutions
+              <span>Explore Solutions</span>
               <svg
-                className="h-4 w-4"
+                className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5"
                 viewBox="0 0 16 16"
                 fill="none"
                 aria-hidden
@@ -154,19 +157,25 @@ export default function HeroSection() {
             </a>
           </div>
 
-          {/* Clean Editorial Quote (Moved below buttons) */}
-          <blockquote
+          {/* Elevated Editorial Quote Card */}
+          <div
             data-hero-el
-            className="relative mt-8 max-w-xl border-l-2 border-accent-soft/80 pl-4.5 py-1 sm:mt-10"
+            className="relative mt-8 max-w-xl overflow-hidden rounded-2xl border border-white/10 bg-white/4 p-4.5 backdrop-blur-md sm:mt-10 sm:p-5"
           >
-            <p className="font-sans text-[15px] sm:text-[16px] leading-relaxed text-white/85">
-              &ldquo;Businesses don&apos;t need more technology.{" "}
-              <span className="font-semibold text-white">
-                They need technology that delivers results.
-              </span>
-              &rdquo;
-            </p>
-          </blockquote>
+            <div className="flex items-start gap-3.5">
+              <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-accent-soft/15 text-accent-soft">
+                <svg className="h-4 w-4 fill-current" viewBox="0 0 24 24">
+                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                </svg>
+              </div>
+              <p className="font-sans text-[14.5px] sm:text-[15.5px] leading-relaxed text-white/85">
+                Businesses don&apos;t need more technology.{" "}
+                <span className="font-semibold text-white">
+                  They need technology that delivers results.
+                </span>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
