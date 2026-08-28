@@ -80,12 +80,12 @@ export default function HeroRibbon({ className }: HeroRibbonProps) {
     // Native card dimensions: 624w x 580h
     const singleW = 624;
     const singleH = 580;
-    const numImages = 5;
+    const numImages = 6;
     const cardAspect = singleW / singleH; // 1.07586
     const circumference = 2 * Math.PI * radius; // 25.1327
     const cardWidthIn3D = ribbonHeight * cardAspect; // 2.1517
     const cardsPerCircumference = circumference / cardWidthIn3D; // 11.68
-    const repeatX = cardsPerCircumference / numImages; // 2.336
+    const repeatX = cardsPerCircumference / numImages; // ~1.9466
 
     // Shader with explicit uvRepeat so cards maintain their exact native aspect ratio
     const vertexShader = `
@@ -170,11 +170,12 @@ export default function HeroRibbon({ className }: HeroRibbonProps) {
 
     // Load actual component screenshots
     const imageSources = [
-      "/components/0.jpeg",
-      "/components/1.jpeg",
-      "/components/2.jpeg",
-      "/components/3.jpeg",
-      "/components/4.jpeg",
+      "/components/0.png",
+      "/components/1.png",
+      "/components/2.png",
+      "/components/3.png",
+      "/components/4.png",
+      "/components/5.png",
     ];
 
     const loadedImages: HTMLImageElement[] = [];
@@ -222,6 +223,7 @@ export default function HeroRibbon({ className }: HeroRibbonProps) {
       highResTexture.wrapT = THREE.ClampToEdgeWrapping;
       highResTexture.minFilter = THREE.LinearFilter;
       highResTexture.magFilter = THREE.LinearFilter;
+      highResTexture.needsUpdate = true;
 
       towerMaterial.uniforms.map.value = highResTexture;
       towerMaterial.uniforms.uvRepeat.value.set(repeatX, 1.0);

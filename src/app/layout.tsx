@@ -39,6 +39,12 @@ export default function RootLayout({
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+        <link rel="preload" as="image" href="/components/0.png" fetchPriority="high" />
+        <link rel="preload" as="image" href="/components/1.png" fetchPriority="high" />
+        <link rel="preload" as="image" href="/components/2.png" fetchPriority="high" />
+        <link rel="preload" as="image" href="/components/3.png" fetchPriority="high" />
+        <link rel="preload" as="image" href="/components/4.png" fetchPriority="high" />
+        <link rel="preload" as="image" href="/components/5.png" fetchPriority="high" />
       </head>
       <body className="bg-background font-sans text-foreground antialiased selection:bg-accent-alt selection:text-white">
         <ThemeProvider>
