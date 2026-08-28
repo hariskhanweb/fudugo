@@ -1,0 +1,17 @@
+{
+  "name": "react-email-clone",
+  "version": "1.0.0",
+  "description": "React Email homepage clone including Three.js / React-Three-Fiber 3D hero assets and complete static bundles",
+  "scripts": {
+    "start": "python server.py",
+    "serve": "npx serve ."
+  },
+  "keywords": [
+    "react-email",
+    "threejs",
+    "webgl",
+    "clone"
+  ],
+  "author": "",
+  "license": "MIT"
+}

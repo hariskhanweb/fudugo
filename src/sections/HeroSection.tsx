@@ -5,8 +5,15 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import data from "@/data/hero.json";
 import HeroRibbon from "@/components/ui/HeroRibbon";
+import PillButton from "@/components/ui/PillButton";
 
 gsap.registerPlugin(ScrollTrigger);
+
+const TRUST_TAGS = [
+  "AI-Powered Architecture",
+  "High-Performance Web & Apps",
+  "Measurable Business ROI",
+];
 
 export default function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -21,15 +28,19 @@ export default function HeroSection() {
     if (reduceMotion) return;
 
     const ctx = gsap.context(() => {
-      const background = section.querySelector("[data-hero='background']");
       const overlay = section.querySelector("[data-hero='overlay']");
-      const content = section.querySelector("[data-hero='content']");
+      const elements = section.querySelectorAll("[data-hero-el]");
 
       gsap
         .timeline({
           defaults: { ease: "power3.out" },
         })
-        .from(content, { y: 28, opacity: 0, duration: 0.9 }, 0.1);
+        .from(elements, {
+          y: 24,
+          opacity: 0,
+          duration: 0.8,
+          stagger: 0.1,
+        }, 0.15);
 
       gsap
         .timeline({
@@ -41,9 +52,7 @@ export default function HeroSection() {
             scrub: 1.1,
           },
         })
-        .to(background, { scale: 1.1, yPercent: 6 }, 0)
-        .to(overlay, { opacity: 1 }, 0)
-        .to(content, { y: -48, opacity: 0.2 }, 0);
+        .to(overlay, { opacity: 1 }, 0);
     }, section);
 
     return () => ctx.revert();
@@ -52,49 +61,135 @@ export default function HeroSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative z-20 isolate min-h-svh overflow-hidden bg-black"
+      className="relative z-20 isolate min-h-svh overflow-hidden bg-black selection:bg-accent-alt/30 selection:text-white"
     >
+      {/* 3D WebGL Background Tower */}
       <div
         data-hero="background"
         className="absolute inset-0 z-0 will-change-transform"
       >
-        <HeroRibbon className="pointer-events-none" />
+        <HeroRibbon className="pointer-events-auto" />
       </div>
 
+      {/* Subtle ambient lighting */}
+      <div
+        className="pointer-events-none absolute top-1/4 right-1/4 h-120 w-120 rounded-full bg-accent-alt/10 blur-[160px]"
+        aria-hidden
+      />
+
+      {/* Screen gradient mask for contrast */}
       <div
         data-hero="overlay"
         className="pointer-events-none absolute inset-0 z-1"
         aria-hidden
-      >
-        <div className="absolute inset-0 bg-black/40" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.92)_0%,rgba(0,0,0,0.72)_34%,rgba(0,0,0,0.28)_62%,rgba(0,0,0,0.55)_100%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_45%,transparent_0%,rgba(0,0,0,0.25)_36%,rgba(0,0,0,0.75)_78%,#000_100%)]" />
-      </div>
+        style={{
+          background:
+            "radial-gradient(circle at center right, transparent 0%, rgba(0, 0, 0, 0.4) 40%, rgba(0, 0, 0, 0.94) 68%, #000 88%), linear-gradient(180deg, rgba(0,0,0,0.7) 0%, transparent 20%, transparent 80%, rgba(0,0,0,0.98) 100%)",
+        }}
+      />
 
-      <div className="relative z-10 mx-auto flex min-h-svh max-w-375 items-center px-5 py-28 sm:px-8 sm:py-32 lg:px-10">
-        <div
-          data-hero="content"
-          className="max-w-xl will-change-transform lg:max-w-2xl"
-        >
-          <h1 className="font-sans text-[clamp(60px,10vw,160px)] font-bold leading-[0.92] tracking-tight text-white">
+      {/* Main Hero Content */}
+      <div className="pointer-events-none relative z-10 mx-auto flex min-h-svh max-w-7xl items-center px-6 py-28 sm:px-10 sm:py-32 lg:px-14">
+        <div className="pointer-events-auto max-w-2xl lg:max-w-3xl">
+          {/* Category kicker */}
+          <div data-hero-el className="mb-4">
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3.5 py-1 backdrop-blur-md">
+              <span className="h-1.5 w-1.5 rounded-full bg-accent-soft" />
+              <span className="font-mono text-xs font-semibold uppercase tracking-wider text-white/80">
+                Digital Product & AI Engineering
+              </span>
+            </div>
+          </div>
+
+          {/* Headline */}
+          <h1
+            data-hero-el
+            className="font-sans text-[clamp(54px,8vw,112px)] font-black tracking-tight text-white leading-[0.94]"
+          >
             {data.title}
           </h1>
-          <p className="mt-2 max-w-xl font-sans text-[clamp(20px,3vw,28px)] font-bold leading-[1.05] tracking-tight text-white">
+
+          <p
+            data-hero-el
+            className="mt-3 font-sans text-[clamp(20px,2.6vw,32px)] font-semibold tracking-tight text-white/90 leading-snug sm:mt-4"
+          >
             {data.titleAccent}
           </p>
 
-          <p className="mt-7 max-w-md font-sans text-[15px] leading-relaxed text-white/70 sm:text-[20px]">
+          {/* Clean Editorial Quote */}
+          <blockquote
+            data-hero-el
+            className="relative mt-7 max-w-xl border-l-2 border-accent-soft/80 pl-4.5 py-1"
+          >
+            <p className="font-sans text-[15px] sm:text-[16px] leading-relaxed text-white/85">
+              &ldquo;Businesses don&apos;t need more technology.{" "}
+              <span className="font-semibold text-white">
+                They need technology that delivers results.
+              </span>
+              &rdquo;
+            </p>
+          </blockquote>
+
+          {/* Body Description */}
+          <p
+            data-hero-el
+            className="mt-6 max-w-xl font-sans text-[15px] leading-relaxed text-white/65 sm:text-[17px]"
+          >
             {data.description}
           </p>
 
-          <a
-            href={data.cta.href}
-            className="mt-8 inline-flex w-fit items-center justify-center rounded-lg border border-white/25 bg-white/10 px-6 py-3 text-sm font-medium text-white backdrop-blur-sm transition-colors hover:border-white/40 hover:bg-white/15"
+          {/* CTA Actions */}
+          <div
+            data-hero-el
+            className="mt-8 flex flex-wrap items-center gap-4 sm:mt-10"
           >
-            {data.cta.label}
-          </a>
+            <PillButton
+              href={data.cta.href}
+              icon={true}
+              size="lg"
+              className="border-accent-alt/50 bg-accent-alt font-semibold text-white shadow-lg shadow-accent-alt/25 transition-transform duration-300 hover:scale-[1.02] hover:bg-accent-alt/90"
+            >
+              {data.cta.label}
+            </PillButton>
+
+            <a
+              href="#services"
+              className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white/80 backdrop-blur-sm transition-all duration-300 hover:border-white/30 hover:bg-white/10 hover:text-white"
+            >
+              Explore Solutions
+              <svg
+                className="h-4 w-4"
+                viewBox="0 0 16 16"
+                fill="none"
+                aria-hidden
+              >
+                <path
+                  d="M6 12l4-4-4-4"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </a>
+          </div>
+
+          {/* Subtle Key Highlights */}
+          <div
+            data-hero-el
+            className="mt-10 flex flex-wrap items-center gap-x-7 gap-y-2.5 border-t border-white/10 pt-6 text-xs sm:text-[13px] text-white/55"
+          >
+            {TRUST_TAGS.map((tag) => (
+              <div key={tag} className="flex items-center gap-2 font-medium">
+                <span className="h-1.5 w-1.5 rounded-full bg-accent-soft/70" />
+                <span>{tag}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
   );
 }
+
+
