@@ -9,12 +9,6 @@ import PillButton from "@/components/ui/PillButton";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const TRUST_TAGS = [
-  "AI-Powered Architecture",
-  "High-Performance Web & Apps",
-  "Measurable Business ROI",
-];
-
 export default function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -116,20 +110,6 @@ export default function HeroSection() {
             {data.titleAccent}
           </p>
 
-          {/* Clean Editorial Quote */}
-          <blockquote
-            data-hero-el
-            className="relative mt-7 max-w-xl border-l-2 border-accent-soft/80 pl-4.5 py-1"
-          >
-            <p className="font-sans text-[15px] sm:text-[16px] leading-relaxed text-white/85">
-              &ldquo;Businesses don&apos;t need more technology.{" "}
-              <span className="font-semibold text-white">
-                They need technology that delivers results.
-              </span>
-              &rdquo;
-            </p>
-          </blockquote>
-
           {/* Body Description */}
           <p
             data-hero-el
@@ -174,18 +154,19 @@ export default function HeroSection() {
             </a>
           </div>
 
-          {/* Subtle Key Highlights */}
-          <div
+          {/* Clean Editorial Quote (Moved below buttons) */}
+          <blockquote
             data-hero-el
-            className="mt-10 flex flex-wrap items-center gap-x-7 gap-y-2.5 border-t border-white/10 pt-6 text-xs sm:text-[13px] text-white/55"
+            className="relative mt-8 max-w-xl border-l-2 border-accent-soft/80 pl-4.5 py-1 sm:mt-10"
           >
-            {TRUST_TAGS.map((tag) => (
-              <div key={tag} className="flex items-center gap-2 font-medium">
-                <span className="h-1.5 w-1.5 rounded-full bg-accent-soft/70" />
-                <span>{tag}</span>
-              </div>
-            ))}
-          </div>
+            <p className="font-sans text-[15px] sm:text-[16px] leading-relaxed text-white/85">
+              &ldquo;Businesses don&apos;t need more technology.{" "}
+              <span className="font-semibold text-white">
+                They need technology that delivers results.
+              </span>
+              &rdquo;
+            </p>
+          </blockquote>
         </div>
       </div>
     </section>
