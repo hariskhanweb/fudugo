@@ -237,8 +237,7 @@ export default function ServiceHelpPicker({
                 size="normal"
                 className={cn(
                   "w-full justify-center sm:w-auto",
-                  hasSelection &&
-                    "border-accent-alt/40 bg-background shadow-[0_0_0_1px_color-mix(in_srgb,var(--accent-alt)_20%,transparent)]",
+                  hasSelection && "border-accent-alt/40 bg-background",
                 )}
               >
                 {ctaLabel}

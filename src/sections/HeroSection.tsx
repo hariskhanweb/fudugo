@@ -130,7 +130,7 @@ export default function HeroSection() {
               href={data.cta.href}
               icon={true}
               size="lg"
-              className="border-accent-alt/50 bg-accent-alt font-semibold text-white shadow-lg shadow-accent-alt/25 transition-transform duration-300 hover:scale-[1.02] hover:bg-accent-alt/90"
+              className="border-accent-alt/50 bg-accent-alt font-semibold text-white transition-transform duration-300 hover:scale-[1.02] hover:bg-accent-alt/90"
             >
               {data.cta.label}
             </PillButton>
