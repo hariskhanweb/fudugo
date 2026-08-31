@@ -12,6 +12,8 @@ export {
 } from "./PillarAccordion";
 export type { PillarAccordionItem } from "./PillarAccordion";
 export { default as PillButton } from "./PillButton";
+export { default as Button } from "./Button";
+export type { ButtonVariant, ButtonSize, ButtonShape, ButtonProps } from "./Button";
 export { default as HeroRibbon } from "./HeroRibbon";
 export { default as Monolog } from "./Monolog";
 export type { MonologVariant } from "./Monolog";

@@ -5,20 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import data from "@/data/hero.json";
 import HeroRibbon from "@/components/ui/HeroRibbon";
-
-function ArrowIcon({ className = "" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 16 16" fill="none" aria-hidden>
-      <path
-        d="M3 8h10M9 4l4 4-4 4"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
+import Button from "@/components/ui/Button";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -132,23 +119,25 @@ export default function HeroSection() {
           {/* CTA Actions */}
           <div
             data-hero-el
-            className="mt-7 flex flex-wrap items-center gap-2.5 sm:mt-10 sm:gap-3"
+            className="mt-6 flex flex-wrap items-center gap-2.5 sm:mt-8 sm:gap-3"
           >
-            <a
+            <Button
               href={data.cta.href}
-              className="group inline-flex items-center gap-2 rounded-full bg-accent-alt px-4 py-2 text-[13px] font-semibold text-white transition-colors duration-200 hover:bg-accent-alt/90 sm:px-5 sm:py-2.5 sm:text-sm"
+              variant="solid-white"
+              size="lg"
+              icon
             >
               {data.cta.label}
-              <ArrowIcon className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
-            </a>
+            </Button>
 
-            <a
+            <Button
               href="#services"
-              className="group inline-flex items-center gap-2 rounded-full border border-white/18 px-4 py-2 text-[13px] font-semibold text-white/88 transition-[border-color,background-color,color] duration-200 hover:border-white/30 hover:bg-white/5 hover:text-white sm:px-5 sm:py-2.5 sm:text-sm"
+              variant="glass"
+              size="lg"
+              icon
             >
               Explore Solutions
-              <ArrowIcon className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
-            </a>
+            </Button>
           </div>
 
           {/* Pull quote */}
