@@ -5,7 +5,20 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import data from "@/data/hero.json";
 import HeroRibbon from "@/components/ui/HeroRibbon";
-import PillButton from "@/components/ui/PillButton";
+
+function ArrowIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 16 16" fill="none" aria-hidden>
+      <path
+        d="M3 8h10M9 4l4 4-4 4"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -30,11 +43,11 @@ export default function HeroSection() {
           defaults: { ease: "power3.out" },
         })
         .from(elements, {
-          y: 24,
+          y: 16,
           opacity: 0,
-          duration: 0.8,
-          stagger: 0.1,
-        }, 0.15);
+          duration: 0.9,
+          stagger: 0.08,
+        }, 0.1);
 
       gsap
         .timeline({
@@ -55,60 +68,55 @@ export default function HeroSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative z-20 isolate min-h-svh overflow-hidden bg-black selection:bg-accent-alt/30 selection:text-white"
+      className="relative z-20 isolate overflow-hidden bg-black sm:min-h-svh selection:bg-accent-alt/30 selection:text-white"
     >
-      {/* 3D WebGL Background Tower */}
+      {/* 3D WebGL Background Tower — desktop/tablet only */}
       <div
         data-hero="background"
-        className="absolute inset-0 z-0 will-change-transform"
+        className="absolute inset-0 z-0 hidden will-change-transform sm:block"
       >
         <HeroRibbon className="pointer-events-auto" />
       </div>
 
-      {/* Subtle ambient lighting */}
+      {/* Mobile backdrop */}
       <div
-        className="pointer-events-none absolute top-1/4 right-1/4 h-120 w-120 rounded-full bg-accent-alt/10 blur-[160px]"
+        className="pointer-events-none absolute inset-0 z-0 bg-linear-to-b from-zinc-950 via-black to-black sm:hidden"
         aria-hidden
       />
 
       {/* Screen gradient mask for contrast */}
       <div
         data-hero="overlay"
-        className="pointer-events-none absolute inset-0 z-1"
+        className="pointer-events-none absolute inset-0 z-1 opacity-0 sm:opacity-100"
         aria-hidden
         style={{
           background:
-            "radial-gradient(circle at center right, transparent 0%, rgba(0, 0, 0, 0.4) 40%, rgba(0, 0, 0, 0.94) 68%, #000 88%), linear-gradient(180deg, rgba(0,0,0,0.7) 0%, transparent 20%, transparent 80%, rgba(0,0,0,0.98) 100%)",
+            "linear-gradient(105deg, rgba(0,0,0,0.94) 0%, rgba(0,0,0,0.82) 34%, rgba(0,0,0,0.45) 58%, rgba(0,0,0,0.15) 78%, transparent 100%), linear-gradient(180deg, rgba(0,0,0,0.55) 0%, transparent 18%, transparent 82%, rgba(0,0,0,0.9) 100%)",
         }}
       />
 
       {/* Main Hero Content */}
-      <div className="pointer-events-none relative z-10 mx-auto flex min-h-svh max-w-360 items-center px-5 pt-32 pb-16 sm:px-8 sm:py-32 lg:px-12">
-        <div className="pointer-events-auto max-w-2xl w-full">
+      <div className="pointer-events-none relative z-10 mx-auto flex max-w-360 flex-col px-5 pt-26 pb-14 sm:min-h-svh sm:justify-center sm:px-8 sm:py-32 lg:px-12">
+        <div className="pointer-events-auto w-full max-w-xl lg:max-w-2xl">
           {/* Category kicker */}
-          <div data-hero-el className="mb-4 sm:mb-5">
-            <div className="inline-flex items-center gap-2.5 rounded-full border border-white/12 bg-white/5 px-4 py-1.5 backdrop-blur-md">
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-soft opacity-75" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-accent-soft" />
-              </span>
-              <span className="font-mono text-xs font-semibold uppercase tracking-wider text-white/90">
-                Digital Product & AI Engineering
-              </span>
-            </div>
-          </div>
+          <p
+            data-hero-el
+            className="mb-4 font-sans text-[12px] font-medium tracking-[0.02em] text-white/55 sm:mb-7 sm:text-sm"
+          >
+            Digital Product & AI Engineering
+          </p>
 
           {/* Headline */}
           <h1
             data-hero-el
-            className="font-sans text-[clamp(52px,9vw,118px)] font-black tracking-tight text-white leading-[0.92]"
+            className="font-sans text-[clamp(2.75rem,12vw,6.5rem)] font-bold leading-[0.94] tracking-[-0.03em] text-white sm:leading-[0.92]"
           >
             {data.title}
           </h1>
 
           <p
             data-hero-el
-            className="mt-3 font-sans text-[clamp(20px,2.8vw,34px)] font-semibold tracking-tight text-white/90 leading-snug sm:mt-4"
+            className="mt-3 max-w-lg font-sans text-[clamp(1.05rem,4.5vw,1.625rem)] font-normal leading-[1.35] tracking-[-0.01em] text-white/85 sm:mt-5"
           >
             {data.titleAccent}
           </p>
@@ -116,7 +124,7 @@ export default function HeroSection() {
           {/* Body Description */}
           <p
             data-hero-el
-            className="mt-5 max-w-xl font-sans text-[15.5px] leading-relaxed text-white/70 sm:mt-6 sm:text-[17.5px]"
+            className="mt-4 max-w-md font-sans text-[15px] leading-[1.7] text-white/58 sm:mt-7 sm:text-[17px] sm:leading-[1.75]"
           >
             {data.description}
           </p>
@@ -124,62 +132,39 @@ export default function HeroSection() {
           {/* CTA Actions */}
           <div
             data-hero-el
-            className="mt-8 flex flex-wrap items-center gap-4 sm:mt-10"
+            className="mt-7 flex flex-wrap items-center gap-2.5 sm:mt-10 sm:gap-3"
           >
-            <PillButton
+            <a
               href={data.cta.href}
-              icon={true}
-              size="lg"
-              className="border-accent-alt/50 bg-accent-alt font-semibold text-white transition-transform duration-300 hover:scale-[1.02] hover:bg-accent-alt/90"
+              className="group inline-flex items-center gap-2 rounded-full bg-accent-alt px-4 py-2 text-[13px] font-semibold text-white transition-colors duration-200 hover:bg-accent-alt/90 sm:px-5 sm:py-2.5 sm:text-sm"
             >
               {data.cta.label}
-            </PillButton>
+              <ArrowIcon className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
+            </a>
 
             <a
               href="#services"
-              className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white/85 backdrop-blur-md transition-all duration-300 hover:border-white/30 hover:bg-white/10 hover:text-white"
+              className="group inline-flex items-center gap-2 rounded-full border border-white/18 px-4 py-2 text-[13px] font-semibold text-white/88 transition-[border-color,background-color,color] duration-200 hover:border-white/30 hover:bg-white/5 hover:text-white sm:px-5 sm:py-2.5 sm:text-sm"
             >
-              <span>Explore Solutions</span>
-              <svg
-                className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5"
-                viewBox="0 0 16 16"
-                fill="none"
-                aria-hidden
-              >
-                <path
-                  d="M6 12l4-4-4-4"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+              Explore Solutions
+              <ArrowIcon className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
             </a>
           </div>
 
-          {/* Elevated Editorial Quote Card */}
-          <div
+          {/* Pull quote */}
+          <figure
             data-hero-el
-            className="relative mt-8 max-w-xl overflow-hidden rounded-2xl border border-white/10 bg-white/4 p-4.5 backdrop-blur-md sm:mt-10 sm:p-5"
+            className="mt-8 max-w-md border-l border-white/20 pl-4 sm:mt-12 sm:pl-6"
           >
-            <div className="flex items-start gap-3.5">
-              <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-accent-soft/15 text-accent-soft">
-                <svg className="h-4 w-4 fill-current" viewBox="0 0 24 24">
-                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                </svg>
-              </div>
-              <p className="font-sans text-[14.5px] sm:text-[15.5px] leading-relaxed text-white/85">
-                Businesses don&apos;t need more technology.{" "}
-                <span className="font-semibold text-white">
-                  They need technology that delivers results.
-                </span>
-              </p>
-            </div>
-          </div>
+            <blockquote className="font-sans text-[14px] leading-[1.65] text-white/70 sm:text-[16px] sm:leading-[1.7]">
+              Businesses don&apos;t need more technology.{" "}
+              <span className="text-white/90">
+                They need technology that delivers results.
+              </span>
+            </blockquote>
+          </figure>
         </div>
       </div>
     </section>
   );
 }
-
-

@@ -15,9 +15,9 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
-      <ClientsSection />
       <div className="relative z-10">
         <AboutSection />
+        <ClientsSection />
         <WorksSection />
         <ServicesSection />
         <StatsSection />

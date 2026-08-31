@@ -72,12 +72,16 @@ export default function Header() {
           : "bg-transparent"
       }`}
     >
-      <div className="mx-auto flex h-20 max-w-360 items-center justify-between gap-6 px-5 font-sans sm:px-8 lg:h-22 lg:px-12">
+      <div className="mx-auto flex max-w-360 items-center justify-between gap-6 px-5 font-sans sm:px-8 lg:px-12 py-6">
         <Link href="/" className="relative z-10 shrink-0" onClick={closeMobile}>
           <Image
             src={site.logo}
             alt={site.name}
-            className="h-9 w-auto object-contain sm:h-10"
+            className={`w-auto object-contain transition-[height] duration-500 ease-in-out ${
+              scrolled
+                ? "h-[2.1rem] sm:h-[2.8rem] md:h-14"
+                : "h-12 sm:h-16 md:h-20"
+            }`}
             width={180}
             height={50}
             priority

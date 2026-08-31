@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { flushSync } from "react-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import data from "@/data/about.json";
@@ -40,14 +41,24 @@ function splitToWords(text: string) {
   return text.split(/(\s+)/).filter((token) => token.length > 0);
 }
 
+const SLIDE_FILL_DURATION = 5;
+const SLIDE_EXIT_DURATION = 0.5;
+const SLIDE_ENTER_DURATION = 0.8;
+
 export default function AboutSection() {
   const sectionRef = useRef<HTMLElement>(null);
+  const progressBarRef = useRef<HTMLDivElement>(null);
   const progressFillRef = useRef<HTMLSpanElement>(null);
+  const slideContentRef = useRef<HTMLDivElement>(null);
+  const progressTweenRef = useRef<gsap.core.Tween | null>(null);
+  const slideTweenRef = useRef<gsap.core.Timeline | null>(null);
+  const isTransitioningRef = useRef(false);
+  const displayIndexRef = useRef(0);
+  const transitionToSlideRef = useRef<(nextIndex: number) => void>(() => {});
   const slides = data.slides;
-  const [index, setIndex] = useState(0);
-  const slide = slides[index];
+  const [displayIndex, setDisplayIndex] = useState(0);
+  const slide = slides[displayIndex];
   const total = slides.length;
-  const progress = (index + 1) / total;
 
   const paragraphs = useMemo(
     () =>
@@ -57,19 +68,131 @@ export default function AboutSection() {
     [],
   );
 
-  const prev = () => setIndex((i) => (i - 1 + total) % total);
-  const next = () => setIndex((i) => (i + 1) % total);
+  const getSlideElements = () => {
+    const content = slideContentRef.current;
+    if (!content) return null;
+
+    const value = content.querySelector<HTMLElement>('[data-about-slide="value"]');
+    const label = content.querySelector<HTMLElement>('[data-about-slide="label"]');
+    if (!value || !label) return null;
+
+    return { value, label };
+  };
+
+  const startProgressFill = useCallback(() => {
+    const fill = progressFillRef.current;
+    const bar = progressBarRef.current;
+    if (!fill) return;
+
+    progressTweenRef.current?.kill();
+    gsap.killTweensOf(fill);
+    gsap.set(fill, { scaleX: 0 });
+    bar?.setAttribute("aria-valuenow", "0");
+
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    if (reduceMotion || total <= 1) {
+      gsap.set(fill, { scaleX: 1 });
+      bar?.setAttribute("aria-valuenow", "100");
+      return;
+    }
+
+    progressTweenRef.current = gsap.to(fill, {
+      scaleX: 1,
+      duration: SLIDE_FILL_DURATION,
+      ease: "none",
+      onUpdate: () => {
+        const scaleX = gsap.getProperty(fill, "scaleX") as number;
+        bar?.setAttribute("aria-valuenow", String(Math.round(scaleX * 100)));
+      },
+      onComplete: () => {
+        const nextIndex = (displayIndexRef.current + 1) % total;
+        transitionToSlideRef.current(nextIndex);
+      },
+    });
+  }, [total]);
+
+  const transitionToSlide = useCallback(
+    (nextIndex: number) => {
+      if (isTransitioningRef.current || nextIndex === displayIndexRef.current) {
+        return;
+      }
+
+      progressTweenRef.current?.kill();
+      slideTweenRef.current?.kill();
+
+      const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+      const els = getSlideElements();
+
+      if (!els || reduceMotion) {
+        flushSync(() => setDisplayIndex(nextIndex));
+        startProgressFill();
+        return;
+      }
+
+      isTransitioningRef.current = true;
+      const { value, label } = els;
+
+      slideTweenRef.current = gsap
+        .timeline({
+          defaults: { ease: "power2.inOut" },
+          onComplete: () => {
+            isTransitioningRef.current = false;
+            startProgressFill();
+          },
+        })
+        .to([value, label], {
+          y: 10,
+          opacity: 0,
+          duration: SLIDE_EXIT_DURATION,
+          stagger: 0.06,
+        })
+        .add(() => {
+          flushSync(() => setDisplayIndex(nextIndex));
+        })
+        .fromTo(
+          [value, label],
+          { y: -18, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: SLIDE_ENTER_DURATION,
+            ease: "power2.out",
+            stagger: 0.08,
+          },
+        );
+    },
+    [startProgressFill],
+  );
 
   useEffect(() => {
-    const fill = progressFillRef.current;
-    if (!fill) return;
-    gsap.to(fill, {
-      scaleX: progress,
-      duration: 0.45,
-      ease: "power2.out",
-      overwrite: true,
-    });
-  }, [progress]);
+    displayIndexRef.current = displayIndex;
+  }, [displayIndex]);
+
+  useEffect(() => {
+    transitionToSlideRef.current = transitionToSlide;
+  }, [transitionToSlide]);
+
+  const prev = () => {
+    transitionToSlide((displayIndex - 1 + total) % total);
+  };
+
+  const next = () => {
+    transitionToSlide((displayIndex + 1) % total);
+  };
+
+  useEffect(() => {
+    startProgressFill();
+
+    return () => {
+      progressTweenRef.current?.kill();
+      slideTweenRef.current?.kill();
+    };
+  }, [startProgressFill]);
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -80,31 +203,11 @@ export default function AboutSection() {
     ).matches;
 
     const ctx = gsap.context(() => {
-      const monolog = section.querySelector("[data-about='monolog']");
       const stats = section.querySelector("[data-about='stats']");
       const body = section.querySelector("[data-about='body']");
       const words = gsap.utils.toArray<HTMLElement>(
         section.querySelectorAll("[data-about='word']"),
       );
-
-      if (!reduceMotion && monolog) {
-        gsap.fromTo(
-          monolog,
-          { y: 56, opacity: 0, scale: 1.04 },
-          {
-            y: 0,
-            opacity: 1,
-            scale: 1,
-            duration: 1.15,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: section,
-              start: "top 72%",
-              toggleActions: "play none none none",
-            },
-          },
-        );
-      }
 
       if (!reduceMotion && stats) {
         gsap.fromTo(
@@ -154,7 +257,7 @@ export default function AboutSection() {
     <section
       ref={sectionRef}
       id={data.id}
-      className="relative z-20 overflow-hidden bg-background pt-6 pb-20 sm:pt-8 sm:pb-24 lg:pb-28"
+      className="relative z-20 overflow-hidden bg-black pb-20 sm:pb-24 lg:pb-28"
     >
       <div
         data-about="monolog"
@@ -168,8 +271,13 @@ export default function AboutSection() {
           {/* Left: progress + nav + stats */}
           <div data-about="stats" className="min-w-0 max-w-72">
             <div
+              ref={progressBarRef}
               className="mb-5 h-px w-full overflow-hidden bg-foreground/15"
-              aria-hidden
+              role="progressbar"
+              aria-valuemin={0}
+              aria-valuemax={100}
+              aria-valuenow={0}
+              aria-label={`Slide ${displayIndex + 1} of ${total} progress`}
             >
               <span
                 ref={progressFillRef}
@@ -197,16 +305,25 @@ export default function AboutSection() {
                 </button>
               </div>
               <p className="font-sans text-[13px] tabular-nums tracking-[0.04em] text-foreground/45">
-                {String(index + 1).padStart(2, "0")}/
+                {String(displayIndex + 1).padStart(2, "0")}/
                 {String(total).padStart(2, "0")}
               </p>
             </div>
 
-            <div key={`${slide.value}-${index}`}>
-              <p className="font-sans text-[clamp(4.5rem,9vw,7.5rem)] font-bold leading-none tracking-[-0.045em] text-foreground">
+            <div
+              ref={slideContentRef}
+              className="overflow-hidden will-change-[transform,opacity]"
+            >
+              <p
+                data-about-slide="value"
+                className="font-sans text-[clamp(4.5rem,9vw,7.5rem)] font-bold leading-none tracking-[-0.045em] text-foreground"
+              >
                 {slide.value}
               </p>
-              <p className="mt-5 max-w-62 font-sans text-[clamp(1rem,1.5vw,1.125rem)] font-normal leading-[1.45] text-foreground/90">
+              <p
+                data-about-slide="label"
+                className="mt-5 max-w-62 font-sans text-[clamp(1rem,1.5vw,1.125rem)] font-normal leading-[1.45] text-foreground/90"
+              >
                 {slide.label}
               </p>
             </div>

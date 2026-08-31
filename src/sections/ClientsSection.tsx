@@ -64,13 +64,13 @@ export default function ClientsSection() {
     if (reduceMotion) return;
 
     const ctx = gsap.context(() => {
-      // Parallax + subtle zoom-out while tucked behind the hero
+      // Subtle parallax while the section scrolls through the viewport
       gsap.fromTo(
         parallax,
-        { yPercent: 18, scale: 1.08 },
+        { yPercent: 10, scale: 1.04 },
         {
-          yPercent: -12,
-          scale: 0.94,
+          yPercent: -8,
+          scale: 0.98,
           ease: "none",
           scrollTrigger: {
             trigger: section,
@@ -88,7 +88,7 @@ export default function ClientsSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative z-0 -mt-28 overflow-hidden bg-header pt-28 sm:-mt-36 sm:pt-36"
+      className="relative overflow-hidden bg-header"
     >
       <div
         ref={parallaxRef}

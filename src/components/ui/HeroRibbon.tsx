@@ -4,6 +4,24 @@ import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { cn } from "@/lib/utils";
 
+const IMAGE_SOURCES = [
+  "/static/components/0.jpeg",
+  "/static/components/1.jpeg",
+  "/static/components/2.jpeg",
+  "/static/components/3.jpeg",
+  "/static/components/4.jpeg",
+];
+
+const TOTAL_LEVELS = 12;
+const RADIUS = 4;
+const RIBBON_HEIGHT = 2;
+const LEVEL_GAP = 3.5;
+const CARD_WIDTH = 624;
+const CARD_HEIGHT = 580;
+const AUTO_ROTATE_SPEED = 0.12;
+const DRAG_VELOCITY_SCALE = 35;
+const INERTIA_DECAY = 0.95;
+
 type HeroRibbonProps = {
   className?: string;
 };
@@ -15,16 +33,19 @@ export default function HeroRibbon({ className }: HeroRibbonProps) {
     const container = containerRef.current;
     if (!container) return;
 
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
     let disposed = false;
     let animationFrameId = 0;
+    let highResTexture: THREE.CanvasTexture | null = null;
 
-    // Clear container
     container.innerHTML = "";
 
     const width = container.clientWidth || window.innerWidth;
     const height = container.clientHeight || window.innerHeight;
 
-    // Camera (FOV 7, position [0, 0, 70])
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(7, width / height, 0.01, 100000);
     camera.position.set(0, 0, 70);
@@ -37,57 +58,20 @@ export default function HeroRibbon({ className }: HeroRibbonProps) {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
     renderer.setSize(width, height);
     renderer.toneMapping = THREE.NoToneMapping;
+    renderer.domElement.style.touchAction = "none";
     container.appendChild(renderer.domElement);
 
-    // Parent group with aesthetic tilt [-0.2, 0.5, 0.2]
     const towerGroup = new THREE.Group();
-    towerGroup.position.set(5.2, 0, 0);
     towerGroup.rotation.set(-0.2, 0.5, 0.2);
     scene.add(towerGroup);
 
-    function updateCameraAndGroup() {
-      if (!container || disposed) return;
-      const w = container.clientWidth || window.innerWidth;
-      const h = container.clientHeight || window.innerHeight;
-      const aspect = w / h;
-      camera.aspect = aspect;
-      // Adjust FOV for narrow / mobile viewports so the tower remains visible
-      if (aspect < 1.0) {
-        camera.fov = 7 / aspect;
-      } else {
-        camera.fov = 7;
-      }
-      camera.updateProjectionMatrix();
-      renderer.setSize(w, h);
+    const numImages = IMAGE_SOURCES.length;
+    const cardAspect = CARD_WIDTH / CARD_HEIGHT;
+    const circumference = 2 * Math.PI * RADIUS;
+    const cardWidthIn3D = RIBBON_HEIGHT * cardAspect;
+    const cardsPerCircumference = circumference / cardWidthIn3D;
+    const repeatX = cardsPerCircumference / numImages;
 
-      // Shift the 3D cylinder tower to the right side matching reference framing
-      if (aspect >= 1.4) {
-        towerGroup.position.set(5.2, 0, 0);
-      } else if (aspect >= 1.1) {
-        towerGroup.position.set(4.0, 0, 0);
-      } else if (aspect >= 0.8) {
-        towerGroup.position.set(2.4, 0, 0);
-      } else {
-        towerGroup.position.set(1.2, 0, 0);
-      }
-    }
-    updateCameraAndGroup();
-
-    const radius = 4;
-    const ribbonHeight = 2;
-    const geometry = new THREE.CylinderGeometry(radius, radius, ribbonHeight, 80, 1, true);
-
-    // Native card dimensions: 624w x 580h
-    const singleW = 624;
-    const singleH = 580;
-    const numImages = 6;
-    const cardAspect = singleW / singleH; // 1.07586
-    const circumference = 2 * Math.PI * radius; // 25.1327
-    const cardWidthIn3D = ribbonHeight * cardAspect; // 2.1517
-    const cardsPerCircumference = circumference / cardWidthIn3D; // 11.68
-    const repeatX = cardsPerCircumference / numImages; // ~1.9466
-
-    // Shader with explicit uvRepeat so cards maintain their exact native aspect ratio
     const vertexShader = `
       varying vec2 vUv;
       void main() {
@@ -110,24 +94,24 @@ export default function HeroRibbon({ className }: HeroRibbonProps) {
       }
     `;
 
-    // Immediate placeholder canvas texture
     const placeholderCanvas = document.createElement("canvas");
-    placeholderCanvas.width = singleW * numImages;
-    placeholderCanvas.height = singleH;
-    const pctx = placeholderCanvas.getContext("2d");
-    if (pctx) {
-      for (let k = 0; k < numImages; k++) {
-        const cx = k * singleW;
-        pctx.fillStyle = k % 2 === 0 ? "#0c192c" : "#081220";
-        pctx.fillRect(cx, 0, singleW, singleH);
-        pctx.strokeStyle = "#1e3a5f";
-        pctx.lineWidth = 4;
-        pctx.strokeRect(cx + 10, 20, singleW - 20, singleH - 40);
-        pctx.fillStyle = "#2563eb";
-        pctx.fillRect(cx + 30, 50, singleW - 60, 24);
-        pctx.fillStyle = "#1e293b";
-        pctx.fillRect(cx + 30, 95, singleW - 140, 16);
-        pctx.fillRect(cx + 30, 125, singleW - 100, 16);
+    placeholderCanvas.width = CARD_WIDTH * numImages;
+    placeholderCanvas.height = CARD_HEIGHT;
+    const placeholderCtx = placeholderCanvas.getContext("2d");
+
+    if (placeholderCtx) {
+      for (let index = 0; index < numImages; index++) {
+        const x = index * CARD_WIDTH;
+        placeholderCtx.fillStyle = index % 2 === 0 ? "#0c192c" : "#081220";
+        placeholderCtx.fillRect(x, 0, CARD_WIDTH, CARD_HEIGHT);
+        placeholderCtx.strokeStyle = "#1e3a5f";
+        placeholderCtx.lineWidth = 4;
+        placeholderCtx.strokeRect(x + 10, 20, CARD_WIDTH - 20, CARD_HEIGHT - 40);
+        placeholderCtx.fillStyle = "#2563eb";
+        placeholderCtx.fillRect(x + 30, 50, CARD_WIDTH - 60, 24);
+        placeholderCtx.fillStyle = "#1e293b";
+        placeholderCtx.fillRect(x + 30, 95, CARD_WIDTH - 140, 16);
+        placeholderCtx.fillRect(x + 30, 125, CARD_WIDTH - 100, 16);
       }
     }
 
@@ -139,86 +123,82 @@ export default function HeroRibbon({ className }: HeroRibbonProps) {
 
     const uniforms = {
       map: { value: initialTexture },
-      uvRepeat: { value: new THREE.Vector2(repeatX, 1.0) },
+      uvRepeat: { value: new THREE.Vector2(repeatX, 1) },
     };
 
     const towerMaterial = new THREE.ShaderMaterial({
-      uniforms: uniforms,
-      vertexShader: vertexShader,
-      fragmentShader: fragmentShader,
+      uniforms,
+      vertexShader,
+      fragmentShader,
       side: THREE.DoubleSide,
       transparent: true,
     });
 
-    // 12 Stacked levels in fixed pivot groups
-    const totalLevels = 12;
+    const geometry = new THREE.CylinderGeometry(
+      RADIUS,
+      RADIUS,
+      RIBBON_HEIGHT,
+      80,
+      1,
+      true,
+    );
+
     const ringMeshes: THREE.Mesh[] = [];
 
-    for (let i = 0; i < totalLevels; i++) {
-      // Pivot holds fixed 3D position and tilt
+    for (let index = 0; index < TOTAL_LEVELS; index++) {
       const pivot = new THREE.Group();
-      pivot.position.set(0, (i - 5) * 3.5, 0);
-      pivot.rotation.set(0, i * Math.PI * 0.5, 0.25);
+      pivot.position.set(0, (index - 5) * LEVEL_GAP, 0);
+      pivot.rotation.set(0, index * Math.PI * 0.5, 0.25);
 
-      // Cylinder mesh rotates cleanly around its own local Y-axis
       const mesh = new THREE.Mesh(geometry, towerMaterial);
       pivot.add(mesh);
       towerGroup.add(pivot);
-
       ringMeshes.push(mesh);
     }
 
-    // Load actual component screenshots
-    const imageSources = [
-      "/components/0.png",
-      "/components/1.png",
-      "/components/2.png",
-      "/components/3.png",
-      "/components/4.png",
-      "/components/5.png",
-    ];
+    function updateCameraAndGroup() {
+      if (!container || disposed) return;
 
-    const loadedImages: HTMLImageElement[] = [];
-    let loadedCount = 0;
-    let highResTexture: THREE.CanvasTexture | null = null;
+      const w = container.clientWidth || window.innerWidth;
+      const h = container.clientHeight || window.innerHeight;
+      const aspect = w / h;
 
-    imageSources.forEach((src, idx) => {
-      const img = new Image();
-      img.crossOrigin = "anonymous";
-      img.src = src;
-      img.onload = () => {
-        if (disposed) return;
-        loadedImages[idx] = img;
-        loadedCount++;
-        if (loadedCount === imageSources.length) {
-          applyLoadedTexture();
-        }
-      };
-      img.onerror = () => {
-        if (disposed) return;
-        loadedCount++;
-        if (loadedCount === imageSources.length) {
-          applyLoadedTexture();
-        }
-      };
-    });
+      camera.aspect = aspect;
+      camera.fov = aspect < 1 ? 7 / aspect : 7;
+      camera.updateProjectionMatrix();
+      renderer.setSize(w, h);
 
-    function applyLoadedTexture() {
+      if (aspect >= 1.4) {
+        towerGroup.position.set(5.2, 0, 0);
+      } else if (aspect >= 1.1) {
+        towerGroup.position.set(4, 0, 0);
+      } else if (aspect >= 0.8) {
+        towerGroup.position.set(2.4, 0, 0);
+      } else {
+        towerGroup.position.set(1.2, 0, 0);
+      }
+    }
+
+    updateCameraAndGroup();
+
+    function applyLoadedTexture(loadedImages: HTMLImageElement[]) {
       if (disposed) return;
-      const compCanvas = document.createElement("canvas");
-      compCanvas.width = singleW * imageSources.length;
-      compCanvas.height = singleH;
-      const ctx = compCanvas.getContext("2d");
+
+      const collageCanvas = document.createElement("canvas");
+      collageCanvas.width = CARD_WIDTH * IMAGE_SOURCES.length;
+      collageCanvas.height = CARD_HEIGHT;
+      const ctx = collageCanvas.getContext("2d");
 
       if (ctx) {
-        imageSources.forEach((_, idx) => {
-          if (loadedImages[idx]) {
-            ctx.drawImage(loadedImages[idx], idx * singleW, 0, singleW, singleH);
+        IMAGE_SOURCES.forEach((_, index) => {
+          const image = loadedImages[index];
+          if (image?.naturalWidth) {
+            ctx.drawImage(image, index * CARD_WIDTH, 0, CARD_WIDTH, CARD_HEIGHT);
           }
         });
       }
 
-      highResTexture = new THREE.CanvasTexture(compCanvas);
+      highResTexture = new THREE.CanvasTexture(collageCanvas);
       highResTexture.wrapS = THREE.RepeatWrapping;
       highResTexture.wrapT = THREE.ClampToEdgeWrapping;
       highResTexture.minFilter = THREE.LinearFilter;
@@ -226,70 +206,120 @@ export default function HeroRibbon({ className }: HeroRibbonProps) {
       highResTexture.needsUpdate = true;
 
       towerMaterial.uniforms.map.value = highResTexture;
-      towerMaterial.uniforms.uvRepeat.value.set(repeatX, 1.0);
+      towerMaterial.uniforms.uvRepeat.value.set(repeatX, 1);
       towerMaterial.needsUpdate = true;
     }
 
-    // Pointer Drag Interaction
+    const loadedImages: HTMLImageElement[] = [];
+    let loadedCount = 0;
+
+    IMAGE_SOURCES.forEach((src, index) => {
+      const image = new Image();
+      image.crossOrigin = "anonymous";
+      image.src = src;
+      image.onload = () => {
+        if (disposed) return;
+        loadedImages[index] = image;
+        loadedCount += 1;
+        if (loadedCount === IMAGE_SOURCES.length) {
+          applyLoadedTexture(loadedImages);
+        }
+      };
+      image.onerror = () => {
+        if (disposed) return;
+        loadedCount += 1;
+        if (loadedCount === IMAGE_SOURCES.length) {
+          applyLoadedTexture(loadedImages);
+        }
+      };
+    });
+
     let isDragging = false;
     let prevX = 0;
-    let localRotationY = 0;
+    let dragRotationY = 0;
     let dragVelocity = 0;
+    let ringSpinY = 0;
+    const canvas = renderer.domElement;
+    const towerTilt = { x: -0.2, y: 0.5, z: 0.2 };
 
-    const onPointerDown = (e: PointerEvent) => {
+    const getDragWidth = () => canvas.clientWidth || window.innerWidth || 1000;
+
+    const onPointerDown = (event: PointerEvent) => {
+      if (reduceMotion) return;
+
       isDragging = true;
-      prevX = e.clientX;
+      prevX = event.clientX;
       dragVelocity = 0;
+      container.style.cursor = "grabbing";
+      canvas.setPointerCapture(event.pointerId);
+      event.preventDefault();
     };
 
-    const onPointerMove = (e: PointerEvent) => {
-      if (isDragging) {
-        const deltaX = ((e.clientX - prevX) / (window.innerWidth || 1000)) * Math.PI * 2;
-        localRotationY += deltaX;
-        dragVelocity = deltaX * 35;
-        prevX = e.clientX;
+    const onPointerMove = (event: PointerEvent) => {
+      if (!isDragging || reduceMotion) return;
+
+      const deltaX =
+        ((event.clientX - prevX) / getDragWidth()) * Math.PI * 2;
+      dragRotationY += deltaX;
+      dragVelocity = deltaX * DRAG_VELOCITY_SCALE;
+      prevX = event.clientX;
+      event.preventDefault();
+    };
+
+    const endDrag = (event: PointerEvent) => {
+      if (!isDragging) return;
+
+      isDragging = false;
+      container.style.cursor = "grab";
+
+      if (canvas.hasPointerCapture(event.pointerId)) {
+        canvas.releasePointerCapture(event.pointerId);
       }
     };
 
-    const onPointerUp = () => {
-      if (isDragging) {
+    if (!reduceMotion) {
+      container.style.cursor = "grab";
+      canvas.addEventListener("pointerdown", onPointerDown);
+      canvas.addEventListener("pointermove", onPointerMove);
+      canvas.addEventListener("pointerup", endDrag);
+      canvas.addEventListener("pointercancel", endDrag);
+      canvas.addEventListener("lostpointercapture", () => {
         isDragging = false;
-      }
-    };
+        container.style.cursor = "grab";
+      });
+    }
 
-    const onPointerCancel = () => {
-      if (isDragging) {
-        isDragging = false;
-      }
-    };
-
-    window.addEventListener("pointerdown", onPointerDown);
-    window.addEventListener("pointermove", onPointerMove);
-    window.addEventListener("pointerup", onPointerUp);
-    window.addEventListener("pointercancel", onPointerCancel);
     window.addEventListener("resize", updateCameraAndGroup);
 
-    // Animation Loop
     const clock = new THREE.Clock();
 
     function renderLoop() {
       if (disposed) return;
-      animationFrameId = requestAnimationFrame(renderLoop);
+
+      animationFrameId = window.requestAnimationFrame(renderLoop);
       const delta = Math.min(clock.getDelta(), 0.1);
 
-      // Apply drag momentum inertia
-      if (!isDragging && dragVelocity !== 0) {
-        localRotationY += dragVelocity * delta;
-        dragVelocity *= 0.95;
-        if (Math.abs(dragVelocity) < 0.0001) dragVelocity = 0;
+      if (!reduceMotion) {
+        if (!isDragging && dragVelocity !== 0) {
+          dragRotationY += dragVelocity * delta;
+          dragVelocity *= INERTIA_DECAY;
+
+          if (Math.abs(dragVelocity) < 0.0001) {
+            dragVelocity = 0;
+          }
+        }
+
+        ringSpinY += AUTO_ROTATE_SPEED * delta;
       }
 
-      // Continuous smooth in-place rotation (faster speed)
-      localRotationY += 0.12 * delta;
+      towerGroup.rotation.set(
+        towerTilt.x,
+        towerTilt.y + dragRotationY,
+        towerTilt.z,
+      );
 
-      // Update all cylinder meshes in their fixed local pivot frames
       ringMeshes.forEach((mesh) => {
-        mesh.rotation.y = localRotationY;
+        mesh.rotation.y = ringSpinY;
       });
 
       renderer.render(scene, camera);
@@ -300,17 +330,16 @@ export default function HeroRibbon({ className }: HeroRibbonProps) {
     return () => {
       disposed = true;
       window.cancelAnimationFrame(animationFrameId);
-      window.removeEventListener("pointerdown", onPointerDown);
-      window.removeEventListener("pointermove", onPointerMove);
-      window.removeEventListener("pointerup", onPointerUp);
-      window.removeEventListener("pointercancel", onPointerCancel);
       window.removeEventListener("resize", updateCameraAndGroup);
 
-      if (renderer) {
-        renderer.dispose();
-        if (renderer.domElement.parentNode === container) {
-          container.removeChild(renderer.domElement);
-        }
+      canvas.removeEventListener("pointerdown", onPointerDown);
+      canvas.removeEventListener("pointermove", onPointerMove);
+      canvas.removeEventListener("pointerup", endDrag);
+      canvas.removeEventListener("pointercancel", endDrag);
+
+      renderer.dispose();
+      if (renderer.domElement.parentNode === container) {
+        container.removeChild(renderer.domElement);
       }
 
       geometry.dispose();
@@ -323,10 +352,11 @@ export default function HeroRibbon({ className }: HeroRibbonProps) {
   return (
     <div
       ref={containerRef}
-      className={cn("absolute inset-0 h-full w-full overflow-hidden select-none", className)}
+      className={cn(
+        "absolute inset-0 h-full w-full overflow-hidden select-none",
+        className,
+      )}
       aria-hidden
     />
   );
 }
-
-
