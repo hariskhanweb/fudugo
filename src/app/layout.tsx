@@ -40,7 +40,10 @@ export default function RootLayout({
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
-      <body className="bg-background font-sans text-foreground antialiased selection:bg-accent-alt selection:text-white">
+      <body
+        suppressHydrationWarning
+        className="bg-background font-sans text-foreground antialiased selection:bg-accent-alt selection:text-white"
+      >
         <ThemeProvider>
           <LenisProvider>
             <div className="flex min-h-screen flex-col">

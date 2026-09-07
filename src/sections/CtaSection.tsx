@@ -18,8 +18,30 @@ const PERK_ICONS = [
   "M148 288h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm108-12v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 96v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm192 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96-260v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h48V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h128V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h48c26.5 0 48 21.5 48 48zm-48 346V160H48v298c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z",
 ] as const;
 
-export default function CtaSection() {
+type CtaSectionProps = {
+  content?: {
+    id?: string;
+    image?: string;
+    headlineLines?: string[];
+    title?: string;
+    cta?: {
+      label?: string;
+      href?: string;
+    };
+    perks?: string[];
+  };
+};
+
+export default function CtaSection({ content: customContent }: CtaSectionProps = {}) {
   const sectionRef = useRef<HTMLElement>(null);
+  const ctaData = {
+    ...data,
+    ...customContent,
+    cta: {
+      ...data.cta,
+      ...customContent?.cta,
+    },
+  };
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -96,7 +118,7 @@ export default function CtaSection() {
   return (
     <section
       ref={sectionRef}
-      id={data.id}
+      id={ctaData.id}
       className="relative isolate min-h-[70vh] overflow-hidden sm:min-h-[75vh] lg:min-h-[80vh]"
     >
       {/* Tall layer so translateY/scale parallax has room to move */}
@@ -105,7 +127,7 @@ export default function CtaSection() {
         className="pointer-events-none absolute inset-0 will-change-transform"
       >
         <Image
-          src={data.image}
+          src={ctaData.image}
           alt="Moody parking garage with dramatic backlight"
           fill
           sizes="100vw"
@@ -164,7 +186,7 @@ export default function CtaSection() {
             <div data-cta="title" className="max-w-xl">
               <div className="border-l-2 border-accent pl-5 sm:pl-6">
                 <h2 className="font-sans text-[clamp(48px,8vw,88px)] font-bold leading-[0.92] tracking-tight text-white">
-                  {(data.headlineLines ?? ["Ready To", "Start?"]).map((line) => (
+                  {(ctaData.headlineLines ?? ["Ready To", "Start?"]).map((line) => (
                     <span key={line} className="block">
                       {line}
                     </span>
@@ -175,22 +197,22 @@ export default function CtaSection() {
 
             <div
               data-cta="content"
-              className="max-w-xs space-y-5 lg:justify-self-end"
+              className="max-w-md space-y-5 lg:justify-self-end"
             >
               <p className="font-sans text-xl font-semibold leading-snug text-white sm:text-2xl">
-                {data.title}
+                {ctaData.title}
               </p>
               <a
-                href={data.cta.href}
+                href={ctaData.cta.href}
                 className="inline-flex min-h-11 items-center justify-center rounded-full border border-white/20 bg-black/40 px-6 py-3 font-sans text-xs font-semibold uppercase tracking-[0.14em] text-white transition-colors duration-300 hover:border-white/40 hover:bg-black/60"
               >
-                {data.cta.label}
+                {ctaData.cta.label}
               </a>
             </div>
           </div>
 
           <div className="mt-16 flex flex-wrap items-center gap-x-8 gap-y-4 sm:mt-20 sm:gap-x-10 lg:mt-24">
-            {data.perks.map((perk, index) => (
+            {ctaData.perks.map((perk, index) => (
               <span
                 key={perk}
                 data-cta="perk"

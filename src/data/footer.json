@@ -9,7 +9,7 @@
     { "label": "Services", "href": "/services" },
     { "label": "Project", "href": "#works" },
     { "label": "Blog", "href": "/blog" },
-    { "label": "Contact", "href": "#contact" }
+    { "label": "Contact", "href": "/contact" }
   ],
   "newsletter": {
     "title": "Subscribe to our newsletter for the latest updates",

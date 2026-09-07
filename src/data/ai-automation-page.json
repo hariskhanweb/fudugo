@@ -1,0 +1,234 @@
+{
+  "hero": {
+    "eyebrow": "AI & AUTOMATION",
+    "title": "Put AI to Work Inside Your Business, Not Just Your Marketing.",
+    "description": "We build practical AI and automation solutions that help businesses simplify repetitive work, understand their data, improve customer experiences, and create smarter digital products.",
+    "ctaLabel": "Deploy Custom AI",
+    "ctaHref": "/contact",
+    "secondaryCtaLabel": "Explore Capabilities",
+    "secondaryCtaHref": "#capabilities",
+    "image": "/ai-automation-hero.jpg",
+    "imageAlt": "AI & Automation Solutions by FuduGo"
+  },
+  "introSection": {
+    "eyebrow": "AI, WITH A PURPOSE",
+    "title": "AI Should Solve Problems. Not Just Sound Innovative.",
+    "lead": "AI becomes valuable when it helps people do something better—whether that's finding the right product, understanding business data, automating repetitive work, or interacting with software more naturally.",
+    "paragraphs": [
+      "At FuduGo, we build AI-powered solutions around specific business requirements. From generative AI and intelligent search to automation and voice AI, we focus on turning AI capabilities into practical tools that businesses can actually use."
+    ],
+    "image": "/ai-agent-nodes.jpg"
+  },
+  "whatWeOffer": {
+    "eyebrow": "OUR AI CAPABILITIES",
+    "title": "Different AI Solutions. One Business Goal: Make Things Better.",
+    "items": [
+      {
+        "number": "01",
+        "title": "AI Development",
+        "description": "Build intelligent functionality into your websites, applications, and business systems based on your specific requirements.",
+        "icon": "cpu",
+        "image": "/mobile-ai-center.jpg"
+      },
+      {
+        "number": "02",
+        "title": "Generative AI",
+        "description": "Create systems that can work with natural-language inputs to generate useful responses, content, insights, or other outputs based on the intended use case.",
+        "icon": "sparkles",
+        "image": "/ai-automation-hero.jpg"
+      },
+      {
+        "number": "03",
+        "title": "AI Automation",
+        "description": "Use AI to streamline repetitive processes, reduce manual effort, and make business workflows more efficient.",
+        "icon": "workflow",
+        "image": "/marketing-paid-media.jpg"
+      },
+      {
+        "number": "04",
+        "title": "Voice AI Agents",
+        "description": "Create voice-based experiences that allow users to interact with systems through natural conversations.",
+        "icon": "voice",
+        "image": "/ai-voice-support.jpg"
+      },
+      {
+        "number": "05",
+        "title": "AI-Powered Search",
+        "description": "Help users find what they actually mean rather than relying only on exact keywords or product names.",
+        "icon": "search",
+        "image": "/ai-agent-nodes.jpg"
+      },
+      {
+        "number": "06",
+        "title": "AI-Powered Business Insights",
+        "description": "Turn business data into understandable answers and insights through natural-language queries.",
+        "icon": "chart",
+        "image": "/marketing-paid-ads-blue.jpg"
+      }
+    ]
+  },
+  "aiDevelopment": {
+    "eyebrow": "(AI + Development)",
+    "title": "How We Actually Build With AI",
+    "lead": "We use AI-enabled development tools, including AI-powered coding agents, on every project we build, including this one. That's not a separate claim we make for this page; it's the same process behind every service we offer.",
+    "items": [
+      {
+        "number": "01",
+        "title": "We Use What We Sell",
+        "description": "Our own development workflow runs on Gemini-powered coding agents built into our editors, which means the AI features we build for you come from a team that uses AI daily, not one that reads about it.",
+        "icon": "terminal"
+      },
+      {
+        "number": "02",
+        "title": "Intent-Based Intelligence, Not Just Keyword Matching",
+        "description": "Where it fits, we build AI that understands what a user actually wants, like a product search that surfaces jackets and sweaters for a \"winter clothes\" query, rather than returning nothing because \"winter\" isn't a product name.",
+        "icon": "intent"
+      },
+      {
+        "number": "03",
+        "title": "Automation That Knows Its Limits",
+        "description": "AI can draft a registration form, suggest a code block, or handle a routine voice query in minutes instead of hours, but our team decides where automation should hand off to a human, so your customers never get stuck talking to a system that can't help them.",
+        "icon": "handshake"
+      },
+      {
+        "number": "04",
+        "title": "Built-In Security From Day One",
+        "description": "Every AI feature we build goes through the same AI-assisted security checks we use across all our development, catching potential gaps before launch rather than after.",
+        "icon": "shield"
+      }
+    ]
+  },
+  "techStack": {
+    "eyebrow": "OUR AI TECHNOLOGY STACK",
+    "title": "The Technology Behind the Intelligence.",
+    "lead": "We work with modern development technologies and AI capabilities to build solutions suited to the requirements of each project.",
+    "categories": [
+      {
+        "id": "ai-genai",
+        "number": "01",
+        "name": "AI & Generative AI",
+        "icon": "sparkles",
+        "skills": ["Gemini", "GPT", "Generative AI Models", "AI Agents"]
+      },
+      {
+        "id": "backend-apis",
+        "number": "02",
+        "name": "Backend & APIs",
+        "icon": "workflow",
+        "skills": ["Node.js", "PHP", "Python", "Laravel", "REST APIs"]
+      },
+      {
+        "id": "frontend",
+        "number": "03",
+        "name": "Frontend",
+        "icon": "layout",
+        "skills": ["React", "Next.js", "Angular", "Vue.js", "JavaScript"]
+      },
+      {
+        "id": "databases",
+        "number": "04",
+        "name": "Databases",
+        "icon": "database",
+        "skills": ["MySQL", "PostgreSQL", "MongoDB"]
+      },
+      {
+        "id": "cloud-deployment",
+        "number": "05",
+        "name": "Cloud & Deployment",
+        "icon": "cloud",
+        "skills": ["AWS", "Google Cloud", "Azure", "Vercel", "DigitalOcean"]
+      }
+    ]
+  },
+  "ourWork": {
+    "eyebrow": "AI IN ACTION",
+    "title": "AI Built for Real Business Needs.",
+    "lead": "We're building AI-enabled tools that go beyond experimentation helping businesses improve customer experiences, understand their data, and simplify the way they work.",
+    "ctaLabel": "View Our Work",
+    "ctaHref": "/work",
+    "projects": [
+      {
+        "id": "project-1",
+        "title": "Autonomous Customer Qualification & Voice Agent",
+        "category": "Conversational AI",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "image": "/ai-voice-support.jpg",
+        "tags": ["Voice AI", "Twilio", "FastAPI", "OpenAI"]
+      },
+      {
+        "id": "project-2",
+        "title": "Intelligent Intent Search & Recommendations",
+        "category": "E-Commerce AI",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "image": "/work-ecommerce.jpg",
+        "tags": ["Vector Search", "pgvector", "Next.js", "Algolia"]
+      },
+      {
+        "id": "project-3",
+        "title": "Multi-Agent Document & Invoice Processing",
+        "category": "Financial Automation",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "image": "/work-fintech.jpg",
+        "tags": ["Document AI", "LangChain", "Python", "PostgreSQL"]
+      },
+      {
+        "id": "project-4",
+        "title": "Predictive Supply Chain & Logistics Intelligence",
+        "category": "Predictive Analytics",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "image": "/work-logistics.jpg",
+        "tags": ["Predictive ML", "Python", "FastAPI", "React"]
+      },
+      {
+        "id": "project-5",
+        "title": "Automated Clinical Diagnostic Assistant",
+        "category": "Healthcare Intelligence",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "image": "/work-healthcare.jpg",
+        "tags": ["Healthcare AI", "RAG", "VPC Sandboxing", "Azure"]
+      }
+    ]
+  },
+  "faqs": {
+    "eyebrow": "QUESTIONS & ANSWERS",
+    "title": "Frequently Asked Questions",
+    "lead": "Clear answers to common questions about our AI development, automation solutions, and business integration.",
+    "ctaLabel": "Have a Question? Get in Touch",
+    "ctaHref": "/contact",
+    "items": [
+      {
+        "id": "faq-1",
+        "question": "What AI services does FuduGo provide?",
+        "answer": "FuduGo provides AI development, Generative AI, AI automation, Voice AI agents, AI-powered search, and other AI-enabled functionality based on business requirements."
+      },
+      {
+        "id": "faq-2",
+        "question": "Can you add AI to an existing website or application?",
+        "answer": "Yes. AI functionality can be integrated into existing websites, applications, e-commerce platforms, and business systems where it provides a practical benefit."
+      },
+      {
+        "id": "faq-3",
+        "question": "How can AI improve an e-commerce website?",
+        "answer": "AI can improve product discovery through intent-based search, recommendations, and other intelligent functionality. For example, a search for \"winter clothes\" can surface relevant products even when \"winter\" isn't part of a product name."
+      },
+      {
+        "id": "faq-4",
+        "question": "Can AI analyze my business data?",
+        "answer": "Yes. AI-powered business tools can be designed to analyze relevant business data and provide insights through natural-language queries, depending on the available data and system architecture."
+      },
+      {
+        "id": "faq-5",
+        "question": "What is an AI agent?",
+        "answer": "An AI agent is a system designed to perform tasks or interact with information based on instructions and defined capabilities. The appropriate design depends on what the agent needs to accomplish."
+      }
+    ]
+  },
+  "ctaSection": {
+    "headlineLines": ["Ready to", "Build With AI?"],
+    "title": "Let's Turn an AI Idea Into Something Your Business Can Use.",
+    "cta": {
+      "label": "Start Your AI Project",
+      "href": "/contact"
+    }
+  }
+}

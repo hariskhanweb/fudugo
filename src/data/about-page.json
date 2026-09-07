@@ -48,39 +48,39 @@
     ]
   },
   "industries": {
-    "title": "Industries We Serve.",
+    "title": "Industries\nWe Serve.",
     "eyebrow": "(Industries)",
-    "description": "We've built motion for brands across 18 countries and dozens of industries.",
+    "description": "We've built websites, apps, and growth strategies for clients across the US, Canada, Australia, New Zealand, EU, and UK - spanning dozens of industries.",
     "items": [
-      {
-        "icon": "saas",
-        "title": "SaaS & Technology",
-        "description": "Explainer videos, product demos, UI animation lorem ipsum dolor."
-      },
       {
         "icon": "health",
         "title": "Healthcare & Medtech",
-        "description": "Patient education, device visualization, brand films lorem."
+        "description": "HIPAA-conscious booking systems, patient portals, and websites that make healthcare easier to access."
       },
       {
-        "icon": "finance",
-        "title": "Finance & FinTech",
-        "description": "Data storytelling, product explainers, investor videos lorem ipsum."
+        "icon": "realestate",
+        "title": "Real Estate & Property",
+        "description": "Listing platforms, virtual tours, and lead-generating websites built to convert browsers into buyers."
       },
       {
         "icon": "retail",
-        "title": "E-commerce & Retail",
-        "description": "Product visualization, social motion, launch films, lorem ipsum."
+        "title": "E-Commerce & Retail",
+        "description": "High-converting online stores, product catalogs, and checkout experiences built for scale."
+      },
+      {
+        "icon": "finance",
+        "title": "Finance & Professional Services",
+        "description": "Secure, trust-building websites and portals for firms where credibility is everything."
       },
       {
         "icon": "education",
         "title": "Education & EdTech",
-        "description": "Course content, explainers, brand identity films lorem ipsum."
+        "description": "Course platforms, enrollment systems, and content-rich sites built for learning at scale."
       },
       {
         "icon": "enterprise",
         "title": "Enterprise & B2B",
-        "description": "Internal comms, brand motion systems, event films, lorem."
+        "description": "Corporate websites, internal tools, and digital platforms built for complex, multi-stakeholder businesses."
       }
     ]
   },

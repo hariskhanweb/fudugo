@@ -11,6 +11,11 @@ import { cn } from "@/lib/utils";
 gsap.registerPlugin(ScrollTrigger);
 
 type PageHeroSectionProps = {
+  title?: string;
+  category?: string;
+  pageTitle?: string;
+  image?: string;
+  imageAlt?: string;
   content?: Partial<PageHeroContent>;
   className?: string;
   priorityImage?: boolean;
@@ -19,15 +24,27 @@ type PageHeroSectionProps = {
 };
 
 export default function PageHeroSection({
+  title,
+  category,
+  pageTitle,
+  image,
+  imageAlt,
   content,
   className,
   priorityImage = true,
   imagePosition,
 }: PageHeroSectionProps) {
   const sectionRef = useRef<HTMLElement>(null);
-  const data: PageHeroContent = { ...defaultContent.hero, ...content };
+  const resolvedTitle = title ?? pageTitle ?? content?.title ?? defaultContent.hero.title;
+  const data: PageHeroContent = {
+    ...defaultContent.hero,
+    ...content,
+    title: resolvedTitle,
+    ...(image ? { image } : {}),
+    ...(imageAlt ? { imageAlt } : {}),
+  };
   const objectPosition =
-    imagePosition ?? data.imagePosition ?? "center";
+    imagePosition ?? content?.imagePosition ?? data.imagePosition ?? "center";
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -72,7 +89,7 @@ export default function PageHeroSection({
         <div className="absolute inset-0 flex items-center justify-center px-5">
           <h1
             data-page-hero="title"
-            className="font-sans text-[clamp(56px,12vw,120px)] font-bold leading-none tracking-tight text-white"
+            className="text-center font-sans text-[clamp(40px,7.5vw,100px)] font-bold leading-[1.05] tracking-tight text-white max-w-5xl"
           >
             {data.title}
           </h1>

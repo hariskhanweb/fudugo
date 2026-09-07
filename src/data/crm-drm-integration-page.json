@@ -1,0 +1,177 @@
+{
+  "hero": {
+    "eyebrow": "CRM & DRM INTEGRATION",
+    "title": "Connect Your Customer and Dealer Data Into One System.",
+    "description": "We integrate and customize CRM and DRM platforms, connecting your customer relationships, dealer networks, and existing business tools into one AI-assisted system, built to help you manage relationships instead of chasing scattered data.",
+    "ctaLabel": "Get a Free Quote",
+    "ctaHref": "/contact",
+    "secondaryCtaLabel": "Explore Capabilities",
+    "secondaryCtaHref": "#capabilities",
+    "image": "/ai-agent-nodes.jpg",
+    "meta": [
+      { "label": "Core CRMs", "value": "Salesforce · HubSpot · Zoho" },
+      { "label": "Sync Model", "value": "Bi-Directional · Real-Time" },
+      { "label": "Security", "value": "Enterprise RBAC · OAuth 2.0" }
+    ]
+  },
+  "introSection": {
+    "eyebrow": "INTEGRATION, WITH PURPOSE",
+    "title": "Disconnected Systems Cost You More Than Time.",
+    "lead": "When your customer data lives in one place, your dealer or distributor records live in another, and your sales team is working from a spreadsheet nobody trusts, decisions get slower and relationships fall through the cracks.",
+    "narrative": "At FuduGo, we integrate CRM and DRM platforms directly into your existing workflows, connecting customer data, dealer relationships, and business tools into one system your team can actually rely on, backed by AI-assisted development to keep the integration reliable and secure.",
+    "image": "/work-fintech.jpg"
+  },
+  "whatWeOffer": {
+    "eyebrow": "What We Deliver",
+    "title": "One System, Fully Connected.",
+    "capabilities": [
+      {
+        "number": "01",
+        "id": "crm-integration",
+        "title": "CRM Integration",
+        "description": "Connecting or customizing CRM platforms to match your actual sales process, not a generic pipeline template.",
+        "icon": "handshake",
+        "image": "/Image-32.jpg"
+      },
+      {
+        "number": "02",
+        "id": "drm-integration",
+        "title": "DRM Integration",
+        "description": "Dealer and distributor relationship systems that keep your network data centralized, accurate, and easy to manage.",
+        "icon": "workflow",
+        "image": "/work-logistics.jpg"
+      },
+      {
+        "number": "03",
+        "id": "third-party-api",
+        "title": "Third-Party & API Integration",
+        "description": "Connecting your CRM/DRM to the other tools you already use, including payment systems, marketing platforms, and internal databases.",
+        "icon": "terminal",
+        "image": "/ai-agent-nodes.jpg"
+      },
+      {
+        "number": "04",
+        "id": "data-migration-sync",
+        "title": "Data Migration & Sync",
+        "description": "Moving existing customer and dealer data into your new or integrated system without losing accuracy or history.",
+        "icon": "database",
+        "image": "/Image-19.jpg"
+      }
+    ]
+  },
+  "aiDevelopment": {
+    "eyebrow": "(AI + Development)",
+    "title": "How AI Makes Your CRM & DRM Smarter",
+    "lead": "We use AI-enabled development tools as part of our everyday build process, and where it adds real value, we build AI into the integration itself, not as a gimmick, but as a working part of how your team manages relationships.",
+    "items": [
+      {
+        "number": "01",
+        "title": "Plain-Language Data Queries",
+        "description": "Instead of digging through reports, your team can ask a direct question, like \"Which dealers had the biggest drop in orders this quarter?\", and get an AI-generated answer pulled directly from your connected data.",
+        "icon": "search"
+      },
+      {
+        "number": "02",
+        "title": "Automatic Relationship Insights",
+        "description": "Our AI-assisted dashboards can surface patterns, such as at-risk customer accounts or underperforming dealer regions, without manual report-building.",
+        "icon": "chart"
+      },
+      {
+        "number": "03",
+        "title": "Faster, More Reliable Integration",
+        "description": "The same AI-assisted coding practices we use across every project, including continuous best-practice checks and early security flagging, apply here too, so sensitive customer and dealer data is handled on a secure, well-tested foundation.",
+        "icon": "shield"
+      },
+      {
+        "number": "04",
+        "title": "Cleaner Data, Automatically",
+        "description": "AI-assisted logic can help flag duplicate or inconsistent records during integration, reducing the manual cleanup work your team would otherwise have to do by hand.",
+        "icon": "sparkles"
+      }
+    ]
+  },
+  "techStack": {
+    "eyebrow": "OUR TECHNOLOGY STACK",
+    "title": "Built With the Right Technology.",
+    "lead": "We select the right integration approach based on your existing systems, data structure, and long-term scalability needs.",
+    "categories": [
+      {
+        "id": "backend",
+        "number": "01",
+        "name": "Backend",
+        "icon": "terminal",
+        "skills": ["Node.js", "PHP", "Python", "Django", "Flask", "Laravel"]
+      },
+      {
+        "id": "database",
+        "number": "02",
+        "name": "Database",
+        "icon": "database",
+        "skills": ["MongoDB", "MySQL", "PostgreSQL", "SQLite"]
+      },
+      {
+        "id": "integration-apis",
+        "number": "03",
+        "name": "Integration & APIs",
+        "icon": "workflow",
+        "skills": ["REST APIs", "Third-party CRM/DRM platforms", "Payment & shipping gateways"]
+      },
+      {
+        "id": "security",
+        "number": "04",
+        "name": "Security",
+        "icon": "shield",
+        "skills": ["Data encryption", "Secure API authentication", "Access-controlled data handling"]
+      },
+      {
+        "id": "cloud-deployment",
+        "number": "05",
+        "name": "Cloud & Deployment",
+        "icon": "cloud",
+        "skills": ["AWS", "Google Cloud", "Azure", "Docker"]
+      }
+    ]
+  },
+  "faqs": {
+    "eyebrow": "QUESTIONS & ANSWERS",
+    "title": "Frequently Asked Questions",
+    "lead": "Clear answers about connecting CRM, DRM, and ERP platforms safely and effectively.",
+    "ctaLabel": "Discuss Your Integration",
+    "ctaHref": "/contact",
+    "items": [
+      {
+        "id": "faq-1",
+        "question": "What does FuduGo offer in CRM and DRM integration?",
+        "answer": "FuduGo integrates and customizes CRM and DRM platforms, connects them to your existing business tools, and migrates existing customer and dealer data into the new system."
+      },
+      {
+        "id": "faq-2",
+        "question": "Can you integrate a CRM/DRM we already use, or do we need to switch platforms?",
+        "answer": "In most cases, we can integrate and customize your existing CRM or DRM platform. Where a platform genuinely can't support what you need, we'll tell you directly rather than forcing a workaround."
+      },
+      {
+        "id": "faq-3",
+        "question": "Does FuduGo use AI in CRM/DRM systems?",
+        "answer": "Yes. Where it adds real value, we build AI-powered features like plain-language data queries and automated relationship insights directly into the integration."
+      },
+      {
+        "id": "faq-4",
+        "question": "Will our existing customer and dealer data be safe during migration?",
+        "answer": "Yes. We follow a structured migration process with data validation at each step, backed by the same AI-assisted security checks we use across all development."
+      },
+      {
+        "id": "faq-5",
+        "question": "Can this connect to other tools we use, like payment or marketing platforms?",
+        "answer": "Yes. We regularly build integrations between CRM/DRM systems and third-party tools like payment gateways, marketing platforms, and internal databases."
+      }
+    ]
+  },
+  "ctaSection": {
+    "headlineLines": ["Ready to", "Build?"],
+    "title": "Let's Connect Your Systems Into One That Actually Works.",
+    "cta": {
+      "label": "Get a Free Quote",
+      "href": "/contact"
+    }
+  }
+}

@@ -1,0 +1,239 @@
+{
+  "hero": {
+    "eyebrow": "DIGITAL MARKETING",
+    "title": "Don't Just Get Seen. Get Found by the Right People.",
+    "description": "We help businesses strengthen their digital presence through SEO, content, social media, paid advertising, and data-driven strategies designed to reach the right audience and generate meaningful business results.",
+    "ctaLabel": "Start Your Campaign",
+    "ctaHref": "/contact",
+    "secondaryCtaLabel": "Explore capabilities",
+    "secondaryCtaHref": "#capabilities",
+    "image": "/Image-4-1.jpg",
+    "imageAlt": "Digital Marketing by FuduGo"
+  },
+  "introSection": {
+    "eyebrow": "MARKETING WITH PURPOSE",
+    "title": "Turn Digital Visibility Into Business Growth.",
+    "lead": "Being visible online is only the beginning. Your marketing should reach people who are actually looking for what your business offers.",
+    "paragraphs": [
+      "At FuduGo, we combine SEO, content, social media, paid advertising, and data to help businesses build a stronger digital presence and attract the right audience.",
+      "Our approach focuses on more than traffic and impressions; we look at how digital marketing can contribute to visibility, engagement, leads, and business growth."
+    ],
+    "services": [
+      "Search Engine Optimization (SEO)",
+      "Social Media Marketing & Management",
+      "High-ROI Paid Advertising (PPC)",
+      "Data-Driven Conversion Optimization"
+    ]
+  },
+  "whatWeOffer": {
+    "eyebrow": "OUR DIGITAL MARKETING SERVICES",
+    "title": "Different Channels. One Clear Goal: Business Growth.",
+    "items": [
+      {
+        "number": "01",
+        "title": "SEO",
+        "description": "Improve your search visibility and help your website reach people actively searching for your products, services, or solutions.",
+        "icon": "search",
+        "image": "/marketing-seo-blue.jpg"
+      },
+      {
+        "number": "02",
+        "title": "Content Marketing",
+        "description": "Create useful, relevant content that answers customer questions, builds authority, and supports your search and marketing goals.",
+        "icon": "content",
+        "image": "/marketing-content-blue.jpg"
+      },
+      {
+        "number": "03",
+        "title": "Social Media Marketing",
+        "description": "Build your brand presence across social platforms with content designed to engage your audience and keep your business visible.",
+        "icon": "share",
+        "image": "/marketing-social-blue.jpg"
+      },
+      {
+        "number": "04",
+        "title": "Paid Advertising",
+        "description": "Reach targeted audiences through paid campaigns designed around your business objectives, from generating leads to driving conversions.",
+        "icon": "target",
+        "image": "/marketing-paid-ads-blue.jpg"
+      }
+    ]
+  },
+  "ourApproach": {
+    "eyebrow": "HOW WE MARKET",
+    "title": "Start With Your Business. Then Build the Strategy.",
+    "lead": "We don't begin by choosing a platform or launching a campaign. We first understand what you're trying to achieve.",
+    "steps": [
+      {
+        "step": "01",
+        "title": "Understand",
+        "description": "We learn about your business, audience, offerings, competition, and growth objectives."
+      },
+      {
+        "step": "02",
+        "title": "Research",
+        "description": "We analyze search behavior, audiences, competitors, keywords, content opportunities, and relevant digital channels."
+      },
+      {
+        "step": "03",
+        "title": "Plan",
+        "description": "We build a marketing strategy around the channels and activities most relevant to your goals."
+      },
+      {
+        "step": "04",
+        "title": "Create",
+        "description": "We develop content, campaigns, creative assets, landing pages, and other marketing elements required for execution."
+      },
+      {
+        "step": "05",
+        "title": "Measure",
+        "description": "We monitor performance using relevant data and identify what's working, what's changing, and where opportunities exist."
+      },
+      {
+        "step": "06",
+        "title": "Improve",
+        "description": "Digital marketing is continuous. We refine campaigns, content, targeting, and strategy based on performance and changing business needs."
+      }
+    ]
+  },
+  "seoApproach": {
+    "eyebrow": "OUR SEO APPROACH",
+    "title": "Build Visibility That Keeps Working.",
+    "lead": "Search visibility can become a long-term source of qualified traffic when it's built around the right audience and useful content.",
+    "subheading": "Our SEO Approach Can Include:",
+    "items": [
+      {
+        "id": "technical-seo",
+        "number": "01",
+        "title": "Technical SEO",
+        "description": "Improve the technical foundation that supports search performance.",
+        "icon": "technical"
+      },
+      {
+        "id": "on-page-seo",
+        "number": "02",
+        "title": "On-Page SEO",
+        "description": "Optimize pages around relevant search intent, content, structure, and user experience.",
+        "icon": "on-page"
+      },
+      {
+        "id": "off-page-seo",
+        "number": "03",
+        "title": "Off-Page SEO",
+        "description": "Build website authority through relevant backlinks, digital mentions, citations, and other external signals.",
+        "icon": "off-page"
+      },
+      {
+        "id": "content-strategy",
+        "number": "04",
+        "title": "Content Strategy",
+        "description": "Create useful content around topics and questions your audience actually searches for.",
+        "icon": "content"
+      },
+      {
+        "id": "local-seo",
+        "number": "05",
+        "title": "Local SEO",
+        "description": "Strengthen visibility for location-based searches and local customers.",
+        "icon": "local"
+      },
+      {
+        "id": "performance-tracking",
+        "number": "06",
+        "title": "Performance Tracking",
+        "description": "Use tools such as Google Search Console and Google Analytics to monitor visibility, traffic, rankings, and changes over time.",
+        "icon": "tracking"
+      }
+    ]
+  },
+  "contentAndSocial": {
+    "eyebrow": "CONTENT + SOCIAL",
+    "title": "Give Your Brand Something Worth Following.",
+    "lead": "Your digital presence isn't built through one post or one campaign. It grows through consistent, relevant communication.",
+    "subheading": "We can help businesses develop:",
+    "checklist": [
+      "Social media content",
+      "Educational content",
+      "Promotional campaigns",
+      "Blog content",
+      "Visual creatives",
+      "Short-form video content",
+      "Brand messaging",
+      "Content calendars"
+    ],
+    "ctaLabel": "Start Your Campaign",
+    "ctaHref": "/contact",
+    "metric": {
+      "label": "Audience Engagement & Retention",
+      "percentage": 92
+    },
+    "image": "/marketing-content-team.jpg",
+    "card": {
+      "headline": "Purpose-Driven Content Strategy",
+      "text": "The goal is to create content that informs, engages, and supports your wider marketing objectives rather than simply filling a content calendar.",
+      "linkText": "Explore Strategy",
+      "linkHref": "/contact"
+    }
+  },
+  "paidAdvertising": {
+    "eyebrow": "PAID MEDIA",
+    "title": "Put Your Business in Front of the Right Audience.",
+    "lead": "Paid advertising allows businesses to reach targeted audiences more directly.",
+    "subheading": "We can build campaigns around objectives such as:",
+    "checklist": [
+      "Lead generation",
+      "Website traffic",
+      "Product promotion",
+      "Brand awareness",
+      "Local visibility",
+      "Conversions"
+    ],
+    "ctaLabel": "Start Your Campaign",
+    "ctaHref": "/contact",
+    "metric": {
+      "label": "Targeted Campaign Efficiency & ROAS",
+      "percentage": 96
+    },
+    "image": "/marketing-paid-media.jpg",
+    "card": {
+      "headline": "Performance-First Media Buying",
+      "text": "Campaign performance can then be monitored and refined based on relevant metrics, audience behavior, and business goals.",
+      "linkText": "Explore Paid Media",
+      "linkHref": "/contact"
+    }
+  },
+  "growthGoals": {
+    "eyebrow": "YOUR GROWTH GOALS",
+    "title": "What Do You Want Your Marketing to Do?",
+    "lead": "Every business enters digital marketing with distinct priorities. We align channels and execution to your exact objectives.",
+    "ctaLabel": "Start achieving your goals",
+    "ctaHref": "/contact",
+    "items": [
+      {
+        "id": "goal-1",
+        "question": "Need More Search Visibility?",
+        "answer": "Build an SEO strategy around the searches your potential customers are making."
+      },
+      {
+        "id": "goal-2",
+        "question": "Want More Qualified Leads?",
+        "answer": "Combine targeted campaigns, relevant landing pages, and conversion-focused marketing."
+      },
+      {
+        "id": "goal-3",
+        "question": "Building Your Brand?",
+        "answer": "Create a consistent digital presence across search, social media, content, and other relevant channels."
+      },
+      {
+        "id": "goal-4",
+        "question": "Want More Local Customers?",
+        "answer": "Strengthen your local search presence so people nearby can find your business."
+      },
+      {
+        "id": "goal-5",
+        "question": "Launching Something New?",
+        "answer": "Build a digital campaign around your new product, service, location, or business initiative."
+      }
+    ]
+  }
+}

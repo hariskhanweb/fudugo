@@ -1,0 +1,168 @@
+{
+  "slug": "business-tools-development",
+  "title": "Business Tools Development",
+  "hero": {
+    "eyebrow": "BUSINESS TOOLS DEVELOPMENT",
+    "title": "Turn Business Processes Into Powerful Digital Tools.",
+    "description": "We build custom business tools that bring your processes, data, and teams together, helping you simplify operations, improve visibility, and give your business the technology it needs to grow.",
+    "ctaLabel": "Start Your Project",
+    "ctaHref": "/contact",
+    "secondaryCtaLabel": "Explore Capabilities",
+    "secondaryCtaHref": "#capabilities",
+    "image": "/work-fintech.jpg",
+    "meta": [
+      { "label": "Architecture", "value": "Custom Cloud ERP & Portals" },
+      { "label": "Security", "value": "Enterprise RBAC · SSO · SOC2 Ready" },
+      { "label": "Automation", "value": "AI-Assisted Workflow Engines" }
+    ]
+  },
+  "introSection": {
+    "eyebrow": "BUSINESS SOFTWARE, WITH PURPOSE",
+    "title": "Your Business Shouldn't Have to Work Around Its Software.",
+    "lead": "Every business has its own processes, teams, data, and operational requirements. Off-the-shelf software doesn't always fit the way you work.",
+    "narrative": "FuduGo builds custom business tools around your requirements, bringing the functionality you need into systems designed to make everyday operations simpler, more connected, and more efficient.",
+    "subNarrative": "From ERP and CRM to HRM, SCM, and CMS, we build business software that helps your teams work smarter and gives you better visibility into your operations.",
+    "image": "/work-ecommerce.jpg"
+  },
+  "whatWeOffer": {
+    "eyebrow": "BUSINESS TOOLS WE BUILD",
+    "title": "One Business. Different Needs. One Connected Approach.",
+    "capabilities": [
+      {
+        "id": "erp",
+        "number": "01",
+        "title": "ERP - Enterprise Resource Planning",
+        "description": "Bring core business processes together in a centralized system designed around your operations, helping teams manage information and workflows more efficiently.",
+        "icon": "workflow",
+        "image": "/work-logistics.jpg"
+      },
+      {
+        "id": "crm",
+        "number": "02",
+        "title": "CRM - Customer Relationship Management",
+        "description": "Manage customer information, interactions, sales processes, and relationships through a centralized system built around your business.",
+        "icon": "handshake",
+        "image": "/Image-32.jpg"
+      },
+      {
+        "id": "hrm",
+        "number": "03",
+        "title": "HRM - Human Resource Management",
+        "description": "Simplify employee-related processes and bring essential HR information and workflows into one accessible system.",
+        "icon": "shield",
+        "image": "/Image-19.jpg"
+      },
+      {
+        "id": "scm",
+        "number": "04",
+        "title": "SCM - Supply Chain Management",
+        "description": "Connect and manage supply chain processes, information, and workflows to improve visibility and operational efficiency.",
+        "icon": "chart",
+        "image": "/work-fintech.jpg"
+      },
+      {
+        "id": "cms",
+        "number": "05",
+        "title": "CMS - Content Management Systems",
+        "description": "Give your teams the tools to create, manage, organize, and update digital content without depending on developers for every change.",
+        "icon": "terminal",
+        "image": "/work-ecommerce.jpg"
+      }
+    ]
+  },
+  "aiDevelopment": {
+    "eyebrow": "AI + BUSINESS SYSTEMS",
+    "title": "Make Your Business Tools Work Smarter.",
+    "lead": "AI can become part of both how we develop your business tools and how your teams use them.",
+    "developerText": "Our developers use AI-assisted coding tools to accelerate implementation, work through complex logic, generate specific code blocks, and identify potential issues during development.",
+    "opportunityText": "But the bigger opportunity is what AI can do inside the system itself.",
+    "systemText": "It can help turn business data into understandable insights, automate repetitive processes, and give users a more natural way to interact with business systems.",
+    "ctaLabel": "Start Your Project",
+    "ctaHref": "/contact",
+    "image": "/ai-agent-nodes.jpg"
+  },
+  "techStack": {
+    "eyebrow": "OUR TECHNOLOGY STACK",
+    "title": "Built With the Right Technology.",
+    "lead": "We select the right stack for your business tool based on your data structure, integration needs, scale, and long-term maintainability.",
+    "categories": [
+      {
+        "id": "frontend",
+        "number": "01",
+        "name": "Frontend",
+        "icon": "workflow",
+        "skills": ["React", "Angular", "Next.js", "Vue.js"]
+      },
+      {
+        "id": "backend",
+        "number": "02",
+        "name": "Backend",
+        "icon": "terminal",
+        "skills": ["Node.js", "PHP", "Python", "Django", "Flask", "Laravel"]
+      },
+      {
+        "id": "database",
+        "number": "03",
+        "name": "Database",
+        "icon": "database",
+        "skills": ["MongoDB", "MySQL", "PostgreSQL", "SQLite"]
+      },
+      {
+        "id": "integrations",
+        "number": "04",
+        "name": "Integrations",
+        "icon": "handshake",
+        "skills": ["CRM & DRM integration", "Third-party APIs", "Payment & shipping gateways"]
+      },
+      {
+        "id": "cloud-deployment",
+        "number": "05",
+        "name": "Cloud & Deployment",
+        "icon": "cloud",
+        "skills": ["AWS", "Google Cloud", "Azure", "Docker"]
+      }
+    ]
+  },
+  "faqs": {
+    "eyebrow": "QUESTIONS & ANSWERS",
+    "title": "Frequently Asked Questions",
+    "lead": "Everything you need to know about building custom ERP, CRM, and operational tools for your organization.",
+    "ctaLabel": "Discuss Your Tool",
+    "ctaHref": "/contact",
+    "items": [
+      {
+        "id": "faq-1",
+        "question": "What does FuduGo offer in business tools development?",
+        "answer": "FuduGo builds custom ERP, CRM, HRM, and supply chain management systems, along with custom CMS platforms and internal business tools tailored to specific operational needs."
+      },
+      {
+        "id": "faq-2",
+        "question": "Can you build a system that replaces our spreadsheets and disconnected tools?",
+        "answer": "Yes. We design custom systems that consolidate scattered workflows, spreadsheets, and disconnected software into one platform built around how your business actually operates."
+      },
+      {
+        "id": "faq-3",
+        "question": "Does FuduGo use AI in business tools?",
+        "answer": "Yes. Where it adds real value, we build AI-powered features like plain-language performance summaries, automated reporting, and improvement recommendations directly into the tools we build."
+      },
+      {
+        "id": "faq-4",
+        "question": "Will I need technical knowledge to use the AI features?",
+        "answer": "No. The AI features we build are designed to be used in plain language, so team members can ask questions and get answers without needing to understand the underlying data or reports."
+      },
+      {
+        "id": "faq-5",
+        "question": "Can this integrate with tools we already use?",
+        "answer": "Yes. We regularly build integrations with third-party CRMs, payment gateways, shipping carriers, and other business software as part of a custom system."
+      }
+    ]
+  },
+  "ctaSection": {
+    "headlineLines": ["Ready to Build", "Better Systems?"],
+    "title": "Let's Build Technology Around the Way Your Business Works.",
+    "cta": {
+      "label": "Start Your Project",
+      "href": "/contact"
+    }
+  }
+}

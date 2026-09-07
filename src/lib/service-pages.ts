@@ -12,7 +12,7 @@ export function getAllServiceSlugs(): string[] {
 }
 
 /** Slugs served by dedicated folders under /services (not [slug]). */
-export const STATIC_SERVICE_SLUGS = ["web-solutions"] as const;
+export const STATIC_SERVICE_SLUGS = ["web-solutions", "mobile-apps", "digital-marketing", "ai-automation", "crm-drm-integration", "business-tools-development"] as const;
 
 export function getDynamicServiceSlugs(): string[] {
   return getAllServiceSlugs().filter(

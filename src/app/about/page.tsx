@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import {
-    AboutSection,
-  AwardsSection,
+  AboutSection,
   ClientsSection,
   CtaSection,
   IndustriesSection,
@@ -26,7 +25,6 @@ export default function AboutPage() {
       />
       <AboutSection />
       <ClientsSection />
-      <AwardsSection />
       <IndustriesSection />
       <SolutionsSection />
       <CtaSection />
