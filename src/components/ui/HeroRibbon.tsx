@@ -40,7 +40,7 @@ export default function HeroRibbon({ className }: HeroRibbonProps) {
 
     let disposed = false;
     let animationFrameId = 0;
-    let highResTexture: THREE.CanvasTexture | null = null;
+    const cardTextures: THREE.Texture[] = [];
 
     container.innerHTML = "";
 
@@ -51,12 +51,13 @@ export default function HeroRibbon({ className }: HeroRibbonProps) {
     const camera = new THREE.PerspectiveCamera(7, width / height, 0.01, 100000);
     camera.position.set(0, 0, 70);
 
+    const pixelRatio = Math.min(window.devicePixelRatio || 1, 1.5);
     const renderer = new THREE.WebGLRenderer({
       alpha: true,
-      antialias: true,
+      antialias: pixelRatio < 1.5,
       powerPreference: "high-performance",
     });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    renderer.setPixelRatio(pixelRatio);
     renderer.setSize(width, height);
     renderer.toneMapping = THREE.NoToneMapping;
     renderer.domElement.style.touchAction = "none";
@@ -66,12 +67,10 @@ export default function HeroRibbon({ className }: HeroRibbonProps) {
     towerGroup.rotation.set(-0.2, 0.5, 0.2);
     scene.add(towerGroup);
 
-    const numImages = IMAGE_SOURCES.length;
     const cardAspect = CARD_WIDTH / CARD_HEIGHT;
     const circumference = 2 * Math.PI * RADIUS;
     const cardWidthIn3D = RIBBON_HEIGHT * cardAspect;
-    const cardsPerCircumference = circumference / cardWidthIn3D;
-    const repeatX = cardsPerCircumference / numImages;
+    const cardsAround = circumference / cardWidthIn3D;
 
     const vertexShader = `
       varying vec2 vUv;
@@ -91,16 +90,35 @@ export default function HeroRibbon({ className }: HeroRibbonProps) {
     `;
 
     const fragmentShader = `
-      uniform sampler2D map;
-      uniform vec2 uvRepeat;
+      uniform sampler2D map0;
+      uniform sampler2D map1;
+      uniform sampler2D map2;
+      uniform sampler2D map3;
+      uniform sampler2D map4;
+      uniform sampler2D map5;
+      uniform float cardsAround;
 
       varying vec2 vUv;
       varying vec3 vNormal;
       varying vec3 vViewPosition;
 
+      vec4 sampleCard(float slot, vec2 uv) {
+        if (slot < 0.5) return texture2D(map0, uv);
+        if (slot < 1.5) return texture2D(map1, uv);
+        if (slot < 2.5) return texture2D(map2, uv);
+        if (slot < 3.5) return texture2D(map3, uv);
+        if (slot < 4.5) return texture2D(map4, uv);
+        return texture2D(map5, uv);
+      }
+
       void main() {
-        vec2 coords = fract(vUv * uvRepeat);
-        vec4 col = texture2D(map, coords);
+        float along = vUv.x * cardsAround;
+        float localU = fract(along);
+        if (!gl_FrontFacing) {
+          localU = 1.0 - localU;
+        }
+        vec2 coords = vec2(localU, vUv.y);
+        vec4 col = sampleCard(mod(floor(along), 6.0), coords);
 
         vec3 normal = normalize(vNormal);
         vec3 viewDir = normalize(vViewPosition);
@@ -144,36 +162,25 @@ export default function HeroRibbon({ className }: HeroRibbonProps) {
       }
     `;
 
-    const placeholderCanvas = document.createElement("canvas");
-    placeholderCanvas.width = CARD_WIDTH * numImages;
-    placeholderCanvas.height = CARD_HEIGHT;
-    const placeholderCtx = placeholderCanvas.getContext("2d");
-
-    if (placeholderCtx) {
-      for (let index = 0; index < numImages; index++) {
-        const x = index * CARD_WIDTH;
-        placeholderCtx.fillStyle = index % 2 === 0 ? "#0c192c" : "#081220";
-        placeholderCtx.fillRect(x, 0, CARD_WIDTH, CARD_HEIGHT);
-        placeholderCtx.strokeStyle = "#1e3a5f";
-        placeholderCtx.lineWidth = 4;
-        placeholderCtx.strokeRect(x + 10, 20, CARD_WIDTH - 20, CARD_HEIGHT - 40);
-        placeholderCtx.fillStyle = "#2563eb";
-        placeholderCtx.fillRect(x + 30, 50, CARD_WIDTH - 60, 24);
-        placeholderCtx.fillStyle = "#1e293b";
-        placeholderCtx.fillRect(x + 30, 95, CARD_WIDTH - 140, 16);
-        placeholderCtx.fillRect(x + 30, 125, CARD_WIDTH - 100, 16);
-      }
-    }
-
-    const initialTexture = new THREE.CanvasTexture(placeholderCanvas);
+    const initialTexture = new THREE.DataTexture(
+      new Uint8Array([8, 18, 36, 255]),
+      1,
+      1,
+    );
+    initialTexture.needsUpdate = true;
     initialTexture.wrapS = THREE.RepeatWrapping;
     initialTexture.wrapT = THREE.ClampToEdgeWrapping;
     initialTexture.minFilter = THREE.LinearFilter;
     initialTexture.magFilter = THREE.LinearFilter;
 
     const uniforms = {
-      map: { value: initialTexture },
-      uvRepeat: { value: new THREE.Vector2(repeatX, 1) },
+      map0: { value: initialTexture },
+      map1: { value: initialTexture },
+      map2: { value: initialTexture },
+      map3: { value: initialTexture },
+      map4: { value: initialTexture },
+      map5: { value: initialTexture },
+      cardsAround: { value: cardsAround },
     };
 
     const towerMaterial = new THREE.ShaderMaterial({
@@ -188,7 +195,7 @@ export default function HeroRibbon({ className }: HeroRibbonProps) {
       RADIUS,
       RADIUS,
       RIBBON_HEIGHT,
-      80,
+      64,
       1,
       true,
     );
@@ -231,56 +238,22 @@ export default function HeroRibbon({ className }: HeroRibbonProps) {
 
     updateCameraAndGroup();
 
-    function applyLoadedTexture(loadedImages: HTMLImageElement[]) {
-      if (disposed) return;
-
-      const collageCanvas = document.createElement("canvas");
-      collageCanvas.width = CARD_WIDTH * IMAGE_SOURCES.length;
-      collageCanvas.height = CARD_HEIGHT;
-      const ctx = collageCanvas.getContext("2d");
-
-      if (ctx) {
-        IMAGE_SOURCES.forEach((_, index) => {
-          const image = loadedImages[index];
-          if (image?.naturalWidth) {
-            ctx.drawImage(image, index * CARD_WIDTH, 0, CARD_WIDTH, CARD_HEIGHT);
-          }
-        });
-      }
-
-      highResTexture = new THREE.CanvasTexture(collageCanvas);
-      highResTexture.wrapS = THREE.RepeatWrapping;
-      highResTexture.wrapT = THREE.ClampToEdgeWrapping;
-      highResTexture.minFilter = THREE.LinearFilter;
-      highResTexture.magFilter = THREE.LinearFilter;
-      highResTexture.needsUpdate = true;
-
-      towerMaterial.uniforms.map.value = highResTexture;
-      towerMaterial.uniforms.uvRepeat.value.set(repeatX, 1);
-      towerMaterial.needsUpdate = true;
-    }
-
-    const loadedImages: HTMLImageElement[] = [];
-    let loadedCount = 0;
-
     IMAGE_SOURCES.forEach((src, index) => {
       const image = new Image();
-      image.crossOrigin = "anonymous";
+      image.decoding = "async";
       image.src = src;
       image.onload = () => {
-        if (disposed) return;
-        loadedImages[index] = image;
-        loadedCount += 1;
-        if (loadedCount === IMAGE_SOURCES.length) {
-          applyLoadedTexture(loadedImages);
-        }
-      };
-      image.onerror = () => {
-        if (disposed) return;
-        loadedCount += 1;
-        if (loadedCount === IMAGE_SOURCES.length) {
-          applyLoadedTexture(loadedImages);
-        }
+        if (disposed || !image.naturalWidth) return;
+
+        const texture = new THREE.Texture(image);
+        texture.minFilter = THREE.LinearFilter;
+        texture.magFilter = THREE.LinearFilter;
+        texture.generateMipmaps = false;
+        texture.needsUpdate = true;
+
+        cardTextures[index]?.dispose();
+        cardTextures[index] = texture;
+        towerMaterial.uniforms[`map${index}`].value = texture;
       };
     });
 
@@ -395,7 +368,7 @@ export default function HeroRibbon({ className }: HeroRibbonProps) {
       geometry.dispose();
       towerMaterial.dispose();
       initialTexture.dispose();
-      highResTexture?.dispose();
+      cardTextures.forEach((texture) => texture.dispose());
     };
   }, []);
 
