@@ -212,7 +212,7 @@ export default function TestimonialsSection() {
                 </div>
               </div>
               <p className="max-w-36 font-sans text-sm leading-snug text-muted">
-                <span className="block">Trusted by Client</span>
+                <span className="block">Trusted by Clients</span>
                 <span className="block">World Wide</span>
               </p>
             </div>

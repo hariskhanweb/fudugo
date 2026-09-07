@@ -1,13 +1,188 @@
 {
+  "hero": {
+    "eyebrow": "WEB DESIGN & DEVELOPMENT",
+    "title": "Turn Your Website Into a Growth Engine.",
+    "description": "We design and develop websites that combine thoughtful experiences, reliable technology, and business-focused functionality built to help you attract customers, operate better, and grow.",
+    "ctaLabel": "Start a web project",
+    "ctaHref": "/contact",
+    "secondaryCtaLabel": "Explore capabilities",
+    "secondaryCtaHref": "#capabilities",
+    "image": "/Image-17.jpg",
+    "imageAlt": "Web Design & Development by FuduGo"
+  },
+  "introSection": {
+    "eyebrow": "WEB DEVELOPMENT, WITH PURPOSE",
+    "title": "Your Website Should Do More Than Look Good.",
+    "lead": "A website is often where customers discover your business, evaluate what you offer, and decide whether to take the next step.",
+    "paragraphs": [
+      "At FuduGo, we combine design, development, functionality, and AI-assisted engineering to create websites around the way your business actually works.",
+      "Whether you need a new business website, an e-commerce platform, a custom web application, or ongoing support, we build experiences that are designed for your users and your business goals."
+    ],
+    "services": [
+      "New Business Websites",
+      "E-Commerce Platforms",
+      "Custom Web Applications",
+      "Ongoing Support & Growth"
+    ]
+  },
+  "whatWeOffer": {
+    "eyebrow": "What We Deliver",
+    "title": "From First Click to Lasting Growth.",
+    "items": [
+      {
+        "number": "01",
+        "title": "Custom Web Design & Development",
+        "description": "Fully custom-built websites designed around your brand and your users, not templated themes.",
+        "icon": "code",
+        "image": "/Image-17.jpg"
+      },
+      {
+        "number": "02",
+        "title": "E-Commerce Website Development",
+        "description": "Online stores built on Magento, Shopify, WooCommerce, and more designed to convert browsers into buyers.",
+        "icon": "cart",
+        "image": "/Image-18.jpg"
+      },
+      {
+        "number": "03",
+        "title": "Website Maintenance & Support",
+        "description": "Ongoing updates, monitoring, and support so your site stays fast, secure, and up-to-date.",
+        "icon": "shield",
+        "image": "/Image-1.jpg"
+      },
+      {
+        "number": "04",
+        "title": "Graphic Design, Video Editing & Branding",
+        "description": "Visual identity, marketing assets, and brand consistency across your entire digital presence.",
+        "icon": "palette",
+        "image": "/Image-19.jpg"
+      }
+    ]
+  },
+  "aiDevelopment": {
+    "eyebrow": "(AI + Development)",
+    "title": "How AI Makes Your Website Better",
+    "lead": "We use AI-enabled development tools, including AI-powered coding agents, as part of our everyday development workflow, not as a gimmick.",
+    "features": [
+      {
+        "id": "clean-code",
+        "title": "Cleaner, More Consistent Code",
+        "description": "AI assists our developers with best-practice checks, helping us write cleaner, standardized code that's easier to maintain.",
+        "icon": "sparkles",
+        "tag": "Quality & Standards"
+      },
+      {
+        "id": "fast-development",
+        "title": "Faster Development, Without Cutting Corners",
+        "description": "AI speeds up code suggestions and repetitive tasks like forms and logic blocks. This reduces development time while allowing our developers to focus on complex, high-value work.",
+        "icon": "bolt",
+        "tag": "Velocity & Focus"
+      },
+      {
+        "id": "security",
+        "title": "Stronger Security From the Start",
+        "description": "AI-assisted tools can flag potential security gaps during development, helping our developers identify and address issues earlier.",
+        "icon": "shield-check",
+        "tag": "Proactive Protection"
+      },
+      {
+        "id": "ecommerce",
+        "title": "Smarter E-commerce Experiences",
+        "description": "We can build AI-powered search that understands intent, not just keywords. A search for \"winter clothes\" can surface jackets, sweaters, and thermal wear even when \"winter\" isn't a product name.",
+        "result": "The result: easier product discovery, fewer dead ends, and more opportunities to convert visitors into customers.",
+        "icon": "brain",
+        "tag": "Semantic Intent Engine",
+        "searchExample": {
+          "query": "winter clothes",
+          "intent": "Season + Cold Weather Attire",
+          "results": ["Insulated Down Jackets", "Merino Wool Sweaters", "Thermal Base Layers"]
+        }
+      }
+    ]
+  },
+  "techStack": {
+    "eyebrow": "OUR TECHNOLOGY STACK",
+    "title": "Built With the Right Technology.",
+    "description": "We work with a wide range of modern technologies and platforms, selecting the right stack based on your project's requirements, functionality, scalability, and long-term goals.",
+    "categories": [
+      {
+        "step": "01",
+        "id": "frontend",
+        "name": "Frontend",
+        "icon": "layout",
+        "description": "Modern, interactive, and ultra-responsive user interfaces.",
+        "skills": ["HTML5", "CSS3", "JavaScript", "React", "Next.js", "Angular", "Vue.js"]
+      },
+      {
+        "step": "02",
+        "id": "backend",
+        "name": "Backend",
+        "icon": "server",
+        "description": "Scalable APIs, business logic, and robust database architectures.",
+        "skills": ["PHP", "Node.js", "Python", "Django", "Flask", "FastAPI", "Laravel", "CodeIgniter"]
+      },
+      {
+        "step": "03",
+        "id": "cms",
+        "name": "CMS",
+        "icon": "file-text",
+        "description": "User-friendly content management systems built for effortless updates.",
+        "skills": ["WordPress", "Drupal", "Joomla", "Wix"]
+      },
+      {
+        "step": "04",
+        "id": "ecommerce",
+        "name": "E-Commerce",
+        "icon": "shopping-bag",
+        "description": "High-converting online store platforms and checkout engines.",
+        "skills": ["Magento", "Shopify", "WooCommerce", "PrestaShop", "BigCommerce"]
+      },
+      {
+        "step": "05",
+        "id": "cloud",
+        "name": "Cloud & Deployment",
+        "icon": "cloud",
+        "description": "Secure cloud infrastructure, global CDNs, and automated CI/CD.",
+        "skills": ["AWS", "Google Cloud", "Azure", "Vercel", "DigitalOcean"]
+      }
+    ]
+  },
+  "faqs": {
+    "eyebrow": "QUESTIONS & ANSWERS",
+    "title": "Frequently Asked Questions",
+    "description": "Clear answers to common questions about our web design, custom engineering, and AI-assisted workflows.",
+    "items": [
+      {
+        "id": "faq-1",
+        "question": "What does FuduGo offer in web design and development?",
+        "answer": "FuduGo provides custom web design and development, e-commerce website development, website maintenance and support, and related graphic design, video editing, and branding services."
+      },
+      {
+        "id": "faq-2",
+        "question": "Can FuduGo build a custom website from scratch?",
+        "answer": "Yes. FuduGo can design and develop websites around a business's specific requirements, functionality, audience, and objectives rather than relying solely on predefined templates."
+      },
+      {
+        "id": "faq-3",
+        "question": "Does FuduGo use AI for website development?",
+        "answer": "Yes. FuduGo uses AI-assisted coding tools to help developers with code suggestions, programming logic, implementation tasks, problem-solving, and identifying potential issues during development."
+      },
+      {
+        "id": "faq-4",
+        "question": "Does AI build the entire website?",
+        "answer": "No. AI is used selectively as a development assistant. FuduGo's developers remain responsible for architecture, project requirements, business logic, code review, testing, and final implementation."
+      },
+      {
+        "id": "faq-5",
+        "question": "Can you add AI features to my website?",
+        "answer": "Yes, where AI provides a meaningful business or user benefit. Potential applications include intelligent search, recommendations, business insights, automation, and other AI-powered functionality."
+      }
+    ]
+  },
   "backLabel": "Back to all services",
   "backHref": "/services",
   "title": "Web Solutions",
   "tags": ["Next.js", "Headless CMS", "API", "Integrations", "Performance"],
-  "lead": "Accelerating business growth through elegant web design, creative content and performance.",
-  "intro": [
-    "Website design is the base of a strong strategy that details clear brand goals and a surefire way to achieve them. Creative success isn't accidental — it's the product of researched planning and forward-thinking strategies that simplify and clarify.",
-    "Depending on the needs of your business, we mostly use a headless CMS or a modern app framework. This way you can keep your website up-to-date with a system that works best for your team."
-  ],
   "pillars": [
     {
       "id": "experience",
@@ -79,7 +254,7 @@
     "title": "We don't just build websites — we create digital experiences for forward-thinking brands.",
     "description": "Standing out through web design, creative content, and growth optimization. Our sites deliver engaging experiences to visitors while guaranteeing long-term profitability for our clients.",
     "ctaLabel": "Get in touch",
-    "ctaHref": "#contact",
+    "ctaHref": "/contact",
     "image": "/web-service.webp",
     "imageAlt": "Web design showcase"
   },
@@ -88,7 +263,7 @@
     "title": "Accelerating business growth through elegant web design, creative content and performance.",
     "description": "Website design is the base of a strong strategy that details clear brand goals and a surefire way to achieve them. Our websites deliver engaging experiences to visitors, while guaranteeing long-term profitability for our clients.",
     "ctaLabel": "Get in touch",
-    "ctaHref": "#contact"
+    "ctaHref": "/contact"
   },
   "process": {
     "eyebrow": "Our web design process",
@@ -164,7 +339,7 @@
       "Second Opinion"
     ],
     "ctaLabel": "Start the conversation",
-    "ctaHref": "#contact"
+    "ctaHref": "/contact"
   },
   "projects": {
     "eyebrow": "Selected work",

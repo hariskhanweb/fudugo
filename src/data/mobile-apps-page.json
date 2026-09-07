@@ -1,0 +1,223 @@
+{
+  "hero": {
+    "eyebrow": "MOBILE APPLICATION DEVELOPMENT",
+    "title": "Build a Mobile App That Moves Your Business Forward.",
+    "description": "We design and develop mobile applications that combine intuitive experiences, reliable technology, and business-focused functionality, helping you connect with customers, streamline operations, and create new opportunities for growth.",
+    "ctaLabel": "Start Your Project",
+    "ctaHref": "/contact",
+    "secondaryCtaLabel": "Explore capabilities",
+    "secondaryCtaHref": "#capabilities",
+    "image": "/Image-18.jpg",
+    "imageAlt": "Mobile Application Development by FuduGo"
+  },
+  "introSection": {
+    "eyebrow": "MOBILE APP DEVELOPMENT",
+    "title": "Build an App That Moves Your Business Forward.",
+    "lead": "A mobile app is often the most direct relationship you have with your customer — it lives on their phone, competes for their attention, and needs to earn a reason to be opened again tomorrow.",
+    "paragraphs": [
+      "At FuduGo, we combine design, development, platform strategy, and AI-assisted engineering to build apps around how your users actually behave.",
+      "Whether you need a customer-facing app, an internal business tool, or a platform to launch on both iOS and Android, we build experiences designed for retention, not just installs."
+    ],
+    "services": [
+      "iOS & Android Native Apps",
+      "Cross-Platform (React Native & Flutter)",
+      "Enterprise & Field Mobility",
+      "App Store Optimization & Deployment"
+    ]
+  },
+  "whatWeOffer": {
+    "eyebrow": "What We Deliver",
+    "title": "From First Install to Long-Term Engagement.",
+    "items": [
+      {
+        "number": "01",
+        "title": "Native & Cross-Platform Development",
+        "description": "Built with React Native, Flutter, or fully native code, whichever fits your product, timeline, and budget best.",
+        "icon": "code",
+        "image": "/mobile-dev.jpg"
+      },
+      {
+        "number": "02",
+        "title": "Mobile UI/UX Design",
+        "description": "User flows and interfaces designed specifically for mobile behavior, not scaled-down desktop layouts.",
+        "icon": "palette",
+        "image": "/mobile-ux.jpg"
+      },
+      {
+        "number": "03",
+        "title": "App Store Deployment & Support",
+        "description": "End-to-end submission to the App Store and Google Play, plus ongoing updates and post-launch maintenance.",
+        "icon": "shield",
+        "image": "/mobile-deploy.jpg"
+      },
+      {
+        "number": "04",
+        "title": "Real-Time Features & Push Notifications",
+        "description": "Firebase-powered live notifications, chat, and real-time data to keep your app responsive and your users engaged.",
+        "icon": "bell",
+        "image": "/mobile-notifications.jpg"
+      }
+    ]
+  },
+  "aiDevelopment": {
+    "eyebrow": "(AI + Development)",
+    "title": "How AI Makes Your App Better",
+    "lead": "We use AI-enabled development tools, including AI-powered coding agents, as part of our everyday mobile development workflow, not as a gimmick.",
+    "features": [
+      {
+        "id": "fast-development",
+        "title": "Faster Feature Development",
+        "description": "For well-defined features like registration flows, booking systems, or profile management, AI helps scaffold initial code structures, which our developers then refine to your exact requirements.",
+        "icon": "bolt",
+        "tag": "Velocity & Scaffolding"
+      },
+      {
+        "id": "cross-platform-consistency",
+        "title": "Consistent Code Across Platforms",
+        "description": "Whether we're building for iOS, Android, or cross-platform with React Native or Flutter, AI-assisted checks help keep code standardized and predictable across devices.",
+        "icon": "layers",
+        "tag": "Multi-Platform Standards"
+      },
+      {
+        "id": "security",
+        "title": "Stronger App Security From the Start",
+        "description": "AI-assisted tools can flag potential security gaps, such as data handling or authentication issues, during development, which is especially important for apps handling personal or payment data.",
+        "icon": "shield-check",
+        "tag": "Data & Auth Protection"
+      },
+      {
+        "id": "fewer-bugs",
+        "title": "Fewer Bugs at Launch",
+        "description": "Continuous AI-assisted checks during development help catch issues earlier, reducing bugs that would otherwise surface after your app is already in users' hands.",
+        "icon": "bug-check",
+        "tag": "Early Quality Assurance"
+      }
+    ]
+  },
+  "techStack": {
+    "eyebrow": "Our Technology Stack",
+    "title": "Built With the Right Technology.",
+    "description": "We work with a wide range of modern frameworks and platforms, selecting the right stack based on your app's requirements, performance needs, and long-term scalability.",
+    "categories": [
+      {
+        "step": "01",
+        "id": "frameworks",
+        "name": "Frameworks",
+        "icon": "layout",
+        "description": "Cross-platform and progressive mobile frameworks tailored for rapid feature velocity and native 60fps performance.",
+        "skills": ["React Native", "Flutter", "Ionic", "Angular", "Vue.js"]
+      },
+      {
+        "step": "02",
+        "id": "backend",
+        "name": "Backend",
+        "icon": "server",
+        "description": "High-throughput APIs, microservices, and robust application servers built for real-time mobile scale.",
+        "skills": ["Node.js", "PHP", "Python", "Django", "Flask", "Laravel"]
+      },
+      {
+        "step": "03",
+        "id": "realtime-notifications",
+        "name": "Real-Time & Notifications",
+        "icon": "bell",
+        "description": "Low-latency live database synchronization, instant chat websockets, and automated push notification pipelines.",
+        "skills": ["Firebase"]
+      },
+      {
+        "step": "04",
+        "id": "security",
+        "name": "Security",
+        "icon": "shield-check",
+        "description": "Comprehensive defense layers protecting user data, API transactions, and sensitive device storage.",
+        "skills": ["Endpoint encryption", "Secure APIs", "Network intrusion detection", "SSL domain verification"]
+      },
+      {
+        "step": "05",
+        "id": "cloud-deployment",
+        "name": "Cloud & Deployment",
+        "icon": "cloud",
+        "description": "Multi-region cloud infrastructure, edge caching, automated CI/CD builds, and production monitoring.",
+        "skills": ["AWS", "Google Cloud", "Azure"]
+      }
+    ]
+  },
+  "ourWork": {
+    "eyebrow": "Our Work",
+    "title": "Apps Built for Real Businesses.",
+    "description": "Explore the mobile applications and digital products we've created to solve real business challenges and create better user experiences.",
+    "projects": [
+      {
+        "id": "wealthflow",
+        "title": "WealthFlow — AI Wealth & Crypto",
+        "category": "Fintech & Banking",
+        "description": "Cross-platform mobile investment terminal featuring biometric authentication, real-time portfolio analytics, and crypto staking.",
+        "image": "/work-fintech.jpg",
+        "tags": ["React Native", "Node.js", "Biometrics", "WebSockets"]
+      },
+      {
+        "id": "healthconnect",
+        "title": "HealthConnect — Telemedicine Portal",
+        "category": "Healthcare & MedTech",
+        "description": "HIPAA-compliant patient application providing live doctor HD video consultations, instant ECG telemetry, and AI diagnosis summaries.",
+        "image": "/work-healthcare.jpg",
+        "tags": ["Flutter", "WebRTC", "Firebase", "CoreML"]
+      },
+      {
+        "id": "luxe",
+        "title": "Luxe — Luxury AR Shopping",
+        "category": "E-Commerce & Retail",
+        "description": "High-conversion luxury retail shopping app with interactive 3D product rendering, 1-click Apple Pay checkout, and AR virtual try-on.",
+        "image": "/work-ecommerce.jpg",
+        "tags": ["SwiftUI", "ARKit", "Shopify Plus", "GraphQL"]
+      },
+      {
+        "id": "fleetflow",
+        "title": "FleetFlow — Real-Time Logistics",
+        "category": "Operations & Fleet",
+        "description": "Mission-critical field operations platform with offline GPS route tracking, automated driver dispatching, and dynamic delivery routing.",
+        "image": "/work-logistics.jpg",
+        "tags": ["React Native", "PostGIS", "Offline-First", "Push Sync"]
+      },
+      {
+        "id": "activefitness",
+        "title": "Pulse — AI Fitness & Health Tracker",
+        "category": "Fitness & Lifestyle",
+        "description": "Smart health companion with Apple Watch/HealthKit sync, live heart-rate zone telemetry, and adaptive workout routines.",
+        "image": "/work-fitness.jpg",
+        "tags": ["Kotlin", "HealthKit", "TensorFlow Lite", "AWS"]
+      }
+    ]
+  },
+  "faqs": {
+    "eyebrow": "QUESTIONS & ANSWERS",
+    "title": "Frequently Asked Questions",
+    "description": "Common questions regarding our mobile app design, cross-platform engineering, and AI-assisted development workflow.",
+    "items": [
+      {
+        "id": "faq-1",
+        "question": "What does FuduGo offer in mobile app development?",
+        "answer": "FuduGo provides native and cross-platform app development, mobile UI/UX design, app store deployment, and ongoing maintenance and support after launch."
+      },
+      {
+        "id": "faq-2",
+        "question": "Do you build apps for both iOS and Android?",
+        "answer": "Yes. We build native apps for each platform when needed, or cross-platform apps using React Native or Flutter when a shared codebase better fits your timeline and budget."
+      },
+      {
+        "id": "faq-3",
+        "question": "Does FuduGo use AI for app development?",
+        "answer": "Yes. FuduGo uses AI-assisted coding tools to help developers with code suggestions, faster implementation of common features, and identifying potential issues during development."
+      },
+      {
+        "id": "faq-4",
+        "question": "Does AI build the entire app?",
+        "answer": "No. AI is used selectively as a development assistant. FuduGo's developers remain responsible for architecture, business logic, code review, testing, and final implementation."
+      },
+      {
+        "id": "faq-5",
+        "question": "Can you add AI features to my app?",
+        "answer": "Yes, where AI provides a meaningful business or user benefit. Potential applications include intelligent search, recommendations, in-app automation, and other AI-powered functionality."
+      }
+    ]
+  }
+}

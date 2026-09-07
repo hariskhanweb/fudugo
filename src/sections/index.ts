@@ -20,3 +20,5 @@ export { default as ServiceProcess } from "./services/ServiceProcess";
 export { default as ServiceHelpPicker } from "./services/ServiceHelpPicker";
 export { default as ServiceLayoutSwitcher } from "./services/ServiceLayoutSwitcher";
 export { default as ServicesIndexSection } from "./services/ServicesIndexSection";
+export { default as ContactSection } from "./ContactSection";
+export { default as FindUsSection } from "./FindUsSection";

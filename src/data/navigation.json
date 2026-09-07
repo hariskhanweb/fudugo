@@ -1,7 +1,8 @@
 {
   "links": [
     { "label": "Home", "href": "/" },
-    { "label": "About", "href": "/about" }
+    { "label": "About", "href": "/about" },
+    { "label": "Contact", "href": "/contact" }
   ],
   "dropdowns": {
     "services": {
@@ -10,28 +11,28 @@
         { "label": "All Services", "href": "/services" },
         { "label": "Web Solutions", "href": "/services/web-solutions" },
         { "label": "Mobile Apps", "href": "/services/mobile-apps" },
-        { "label": "Business Software", "href": "/services/business-software" },
+        { "label": "CRM & DRM Integration", "href": "/services/crm-drm-integration" },
+        { "label": "Business Tools Development", "href": "/services/business-tools-development" },
         { "label": "Cloud & Infrastructure", "href": "/services/cloud-infrastructure" },
         { "label": "Branding & Design", "href": "/services/branding-design" },
-        { "label": "Digital Marketing", "href": "/services/digital-marketing" }
+        { "label": "Digital Marketing", "href": "/services/digital-marketing" },
+        { "label": "AI & Automation", "href": "/services/ai-automation" }
       ]
     },
     "portfolio": {
       "label": "Portfolio",
       "items": [
-        { "label": "Our Work", "href": "#works" },
-        { "label": "Single Portfolio", "href": "#" }
+        { "label": "Our Work", "href": "/#works" },
+        { "label": "Single Portfolio", "href": "/#works" }
       ]
     },
     "pages": {
       "label": "Pages",
       "items": [
-        { "label": "Our Process", "href": "#process" },
-        { "label": "Solutions", "href": "#" },
-        { "label": "Awards", "href": "#" },
-        { "label": "FAQ", "href": "#" },
-        { "label": "404 Error", "href": "#" },
-        { "label": "Contact", "href": "#contact" }
+        { "label": "Our Process", "href": "/#process" },
+        { "label": "Solutions", "href": "/about" },
+        { "label": "FAQ", "href": "/#testimonials" },
+        { "label": "Contact", "href": "/contact" }
       ]
     },
     "blog": {
@@ -44,6 +45,6 @@
   },
   "cta": {
     "label": "Let's discuss",
-    "href": "#contact"
+    "href": "/contact"
   }
 }

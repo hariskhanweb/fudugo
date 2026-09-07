@@ -126,7 +126,7 @@ export default function IndustriesSection({
             <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:gap-x-5">
               <h2
                 data-industries="title"
-                className="font-sans text-[clamp(40px,7vw,72px)] font-bold leading-none tracking-tight text-foreground"
+                className="font-sans text-[clamp(40px,7vw,72px)] font-bold leading-[1.05] tracking-tight text-foreground whitespace-pre-line"
               >
                 {data.title}
               </h2>
@@ -212,7 +212,7 @@ function IndustryCard({ item, index }: { item: IndustryItem; index: number }) {
           className="mt-5 flex items-center gap-2 font-sans text-xs font-medium text-accent-alt/70 transition-colors duration-300 group-hover:text-accent-alt"
         >
           <span className="h-px w-6 bg-accent-alt/40 group-hover:bg-accent-alt/60" aria-hidden />
-          <span>Explore motion solutions</span>
+          <span>Explore solutions</span>
         </div>
       </div>
     </article>

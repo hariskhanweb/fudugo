@@ -6,80 +6,74 @@
   "items": [
     {
       "number": "01",
-      "title": "Web Solutions",
-      "subtitle": "Build. Launch. Grow.",
-      "description": "We build fast, easy-to-use websites that show up on Google and turn visitors into customers from day one.",
+      "title": "Web Design & Development",
+      "subtitle": "Design. Build. Convert.",
+      "description": "Custom websites and e-commerce platforms built with AI-assisted engineering designed to turn visitors into customers.",
       "image": "/Image-17.jpg",
       "categories": [
-        "Next.js & React",
-        "Headless CMS",
+        "Custom Web Design",
         "E-Commerce",
-        "SEO & Performance"
+        "Maintenance & Support"
       ]
     },
     {
       "number": "02",
-      "title": "Mobile Apps",
+      "title": "Mobile Application Development",
       "subtitle": "Design. Develop. Deploy.",
-      "description": "We build apps that work great on any phone, are easy to use, and keep your customers coming back.",
+      "description": "Native and cross-platform apps built for real user engagement, from first install to long-term retention.",
       "image": "/Image-18.jpg",
       "categories": [
         "iOS & Android",
-        "Cross-Platform",
-        "UI/UX Design",
-        "App Store Launch"
+        "React Native & Flutter",
+        "App Store Deployment"
       ]
     },
     {
       "number": "03",
-      "title": "Business Software",
-      "subtitle": "Automate. Streamline. Scale.",
-      "description": "Custom software solutions that eliminate manual work and give your business the tools to operate smarter.",
+      "title": "Business Tools Development",
+      "subtitle": "Connect. Automate. Scale.",
+      "description": "Custom ERP, CRM, and HRM systems built around how your business actually operates, not a generic template.",
       "image": "/Image-19.jpg",
       "categories": [
-        "CRM & ERP",
-        "Workflow Automation",
-        "API Integrations",
-        "Dashboards & Analytics"
+        "ERP",
+        "CRM & HRM",
+        "Custom Dashboards"
       ]
     },
     {
       "number": "04",
-      "title": "Cloud & Infrastructure",
-      "subtitle": "Deploy. Secure. Scale.",
-      "description": "We set up your systems to run fast and reliably, so your business can grow without any tech headaches.",
-      "image": "/Image-20.jpg",
+      "title": "AI & Automation",
+      "subtitle": "Automate. Analyze. Accelerate.",
+      "description": "AI-powered tools and automation systems that reduce manual work and surface real business insights.",
+      "image": "/Image-4.jpg",
       "categories": [
-        "AWS & Azure",
-        "CI/CD Pipelines",
-        "DevOps",
-        "Security & Monitoring"
+        "AI Development",
+        "Workflow Automation",
+        "Voice AI Agents"
       ]
     },
     {
       "number": "05",
-      "title": "Branding & Design",
-      "subtitle": "Craft. Refine. Elevate.",
-      "description": "Unique visual identities and design systems that make your brand easy to recognize and remember.",
-      "image": "/Image-21.jpg",
+      "title": "CRM & DRM Integration",
+      "subtitle": "Integrate. Unify. Manage.",
+      "description": "Connecting your customer and dealer data into one reliable system, built on AI-assisted, secure integration.",
+      "image": "/Image-32.jpg",
       "categories": [
-        "Logo & Identity",
-        "Design Systems",
-        "Brand Strategy",
-        "Packaging & Print"
+        "CRM Integration",
+        "DRM Integration",
+        "Data Migration"
       ]
     },
     {
       "number": "06",
-      "title": "Digital Marketing",
-      "subtitle": "Target. Convert. Grow.",
-      "description": "We help more people find your business online and turn that attention into real, measurable growth.",
-      "image": "/Image-22.jpg",
+      "title": "SEO & Digital Marketing",
+      "subtitle": "Rank. Reach. Grow.",
+      "description": "Search optimization and social media marketing that gets your business found by the people already looking for it.",
+      "image": "/Image-1.jpg",
       "categories": [
-        "SEO & Content",
-        "Paid Ads (PPC)",
-        "Social Media",
-        "Email & Automation"
+        "SEO",
+        "Social Media Marketing",
+        "Paid Ads"
       ]
     }
   ]

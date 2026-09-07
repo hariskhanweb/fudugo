@@ -48,15 +48,15 @@
     },
     {
       "slug": "mobile-apps",
-      "title": "Mobile Apps",
-      "shortTitle": "Mobile",
-      "eyebrow": "(02 — Mobile Apps)",
+      "title": "Build a Mobile App That Moves Your Business Forward.",
+      "shortTitle": "Mobile Apps",
+      "eyebrow": "MOBILE APPLICATION DEVELOPMENT",
       "tagline": "Native feel. Cross-platform reach.",
-      "description": "We craft iOS and Android apps that feel native, ship reliably, and keep users coming back — from MVP to App Store polish.",
+      "description": "We design and develop mobile applications that combine intuitive experiences, reliable technology, and business-focused functionality, helping you connect with customers, streamline operations, and create new opportunities for growth.",
       "heroImage": "/Image-18.jpg",
       "heroImagePosition": "center top",
       "layout": "device",
-      "ctaLabel": "Plan your app",
+      "ctaLabel": "Start Your Project",
       "highlights": [
         { "label": "Platforms", "value": "iOS · Android" },
         { "label": "Typical MVP", "value": "8–14 wks" },
@@ -64,20 +64,20 @@
       ],
       "capabilities": [
         {
-          "title": "Consumer apps",
-          "description": "Onboarding, retention loops, and delightful micro-interactions."
+          "title": "Native & Cross-Platform Development",
+          "description": "Built with React Native, Flutter, or fully native code, whichever fits your product, timeline, and budget best."
         },
         {
-          "title": "Business & field apps",
-          "description": "Offline-ready tools for teams who work beyond the desk."
+          "title": "Mobile UI/UX Design",
+          "description": "User flows and interfaces designed specifically for mobile behavior, not scaled-down desktop layouts."
         },
         {
-          "title": "App redesigns",
-          "description": "Modernize legacy apps without losing your users or ratings."
+          "title": "App Store Deployment & Support",
+          "description": "End-to-end submission to the App Store and Google Play, plus ongoing updates and post-launch maintenance."
         },
         {
-          "title": "API & backend pairing",
-          "description": "Secure integrations, push notifications, and analytics baked in."
+          "title": "Real-Time Features & Push Notifications",
+          "description": "Firebase-powered live notifications, chat, and real-time data to keep your app responsive and your users engaged."
         }
       ],
       "process": [
@@ -234,13 +234,13 @@
       "slug": "digital-marketing",
       "title": "Digital Marketing",
       "shortTitle": "Marketing",
-      "eyebrow": "(06 — Digital Marketing)",
-      "tagline": "Growth with creative that converts.",
-      "description": "Strategy, campaigns, and performance creative that turn attention into pipeline — measured, iterated, and built for modern channels.",
+      "eyebrow": "DIGITAL MARKETING",
+      "tagline": "Don't Just Get Seen. Get Found by the Right People.",
+      "description": "We help businesses strengthen their digital presence through SEO, content, social media, paid advertising, and data-driven strategies designed to reach the right audience and generate meaningful business results.",
       "heroImage": "/Image-4-1.jpg",
       "heroImagePosition": "center",
       "layout": "funnel",
-      "ctaLabel": "Grow with us",
+      "ctaLabel": "Start Your Campaign",
       "highlights": [
         { "label": "Channels", "value": "Paid · Organic" },
         { "label": "Focus", "value": "Pipeline" },
@@ -274,6 +274,86 @@
         "Clear attribution from spend to pipeline",
         "Creative systems that keep testing fresh",
         "Sustainable growth — not one-off spikes"
+      ]
+    },
+    {
+      "slug": "ai-automation",
+      "title": "AI & Automation",
+      "shortTitle": "AI",
+      "eyebrow": "(07 — AI & Automation)",
+      "tagline": "Put AI to work inside your business, not just your marketing.",
+      "description": "We build practical AI and automation solutions that help businesses simplify repetitive work, understand their data, improve customer experiences, and create smarter digital products.",
+      "heroImage": "/ai-automation-hero.jpg",
+      "heroImagePosition": "center",
+      "layout": "funnel",
+      "ctaLabel": "Deploy Custom AI",
+      "highlights": [
+        { "label": "Latency", "value": "<500ms" },
+        { "label": "Accuracy", "value": "99.4%" },
+        { "label": "Efficiency", "value": "10x" }
+      ],
+      "capabilities": [
+        {
+          "title": "Autonomous AI Agents",
+          "description": "Custom multi-agent copilots that research, reason, call external APIs, and execute complex workflows without constant human supervision."
+        },
+        {
+          "title": "Intelligent Workflow Automation",
+          "description": "Zero-touch operational pipelines connecting your CRM, ERP, and payment gateways—triggering instant cross-platform data synchronization."
+        },
+        {
+          "title": "Conversational & Voice AI",
+          "description": "Natural-sounding voice and chat agents that handle customer qualification, support triage, and booking with sub-second response times."
+        },
+        {
+          "title": "Document AI & RAG Extraction",
+          "description": "Parse unstructured PDFs, invoices, and legal contracts into structured database records using Retrieval-Augmented Generation."
+        }
+      ],
+      "process": [
+        { "step": "01", "title": "Audit & Feasibility", "description": "Identify high-friction manual bottlenecks and estimate ROI potential." },
+        { "step": "02", "title": "Data Pipelines", "description": "Clean, vectorize, and structure enterprise context without data leakage." },
+        { "step": "03", "title": "Agent Orchestration", "description": "Construct multi-agent networks, tool-calling capabilities, and guardrails." },
+        { "step": "04", "title": "Deploy & Telemetry", "description": "Ship into secure production environments with 24/7 telemetry and drift alerts." }
+      ],
+      "outcomes": [
+        "Hundreds of hours saved in manual administration and data entry",
+        "24/7 autonomous client qualification and instant support resolution",
+        "Deterministic guardrails with zero proprietary data leakage"
+      ]
+    },
+    {
+      "slug": "business-tools-development",
+      "title": "Business Tools Development",
+      "shortTitle": "Business Tools",
+      "eyebrow": "BUSINESS TOOLS DEVELOPMENT",
+      "tagline": "Custom ERP, CRM & operational systems built for scale.",
+      "description": "Custom ERP, HRM, and operational dashboards engineered around your actual workflows, not rigid generic templates.",
+      "heroImage": "/work-fintech.jpg",
+      "heroImagePosition": "center",
+      "layout": "business-tools",
+      "ctaLabel": "Get a Free Quote",
+      "highlights": [
+        { "label": "Architecture", "value": "Custom Cloud ERP" },
+        { "label": "Security", "value": "RBAC · SSO · SOC2" },
+        { "label": "Delivery", "value": "8–14 wks" }
+      ],
+      "capabilities": [
+        { "title": "Custom ERP Systems", "description": "Unified inventory, logistics, and billing engines." },
+        { "title": "Tailored CRM & Portals", "description": "Client management engines designed around your exact sales cycle." },
+        { "title": "HRM & Workforce Portals", "description": "Centralized employee records, payroll sync, and leave approvals." },
+        { "title": "Operations Dashboards", "description": "Real-time KPI visualization and cross-department intelligence." }
+      ],
+      "process": [
+        { "step": "01", "title": "Workflow Mapping", "description": "Document actual department operational procedures and data schemas." },
+        { "step": "02", "title": "System Architecture", "description": "Design secure database relations, APIs, and role-based permissions." },
+        { "step": "03", "title": "Iterative Engineering", "description": "Sprint-based module development with weekly functional demos." },
+        { "step": "04", "title": "Migration & Rollout", "description": "Zero-downtime data migration, parallel testing, and staff training." }
+      ],
+      "outcomes": [
+        "Elimination of double data entry and spreadsheet chaos",
+        "Granular security and complete auditability across all records",
+        "100% intellectual property ownership with zero recurring user license fees"
       ]
     }
   ]

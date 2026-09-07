@@ -4,8 +4,12 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import data from "@/data/hero.json";
-import HeroRibbon from "@/components/ui/HeroRibbon";
+import dynamic from "next/dynamic";
 import Button from "@/components/ui/Button";
+
+const HeroRibbon = dynamic(() => import("@/components/ui/HeroRibbon"), {
+  ssr: false,
+});
 
 gsap.registerPlugin(ScrollTrigger);
 
