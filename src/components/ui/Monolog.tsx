@@ -43,6 +43,8 @@ const VIEWBOX_HEIGHT = 386;
 const STROKE_WIDTH = 2;
 /** Paths shorter than this skip stroke-draw (avoids dot artifacts). */
 const MIN_DRAW_LENGTH = 180;
+/** Replay the outline-to-fill cycle this often (seconds). */
+const DRAW_REPEAT_INTERVAL = 20;
 
 function isDotPath(path: SVGPathElement) {
   return path.getTotalLength() < MIN_DRAW_LENGTH;
@@ -150,7 +152,12 @@ export default function Monolog({
       timelineRef.current?.kill();
       preparePaths(ordered);
 
-      const tl = gsap.timeline();
+      const tl = gsap.timeline({
+        repeat: -1,
+        onRepeat: () => {
+          preparePaths(ordered);
+        },
+      });
       let cursor = 0;
 
       drawPaths.forEach((path) => {
@@ -198,6 +205,7 @@ export default function Monolog({
         );
       }
 
+      tl.repeatDelay(Math.max(0, DRAW_REPEAT_INTERVAL - tl.duration()));
       timelineRef.current = tl;
     };
 

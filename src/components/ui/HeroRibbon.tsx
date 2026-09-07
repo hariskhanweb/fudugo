@@ -5,11 +5,12 @@ import * as THREE from "three";
 import { cn } from "@/lib/utils";
 
 const IMAGE_SOURCES = [
-  "/static/components/0.jpeg",
-  "/static/components/1.jpeg",
-  "/static/components/2.jpeg",
-  "/static/components/3.jpeg",
-  "/static/components/4.jpeg",
+  "/components/Ai-01.webp",
+  "/components/Ai-02.webp",
+  "/components/Ai-03.webp",
+  "/components/Ai-04.webp",
+  "/components/Ai-05.webp",
+  "/components/Ai-06.webp",
 ];
 
 const TOTAL_LEVELS = 12;
@@ -74,22 +75,71 @@ export default function HeroRibbon({ className }: HeroRibbonProps) {
 
     const vertexShader = `
       varying vec2 vUv;
+      varying vec3 vNormal;
+      varying vec3 vViewPosition;
+
       void main() {
         vUv = uv;
-        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+
+        vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
+
+        vNormal = normalize(normalMatrix * normal);
+        vViewPosition = -mvPosition.xyz;
+
+        gl_Position = projectionMatrix * mvPosition;
       }
     `;
 
     const fragmentShader = `
       uniform sampler2D map;
       uniform vec2 uvRepeat;
+
       varying vec2 vUv;
+      varying vec3 vNormal;
+      varying vec3 vViewPosition;
+
       void main() {
         vec2 coords = fract(vUv * uvRepeat);
         vec4 col = texture2D(map, coords);
+
+        vec3 normal = normalize(vNormal);
+        vec3 viewDir = normalize(vViewPosition);
+
+        // Flip the normal for the inside-facing surface.
         if (!gl_FrontFacing) {
-          col.rgb = mix(col.rgb, vec3(0.0), 0.86);
+          normal = -normal;
         }
+
+        // Soft light coming from the front/top.
+        vec3 lightDir = normalize(vec3(-0.25, 0.35, 1.0));
+
+        float diffuse = max(dot(normal, lightDir), 0.0);
+
+        // Soft ambient light so the inside isn't completely black.
+        float ambient = 0.16;
+
+        // Extra soft glow when looking at the inner surface.
+        float innerGlow = 0.0;
+
+        if (!gl_FrontFacing) {
+          float facing = max(dot(normal, viewDir), 0.0);
+
+          innerGlow = pow(facing, 1.8) * 0.30;
+
+          // Cyan/blue light similar to the reference.
+          vec3 glowColor = vec3(0.0, 0.55, 1.0);
+
+          col.rgb += glowColor * innerGlow;
+        }
+
+        // Apply soft directional lighting.
+        col.rgb *= ambient + diffuse * 0.75;
+
+        // Keep the inside slightly darker than the front.
+        if (!gl_FrontFacing) {
+          col.rgb *= 0.30;
+        }
+
         gl_FragColor = col;
       }
     `;
