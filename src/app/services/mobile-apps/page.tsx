@@ -7,7 +7,9 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import content from "@/data/mobile-apps-page.json";
 import { Container, AccentMark } from "@/components/ui";
-import { CtaSection, PageHeroSection } from "@/sections";
+import { CtaSection } from "@/sections";
+import ServiceHero from "@/sections/services/ServiceHero";
+import { getServiceBySlug } from "@/lib/service-pages";
 import { useGsapContext } from "@/lib/use-gsap-context";
 import { cn } from "@/lib/utils";
 
@@ -78,7 +80,7 @@ function FaqAccordion({
             <button
               type="button"
               onClick={() => setOpenId(isOpen ? null : item.id)}
-              className="flex w-full items-center justify-between gap-4 p-5 text-left sm:p-6"
+              className="flex w-full cursor-pointer items-center justify-between gap-4 p-5 text-left outline-hidden sm:p-6 focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-accent-alt/70"
               aria-expanded={isOpen}
             >
               <span
@@ -182,7 +184,7 @@ function MobileWorkSlider({
             type="button"
             onClick={prevSlide}
             aria-label="Previous slide"
-            className="flex h-11 w-11 items-center justify-center rounded-2xl border border-border/80 bg-surface/80 text-foreground transition-all duration-300 hover:border-accent-alt hover:bg-accent-alt hover:text-white shadow-xs cursor-pointer"
+            className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-2xl border border-border/80 bg-surface/80 text-foreground shadow-xs transition-all duration-300 outline-hidden hover:border-accent-alt hover:bg-accent-alt hover:text-white focus-visible:ring-2 focus-visible:ring-accent-alt/70"
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <polyline points="15 18 9 12 15 6" />
@@ -192,7 +194,7 @@ function MobileWorkSlider({
             type="button"
             onClick={nextSlide}
             aria-label="Next slide"
-            className="flex h-11 w-11 items-center justify-center rounded-2xl border border-border/80 bg-surface/80 text-foreground transition-all duration-300 hover:border-accent-alt hover:bg-accent-alt hover:text-white shadow-xs cursor-pointer"
+            className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-2xl border border-border/80 bg-surface/80 text-foreground shadow-xs transition-all duration-300 outline-hidden hover:border-accent-alt hover:bg-accent-alt hover:text-white focus-visible:ring-2 focus-visible:ring-accent-alt/70"
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <polyline points="9 18 15 12 9 6" />
@@ -298,27 +300,12 @@ function MobileWorkSlider({
 
 export default function MobileAppsPage() {
   const rootRef = useRef<HTMLDivElement>(null);
-  const { hero, introSection, whatWeOffer, aiDevelopment, techStack, ourWork, faqs } = content;
+  const { introSection, whatWeOffer, aiDevelopment, techStack, ourWork, faqs } = content;
+  const service = getServiceBySlug("mobile-apps");
 
   useGsapContext(
     rootRef,
     (scope) => {
-      // Hero elements animation
-      const heroParts = scope.querySelectorAll("[data-mobile-hero='part']");
-      if (heroParts.length) {
-        gsap.fromTo(
-          heroParts,
-          { y: 28, opacity: 0 },
-          {
-            y: 0,
-            opacity: 1,
-            duration: 0.75,
-            stagger: 0.08,
-            ease: "power3.out",
-          },
-        );
-      }
-
       // Scroll reveals for general sections
       const blocks = scope.querySelectorAll("[data-mobile='reveal']");
       blocks.forEach((block) => {
@@ -408,127 +395,9 @@ export default function MobileAppsPage() {
 
   return (
     <>
-      {/* Top Header Banner matching About & Contact pages */}
-      <PageHeroSection
-        content={{
-          title: "Mobile Application Development",
-          image: hero.image,
-          imageAlt: hero.imageAlt,
-          imagePosition: "center top",
-        }}
-      />
+      {service ? <ServiceHero service={service} /> : null}
 
       <div ref={rootRef}>
-        {/* 1. HERO CONTENT SECTION */}
-        <section className="relative overflow-hidden bg-background py-16 sm:py-20 lg:py-28">
-          {/* Subtle Grid Background Pattern */}
-          <div
-            className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,var(--border)_1px,transparent_1px),linear-gradient(to_bottom,var(--border)_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-30 [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"
-            aria-hidden
-          />
-
-          {/* Ambient Glows */}
-          <div
-            className="pointer-events-none absolute -left-40 top-1/4 h-96 w-96 rounded-full bg-accent-alt/15 blur-[130px]"
-            aria-hidden
-          />
-          <div
-            className="pointer-events-none absolute -right-40 bottom-10 h-96 w-96 rounded-full bg-accent/10 blur-[130px]"
-            aria-hidden
-          />
-
-          <Container className="relative px-5 sm:px-8 lg:px-12">
-            <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-14 xl:gap-20">
-              {/* Left Column: Heading & Copy */}
-              <div className="lg:col-span-7">
-                <div data-mobile-hero="part">
-                  <AccentMark className="mb-5 origin-left" />
-                </div>
-
-                {/* Small Label */}
-                <p
-                  data-mobile-hero="part"
-                  className="mb-4 font-sans text-sm font-semibold uppercase tracking-wider text-accent-alt sm:text-[15px]"
-                >
-                  {hero.eyebrow}
-                </p>
-
-                {/* Main H1 */}
-                <h1
-                  data-mobile-hero="part"
-                  className="font-sans text-[clamp(38px,6.5vw,76px)] font-bold leading-[1.04] tracking-tight text-foreground"
-                >
-                  {hero.title}
-                </h1>
-
-                {/* Supporting Text */}
-                <p
-                  data-mobile-hero="part"
-                  className="mt-6 max-w-2xl font-sans text-base leading-relaxed text-muted sm:text-lg sm:leading-relaxed"
-                >
-                  {hero.description}
-                </p>
-
-                {/* CTA Buttons */}
-                <div
-                  data-mobile-hero="part"
-                  className="mt-8 flex flex-wrap items-center gap-4 sm:mt-10"
-                >
-                  <Link
-                    href={hero.ctaHref}
-                    className="inline-flex items-center gap-2 rounded-xl border border-accent-alt bg-accent-alt px-7 py-3.5 font-sans text-sm font-semibold text-white shadow-lg shadow-accent-alt/25 transition-all duration-300 hover:bg-accent-soft hover:shadow-accent-alt/40"
-                  >
-                    <span>{hero.ctaLabel}</span>
-                    <span>→</span>
-                  </Link>
-                  <a
-                    href={hero.secondaryCtaHref}
-                    className="inline-flex items-center gap-2 rounded-xl border border-border/80 bg-surface/60 px-6 py-3.5 font-sans text-sm font-medium text-foreground backdrop-blur-xs transition-colors hover:border-accent-alt/40 hover:bg-surface-hover"
-                  >
-                    {hero.secondaryCtaLabel}
-                  </a>
-                </div>
-              </div>
-
-              {/* Right Column: Floating Device Mockup Graphic */}
-              <div data-mobile-hero="part" className="relative lg:col-span-5 flex justify-center">
-                <div className="group relative w-full max-w-[340px] overflow-hidden rounded-[2.5rem] border-4 border-border/80 bg-surface/80 p-3 shadow-2xl backdrop-blur-md transition-all duration-500 hover:border-accent-alt/40 hover:shadow-[0_25px_60px_-15px_rgba(0,0,0,0.6)]">
-                  {/* Phone Notch / Speaker Bar */}
-                  <div className="absolute left-1/2 top-5 z-20 h-4 w-28 -translate-x-1/2 rounded-full bg-black/80" />
-
-                  <div className="relative aspect-9/18 overflow-hidden rounded-[2rem] bg-panel">
-                    <Image
-                      src="/Image-18.jpg"
-                      alt="Mobile App Showcase"
-                      fill
-                      priority
-                      sizes="(max-width: 1024px) 100vw, 340px"
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/25 to-transparent" />
-                  </div>
-
-                  {/* Floating Micro-Badge */}
-                  <div className="absolute bottom-7 left-7 right-7 flex items-center justify-between rounded-xl border border-white/15 bg-black/70 px-4 py-3 backdrop-blur-md">
-                    <div className="flex items-center gap-2.5">
-                      <span className="relative flex h-2.5 w-2.5">
-                        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-                        <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500" />
-                      </span>
-                      <span className="font-sans text-xs font-semibold text-white">
-                        iOS & Android Native
-                      </span>
-                    </div>
-                    <span className="font-mono text-xs font-bold text-accent-alt">
-                      60 FPS
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Container>
-        </section>
-
         {/* 2. INTRODUCTION SECTION */}
         <section
           id="capabilities"
@@ -567,7 +436,7 @@ export default function MobileAppsPage() {
                 <div className="pt-3">
                   <Link
                     href="/contact"
-                    className="inline-flex items-center gap-2 font-sans text-sm font-semibold text-accent-alt transition-colors hover:text-accent-soft sm:text-base"
+                    className="inline-flex items-center gap-2 font-sans text-sm font-semibold text-accent-alt transition-colors hover:text-accent-soft sm:text-base cursor-pointer outline-hidden focus-visible:ring-2 focus-visible:ring-accent-alt/70"
                   >
                     <span>Discuss your mobile project</span>
                     <span>→</span>
@@ -606,7 +475,7 @@ export default function MobileAppsPage() {
                   className="group relative flex h-full flex-col justify-between overflow-hidden rounded-3xl border border-border/80 bg-surface/60 shadow-(--card-shadow) backdrop-blur-xs transition-all duration-400 hover:-translate-y-1.5 hover:border-accent-alt/40 hover:bg-surface hover:shadow-[0_20px_50px_-15px_rgba(0,0,0,0.5)]"
                 >
                   <div>
-                    <div className="relative aspect-16/9 w-full overflow-hidden bg-panel">
+                    <div className="relative aspect-video w-full overflow-hidden bg-panel">
                       <Image
                         src={item.image ?? "/Image-18.jpg"}
                         alt={item.title}
@@ -656,17 +525,17 @@ export default function MobileAppsPage() {
         <section className="relative overflow-hidden bg-header py-20 sm:py-24 lg:py-32 border-t border-b border-border/60">
           {/* Subtle Ambient Grid and Glows */}
           <div
-            className="pointer-events-none absolute inset-0 bg-[radial-gradient(#ffffff0a_1px,transparent_1px)] bg-[size:1.5rem_1.5rem] opacity-40"
+            className="pointer-events-none absolute inset-0 bg-[radial-gradient(#ffffff0a_1px,transparent_1px)] bg-size-[1.5rem_1.5rem] opacity-40"
             aria-hidden
           />
           <div
-            className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[500px] rounded-full bg-accent-alt/12 blur-[140px]"
+            className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-125 w-125 rounded-full bg-accent-alt/12 blur-[140px]"
             aria-hidden
           />
 
           <Container className="relative px-5 sm:px-8 lg:px-12">
             {/* Section Header */}
-            <div data-mobile="reveal" className="mx-auto mb-14 max-w-[900px] text-center sm:mb-16 lg:mb-20">
+            <div data-mobile="reveal" className="mx-auto mb-14 max-w-225 text-center sm:mb-16 lg:mb-20">
               <div className="flex justify-center mb-4">
                 <AccentMark />
               </div>
@@ -677,7 +546,7 @@ export default function MobileAppsPage() {
                 {aiDevelopment.title}
               </h2>
 
-              <div className="mx-auto mt-6 max-w-[900px] rounded-2xl border border-border/70 bg-surface/40 p-5 sm:p-6 backdrop-blur-xs">
+              <div className="mx-auto mt-6 max-w-225 rounded-2xl border border-border/70 bg-surface/40 p-5 sm:p-6 backdrop-blur-xs">
                 <p className="font-sans text-base leading-relaxed text-foreground/90 sm:text-lg">
                   {aiDevelopment.lead}
                 </p>
@@ -730,7 +599,7 @@ export default function MobileAppsPage() {
 
               {/* Center Column (High-Tech Floating Phone Mockup) */}
               <div className="flex justify-center lg:col-span-4 py-2">
-                <div className="group relative w-full max-w-[310px] sm:max-w-[330px]">
+                <div className="group relative w-full max-w-77.5 sm:max-w-82.5">
                   {/* Outer Ambient Glow */}
                   <div
                     className="pointer-events-none absolute inset-0 -inset-x-4 -inset-y-4 rounded-[3rem] bg-accent-alt/20 blur-2xl transition-all duration-700 group-hover:bg-accent-alt/30"
@@ -743,7 +612,7 @@ export default function MobileAppsPage() {
                     <div className="absolute left-1/2 top-4 z-20 h-4 w-24 -translate-x-1/2 rounded-full bg-black/90 border border-white/10" />
 
                     {/* Phone Screen Display */}
-                    <div className="relative aspect-9/18 overflow-hidden rounded-[2rem] bg-panel">
+                    <div className="relative aspect-9/18 overflow-hidden rounded-4xl bg-panel">
                       <Image
                         src="/mobile-ai-center.jpg"
                         alt="AI-Powered Mobile Engineering Telemetry"

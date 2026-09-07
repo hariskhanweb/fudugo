@@ -43,7 +43,7 @@ const variantStyles: Record<ButtonVariant, string> = {
   "solid-white":
     "bg-white text-black hover:bg-white/90",
   glass:
-    "border border-white/15 bg-white/5 text-white/85 backdrop-blur-sm hover:border-white/25 hover:bg-white/10 hover:text-white",
+    "border border-white/15 bg-white/5 text-white/85 backdrop-blur-xs hover:border-white/25 hover:bg-white/10 hover:text-white",
   accent:
     "bg-accent text-white hover:bg-accent/90",
   link:
@@ -133,7 +133,7 @@ export default function Button({
   const isExternal = href?.startsWith("http");
 
   const classes = cn(
-    "group inline-flex shrink-0 items-center justify-center font-sans font-medium transition-[color,background-color,border-color,transform] duration-200",
+    "group inline-flex shrink-0 cursor-pointer items-center justify-center font-sans font-medium outline-hidden transition-[color,background-color,border-color] duration-200 focus-visible:ring-2 focus-visible:ring-accent-alt/70",
     !isLink && "disabled:pointer-events-none disabled:opacity-50",
     variantStyles[variant],
     isLink ? styles.link : cn(shapeStyles[shape], styles.root),

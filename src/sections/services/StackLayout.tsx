@@ -4,6 +4,7 @@ import { useRef } from "react";
 import gsap from "gsap";
 import type { ServicePageContent } from "@/types";
 import { Container } from "@/components/ui";
+import { cn } from "@/lib/utils";
 import { useGsapContext } from "@/lib/use-gsap-context";
 
 /** Vertical infrastructure stack — layered architecture cards */
@@ -81,7 +82,10 @@ export default function StackLayout({ service }: { service: ServicePageContent }
               {layers.map((layer, index) => (
                 <div
                   key={layer.label}
-                  className={`rounded-xl border border-border/50 bg-linear-to-r ${layer.tone} to-transparent px-4 py-3`}
+                  className={cn(
+                    "rounded-xl border border-border/50 bg-linear-to-r to-transparent px-4 py-3",
+                    layer.tone,
+                  )}
                   style={{ marginLeft: `${index * 12}px` }}
                 >
                   <p className="font-sans text-sm font-semibold text-foreground">{layer.label}</p>

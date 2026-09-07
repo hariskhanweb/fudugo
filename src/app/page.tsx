@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import {
   AboutSection,
   BlogSection,
@@ -10,6 +11,18 @@ import {
   TestimonialsSection,
   WorksSection,
 } from "@/sections";
+import { DEFAULT_DESCRIPTION, DEFAULT_TITLE, pageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = {
+  ...pageMetadata({
+    title: DEFAULT_TITLE,
+    description: DEFAULT_DESCRIPTION,
+    path: "/",
+  }),
+  title: {
+    absolute: DEFAULT_TITLE,
+  },
+};
 
 const RIBBON_IMAGES = [
   "/components/Ai-01.webp",

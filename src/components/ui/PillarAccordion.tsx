@@ -53,13 +53,13 @@ export default function PillarAccordion({
             <button
               type="button"
               onClick={() => setOpenId(isOpen ? null : item.id)}
-              className="flex w-full items-center gap-3.5 py-5 text-left sm:gap-4 sm:py-6"
+              className="flex w-full cursor-pointer items-center gap-3.5 py-5 text-left outline-hidden sm:gap-4 sm:py-6 focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-accent-alt/70"
               aria-expanded={isOpen}
             >
               <CornerArrow className="h-5 w-2.75 shrink-0 text-accent-alt" />
               <span
                 className={cn(
-                  "min-w-0 flex-1 font-sans text-[18px] transition-colors sm:text-[22px]",
+                  "min-w-0 grow font-sans text-[18px] transition-colors sm:text-[22px]",
                   isOpen ? "text-accent-alt" : "text-foreground",
                 )}
               >

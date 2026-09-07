@@ -79,7 +79,7 @@ export default function PillButton({
   const showIcon = iconNode != null;
 
   const classes = cn(
-    "group inline-flex shrink-0 items-center rounded-full border border-border/70 bg-background/80 font-sans font-semibold text-foreground transition-[border-color,background-color] duration-300 hover:border-accent-alt/40 hover:bg-background",
+    "group inline-flex shrink-0 cursor-pointer items-center rounded-full border border-border/70 bg-background/80 font-sans font-semibold text-foreground transition-[border-color,background-color] duration-300 outline-hidden hover:border-accent-alt/40 hover:bg-background focus-visible:ring-2 focus-visible:ring-accent-alt/70",
     showIcon ? styles.withIcon : styles.withoutIcon,
     className,
   );

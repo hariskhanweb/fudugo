@@ -103,7 +103,7 @@ function MediaSurface({ project }: { project: Project }) {
       <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/35 via-transparent to-black/20" />
 
       {badge ? (
-        <div className="absolute left-3 top-3 z-10 flex max-w-[85%] items-center gap-2.5 rounded-xl bg-black/55 px-2.5 py-2 backdrop-blur-sm sm:left-4 sm:top-4">
+        <div className="absolute left-3 top-3 z-10 flex max-w-[85%] items-center gap-2.5 rounded-xl bg-black/55 px-2.5 py-2 backdrop-blur-xs sm:left-4 sm:top-4">
           <div className="relative h-9 w-9 shrink-0 overflow-hidden rounded-full bg-surface">
             {badge.avatar ? (
               <Image

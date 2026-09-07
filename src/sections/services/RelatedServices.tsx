@@ -26,7 +26,7 @@ export default function RelatedServices({
           </div>
           <Link
             href="/services"
-            className="hidden font-sans text-sm font-medium text-accent-alt transition-opacity hover:opacity-80 sm:inline"
+            className="hidden cursor-pointer font-sans text-sm font-medium text-accent-alt transition-opacity hover:opacity-80 focus-visible:ring-2 focus-visible:ring-accent-alt/70 focus-visible:outline-hidden sm:inline"
           >
             View all
           </Link>
@@ -37,7 +37,7 @@ export default function RelatedServices({
             <Link
               key={service.slug}
               href={`/services/${service.slug}`}
-              className="group rounded-2xl border border-border/50 bg-surface/30 p-5 transition-[border-color,background-color] duration-300 hover:border-accent-alt/30 hover:bg-surface/50 sm:p-6"
+              className="group cursor-pointer rounded-2xl border border-border/50 bg-surface/30 p-5 transition-[border-color,background-color] duration-300 hover:border-accent-alt/30 hover:bg-surface/50 focus-visible:ring-2 focus-visible:ring-accent-alt/70 focus-visible:outline-hidden sm:p-6"
             >
               <p className="font-sans text-xs text-accent-alt">{service.eyebrow}</p>
               <h3 className="mt-3 font-sans text-lg font-bold text-foreground transition-colors group-hover:text-accent-soft">

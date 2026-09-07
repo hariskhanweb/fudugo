@@ -291,7 +291,7 @@ export default function AboutSection() {
                   type="button"
                   onClick={prev}
                   aria-label="Previous slide"
-                  className="flex h-8 w-8 items-center justify-center text-foreground/55 transition-colors hover:text-foreground"
+                  className="flex h-8 w-8 cursor-pointer items-center justify-center text-foreground/55 transition-colors outline-hidden hover:text-foreground focus-visible:ring-2 focus-visible:ring-accent-alt/70"
                 >
                   <ArrowLeft className="h-4.5 w-4.5" />
                 </button>
@@ -299,7 +299,7 @@ export default function AboutSection() {
                   type="button"
                   onClick={next}
                   aria-label="Next slide"
-                  className="flex h-8 w-8 items-center justify-center text-foreground/55 transition-colors hover:text-foreground"
+                  className="flex h-8 w-8 cursor-pointer items-center justify-center text-foreground/55 transition-colors outline-hidden hover:text-foreground focus-visible:ring-2 focus-visible:ring-accent-alt/70"
                 >
                   <ArrowRight className="h-4.5 w-4.5" />
                 </button>

@@ -128,7 +128,7 @@ export default function ServiceHelpPicker({
                 onClick={() => toggle(option)}
                 aria-pressed={active}
                 className={cn(
-                  "group relative flex items-center gap-3.5 overflow-hidden rounded-2xl border px-4 py-4 text-left outline-none transition-[border-color,background-color,box-shadow,transform,color] duration-300",
+                  "group relative flex cursor-pointer items-center gap-3.5 overflow-hidden rounded-2xl border px-4 py-4 text-left outline-hidden transition-[border-color,background-color,box-shadow,color] duration-300",
                   "focus-visible:ring-2 focus-visible:ring-accent-alt/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background",
                   "active:scale-[0.985]",
                   active
@@ -146,13 +146,13 @@ export default function ServiceHelpPicker({
                   {String(index + 1).padStart(2, "0")}
                 </span>
 
-                <span className="min-w-0 flex-1 font-sans text-sm font-medium sm:text-[15px]">
+                <span className="min-w-0 grow font-sans text-sm font-medium sm:text-[15px]">
                   {option}
                 </span>
 
                 <span
                   className={cn(
-                    "flex h-7 w-7 shrink-0 items-center justify-center rounded-full border transition-[background-color,border-color,color,transform] duration-300",
+                    "flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-border/80 transition-[background-color,border-color,color] duration-300",
                     active
                       ? "scale-100 border-accent-alt bg-accent-alt text-background"
                       : "border-border/80 text-muted group-hover:border-border-hover group-hover:text-foreground",
@@ -179,7 +179,7 @@ export default function ServiceHelpPicker({
           )}
         >
           <div className="flex flex-col gap-4 p-4 sm:flex-row sm:items-center sm:gap-5 sm:px-5 sm:py-3">
-            <div className="min-w-0 flex-1">
+            <div className="min-w-0 grow">
               <div className="mb-2.5 flex items-center justify-between gap-3 sm:mb-3">
                 <p className="font-sans text-xs font-semibold uppercase tracking-[0.16em] text-muted">
                   {title}
@@ -203,7 +203,7 @@ export default function ServiceHelpPicker({
                       key={option}
                       type="button"
                       onClick={() => remove(option)}
-                      className="inline-flex items-center gap-1.5 rounded-full border border-accent-alt/30 bg-accent-alt/10 py-1 pl-3 pr-2 font-sans text-xs font-medium text-accent-soft transition-colors hover:border-accent-alt/50 hover:bg-accent-alt/15"
+                      className="inline-flex cursor-pointer items-center gap-1.5 rounded-full border border-accent-alt/30 bg-accent-alt/10 py-1 pr-2 pl-3 font-sans text-xs font-medium text-accent-soft transition-colors hover:border-accent-alt/50 hover:bg-accent-alt/15 focus-visible:ring-2 focus-visible:ring-accent-alt/70 focus-visible:outline-hidden"
                     >
                       {option}
                       <span className="flex h-4 w-4 items-center justify-center rounded-full bg-accent-alt/20 text-accent-alt">

@@ -7,7 +7,9 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Container, AccentMark } from "@/components/ui";
 import { useGsapContext } from "@/lib/use-gsap-context";
-import { CtaSection, PageHeroSection } from "@/sections";
+import { CtaSection } from "@/sections";
+import ServiceHero from "@/sections/services/ServiceHero";
+import { getServiceBySlug } from "@/lib/service-pages";
 import { cn } from "@/lib/utils";
 import content from "@/data/business-tools-development-page.json";
 
@@ -109,7 +111,7 @@ function FaqAccordion({
             <button
               type="button"
               onClick={() => setOpenId(isOpen ? null : item.id)}
-              className="flex w-full items-center justify-between gap-4 text-left cursor-pointer"
+              className="flex w-full cursor-pointer items-center justify-between gap-4 text-left outline-hidden focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-accent-alt/70"
               aria-expanded={isOpen}
             >
               <span className="font-sans text-lg font-bold text-foreground transition-colors group-hover:text-accent-alt sm:text-xl">
@@ -146,27 +148,12 @@ function FaqAccordion({
 
 export default function BusinessToolsDevelopmentPage() {
   const rootRef = useRef<HTMLDivElement>(null);
-  const { hero, introSection, whatWeOffer, aiDevelopment, techStack, faqs, ctaSection } = content;
+  const { introSection, whatWeOffer, aiDevelopment, techStack, faqs, ctaSection } = content;
+  const service = getServiceBySlug("business-tools-development");
 
   useGsapContext(
     rootRef,
     (scope) => {
-      // Hero elements animation
-      const heroParts = scope.querySelectorAll("[data-tool-hero='part']");
-      if (heroParts.length > 0) {
-        gsap.fromTo(
-          heroParts,
-          { y: 35, opacity: 0 },
-          {
-            y: 0,
-            opacity: 1,
-            duration: 0.8,
-            stagger: 0.12,
-            ease: "power3.out",
-          },
-        );
-      }
-
       // Scroll reveals
       const reveals = scope.querySelectorAll("[data-tool='reveal']");
       reveals.forEach((el) => {
@@ -254,137 +241,18 @@ export default function BusinessToolsDevelopmentPage() {
 
   return (
     <>
-      <PageHeroSection
-        content={{
-          title: "Business Tools Development",
-          image: "/work-fintech.jpg",
-          imageAlt: "Business Tools & ERP Systems",
-          imagePosition: "center",
-        }}
-      />
+      {service ? <ServiceHero service={service} /> : null}
 
       <div ref={rootRef} className="relative min-h-screen bg-background text-foreground">
-        {/* 1. HERO SECTION */}
-        <section className="relative overflow-hidden pt-12 pb-20 sm:pt-16 sm:pb-28 lg:pt-20 lg:pb-32 border-b border-border/60">
-          {/* Cyber Network Grid Pattern */}
-          <div
-            className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(40,171,226,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(40,171,226,0.08)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] [mask-image:radial-gradient(ellipse_75%_65%_at_50%_35%,#000_60%,transparent_100%)] opacity-70"
-            aria-hidden
-          />
-          {/* Ambient Glowing Orbs */}
-          <div
-            className="pointer-events-none absolute -top-40 right-1/4 h-[500px] w-[500px] rounded-full bg-accent-alt/18 blur-[140px]"
-            aria-hidden
-          />
-          <div
-            className="pointer-events-none absolute top-1/3 -left-32 h-[450px] w-[450px] rounded-full bg-blue-600/12 blur-[150px]"
-            aria-hidden
-          />
-
-          <Container className="relative px-5 sm:px-8 lg:px-12">
-            <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-14 xl:gap-16">
-              {/* Left Column: Copy & Actions */}
-              <div className="lg:col-span-6 xl:col-span-6">
-                <div data-tool-hero="part">
-                  <AccentMark className="mb-4 origin-left" />
-                  <p className="font-sans text-sm font-semibold uppercase tracking-wider text-accent-alt">
-                    {hero.eyebrow}
-                  </p>
-                </div>
-
-                <h1
-                  data-tool-hero="part"
-                  className="mt-4 font-sans text-[clamp(36px,5.5vw,60px)] font-bold leading-[1.06] tracking-tight text-foreground"
-                >
-                  {hero.title}
-                </h1>
-
-                <p
-                  data-tool-hero="part"
-                  className="mt-6 font-sans text-base leading-relaxed text-muted sm:text-lg"
-                >
-                  {hero.description}
-                </p>
-
-                <div
-                  data-tool-hero="part"
-                  className="mt-8 flex flex-wrap items-center gap-4 sm:gap-5"
-                >
-                  <Link
-                    href={hero.ctaHref}
-                    className="inline-flex items-center gap-2 rounded-xl border border-accent-alt bg-accent-alt px-7 py-3.5 font-sans text-sm font-semibold text-white shadow-lg shadow-accent-alt/25 transition-all duration-300 hover:bg-accent-soft hover:shadow-accent-alt/40"
-                  >
-                    <span>{hero.ctaLabel}</span>
-                    <span className="text-base leading-none">↗</span>
-                  </Link>
-                  <Link
-                    href={hero.secondaryCtaHref}
-                    className="inline-flex items-center gap-2 rounded-xl border border-border/80 bg-surface/80 px-7 py-3.5 font-sans text-sm font-semibold text-foreground transition-all duration-300 hover:border-accent-alt/50 hover:bg-surface hover:text-accent-soft"
-                  >
-                    <span>{hero.secondaryCtaLabel}</span>
-                    <span className="text-base leading-none">↓</span>
-                  </Link>
-                </div>
-              </div>
-
-              {/* Right Column: High-Tech Cockpit Visualization */}
-              <div className="relative lg:col-span-6 xl:col-span-6">
-                <div
-                  data-tool-hero="part"
-                  className="group relative aspect-16/10 sm:aspect-16/11 lg:aspect-4/3 w-full overflow-hidden rounded-[2rem] border border-border/80 bg-surface shadow-2xl transition-all duration-500 hover:border-accent-alt/40"
-                >
-                  <Image
-                    src={hero.image}
-                    alt="Custom Business Tools & ERP Architecture"
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    priority
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-linear-to-t from-background/85 via-transparent to-background/25" />
-
-                  {/* Floating Live Telemetry Chip */}
-                  <div className="absolute top-4 left-4 z-20 flex items-center gap-2 rounded-xl border border-white/15 bg-black/75 px-3 py-1.5 backdrop-blur-md">
-                    <span className="relative flex h-2 w-2">
-                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-                      <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
-                    </span>
-                    <span className="font-mono text-[11px] font-semibold text-white/90">
-                      Enterprise Core · Online & Synchronized
-                    </span>
-                  </div>
-
-                  {/* Floating Meta Badges */}
-                  <div className="absolute inset-x-4 bottom-4 flex flex-wrap gap-2 sm:inset-x-6 sm:bottom-6">
-                    {hero.meta.map((m) => (
-                      <div
-                        key={m.label}
-                        className="rounded-xl border border-white/10 bg-black/75 px-3.5 py-2 backdrop-blur-md"
-                      >
-                        <span className="block font-mono text-[10px] uppercase tracking-wider text-accent-alt">
-                          {m.label}
-                        </span>
-                        <span className="block font-sans text-xs font-semibold text-white">
-                          {m.value}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Container>
-        </section>
-
         {/* 2. PURPOSE-BUILT SOFTWARE (INTRO SECTION) */}
         <section className="relative overflow-hidden bg-header py-20 sm:py-24 lg:py-32 border-b border-border/60">
           {/* Subtle Dot Matrix Tech Pattern */}
           <div
-            className="pointer-events-none absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:1.75rem_1.75rem] opacity-50 [mask-image:radial-gradient(ellipse_80%_60%_at_50%_50%,#000_60%,transparent_100%)]"
+            className="pointer-events-none absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.06)_1px,transparent_1px)] bg-size-[1.75rem_1.75rem] opacity-50 mask-[radial-gradient(ellipse_80%_60%_at_50%_50%,#000_60%,transparent_100%)]"
             aria-hidden
           />
           <div
-            className="pointer-events-none absolute -right-32 top-1/2 -translate-y-1/2 h-[420px] w-[420px] rounded-full bg-accent-alt/12 blur-[140px]"
+            className="pointer-events-none absolute -right-32 top-1/2 -translate-y-1/2 h-105 w-105 rounded-full bg-accent-alt/12 blur-[140px]"
             aria-hidden
           />
 
@@ -448,7 +316,7 @@ export default function BusinessToolsDevelopmentPage() {
         <section id="capabilities" className="relative overflow-hidden bg-background py-20 sm:py-24 lg:py-32 border-b border-border/60">
           {/* Ambient Cyber Grid Background */}
           <div
-            className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_70%_50%_at_50%_50%,#000_70%,transparent_100%)]"
+            className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-size-[4rem_4rem] mask-[radial-gradient(ellipse_70%_50%_at_50%_50%,#000_70%,transparent_100%)]"
             aria-hidden
           />
           <div
@@ -487,7 +355,7 @@ export default function BusinessToolsDevelopmentPage() {
                 >
                   <div>
                     {/* Top Image Banner */}
-                    <div className="relative aspect-16/9 w-full overflow-hidden bg-panel">
+                    <div className="relative aspect-video w-full overflow-hidden bg-panel">
                       <Image
                         src={item.image}
                         alt={item.title}
@@ -579,7 +447,7 @@ export default function BusinessToolsDevelopmentPage() {
                 <div className="mt-9">
                   <Link
                     href={aiDevelopment.ctaHref}
-                    className="inline-flex items-center gap-2 rounded-full bg-accent-alt px-8 py-3.5 font-sans text-sm font-semibold text-white shadow-lg shadow-accent-alt/25 transition-all duration-300 hover:bg-accent-soft hover:shadow-accent-alt/40"
+                    className="inline-flex items-center gap-2 rounded-full bg-accent-alt px-8 py-3.5 font-sans text-sm font-semibold text-white shadow-lg shadow-accent-alt/25 transition-all duration-300 hover:bg-accent-soft hover:shadow-accent-alt/40 cursor-pointer outline-hidden focus-visible:ring-2 focus-visible:ring-white/40"
                   >
                     <span>{aiDevelopment.ctaLabel}</span>
                     <span className="text-base leading-none">↗</span>
@@ -590,7 +458,7 @@ export default function BusinessToolsDevelopmentPage() {
               {/* Right Column: Hero Photo */}
               <div data-tool="reveal" className="relative lg:col-span-6 xl:col-span-6">
                 {/* Main Photo Card */}
-                <div className="relative aspect-4/3 sm:aspect-16/11 lg:aspect-4/3 w-full overflow-hidden rounded-[2rem] border border-border/80 shadow-2xl">
+                <div className="relative aspect-4/3 sm:aspect-16/11 lg:aspect-4/3 w-full overflow-hidden rounded-4xl border border-border/80 shadow-2xl">
                   <Image
                     src={aiDevelopment.image}
                     alt="AI Business Systems Architecture"
@@ -611,7 +479,7 @@ export default function BusinessToolsDevelopmentPage() {
         >
           {/* Subtle Protocol Lines Background */}
           <div
-            className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,rgba(40,171,226,0.03)_1px,transparent_1px)] bg-[size:100%_3.5rem] opacity-60"
+            className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,rgba(40,171,226,0.03)_1px,transparent_1px)] bg-size-[100%_3.5rem] opacity-60"
             aria-hidden
           />
           <div
@@ -643,7 +511,7 @@ export default function BusinessToolsDevelopmentPage() {
                     <div className="pt-6">
                       <Link
                         href="/contact"
-                        className="inline-flex items-center gap-2 rounded-xl bg-accent-alt px-6 py-3 font-sans text-sm font-semibold text-white shadow-lg shadow-accent-alt/25 transition-all hover:bg-accent-soft hover:shadow-accent-alt/40"
+                        className="inline-flex items-center gap-2 rounded-xl bg-accent-alt px-6 py-3 font-sans text-sm font-semibold text-white shadow-lg shadow-accent-alt/25 transition-all hover:bg-accent-soft hover:shadow-accent-alt/40 cursor-pointer outline-hidden focus-visible:ring-2 focus-visible:ring-white/40"
                       >
                         <span>Plan Your System</span>
                         <span>→</span>
@@ -747,7 +615,7 @@ export default function BusinessToolsDevelopmentPage() {
         <section className="relative overflow-hidden bg-background py-20 sm:py-24 lg:py-32 border-b border-border/60">
           {/* FAQ Ambient Atmosphere */}
           <div
-            className="pointer-events-none absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:24px_24px] opacity-40"
+            className="pointer-events-none absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.03)_1px,transparent_1px)] bg-size-[24px_24px] opacity-40"
             aria-hidden
           />
           <div
@@ -776,7 +644,7 @@ export default function BusinessToolsDevelopmentPage() {
                   <div className="pt-4">
                     <Link
                       href={faqs.ctaHref}
-                      className="inline-flex items-center gap-2 rounded-xl border border-accent-alt bg-accent-alt px-6 py-3 font-sans text-sm font-semibold text-white shadow-lg shadow-accent-alt/25 transition-all hover:bg-accent-soft hover:shadow-accent-alt/40"
+                      className="inline-flex items-center gap-2 rounded-xl border border-accent-alt bg-accent-alt px-6 py-3 font-sans text-sm font-semibold text-white shadow-lg shadow-accent-alt/25 transition-all hover:bg-accent-soft hover:shadow-accent-alt/40 cursor-pointer outline-hidden focus-visible:ring-2 focus-visible:ring-white/40"
                     >
                       <span>{faqs.ctaLabel}</span>
                       <span>→</span>

@@ -355,6 +355,52 @@
         "Granular security and complete auditability across all records",
         "100% intellectual property ownership with zero recurring user license fees"
       ]
+    },
+    {
+      "slug": "crm-drm-integration",
+      "title": "CRM & DRM Integration",
+      "shortTitle": "CRM & DRM",
+      "eyebrow": "(08 — CRM & DRM Integration)",
+      "tagline": "Connect your customer and dealer data into one system.",
+      "description": "We integrate and customize CRM and DRM platforms, connecting your customer relationships, dealer networks, and existing business tools into one AI-assisted system, built to help you manage relationships instead of chasing scattered data.",
+      "heroImage": "/ai-agent-nodes.jpg",
+      "heroImagePosition": "center",
+      "layout": "editorial",
+      "ctaLabel": "Get a Free Quote",
+      "highlights": [
+        { "label": "Core CRMs", "value": "Salesforce · HubSpot · Zoho" },
+        { "label": "Sync Model", "value": "Bi-Directional · Real-Time" },
+        { "label": "Security", "value": "Enterprise RBAC · OAuth 2.0" }
+      ],
+      "capabilities": [
+        {
+          "title": "CRM Integration",
+          "description": "Connecting or customizing CRM platforms to match your actual sales process."
+        },
+        {
+          "title": "DRM Integration",
+          "description": "Dealer and distributor systems that keep network data centralized and accurate."
+        },
+        {
+          "title": "Third-Party & API Integration",
+          "description": "Connect CRM/DRM to payments, marketing platforms, and internal databases."
+        },
+        {
+          "title": "Data Migration & Sync",
+          "description": "Move existing customer and dealer data without losing accuracy or history."
+        }
+      ],
+      "process": [
+        { "step": "01", "title": "Audit", "description": "Map current CRM, DRM, and adjacent tools." },
+        { "step": "02", "title": "Architecture", "description": "Define sync model, APIs, and security." },
+        { "step": "03", "title": "Integrate", "description": "Build connections and migrate data in stages." },
+        { "step": "04", "title": "Train & operate", "description": "Hand over with validation, access, and support." }
+      ],
+      "outcomes": [
+        "One reliable source of customer and dealer truth",
+        "Fewer manual handoffs between sales and the network",
+        "Safer, validated data during and after migration"
+      ]
     }
   ]
 }

@@ -1,8 +1,7 @@
 {
   "links": [
     { "label": "Home", "href": "/" },
-    { "label": "About", "href": "/about" },
-    { "label": "Contact", "href": "/contact" }
+    { "label": "About", "href": "/about" }
   ],
   "dropdowns": {
     "services": {
@@ -22,24 +21,13 @@
     "portfolio": {
       "label": "Portfolio",
       "items": [
-        { "label": "Our Work", "href": "/#works" },
-        { "label": "Single Portfolio", "href": "/#works" }
-      ]
-    },
-    "pages": {
-      "label": "Pages",
-      "items": [
-        { "label": "Our Process", "href": "/#process" },
-        { "label": "Solutions", "href": "/about" },
-        { "label": "FAQ", "href": "/#testimonials" },
-        { "label": "Contact", "href": "/contact" }
+        { "label": "Our Work", "href": "/#works" }
       ]
     },
     "blog": {
       "label": "Blog",
       "items": [
-        { "label": "Our Blog", "href": "/blog" },
-        { "label": "Single Post", "href": "/blog/whats-new-in-web-apps-and-marketing" }
+        { "label": "Our Blog", "href": "/blog" }
       ]
     }
   },

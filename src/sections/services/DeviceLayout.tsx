@@ -104,7 +104,7 @@ export default function DeviceLayout({ service }: { service: ServicePageContent 
                   className="object-cover"
                 />
                 <div className="absolute inset-x-0 top-0 h-8 bg-linear-to-b from-black/40 to-transparent" />
-                <div className="absolute inset-x-8 bottom-4 rounded-xl border border-white/10 bg-black/45 px-3 py-2 backdrop-blur-sm">
+                <div className="absolute inset-x-8 bottom-4 rounded-xl border border-white/10 bg-black/45 px-3 py-2 backdrop-blur-xs">
                   <p className="font-sans text-[10px] uppercase tracking-wider text-accent-soft">
                     Live preview
                   </p>

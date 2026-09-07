@@ -7,7 +7,9 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import content from "@/data/web-solutions-page.json";
 import { Container, AccentMark } from "@/components/ui";
-import { CtaSection, PageHeroSection } from "@/sections";
+import { CtaSection } from "@/sections";
+import ServiceHero from "@/sections/services/ServiceHero";
+import { getServiceBySlug } from "@/lib/service-pages";
 import { useGsapContext } from "@/lib/use-gsap-context";
 import { cn } from "@/lib/utils";
 
@@ -75,7 +77,7 @@ function FaqAccordion({
             <button
               type="button"
               onClick={() => setOpenId(isOpen ? null : item.id)}
-              className="flex w-full items-center justify-between gap-4 p-5 text-left sm:p-6"
+              className="flex w-full cursor-pointer items-center justify-between gap-4 p-5 text-left outline-hidden sm:p-6 focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-accent-alt/70"
               aria-expanded={isOpen}
             >
               <span
@@ -123,27 +125,12 @@ function FaqAccordion({
 
 export default function WebSolutionsPage() {
   const rootRef = useRef<HTMLDivElement>(null);
-  const { hero, introSection, whatWeOffer, aiDevelopment, techStack, faqs } = content;
+  const { introSection, whatWeOffer, aiDevelopment, techStack, faqs } = content;
+  const service = getServiceBySlug("web-solutions");
 
   useGsapContext(
     rootRef,
     (scope) => {
-      // Hero elements animation
-      const heroParts = scope.querySelectorAll("[data-web-hero='part']");
-      if (heroParts.length) {
-        gsap.fromTo(
-          heroParts,
-          { y: 28, opacity: 0 },
-          {
-            y: 0,
-            opacity: 1,
-            duration: 0.75,
-            stagger: 0.08,
-            ease: "power3.out",
-          },
-        );
-      }
-
       // Scroll reveals for sections
       const blocks = scope.querySelectorAll("[data-web='reveal']");
       blocks.forEach((block) => {
@@ -171,123 +158,9 @@ export default function WebSolutionsPage() {
   return (
     <>
       {/* Top Header Banner matching About & Contact pages */}
-      <PageHeroSection
-        content={{
-          title: "Web Design & Development",
-          image: hero.image,
-          imageAlt: hero.imageAlt,
-          imagePosition: "center",
-        }}
-      />
+      {service ? <ServiceHero service={service} /> : null}
 
       <div ref={rootRef}>
-        {/* 1. HERO CONTENT SECTION */}
-        <section className="relative overflow-hidden bg-background py-16 sm:py-20 lg:py-28">
-          {/* Subtle Grid Background Pattern */}
-          <div
-            className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,var(--border)_1px,transparent_1px),linear-gradient(to_bottom,var(--border)_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-30 [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"
-            aria-hidden
-          />
-
-          {/* Ambient Glows */}
-          <div
-            className="pointer-events-none absolute -left-40 top-1/4 h-96 w-96 rounded-full bg-accent-alt/15 blur-[130px]"
-            aria-hidden
-          />
-          <div
-            className="pointer-events-none absolute -right-40 bottom-10 h-96 w-96 rounded-full bg-accent/10 blur-[130px]"
-            aria-hidden
-          />
-
-          <Container className="relative px-5 sm:px-8 lg:px-12">
-            <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-14 xl:gap-20">
-              {/* Left Column: Heading & Copy */}
-              <div className="lg:col-span-7">
-                <div data-web-hero="part">
-                  <AccentMark className="mb-5 origin-left" />
-                </div>
-
-                {/* Small Label */}
-                <p
-                  data-web-hero="part"
-                  className="mb-4 font-sans text-sm font-semibold uppercase tracking-wider text-accent-alt sm:text-[15px]"
-                >
-                  {hero.eyebrow}
-                </p>
-
-                {/* Main H1 */}
-                <h1
-                  data-web-hero="part"
-                  className="font-sans text-[clamp(38px,6.5vw,76px)] font-bold leading-[1.04] tracking-tight text-foreground"
-                >
-                  {hero.title}
-                </h1>
-
-                {/* Supporting Text */}
-                <p
-                  data-web-hero="part"
-                  className="mt-6 max-w-2xl font-sans text-base leading-relaxed text-muted sm:text-lg sm:leading-relaxed"
-                >
-                  {hero.description}
-                </p>
-
-                {/* CTA Buttons */}
-                <div
-                  data-web-hero="part"
-                  className="mt-8 flex flex-wrap items-center gap-4 sm:mt-10"
-                >
-                  <Link
-                    href={hero.ctaHref}
-                    className="inline-flex items-center gap-2 rounded-xl border border-accent-alt bg-accent-alt px-7 py-3.5 font-sans text-sm font-semibold text-white shadow-lg shadow-accent-alt/25 transition-all duration-300 hover:bg-accent-soft hover:shadow-accent-alt/40"
-                  >
-                    <span>{hero.ctaLabel}</span>
-                    <span>→</span>
-                  </Link>
-                  <a
-                    href={hero.secondaryCtaHref}
-                    className="inline-flex items-center gap-2 rounded-xl border border-border/80 bg-surface/60 px-6 py-3.5 font-sans text-sm font-medium text-foreground backdrop-blur-xs transition-colors hover:border-accent-alt/40 hover:bg-surface-hover"
-                  >
-                    {hero.secondaryCtaLabel}
-                  </a>
-                </div>
-              </div>
-
-              {/* Right Column: Floating Side Showcase Graphic */}
-              <div data-web-hero="part" className="relative lg:col-span-5">
-                <div className="group relative overflow-hidden rounded-3xl border border-border/80 bg-surface/60 p-4 shadow-2xl backdrop-blur-md transition-all duration-500 hover:border-accent-alt/40 hover:shadow-[0_25px_60px_-15px_rgba(0,0,0,0.6)]">
-                  <div className="relative aspect-4/3 overflow-hidden rounded-2xl bg-panel">
-                    <Image
-                      src="/web-service.webp"
-                      alt="Web Design Showcase"
-                      fill
-                      priority
-                      sizes="(max-width: 1024px) 100vw, 40vw"
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent" />
-                  </div>
-
-                  {/* Floating Micro-Badge */}
-                  <div className="absolute bottom-7 left-7 right-7 flex items-center justify-between rounded-xl border border-white/15 bg-black/65 px-4 py-3 backdrop-blur-md">
-                    <div className="flex items-center gap-2.5">
-                      <span className="relative flex h-2.5 w-2.5">
-                        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-                        <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500" />
-                      </span>
-                      <span className="font-sans text-xs font-semibold text-white">
-                        AI-Enabled Engineering
-                      </span>
-                    </div>
-                    <span className="font-mono text-xs font-bold text-accent-alt">
-                      99+ Speed
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Container>
-        </section>
-
         {/* 2. INTRODUCTION SECTION */}
         <section
           id="capabilities"
@@ -332,7 +205,7 @@ export default function WebSolutionsPage() {
                 <div className="pt-3">
                   <Link
                     href="/contact"
-                    className="inline-flex items-center gap-2 font-sans text-sm font-semibold text-accent-alt transition-colors hover:text-accent-soft sm:text-base"
+                    className="inline-flex items-center gap-2 font-sans text-sm font-semibold text-accent-alt transition-colors hover:text-accent-soft sm:text-base cursor-pointer outline-hidden focus-visible:ring-2 focus-visible:ring-accent-alt/70"
                   >
                     <span>Discuss your web project</span>
                     <span>→</span>
@@ -375,7 +248,7 @@ export default function WebSolutionsPage() {
                 >
                   <div>
                     {/* Top Image Banner */}
-                    <div className="relative aspect-16/9 w-full overflow-hidden bg-panel">
+                    <div className="relative aspect-video w-full overflow-hidden bg-panel">
                       <Image
                         src={item.image ?? "/Image-17.jpg"}
                         alt={item.title}
@@ -432,7 +305,7 @@ export default function WebSolutionsPage() {
         <section className="relative overflow-hidden bg-header py-20 sm:py-24 lg:py-32 border-t border-b border-border/60">
           {/* Subtle Grid Background Pattern */}
           <div
-            className="pointer-events-none absolute inset-0 bg-[radial-gradient(#ffffff0a_1px,transparent_1px)] bg-[size:1.5rem_1.5rem] opacity-40"
+            className="pointer-events-none absolute inset-0 bg-[radial-gradient(#ffffff0a_1px,transparent_1px)] bg-size-[1.5rem_1.5rem] opacity-40"
             aria-hidden
           />
 

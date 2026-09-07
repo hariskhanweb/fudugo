@@ -1,13 +1,15 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import content from "@/data/digital-marketing-page.json";
 import { Container, AccentMark } from "@/components/ui";
-import { CtaSection, PageHeroSection } from "@/sections";
+import { CtaSection } from "@/sections";
+import ServiceHero from "@/sections/services/ServiceHero";
+import { getServiceBySlug } from "@/lib/service-pages";
 import { useGsapContext } from "@/lib/use-gsap-context";
 import { cn } from "@/lib/utils";
 
@@ -162,7 +164,7 @@ function FaqAccordion({
             <button
               type="button"
               onClick={() => setOpenId(isOpen ? null : item.id)}
-              className="flex w-full items-center justify-between gap-4 p-5 text-left sm:p-6"
+              className="flex w-full cursor-pointer items-center justify-between gap-4 p-5 text-left outline-hidden sm:p-6 focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-accent-alt/70"
               aria-expanded={isOpen}
             >
               <span
@@ -210,27 +212,12 @@ function FaqAccordion({
 
 export default function DigitalMarketingPage() {
   const rootRef = useRef<HTMLDivElement>(null);
-  const { hero, introSection, whatWeOffer, ourApproach, seoApproach, contentAndSocial, paidAdvertising, growthGoals } = content;
+  const { introSection, whatWeOffer, ourApproach, seoApproach, contentAndSocial, paidAdvertising, growthGoals } = content;
+  const service = getServiceBySlug("digital-marketing");
 
   useGsapContext(
     rootRef,
     (scope) => {
-      // Hero elements animation
-      const heroParts = scope.querySelectorAll("[data-digital-hero='part']");
-      if (heroParts.length) {
-        gsap.fromTo(
-          heroParts,
-          { y: 28, opacity: 0 },
-          {
-            y: 0,
-            opacity: 1,
-            duration: 0.75,
-            stagger: 0.08,
-            ease: "power3.out",
-          },
-        );
-      }
-
       // Scroll reveals for sections
       const blocks = scope.querySelectorAll("[data-digital='reveal']");
       blocks.forEach((block) => {
@@ -320,156 +307,9 @@ export default function DigitalMarketingPage() {
 
   return (
     <>
-      {/* Top Header Banner matching other service pages */}
-      <PageHeroSection
-        content={{
-          title: "Digital Marketing",
-          image: hero.image,
-          imageAlt: hero.imageAlt,
-          imagePosition: "center",
-        }}
-      />
+      {service ? <ServiceHero service={service} /> : null}
 
       <div ref={rootRef}>
-        {/* 1. HERO SECTION */}
-        <section className="relative overflow-hidden bg-background py-16 sm:py-20 lg:py-28">
-          {/* Subtle Grid Background Pattern */}
-          <div
-            className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,var(--border)_1px,transparent_1px),linear-gradient(to_bottom,var(--border)_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-30 [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"
-            aria-hidden
-          />
-
-          {/* Ambient Glows */}
-          <div
-            className="pointer-events-none absolute -left-40 top-1/4 h-96 w-96 rounded-full bg-accent-alt/15 blur-[130px]"
-            aria-hidden
-          />
-          <div
-            className="pointer-events-none absolute -right-40 bottom-10 h-96 w-96 rounded-full bg-accent/10 blur-[130px]"
-            aria-hidden
-          />
-
-          <Container className="relative px-5 sm:px-8 lg:px-12">
-            <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-14 xl:gap-20">
-              {/* Left Column: Heading & Copy */}
-              <div className="lg:col-span-7">
-                <div data-digital-hero="part">
-                  <AccentMark className="mb-5 origin-left" />
-                </div>
-
-                {/* Small Label */}
-                <p
-                  data-digital-hero="part"
-                  className="mb-4 font-sans text-sm font-semibold uppercase tracking-wider text-accent-alt sm:text-[15px]"
-                >
-                  {hero.eyebrow}
-                </p>
-
-                {/* Main H1 */}
-                <h1
-                  data-digital-hero="part"
-                  className="font-sans text-[clamp(38px,6.5vw,76px)] font-bold leading-[1.04] tracking-tight text-foreground"
-                >
-                  {hero.title}
-                </h1>
-
-                {/* Supporting Text */}
-                <p
-                  data-digital-hero="part"
-                  className="mt-6 max-w-2xl font-sans text-base leading-relaxed text-muted sm:text-lg sm:leading-relaxed"
-                >
-                  {hero.description}
-                </p>
-
-                {/* CTA */}
-                <div
-                  data-digital-hero="part"
-                  className="mt-8 flex flex-wrap items-center gap-4 sm:mt-10"
-                >
-                  <Link
-                    href={hero.ctaHref}
-                    className="inline-flex items-center gap-2 rounded-xl border border-accent-alt bg-accent-alt px-7 py-3.5 font-sans text-sm font-semibold text-white shadow-lg shadow-accent-alt/25 transition-all duration-300 hover:bg-accent-soft hover:shadow-accent-alt/40"
-                  >
-                    <span>{hero.ctaLabel}</span>
-                    <span>→</span>
-                  </Link>
-                  <a
-                    href={hero.secondaryCtaHref}
-                    className="inline-flex items-center gap-2 rounded-xl border border-border/80 bg-surface/60 px-6 py-3.5 font-sans text-sm font-medium text-foreground backdrop-blur-xs transition-colors hover:border-accent-alt/40 hover:bg-surface-hover"
-                  >
-                    {hero.secondaryCtaLabel}
-                  </a>
-                </div>
-              </div>
-
-              {/* Right Column: Floating Digital Marketing Performance Hub */}
-              <div data-digital-hero="part" className="relative lg:col-span-5 flex justify-center">
-                <div className="group relative w-full max-w-[420px] overflow-hidden rounded-[2rem] border border-border/80 bg-surface/80 p-6 shadow-2xl backdrop-blur-md transition-all duration-500 hover:border-accent-alt/40 hover:shadow-[0_25px_60px_-15px_rgba(0,0,0,0.6)]">
-                  {/* Performance Hub Header */}
-                  <div className="flex items-center justify-between border-b border-border/50 pb-4">
-                    <div className="flex items-center gap-2.5">
-                      <span className="relative flex h-2.5 w-2.5">
-                        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-                        <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500" />
-                      </span>
-                      <span className="font-sans text-xs font-semibold uppercase tracking-wider text-foreground">
-                        Live Campaign Engine
-                      </span>
-                    </div>
-                    <span className="rounded-full bg-accent-alt/15 px-2.5 py-0.5 font-mono text-[11px] font-bold text-accent-alt">
-                      Targeting Active
-                    </span>
-                  </div>
-
-                  {/* Growth Metrics Grid */}
-                  <div className="mt-5 grid grid-cols-2 gap-3.5">
-                    <div className="rounded-xl border border-border/60 bg-panel/70 p-3.5">
-                      <p className="font-mono text-[11px] uppercase tracking-wider text-muted">Organic Lift</p>
-                      <p className="mt-1 font-sans text-2xl font-bold text-foreground">+284%</p>
-                      <p className="mt-0.5 text-[11px] font-medium text-emerald-400">↑ High-intent search</p>
-                    </div>
-                    <div className="rounded-xl border border-border/60 bg-panel/70 p-3.5">
-                      <p className="font-mono text-[11px] uppercase tracking-wider text-muted">Blended ROAS</p>
-                      <p className="mt-1 font-sans text-2xl font-bold text-accent-alt">4.8x</p>
-                      <p className="mt-0.5 text-[11px] font-medium text-accent-soft">Top 5% category</p>
-                    </div>
-                  </div>
-
-                  {/* Visual Performance Chart Strip */}
-                  <div className="mt-4 rounded-xl border border-border/60 bg-panel/50 p-4">
-                    <div className="flex items-center justify-between text-xs text-muted mb-2.5">
-                      <span className="font-sans font-medium text-foreground/90">Acquisition Trend</span>
-                      <span className="font-mono text-[11px] text-accent-alt">90-Day Trajectory</span>
-                    </div>
-                    {/* Visual Bar Progression */}
-                    <div className="flex items-end gap-1.5 h-16 pt-2">
-                      <div className="w-1/8 rounded-t bg-accent-alt/25 h-[35%]" />
-                      <div className="w-1/8 rounded-t bg-accent-alt/35 h-[45%]" />
-                      <div className="w-1/8 rounded-t bg-accent-alt/45 h-[40%]" />
-                      <div className="w-1/8 rounded-t bg-accent-alt/60 h-[65%]" />
-                      <div className="w-1/8 rounded-t bg-accent-alt/75 h-[70%]" />
-                      <div className="w-1/8 rounded-t bg-accent-alt/85 h-[85%]" />
-                      <div className="w-1/8 rounded-t bg-accent-alt h-[95%]" />
-                      <div className="w-1/8 rounded-t bg-accent-soft h-[100%] shadow-[0_0_12px_var(--accent-alt)]" />
-                    </div>
-                  </div>
-
-                  {/* Channel Badges */}
-                  <div className="mt-4 flex flex-wrap items-center justify-between gap-2 border-t border-border/50 pt-4">
-                    <div className="flex items-center gap-1.5">
-                      <span className="rounded-md border border-border/70 bg-panel px-2 py-0.5 font-mono text-[10px] font-medium text-muted">SEO</span>
-                      <span className="rounded-md border border-border/70 bg-panel px-2 py-0.5 font-mono text-[10px] font-medium text-muted">Google Ads</span>
-                      <span className="rounded-md border border-border/70 bg-panel px-2 py-0.5 font-mono text-[10px] font-medium text-muted">Meta</span>
-                      <span className="rounded-md border border-border/70 bg-panel px-2 py-0.5 font-mono text-[10px] font-medium text-muted">CRO</span>
-                    </div>
-                    <span className="font-sans text-xs font-semibold text-accent-alt">Verified ROI</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Container>
-        </section>
-
         {/* 2. INTRODUCTION */}
         <section
           id="capabilities"
@@ -510,7 +350,7 @@ export default function DigitalMarketingPage() {
                 <div className="pt-3">
                   <Link
                     href="/contact"
-                    className="inline-flex items-center gap-2 font-sans text-sm font-semibold text-accent-alt transition-colors hover:text-accent-soft sm:text-base"
+                    className="inline-flex items-center gap-2 font-sans text-sm font-semibold text-accent-alt transition-colors hover:text-accent-soft sm:text-base cursor-pointer outline-hidden focus-visible:ring-2 focus-visible:ring-accent-alt/70"
                   >
                     <span>Discuss your marketing strategy</span>
                     <span>→</span>
@@ -549,7 +389,7 @@ export default function DigitalMarketingPage() {
                   className="group relative flex h-full flex-col justify-between overflow-hidden rounded-3xl border border-border/80 bg-surface/60 shadow-(--card-shadow) backdrop-blur-xs transition-all duration-400 hover:-translate-y-1.5 hover:border-accent-alt/40 hover:bg-surface hover:shadow-[0_20px_50px_-15px_rgba(0,0,0,0.5)]"
                 >
                   <div>
-                    <div className="relative aspect-16/9 w-full overflow-hidden bg-panel">
+                    <div className="relative aspect-video w-full overflow-hidden bg-panel">
                       <Image
                         src={item.image ?? "/Image-1.jpg"}
                         alt={item.title}
@@ -789,7 +629,7 @@ export default function DigitalMarketingPage() {
                 <div className="mt-9">
                   <Link
                     href={contentAndSocial.ctaHref}
-                    className="inline-flex items-center gap-2 rounded-full bg-accent-alt px-8 py-3.5 font-sans text-sm font-semibold text-white shadow-lg shadow-accent-alt/25 transition-all duration-300 hover:bg-accent-soft hover:shadow-accent-alt/40"
+                    className="inline-flex items-center gap-2 rounded-full bg-accent-alt px-8 py-3.5 font-sans text-sm font-semibold text-white shadow-lg shadow-accent-alt/25 transition-all duration-300 hover:bg-accent-soft hover:shadow-accent-alt/40 cursor-pointer outline-hidden focus-visible:ring-2 focus-visible:ring-white/40"
                   >
                     <span>{contentAndSocial.ctaLabel}</span>
                     <span className="text-base leading-none">↗</span>
@@ -818,7 +658,7 @@ export default function DigitalMarketingPage() {
               {/* Right Column: Hero Photo with Overlapping Floating Badge Card */}
               <div data-digital="reveal" className="relative lg:col-span-6 xl:col-span-6 pb-8 sm:pb-10 lg:pb-0">
                 {/* Main Photo Card */}
-                <div className="relative aspect-[4/3] sm:aspect-[16/11] lg:aspect-[4/3] w-full overflow-hidden rounded-[2rem] border border-border/80 shadow-2xl">
+                <div className="relative aspect-4/3 sm:aspect-16/11 lg:aspect-4/3 w-full overflow-hidden rounded-4xl border border-border/80 shadow-2xl">
                   <Image
                     src={contentAndSocial.image}
                     alt="Content and Social Media Strategy"
@@ -830,7 +670,7 @@ export default function DigitalMarketingPage() {
                 </div>
 
                 {/* Overlapping Floating Badge Card pinned to bottom corner */}
-                <div className="relative sm:absolute -bottom-8 -right-2 sm:-right-4 lg:-bottom-6 lg:-right-4 xl:-right-6 sm:max-w-[280px] lg:max-w-[310px] mt-6 sm:mt-0 rounded-2xl sm:rounded-3xl border border-border/80 bg-surface/95 p-6 shadow-2xl backdrop-blur-md transition-all duration-300 hover:border-accent-alt/40">
+                <div className="relative sm:absolute -bottom-8 -right-2 sm:-right-4 lg:-bottom-6 lg:-right-4 xl:-right-6 sm:max-w-70 lg:max-w-77.5 mt-6 sm:mt-0 rounded-2xl sm:rounded-3xl border border-border/80 bg-surface/95 p-6 shadow-2xl backdrop-blur-md transition-all duration-300 hover:border-accent-alt/40">
                   {/* Top Logo / Badge Symbol */}
                   <div className="mb-3.5 inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-accent-alt/15 text-accent-alt shadow-inner">
                     <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -878,7 +718,7 @@ export default function DigitalMarketingPage() {
               {/* Left Column on Desktop (Image & Floating Card): order-2 on mobile, order-1 on lg */}
               <div data-digital="reveal" className="relative order-2 lg:order-1 lg:col-span-6 xl:col-span-6 pb-8 sm:pb-10 lg:pb-0">
                 {/* Main Photo Card */}
-                <div className="relative aspect-[4/3] sm:aspect-[16/11] lg:aspect-[4/3] w-full overflow-hidden rounded-[2rem] border border-border/80 shadow-2xl">
+                <div className="relative aspect-4/3 sm:aspect-16/11 lg:aspect-4/3 w-full overflow-hidden rounded-4xl border border-border/80 shadow-2xl">
                   <Image
                     src={paidAdvertising.image}
                     alt="Paid Advertising Strategy"
@@ -890,7 +730,7 @@ export default function DigitalMarketingPage() {
                 </div>
 
                 {/* Overlapping Floating Badge Card pinned to bottom corner */}
-                <div className="relative sm:absolute -bottom-8 -right-2 sm:-right-4 lg:-bottom-6 lg:-right-4 xl:-right-6 sm:max-w-[280px] lg:max-w-[310px] mt-6 sm:mt-0 rounded-2xl sm:rounded-3xl border border-border/80 bg-surface/95 p-6 shadow-2xl backdrop-blur-md transition-all duration-300 hover:border-accent-alt/40">
+                <div className="relative sm:absolute -bottom-8 -right-2 sm:-right-4 lg:-bottom-6 lg:-right-4 xl:-right-6 sm:max-w-70 lg:max-w-77.5 mt-6 sm:mt-0 rounded-2xl sm:rounded-3xl border border-border/80 bg-surface/95 p-6 shadow-2xl backdrop-blur-md transition-all duration-300 hover:border-accent-alt/40">
                   {/* Top Target/Bullseye Icon */}
                   <div className="mb-3.5 inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-accent-alt/15 text-accent-alt shadow-inner">
                     <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -962,7 +802,7 @@ export default function DigitalMarketingPage() {
                 <div className="mt-9">
                   <Link
                     href={paidAdvertising.ctaHref}
-                    className="inline-flex items-center gap-2 rounded-full bg-accent-alt px-8 py-3.5 font-sans text-sm font-semibold text-white shadow-lg shadow-accent-alt/25 transition-all duration-300 hover:bg-accent-soft hover:shadow-accent-alt/40"
+                    className="inline-flex items-center gap-2 rounded-full bg-accent-alt px-8 py-3.5 font-sans text-sm font-semibold text-white shadow-lg shadow-accent-alt/25 transition-all duration-300 hover:bg-accent-soft hover:shadow-accent-alt/40 cursor-pointer outline-hidden focus-visible:ring-2 focus-visible:ring-white/40"
                   >
                     <span>{paidAdvertising.ctaLabel}</span>
                     <span className="text-base leading-none">↗</span>
@@ -1012,7 +852,7 @@ export default function DigitalMarketingPage() {
                   <div className="pt-4">
                     <Link
                       href={growthGoals.ctaHref}
-                      className="inline-flex items-center gap-2 rounded-xl border border-accent-alt bg-accent-alt px-6 py-3 font-sans text-sm font-semibold text-white shadow-lg shadow-accent-alt/25 transition-all hover:bg-accent-soft hover:shadow-accent-alt/40"
+                      className="inline-flex items-center gap-2 rounded-xl border border-accent-alt bg-accent-alt px-6 py-3 font-sans text-sm font-semibold text-white shadow-lg shadow-accent-alt/25 transition-all hover:bg-accent-soft hover:shadow-accent-alt/40 cursor-pointer outline-hidden focus-visible:ring-2 focus-visible:ring-white/40"
                     >
                       <span>{growthGoals.ctaLabel}</span>
                       <span>→</span>

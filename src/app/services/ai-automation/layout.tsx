@@ -1,15 +1,12 @@
-import type { Metadata } from "next";
+import ServiceRouteChrome from "@/sections/services/ServiceRouteChrome";
+import { servicePageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "AI & Automation Solutions - FuduGo",
-  description:
-    "We engineer custom autonomous AI agents, enterprise workflow automations, conversational voice systems, and predictive intelligence models that eliminate operational friction and scale your business.",
-};
+export const metadata = servicePageMetadata("ai-automation");
 
 export default function AiAutomationLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return children;
+  return <ServiceRouteChrome slug="ai-automation">{children}</ServiceRouteChrome>;
 }

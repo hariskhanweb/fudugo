@@ -5,6 +5,7 @@ import Image from "next/image";
 import gsap from "gsap";
 import type { ServicePageContent } from "@/types";
 import { Container } from "@/components/ui";
+import { cn } from "@/lib/utils";
 import { useGsapContext } from "@/lib/use-gsap-context";
 
 /** Asymmetric gallery collage + typographic capability list */
@@ -89,11 +90,11 @@ export default function GalleryLayout({ service }: { service: ServicePageContent
             <div
               key={`${tile.src}-${index}`}
               data-gallery="tile"
-              className={`relative overflow-hidden rounded-2xl ${tile.className}`}
+              className={cn("relative overflow-hidden rounded-2xl", tile.className)}
             >
               <Image
                 src={tile.src}
-                alt=""
+                alt={index === 0 ? service.title : ""}
                 fill
                 sizes="(max-width: 640px) 100vw, 40vw"
                 className="object-cover transition-transform duration-700 hover:scale-[1.03]"

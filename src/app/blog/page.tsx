@@ -3,12 +3,14 @@ import { BlogCard, Container } from "@/components/ui";
 import { CtaSection } from "@/sections";
 import data from "@/data/blog.json";
 import { getAllBlogPosts } from "@/lib/blog";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Blog - FuduGo",
+export const metadata: Metadata = pageMetadata({
+  title: "Blog",
   description:
-    "Insights on web, apps, product thinking, and digital growth from the FuduGo team.",
-};
+    "Insights from FuduGo on websites, mobile apps, product thinking, AI, and digital growth.",
+  path: "/blog",
+});
 
 export default function BlogPage() {
   const posts = getAllBlogPosts();

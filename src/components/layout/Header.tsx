@@ -64,6 +64,14 @@ export default function Header() {
     setMobileAccordion(null);
   };
 
+  const linksBeforeDropdown = navigation.links.slice(0, 2);
+  const linksAfterDropdown = navigation.links.slice(2);
+
+  const navLinkClass =
+    "text-[15px] font-semibold text-foreground transition-opacity outline-hidden hover:opacity-70 focus-visible:ring-2 focus-visible:ring-accent-alt/70";
+  const mobileNavLinkClass =
+    "rounded-lg px-3 py-3 text-base font-semibold text-foreground transition-colors outline-hidden hover:bg-foreground/5 focus-visible:bg-foreground/5";
+
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-[background-color,backdrop-filter,border-color] duration-300 ${
@@ -92,12 +100,8 @@ export default function Header() {
           aria-label="Primary"
           className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-8 lg:flex xl:gap-10"
         >
-          {navigation.links.map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              className="text-[15px] font-semibold text-foreground transition-opacity hover:opacity-70"
-            >
+          {linksBeforeDropdown.map((link) => (
+            <Link key={link.label} href={link.href} className={navLinkClass}>
               {link.label}
             </Link>
           ))}
@@ -115,7 +119,7 @@ export default function Header() {
               >
                 <button
                   type="button"
-                  className="flex items-center gap-1.5 text-[15px] font-semibold text-foreground transition-opacity hover:opacity-70"
+                  className="flex cursor-pointer items-center gap-1.5 text-[15px] font-semibold text-foreground transition-opacity outline-hidden hover:opacity-70 focus-visible:ring-2 focus-visible:ring-accent-alt/70"
                   aria-expanded={isOpen}
                   aria-haspopup="true"
                 >
@@ -140,7 +144,7 @@ export default function Header() {
                       <Link
                         key={item.label}
                         href={item.href}
-                        className="block px-4 py-2 text-sm font-medium text-muted transition-colors hover:bg-foreground/5 hover:text-foreground"
+                        className="block px-4 py-2 text-sm font-medium text-muted transition-colors outline-hidden hover:bg-foreground/5 hover:text-foreground focus-visible:bg-foreground/5 focus-visible:text-foreground"
                       >
                         {item.label}
                       </Link>
@@ -150,19 +154,25 @@ export default function Header() {
               </div>
             );
           })}
+
+          {linksAfterDropdown.map((link) => (
+            <Link key={link.label} href={link.href} className={navLinkClass}>
+              {link.label}
+            </Link>
+          ))}
         </nav>
 
         <div className="hidden items-center gap-6 lg:flex xl:gap-6">
           <a
             href={`mailto:${site.email}`}
-            className="flex items-center gap-2.5 text-sm font-normal text-muted transition-colors hover:text-foreground"
+            className="flex items-center gap-2.5 text-sm font-normal text-muted transition-colors outline-hidden hover:text-foreground focus-visible:ring-2 focus-visible:ring-accent-alt/70"
           >
             <EnvelopeIcon className="h-4 w-4 shrink-0 text-muted" />
             <span className="hidden xl:inline">{site.email}</span>
           </a>
           <a
             href={navigation.cta.href}
-            className="inline-flex items-center gap-2.5 rounded-lg border border-border bg-surface px-5 py-2.5 text-sm font-semibold text-foreground transition-colors hover:border-border-hover hover:bg-surface-hover"
+            className="inline-flex cursor-pointer items-center gap-2.5 rounded-lg border border-border bg-surface px-5 py-2.5 text-sm font-semibold text-foreground transition-colors outline-hidden hover:border-border-hover hover:bg-surface-hover focus-visible:ring-2 focus-visible:ring-accent-alt/70"
           >
             {navigation.cta.label}
             <QuoteIcon className="h-3.5 w-3.5 text-foreground" />
@@ -172,7 +182,7 @@ export default function Header() {
         <button
           type="button"
           onClick={() => setMobileMenuOpen((o) => !o)}
-          className="relative z-10 -mr-1 inline-flex h-10 w-10 items-center justify-center rounded-lg text-foreground transition-colors hover:bg-foreground/5 lg:hidden"
+          className="relative z-10 -mr-1 inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg text-foreground transition-colors outline-hidden hover:bg-foreground/5 focus-visible:ring-2 focus-visible:ring-accent-alt/70 lg:hidden"
           aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={mobileMenuOpen}
           aria-controls="mobile-nav"
@@ -199,12 +209,12 @@ export default function Header() {
           aria-label="Mobile"
           className="flex max-h-[min(calc(100dvh-88px),680px)] flex-col gap-1 overflow-y-auto px-5 py-4 font-sans"
         >
-          {navigation.links.map((link) => (
+          {linksBeforeDropdown.map((link) => (
             <Link
               key={link.label}
               href={link.href}
               onClick={closeMobile}
-              className="rounded-lg px-3 py-3 text-base font-semibold text-foreground transition-colors hover:bg-foreground/5"
+              className={mobileNavLinkClass}
             >
               {link.label}
             </Link>
@@ -220,7 +230,7 @@ export default function Header() {
                   onClick={() =>
                     setMobileAccordion((prev) => (prev === key ? null : key))
                   }
-                  className="flex w-full items-center justify-between rounded-lg px-3 py-3 text-left text-base font-semibold text-foreground transition-colors hover:bg-foreground/5"
+                  className="flex w-full cursor-pointer items-center justify-between rounded-lg px-3 py-3 text-left text-base font-semibold text-foreground transition-colors outline-hidden hover:bg-foreground/5 focus-visible:bg-foreground/5"
                   aria-expanded={isOpen}
                 >
                   {menu.label}
@@ -236,13 +246,13 @@ export default function Header() {
                   }`}
                 >
                   <div className="overflow-hidden">
-                    <div className="mb-1 ml-2 space-y-0.5 border-l border-border py-1 pl-3">
+                    <div className="mb-1 ml-2 flex flex-col gap-0.5 border-l border-border py-1 pl-3">
                       {menu.items.map((item) => (
                         <Link
                           key={item.label}
                           href={item.href}
                           onClick={closeMobile}
-                          className="block rounded-md px-3 py-2.5 text-sm font-medium text-muted transition-colors hover:bg-foreground/5 hover:text-foreground"
+                          className="block rounded-md px-3 py-2.5 text-sm font-medium text-muted transition-colors outline-hidden hover:bg-foreground/5 hover:text-foreground focus-visible:bg-foreground/5 focus-visible:text-foreground"
                         >
                           {item.label}
                         </Link>
@@ -254,10 +264,21 @@ export default function Header() {
             );
           })}
 
-          <div className="mt-3 space-y-3 border-t border-border pt-4">
+          {linksAfterDropdown.map((link) => (
+            <Link
+              key={link.label}
+              href={link.href}
+              onClick={closeMobile}
+              className={mobileNavLinkClass}
+            >
+              {link.label}
+            </Link>
+          ))}
+
+          <div className="mt-3 flex flex-col gap-3 border-t border-border pt-4">
             <a
               href={`mailto:${site.email}`}
-              className="flex items-center gap-2.5 rounded-lg px-3 py-3 text-sm font-normal text-muted transition-colors hover:text-foreground"
+              className="flex items-center gap-2.5 rounded-lg px-3 py-3 text-sm font-normal text-muted transition-colors outline-hidden hover:text-foreground focus-visible:bg-foreground/5"
             >
               <EnvelopeIcon className="h-4 w-4 text-muted" />
               {site.email}
@@ -265,7 +286,7 @@ export default function Header() {
             <a
               href={navigation.cta.href}
               onClick={closeMobile}
-              className="inline-flex w-full items-center justify-center gap-2.5 rounded-lg border border-border bg-surface px-5 py-3.5 text-sm font-semibold text-foreground transition-colors hover:border-border-hover hover:bg-surface-hover"
+              className="inline-flex w-full cursor-pointer items-center justify-center gap-2.5 rounded-lg border border-border bg-surface px-5 py-3.5 text-sm font-semibold text-foreground transition-colors outline-hidden hover:border-border-hover hover:bg-surface-hover focus-visible:ring-2 focus-visible:ring-accent-alt/70"
             >
               {navigation.cta.label}
               <QuoteIcon className="h-3.5 w-3.5 text-foreground" />

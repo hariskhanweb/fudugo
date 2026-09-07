@@ -7,7 +7,9 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import content from "@/data/ai-automation-page.json";
 import { Container, AccentMark } from "@/components/ui";
-import { CtaSection, PageHeroSection } from "@/sections";
+import { CtaSection } from "@/sections";
+import ServiceHero from "@/sections/services/ServiceHero";
+import { getServiceBySlug } from "@/lib/service-pages";
 import { useGsapContext } from "@/lib/use-gsap-context";
 import { cn } from "@/lib/utils";
 
@@ -167,7 +169,7 @@ function FaqAccordion({
             <button
               type="button"
               onClick={() => setOpenId(isOpen ? null : item.id)}
-              className="flex w-full items-center justify-between gap-4 p-5 text-left sm:p-6"
+              className="flex w-full cursor-pointer items-center justify-between gap-4 p-5 text-left outline-hidden sm:p-6 focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-accent-alt/70"
               aria-expanded={isOpen}
             >
               <span
@@ -271,7 +273,7 @@ function AiWorkSlider({
             type="button"
             onClick={prevSlide}
             aria-label="Previous slide"
-            className="flex h-11 w-11 items-center justify-center rounded-2xl border border-border/80 bg-surface/80 text-foreground transition-all duration-300 hover:border-accent-alt hover:bg-accent-alt hover:text-white shadow-xs cursor-pointer"
+            className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-2xl border border-border/80 bg-surface/80 text-foreground shadow-xs transition-all duration-300 outline-hidden hover:border-accent-alt hover:bg-accent-alt hover:text-white focus-visible:ring-2 focus-visible:ring-accent-alt/70"
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <polyline points="15 18 9 12 15 6" />
@@ -281,7 +283,7 @@ function AiWorkSlider({
             type="button"
             onClick={nextSlide}
             aria-label="Next slide"
-            className="flex h-11 w-11 items-center justify-center rounded-2xl border border-border/80 bg-surface/80 text-foreground transition-all duration-300 hover:border-accent-alt hover:bg-accent-alt hover:text-white shadow-xs cursor-pointer"
+            className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-2xl border border-border/80 bg-surface/80 text-foreground shadow-xs transition-all duration-300 outline-hidden hover:border-accent-alt hover:bg-accent-alt hover:text-white focus-visible:ring-2 focus-visible:ring-accent-alt/70"
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <polyline points="9 18 15 12 9 6" />
@@ -369,27 +371,12 @@ function AiWorkSlider({
 
 export default function AiAutomationPage() {
   const rootRef = useRef<HTMLDivElement>(null);
-  const { hero, introSection, whatWeOffer, aiDevelopment, techStack, ourWork, faqs, ctaSection } = content;
+  const { introSection, whatWeOffer, aiDevelopment, techStack, ourWork, faqs, ctaSection } = content;
+  const service = getServiceBySlug("ai-automation");
 
   useGsapContext(
     rootRef,
     (scope) => {
-      // Hero elements animation
-      const heroParts = scope.querySelectorAll("[data-ai-hero='part']");
-      if (heroParts.length) {
-        gsap.fromTo(
-          heroParts,
-          { y: 28, opacity: 0 },
-          {
-            y: 0,
-            opacity: 1,
-            duration: 0.75,
-            stagger: 0.08,
-            ease: "power3.out",
-          },
-        );
-      }
-
       // Scroll reveals for sections
       const blocks = scope.querySelectorAll("[data-ai='reveal']");
       blocks.forEach((block) => {
@@ -497,94 +484,9 @@ export default function AiAutomationPage() {
 
   return (
     <>
-      <PageHeroSection
-        content={{
-          title: "AI & Automation",
-          image: hero.image,
-          imageAlt: "AI & Automation",
-          imagePosition: "center",
-        }}
-      />
+      {service ? <ServiceHero service={service} /> : null}
 
       <div ref={rootRef} className="relative bg-background text-foreground">
-        {/* 1. HERO SECTION */}
-        <section className="relative overflow-hidden pt-12 pb-20 sm:pt-16 sm:pb-28 lg:pt-20 lg:pb-32 border-b border-border/60">
-          <div
-            className="pointer-events-none absolute -top-40 right-1/4 h-96 w-96 rounded-full bg-accent-alt/15 blur-[120px]"
-            aria-hidden
-          />
-          <div
-            className="pointer-events-none absolute top-1/2 -left-40 h-80 w-80 rounded-full bg-accent-soft/10 blur-[140px]"
-            aria-hidden
-          />
-
-          <Container className="relative px-5 sm:px-8 lg:px-12">
-            <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-14 xl:gap-16">
-              {/* Left Column: Copy & Actions */}
-              <div className="lg:col-span-6 xl:col-span-6">
-                <div data-ai-hero="part">
-                  <AccentMark className="mb-4 origin-left" />
-                  <p className="font-sans text-sm font-semibold uppercase tracking-wider text-accent-alt">
-                    {hero.eyebrow}
-                  </p>
-                </div>
-
-                <h1
-                  data-ai-hero="part"
-                  className="mt-4 font-sans text-[clamp(36px,5.5vw,60px)] font-bold leading-[1.06] tracking-tight text-foreground"
-                >
-                  {hero.title}
-                </h1>
-
-                <p
-                  data-ai-hero="part"
-                  className="mt-6 font-sans text-base leading-relaxed text-muted sm:text-lg"
-                >
-                  {hero.description}
-                </p>
-
-                <div
-                  data-ai-hero="part"
-                  className="mt-8 flex flex-wrap items-center gap-4 sm:gap-5"
-                >
-                  <Link
-                    href={hero.ctaHref}
-                    className="inline-flex items-center gap-2 rounded-xl border border-accent-alt bg-accent-alt px-7 py-3.5 font-sans text-sm font-semibold text-white shadow-lg shadow-accent-alt/25 transition-all duration-300 hover:bg-accent-soft hover:shadow-accent-alt/40"
-                  >
-                    <span>{hero.ctaLabel}</span>
-                    <span className="text-base leading-none">↗</span>
-                  </Link>
-                  <Link
-                    href={hero.secondaryCtaHref}
-                    className="inline-flex items-center gap-2 rounded-xl border border-border/80 bg-surface/80 px-7 py-3.5 font-sans text-sm font-semibold text-foreground transition-all duration-300 hover:border-accent-alt/50 hover:bg-surface hover:text-accent-soft"
-                  >
-                    <span>{hero.secondaryCtaLabel}</span>
-                    <span className="text-base leading-none">↓</span>
-                  </Link>
-                </div>
-              </div>
-
-              {/* Right Column: High-Tech Cockpit Visualization */}
-              <div className="relative lg:col-span-6 xl:col-span-6">
-                <div
-                  data-ai-hero="part"
-                  className="group relative aspect-[16/10] sm:aspect-[16/11] lg:aspect-[4/3] w-full overflow-hidden rounded-[2rem] border border-border/80 bg-surface shadow-2xl transition-all duration-500 hover:border-accent-alt/40"
-                >
-                  <Image
-                    src={hero.image}
-                    alt={hero.imageAlt}
-                    fill
-                    priority
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-linear-to-t from-background/70 via-transparent to-transparent" />
-                </div>
-              </div>
-            </div>
-          </Container>
-        </section>
-
         {/* 2. INTRO / PHILOSOPHY SECTION */}
         <section className="relative overflow-hidden bg-header py-20 sm:py-24 lg:py-32 border-b border-border/60">
           <div
@@ -596,7 +498,7 @@ export default function AiAutomationPage() {
             <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-14 xl:gap-20">
               {/* Left Column: Clean Visual Graphic */}
               <div data-ai="reveal" className="relative lg:col-span-6">
-                <div className="group relative aspect-[4/3] sm:aspect-[16/11] lg:aspect-[4/3] w-full overflow-hidden rounded-[2.5rem] border border-border/80 bg-surface shadow-2xl transition-all duration-500 hover:border-accent-alt/40">
+                <div className="group relative aspect-4/3 sm:aspect-16/11 lg:aspect-4/3 w-full overflow-hidden rounded-[2.5rem] border border-border/80 bg-surface shadow-2xl transition-all duration-500 hover:border-accent-alt/40">
                   <Image
                     src={introSection.image || "/ai-agent-nodes.jpg"}
                     alt={introSection.title}
@@ -671,7 +573,7 @@ export default function AiAutomationPage() {
                     </div>
 
                     {/* Image Preview */}
-                    <div className="relative mb-6 aspect-[16/10] w-full overflow-hidden rounded-2xl border border-border/60 bg-panel">
+                    <div className="relative mb-6 aspect-16/10 w-full overflow-hidden rounded-2xl border border-border/60 bg-panel">
                       <Image
                         src={item.image}
                         alt={item.title}
@@ -886,7 +788,7 @@ export default function AiAutomationPage() {
               <div>
                 <Link
                   href={ourWork.ctaHref}
-                  className="inline-flex items-center gap-2 rounded-xl bg-accent-alt px-7 py-3.5 font-sans text-sm font-semibold text-white shadow-lg shadow-accent-alt/25 transition-all duration-300 hover:bg-accent-soft hover:shadow-accent-alt/40"
+                  className="inline-flex items-center gap-2 rounded-xl bg-accent-alt px-7 py-3.5 font-sans text-sm font-semibold text-white shadow-lg shadow-accent-alt/25 transition-all duration-300 hover:bg-accent-soft hover:shadow-accent-alt/40 cursor-pointer outline-hidden focus-visible:ring-2 focus-visible:ring-white/40"
                 >
                   <span>{ourWork.ctaLabel}</span>
                   <span>→</span>
@@ -920,7 +822,7 @@ export default function AiAutomationPage() {
                   <div className="pt-4">
                     <Link
                       href={faqs.ctaHref}
-                      className="inline-flex items-center gap-2 rounded-xl border border-accent-alt bg-accent-alt px-6 py-3 font-sans text-sm font-semibold text-white shadow-lg shadow-accent-alt/25 transition-all hover:bg-accent-soft hover:shadow-accent-alt/40"
+                      className="inline-flex items-center gap-2 rounded-xl border border-accent-alt bg-accent-alt px-6 py-3 font-sans text-sm font-semibold text-white shadow-lg shadow-accent-alt/25 transition-all hover:bg-accent-soft hover:shadow-accent-alt/40 cursor-pointer outline-hidden focus-visible:ring-2 focus-visible:ring-white/40"
                     >
                       <span>{faqs.ctaLabel}</span>
                       <span>→</span>

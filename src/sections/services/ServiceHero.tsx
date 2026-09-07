@@ -45,7 +45,7 @@ export default function ServiceHero({ service, className }: ServiceHeroProps) {
       <div className="absolute inset-0">
         <Image
           src={service.heroImage}
-          alt=""
+          alt={service.title}
           fill
           priority
           sizes="100vw"
@@ -89,15 +89,15 @@ export default function ServiceHero({ service, className }: ServiceHeroProps) {
             data-service-hero="part"
             className="mt-8 flex flex-wrap items-center gap-3"
           >
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-2 rounded-lg border border-accent-alt/40 bg-accent-alt/10 px-5 py-2.5 font-sans text-sm font-semibold text-accent-alt transition-colors hover:bg-accent-alt/20"
+            <Link
+              href="/contact"
+              className="inline-flex cursor-pointer items-center gap-2 rounded-lg border border-accent-alt/40 bg-accent-alt/10 px-5 py-2.5 font-sans text-sm font-semibold text-accent-alt transition-colors hover:bg-accent-alt/20 focus-visible:ring-2 focus-visible:ring-accent-alt/70 focus-visible:outline-hidden"
             >
               {service.ctaLabel}
-            </a>
+            </Link>
             <Link
               href="/services"
-              className="inline-flex items-center gap-2 px-3 py-2.5 font-sans text-sm font-medium text-muted transition-colors hover:text-foreground"
+              className="inline-flex cursor-pointer items-center gap-2 px-3 py-2.5 font-sans text-sm font-medium text-muted transition-colors hover:text-foreground focus-visible:ring-2 focus-visible:ring-accent-alt/70 focus-visible:outline-hidden"
             >
               All services
             </Link>

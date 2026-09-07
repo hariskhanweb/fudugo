@@ -29,7 +29,7 @@ export default function Footer() {
       <div className="mx-auto max-w-360 px-5 pb-8 pt-16 sm:px-8 sm:pt-20 lg:px-12 lg:pt-24">
         <div className="grid grid-cols-1 gap-12 pb-12 md:grid-cols-2 lg:grid-cols-12 lg:gap-x-10 lg:gap-y-12 xl:gap-x-14">
           {/* Brand + contact */}
-          <div className="space-y-7 lg:col-span-4">
+          <div className="flex flex-col gap-7 lg:col-span-4">
             <Link href="/" className="inline-block">
               <Image
                 src={site.logo}
@@ -44,8 +44,8 @@ export default function Footer() {
               {footer.tagline}
             </p>
 
-            <div className="space-y-6">
-              <div className="space-y-2">
+            <div className="flex flex-col gap-6">
+              <div className="flex flex-col gap-2">
                 <h5 className="font-sans text-[15px] font-semibold text-foreground">
                   {footer.officeLabel}
                 </h5>
@@ -53,7 +53,7 @@ export default function Footer() {
                   {site.address}
                 </p>
               </div>
-              <div className="space-y-2">
+              <div className="flex flex-col gap-2">
                 <h5 className="font-sans text-[15px] font-semibold text-foreground">
                   {footer.contactLabel}
                 </h5>
@@ -68,11 +68,11 @@ export default function Footer() {
           </div>
 
           {/* Quick links */}
-          <div className="space-y-5 lg:col-span-3">
+          <div className="flex flex-col gap-5 lg:col-span-3">
             <h4 className="font-sans text-base font-semibold text-foreground sm:text-lg">
               {footer.quickLinksTitle}
             </h4>
-            <ul className="space-y-3.5">
+            <ul className="flex flex-col gap-3.5">
               {footer.quickLinks.map((link) => (
                 <li key={link.label}>
                   <a
@@ -93,8 +93,8 @@ export default function Footer() {
           </div>
 
           {/* Newsletter / social / awards */}
-          <div className="space-y-8 lg:col-span-5">
-            <div className="space-y-5">
+          <div className="flex flex-col gap-8 lg:col-span-5">
+            <div className="flex flex-col gap-5">
               <h5 className="max-w-sm font-sans text-[15px] font-semibold leading-snug text-foreground sm:text-base">
                 {footer.newsletter.title}
               </h5>
@@ -111,11 +111,11 @@ export default function Footer() {
                   name="email"
                   placeholder={footer.newsletter.placeholder}
                   required
-                  className="min-w-0 flex-1 border-0 border-b border-border bg-transparent px-0 py-2.5 font-sans text-sm text-foreground outline-none transition-colors placeholder:text-muted focus:border-accent-alt"
+                  className="min-w-0 grow border-0 border-b border-border bg-transparent px-0 py-2.5 font-sans text-sm text-foreground outline-hidden transition-colors placeholder:text-muted focus:border-accent-alt"
                 />
                 <button
                   type="submit"
-                  className="shrink-0 rounded-lg border border-border bg-transparent px-5 py-2.5 font-sans text-sm font-medium text-foreground transition-colors hover:border-border-hover hover:bg-foreground/5"
+                  className="shrink-0 cursor-pointer rounded-lg border border-border bg-transparent px-5 py-2.5 font-sans text-sm font-medium text-foreground transition-colors outline-hidden hover:border-border-hover hover:bg-foreground/5 focus-visible:ring-2 focus-visible:ring-accent-alt/70"
                 >
                   {footer.newsletter.button}
                 </button>
@@ -134,7 +134,7 @@ export default function Footer() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={social.label}
-                      className="inline-flex h-11 w-11 items-center justify-center rounded-md bg-accent-alt text-white transition-colors duration-200 hover:scale-105 hover:bg-accent-soft"
+                      className="inline-flex h-11 w-11 items-center justify-center rounded-md bg-accent-alt text-white transition-colors duration-200 outline-hidden hover:scale-105 hover:bg-accent-soft focus-visible:ring-2 focus-visible:ring-accent-alt/70"
                     >
                       <svg
                         className="h-3.5 w-3.5 fill-current sm:h-4 sm:w-4"
@@ -149,7 +149,7 @@ export default function Footer() {
               </ul>
             </div>
 
-            <div className="space-y-4 border-t border-border pt-7">
+            <div className="flex flex-col gap-4 border-t border-border pt-7">
               <h5 className="font-sans text-[15px] font-semibold text-foreground">
                 {footer.awardsTitle}
               </h5>
@@ -158,7 +158,7 @@ export default function Footer() {
                   <a
                     key={award}
                     href="#"
-                    className="inline-flex min-h-10 items-center rounded-full border border-border bg-transparent px-3.5 py-2.5 font-sans text-xs font-medium text-muted transition-colors hover:border-border-hover hover:text-foreground"
+                    className="inline-flex min-h-10 items-center rounded-full border border-border bg-transparent px-3.5 py-2.5 font-sans text-xs font-medium text-muted transition-colors outline-hidden hover:border-border-hover hover:text-foreground focus-visible:ring-2 focus-visible:ring-accent-alt/70"
                   >
                     {award}
                   </a>

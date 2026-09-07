@@ -43,7 +43,7 @@ export default function ServicesIndexSection() {
           <AccentMark className="mb-5" />
           <p className="font-sans text-sm text-accent-soft">(Our Services)</p>
           <h1 className="mt-3 font-sans text-[clamp(36px,6vw,56px)] font-bold leading-none tracking-tight text-foreground">
-            Six ways we help brands ship better digital work.
+            Digital services that help brands ship better work.
           </h1>
           <p className="mt-4 font-sans text-sm leading-relaxed text-muted sm:text-[15px]">
             Each practice has its own process, deliverables, and design language — pick the one that matches your next goal.
@@ -59,18 +59,18 @@ export default function ServicesIndexSection() {
               key={service.slug}
               href={`/services/${service.slug}`}
               data-services-index="card"
-              className="group relative overflow-hidden rounded-2xl border border-border/50 bg-surface/25 transition-[border-color,transform] duration-300 hover:-translate-y-0.5 hover:border-accent-alt/30"
+              className="group relative cursor-pointer overflow-hidden rounded-2xl border border-border/50 bg-surface/25 transition-[border-color] duration-300 hover:-translate-y-0.5 hover:border-accent-alt/30 focus-visible:ring-2 focus-visible:ring-accent-alt/70 focus-visible:outline-hidden"
             >
               <div className="relative h-44 overflow-hidden sm:h-48">
                 <Image
                   src={service.heroImage}
-                  alt=""
+                  alt={service.shortTitle || service.title}
                   fill
                   sizes="(max-width: 1024px) 50vw, 33vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-background via-background/20 to-transparent" />
-                <span className="absolute left-4 top-4 rounded-full border border-white/15 bg-black/35 px-2.5 py-1 font-sans text-[11px] font-semibold text-white backdrop-blur-sm">
+                <span className="absolute left-4 top-4 rounded-full border border-white/15 bg-black/35 px-2.5 py-1 font-sans text-[11px] font-semibold text-white backdrop-blur-xs">
                   {String(index + 1).padStart(2, "0")}
                 </span>
               </div>

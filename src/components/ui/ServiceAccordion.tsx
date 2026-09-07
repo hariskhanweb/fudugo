@@ -112,12 +112,12 @@ function ServicePanel({
         type="button"
         onClick={onToggle}
         aria-expanded={isOpen}
-        className="flex w-full items-center gap-4 px-5 py-5 text-left sm:gap-6 sm:px-6 sm:py-6 lg:px-8"
+        className="flex w-full cursor-pointer items-center gap-4 px-5 py-5 text-left outline-hidden sm:gap-6 sm:px-6 sm:py-6 lg:px-8 focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-accent-alt/70"
       >
         <span className="shrink-0 font-sans text-sm font-normal text-accent-alt sm:text-[15px]">
           ({item.number})
         </span>
-        <h3 className="min-w-0 flex-1 font-sans text-xl font-bold tracking-tight text-foreground sm:text-2xl lg:text-[28px]">
+        <h3 className="min-w-0 grow font-sans text-xl font-bold tracking-tight text-foreground sm:text-2xl lg:text-[28px]">
           {item.title}
         </h3>
         <PlusMinusIcon open={isOpen} />

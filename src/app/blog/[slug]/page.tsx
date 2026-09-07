@@ -5,6 +5,8 @@ import { notFound } from "next/navigation";
 import { BlogCard, Container } from "@/components/ui";
 import { CtaSection } from "@/sections";
 import { getAllBlogPosts, getBlogPostBySlug, getBlogStaticParams } from "@/lib/blog";
+import JsonLd from "@/components/seo/JsonLd";
+import { blogPostingJsonLd, pageMetadata } from "@/lib/seo";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -21,13 +23,21 @@ export async function generateMetadata({
   const post = getBlogPostBySlug(slug);
 
   if (!post) {
-    return { title: "Post - FuduGo" };
+    return pageMetadata({
+      title: "Post not found",
+      description: "This article could not be found.",
+      path: `/blog/${slug}`,
+      noIndex: true,
+    });
   }
 
-  return {
-    title: `${post.title} - FuduGo`,
+  return pageMetadata({
+    title: post.title,
     description: post.excerpt ?? post.title,
-  };
+    path: `/blog/${post.slug}`,
+    image: post.image,
+    type: "article",
+  });
 }
 
 export default async function BlogPostPage({ params }: PageProps) {
@@ -42,6 +52,7 @@ export default async function BlogPostPage({ params }: PageProps) {
 
   return (
     <>
+      <JsonLd data={blogPostingJsonLd(post.slug)} />
       <article className="bg-background pt-24 pb-16 sm:pt-28 sm:pb-20 lg:pt-32 lg:pb-24">
         <Container className="px-5 sm:px-8 lg:px-10">
           <Link
@@ -72,7 +83,7 @@ export default async function BlogPostPage({ params }: PageProps) {
           </div>
 
           <div className="relative mt-12 overflow-hidden rounded-3xl border border-border/50 bg-surface/30 lg:mt-14">
-            <div className="relative aspect-[16/9]">
+            <div className="relative aspect-video">
               <Image
                 src={post.image}
                 alt={post.title}

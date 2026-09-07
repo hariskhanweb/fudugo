@@ -114,10 +114,10 @@ export default function ContactSection() {
                 {contactData.eyebrow}
               </p>
               
-              <h1 className="font-sans text-[clamp(44px,6.5vw,76px)] font-bold leading-[1.05] tracking-tight text-foreground">
+              <h2 className="font-sans text-[clamp(44px,6.5vw,76px)] font-bold leading-[1.05] tracking-tight text-foreground">
                 Let’s Create
                 <span className="block text-foreground">Something Great</span>
-              </h1>
+              </h2>
 
               <p className="max-w-xl font-sans text-base leading-relaxed text-muted sm:text-lg sm:leading-relaxed">
                 {contactData.description}
@@ -171,7 +171,7 @@ export default function ContactSection() {
                   placeholder="Your Name"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full border-b border-border/80 bg-transparent py-4 text-base text-foreground placeholder-muted/60 transition-colors duration-200 focus:border-accent-alt focus:outline-none sm:text-lg"
+                  className="w-full border-b border-border/80 bg-transparent py-4 text-base text-foreground placeholder-muted/60 transition-colors duration-200 outline-hidden focus:border-accent-alt sm:text-lg"
                 />
               </div>
 
@@ -183,7 +183,7 @@ export default function ContactSection() {
                   placeholder="Email"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full border-b border-border/80 bg-transparent py-4 text-base text-foreground placeholder-muted/60 transition-colors duration-200 focus:border-accent-alt focus:outline-none sm:text-lg"
+                  className="w-full border-b border-border/80 bg-transparent py-4 text-base text-foreground placeholder-muted/60 transition-colors duration-200 outline-hidden focus:border-accent-alt sm:text-lg"
                 />
               </div>
 
@@ -195,7 +195,7 @@ export default function ContactSection() {
                   placeholder="Message"
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full resize-none border-b border-border/80 bg-transparent py-4 text-base text-foreground placeholder-muted/60 transition-colors duration-200 focus:border-accent-alt focus:outline-none sm:text-lg"
+                  className="w-full resize-none border-b border-border/80 bg-transparent py-4 text-base text-foreground placeholder-muted/60 transition-colors duration-200 outline-hidden focus:border-accent-alt sm:text-lg"
                 />
               </div>
 
@@ -203,7 +203,7 @@ export default function ContactSection() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="group relative inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-panel px-9 py-4 font-sans text-sm font-semibold text-foreground shadow-(--card-shadow) transition-all duration-300 hover:border-accent-alt hover:bg-surface-hover hover:shadow-[0_0_24px_-4px_var(--accent-glow)] active:scale-95 disabled:opacity-60 sm:text-[15px]"
+                  className="group relative inline-flex cursor-pointer items-center justify-center gap-2 rounded-xl border border-border bg-panel px-9 py-4 font-sans text-sm font-semibold text-foreground shadow-(--card-shadow) transition-all duration-300 outline-hidden hover:border-accent-alt hover:bg-surface-hover hover:shadow-[0_0_24px_-4px_var(--accent-glow)] focus-visible:ring-2 focus-visible:ring-accent-alt/70 active:scale-95 disabled:opacity-60 sm:text-[15px]"
                 >
                   {isSubmitting ? (
                     <>
@@ -268,7 +268,7 @@ export default function ContactSection() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={social.name}
-                      className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-accent-alt text-white shadow-md shadow-accent-alt/20 transition-all duration-300 hover:-translate-y-1 hover:bg-accent-soft hover:shadow-lg hover:shadow-accent-alt/40 sm:h-12 sm:w-12"
+                      className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-accent-alt text-white shadow-md shadow-accent-alt/20 transition-all duration-300 outline-hidden hover:-translate-y-1 hover:bg-accent-soft hover:shadow-lg hover:shadow-accent-alt/40 focus-visible:ring-2 focus-visible:ring-accent-alt/70 sm:h-12 sm:w-12"
                     >
                       <SocialIcon type={social.icon} />
                     </a>

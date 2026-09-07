@@ -1,15 +1,12 @@
-import type { Metadata } from "next";
+import ServiceRouteChrome from "@/sections/services/ServiceRouteChrome";
+import { servicePageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Web Solutions - FuduGo",
-  description:
-    "Elegant web design, creative content, and performance — marketing sites, platforms, and CMS-driven experiences from FuduGo.",
-};
+export const metadata = servicePageMetadata("web-solutions");
 
 export default function WebSolutionsLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return children;
+  return <ServiceRouteChrome slug="web-solutions">{children}</ServiceRouteChrome>;
 }
