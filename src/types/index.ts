@@ -32,14 +32,48 @@ export type ProjectMedia =
       poster?: string;
     };
 
+export type ProjectDetailSection = {
+  heading: string;
+  paragraphs: string[];
+};
+
+export type ProjectScreenshot = {
+  src: string;
+  alt: string;
+  caption?: string;
+};
+
+export type ProjectStoryBlock = {
+  title?: string;
+  body: string;
+};
+
 export type Project = {
   id: string;
+  slug: string;
   title: string;
   year: string;
   href?: string;
+  liveUrl?: string;
   metaPosition: "top" | "bottom";
   media: ProjectMedia;
   badge?: ProjectBadge;
+  client?: string;
+  category?: string;
+  summary?: string;
+  role?: string;
+  industry?: string;
+  services?: string[];
+  outcomes?: string[];
+  pain?: ProjectStoryBlock;
+  solution?: ProjectStoryBlock;
+  promise?: ProjectStoryBlock;
+  screenshots?: ProjectScreenshot[];
+  gallery?: ProjectScreenshot[];
+  content?: {
+    intro?: string;
+    sections: ProjectDetailSection[];
+  };
 };
 
 export type ServiceItem = {

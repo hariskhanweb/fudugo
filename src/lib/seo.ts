@@ -3,6 +3,7 @@ import site from "@/data/site.json";
 import hero from "@/data/hero.json";
 import { getAllBlogPosts, getBlogPostBySlug } from "@/lib/blog";
 import { SERVICES, getServiceBySlug } from "@/lib/service-pages";
+import { getAllProjects } from "@/lib/works";
 
 export const SITE_URL = (
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://fudugo.com"
@@ -199,5 +200,11 @@ export function sitemapEntries() {
         priority: 0.6,
       };
     }),
+    ...getAllProjects().map((project) => ({
+      url: absoluteUrl(`/work/${project.slug}`),
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.65,
+    })),
   ];
 }

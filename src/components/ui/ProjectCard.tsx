@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import type { Project } from "@/types";
 import { cn, youtubeEmbedUrl } from "@/lib/utils";
 
@@ -41,27 +42,28 @@ function YouTubeIcon({ className = "" }: { className?: string }) {
 function MetaBar({
   title,
   year,
-  href = "#",
+  href,
 }: {
   title: string;
   year: string;
-  href?: string;
+  href: string;
 }) {
   return (
     <div className="flex items-center justify-between gap-4 rounded-2xl surface-card px-5 py-4 sm:px-6 sm:py-6">
-      <a
+      <Link
         href={href}
-        className="truncate font-sans text-[15px] font-medium text-foreground transition-colors hover:text-accent-soft sm:text-[18px]"
+        className="truncate font-sans text-[15px] font-medium text-foreground transition-colors outline-hidden hover:text-accent-soft focus-visible:ring-2 focus-visible:ring-accent-alt/70 sm:text-[18px]"
       >
         {title}
-      </a>
+      </Link>
       <span className="shrink-0 font-sans text-sm text-muted">{year}</span>
     </div>
   );
 }
 
 function MediaSurface({ project }: { project: Project }) {
-  const { media, badge, href = "#", title } = project;
+  const href = project.href ?? `/work/${project.slug}`;
+  const { media, badge, title } = project;
   const youtubeUrl =
     media.type === "video"
       ? `https://www.youtube.com/watch?v=${media.videoId}`
@@ -129,13 +131,13 @@ function MediaSurface({ project }: { project: Project }) {
       ) : null}
 
       <div className="absolute bottom-3 left-3 z-10 sm:bottom-4 sm:left-4">
-        <a
+        <Link
           href={href}
-          className="inline-flex h-11 w-11 items-center justify-center rounded-full text-white/90 transition-colors hover:text-white"
+          className="inline-flex h-11 w-11 cursor-pointer items-center justify-center rounded-full text-white/90 transition-colors outline-hidden hover:text-white focus-visible:ring-2 focus-visible:ring-white/50"
           aria-label={`Open ${title}`}
         >
           <LinkIcon className="h-5 w-5" />
-        </a>
+        </Link>
       </div>
 
       {youtubeUrl ? (
@@ -144,7 +146,7 @@ function MediaSurface({ project }: { project: Project }) {
             href={youtubeUrl}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full text-white/90 transition-colors hover:text-white"
+            className="inline-flex h-11 w-11 cursor-pointer items-center justify-center rounded-full text-white/90 transition-colors outline-hidden hover:text-white focus-visible:ring-2 focus-visible:ring-white/50"
             aria-label={`Watch ${title} on YouTube`}
           >
             <YouTubeIcon className="h-5 w-5" />
@@ -156,8 +158,9 @@ function MediaSurface({ project }: { project: Project }) {
 }
 
 export default function ProjectCard({ project, className }: ProjectCardProps) {
+  const href = project.href ?? `/work/${project.slug}`;
   const meta = (
-    <MetaBar title={project.title} year={project.year} href={project.href} />
+    <MetaBar title={project.title} year={project.year} href={href} />
   );
 
   return (

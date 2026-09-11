@@ -5,15 +5,39 @@
   "description": "Explore the digital products, platforms, and experiences we've created for businesses across industries.",
   "cta": {
     "label": "View all Project",
-    "href": "#"
+    "href": "/#works"
   },
   "projects": [
     {
       "id": "nexus-x1",
+      "slug": "nexus-x1",
       "title": "Nexus X1 — Product Launch Film",
       "year": "2026",
-      "href": "#",
       "metaPosition": "bottom",
+      "client": "Nexus Labs",
+      "category": "Product Launch",
+      "industry": "Consumer Tech",
+      "role": "Direction, edit, and motion design",
+      "liveUrl": "https://fudugo.com",
+      "summary": "A cinematic product launch film that introduced Nexus X1 with clarity, pace, and a visual system built for paid, web, and social cutdowns.",
+      "services": ["Motion Design", "Product Film", "Launch Creative"],
+      "outcomes": [
+        "Launch film used across paid, site, and event channels",
+        "Modular cutdowns for 6s, 15s, and 30s placements",
+        "Clear product story without overloading specs"
+      ],
+      "pain": {
+        "title": "The product looked powerful. The story did not.",
+        "body": "Nexus X1 had strong engineering, but early launch assets felt like a feature dump. Prospects saw specs before they felt the product. Paid and social cutdowns also failed to survive compression, so the brand looked soft in the channels that mattered most."
+      },
+      "solution": {
+        "title": "A film system built for every surface.",
+        "body": "We rebuilt the narrative around three beats — problem, clarity, proof — then designed motion rules, type treatments, and modular cutdowns so the same hero moments could live in keynote, homepage, and ads without losing fidelity."
+      },
+      "promise": {
+        "title": "One launch language. Everywhere.",
+        "body": "Marketing ships from a single source of truth. The film carries brand tone while making the product feel tangible, useful, and ready — from first frame to final CTA."
+      },
       "media": {
         "type": "image",
         "src": "https://img.youtube.com/vi/steaLQu5RFw/maxresdefault.jpg",
@@ -23,14 +47,79 @@
         "number": "1",
         "label": "Product Launch",
         "author": "Khairul Fayyad"
+      },
+      "screenshots": [
+        {
+          "src": "/Image-17.jpg",
+          "alt": "Nexus X1 landing page hero",
+          "caption": "Launch landing page"
+        },
+        {
+          "src": "/Image-18.jpg",
+          "alt": "Nexus X1 product detail screen",
+          "caption": "Product detail"
+        },
+        {
+          "src": "/Image-19.jpg",
+          "alt": "Nexus X1 mobile campaign frame",
+          "caption": "Mobile campaign"
+        },
+        {
+          "src": "/Image-32.jpg",
+          "alt": "Nexus X1 feature grid",
+          "caption": "Feature grid"
+        }
+      ],
+      "content": {
+        "intro": "Nexus X1 needed a launch film that felt premium without becoming a feature dump. We built a motion system that carried the product story from first frame to final CTA.",
+        "sections": [
+          {
+            "heading": "Brief and creative direction",
+            "paragraphs": [
+              "The brief asked for a film that could open a keynote, run as a homepage hero, and survive social compression. That meant a strong opening image, a paced reveal, and a visual language that stayed readable at every size.",
+              "We mapped the story around three beats: problem, product clarity, and proof. Each beat had its own camera language so the film never felt like a single continuous montage."
+            ]
+          },
+          {
+            "heading": "Production and motion system",
+            "paragraphs": [
+              "The edit mixed product photography, UI overlays, and abstract motion to keep attention on capability without losing brand mood. Timing, easing, and type rules were documented so the campaign team could ship matching assets after launch.",
+              "Cutdowns were designed as first-class deliverables, not afterthoughts. The same hero moments were rebuilt for vertical, square, and landscape placements."
+            ]
+          }
+        ]
       }
     },
     {
       "id": "pulse",
+      "slug": "pulse",
       "title": "Pulse — Brand Motion System",
       "year": "2026",
-      "href": "#",
       "metaPosition": "top",
+      "client": "Pulse Collective",
+      "category": "Brand Motion",
+      "industry": "Creative Platform",
+      "role": "Motion language, templates, and guidelines",
+      "liveUrl": "https://fudugo.com",
+      "summary": "A reusable brand motion system covering transitions, type behavior, and logo treatments for campaigns and product surfaces.",
+      "services": ["Brand Motion", "Design Systems", "Guidelines"],
+      "outcomes": [
+        "Shared motion grammar across product and marketing",
+        "Reusable templates for editors and designers",
+        "Faster campaign rollout with consistent brand feel"
+      ],
+      "pain": {
+        "title": "Every team animated differently.",
+        "body": "Product demos, ads, and landing pages each had their own timing and logo behavior. The brand felt alive in one place and broken in another. Campaigns slowed down because every new asset needed a specialist."
+      },
+      "solution": {
+        "title": "A shared motion grammar.",
+        "body": "We turned brand attributes into rules for enter, pause, and exit — with templates, timing charts, and usage notes so editors and designers could ship on-brand motion without waiting on a specialist every time."
+      },
+      "promise": {
+        "title": "Coherent motion at campaign speed.",
+        "body": "Product and marketing finally share one language. Rollouts get faster, and the brand feels consistent across pages, ads, and demos."
+      },
       "media": {
         "type": "video",
         "videoId": "dL1OxvwvMLo"
@@ -39,14 +128,73 @@
         "number": "2",
         "label": "Brand Motion",
         "author": "Khairul Fayyad"
+      },
+      "screenshots": [
+        {
+          "src": "/Image-19.jpg",
+          "alt": "Pulse brand system overview",
+          "caption": "System overview"
+        },
+        {
+          "src": "/Image-32.jpg",
+          "alt": "Pulse campaign application",
+          "caption": "Campaign application"
+        },
+        {
+          "src": "/Image-17.jpg",
+          "alt": "Pulse template board",
+          "caption": "Template board"
+        }
+      ],
+      "content": {
+        "intro": "Pulse needed motion that felt alive without becoming chaotic. We turned brand attributes into rules for timing, easing, layering, and logo behavior.",
+        "sections": [
+          {
+            "heading": "From identity to motion grammar",
+            "paragraphs": [
+              "Instead of designing one-off animations, we translated the brand strategy into principles: how assets enter, how they pause, and how they exit. That gave every editor the same visual language.",
+              "We prototyped transitions against real campaign layouts so the system stayed practical under deadline pressure."
+            ]
+          },
+          {
+            "heading": "Templates and enablement",
+            "paragraphs": [
+              "The deliverable was not only a showreel. It included template packs, timing charts, and short usage notes so internal teams could ship on-brand motion without waiting on a specialist every time."
+            ]
+          }
+        ]
       }
     },
     {
       "id": "horizon",
+      "slug": "horizon",
       "title": "Horizon — Brand Anthem",
       "year": "2026",
-      "href": "#",
       "metaPosition": "bottom",
+      "client": "Horizon",
+      "category": "Brand Anthem",
+      "industry": "Enterprise",
+      "role": "Concept, edit, and finishing",
+      "liveUrl": "https://fudugo.com",
+      "summary": "An anthem film that captured Horizon’s ambition with restrained visuals, strong pacing, and a soundtrack-led emotional arc.",
+      "services": ["Brand Film", "Sound Design", "Finishing"],
+      "outcomes": [
+        "Flagship film for brand and investor moments",
+        "Short-form social edits with the same emotional core",
+        "Stronger brand recall through a repeatable visual motif"
+      ],
+      "pain": {
+        "title": "Ambition without a memorable frame.",
+        "body": "Horizon had a bold vision, but existing films felt either too corporate or too abstract. Nothing held in a boardroom and still landed on social."
+      },
+      "solution": {
+        "title": "An anthem built on tension and release.",
+        "body": "We structured the piece around a quiet opening, a building middle, and a confident close. Music led the cut. Visual motifs repeated just enough to become memorable without turning into a gimmick."
+      },
+      "promise": {
+        "title": "One emotional spine across every cut.",
+        "body": "From the master anthem to LinkedIn and event loops, every version keeps the same core — so the brand voice stays consistent wherever it appears."
+      },
       "media": {
         "type": "video",
         "videoId": "qE_W2lr3omQ"
@@ -55,14 +203,72 @@
         "number": "3",
         "label": "Brand Anthem",
         "author": "Khairul Fayyad"
+      },
+      "screenshots": [
+        {
+          "src": "/Image-4-1.jpg",
+          "alt": "Horizon visual motif",
+          "caption": "Visual motif"
+        },
+        {
+          "src": "/Image-17.jpg",
+          "alt": "Horizon campaign frame",
+          "caption": "Campaign frame"
+        },
+        {
+          "src": "/Image-32.jpg",
+          "alt": "Horizon event loop still",
+          "caption": "Event loop"
+        }
+      ],
+      "content": {
+        "intro": "Horizon wanted an anthem that felt expansive without becoming abstract. The film had to work in a boardroom and still land on social.",
+        "sections": [
+          {
+            "heading": "Story architecture",
+            "paragraphs": [
+              "We structured the piece around tension and release: a quiet opening, a building middle, and a confident close. Music led the cut so emotion stayed ahead of exposition."
+            ]
+          },
+          {
+            "heading": "Cutdowns and distribution",
+            "paragraphs": [
+              "From the master anthem we produced channel-ready edits for web, LinkedIn, and event loops. Every version kept the same emotional spine."
+            ]
+          }
+        ]
       }
     },
     {
       "id": "coreai",
+      "slug": "coreai",
       "title": "CoreAI — Product Explainer",
       "year": "2026",
-      "href": "#",
       "metaPosition": "top",
+      "client": "CoreAI",
+      "category": "Product Explainer",
+      "industry": "AI / SaaS",
+      "role": "Script, UI motion, and edit",
+      "liveUrl": "https://fudugo.com",
+      "summary": "A product explainer that made a complex AI workflow understandable in under two minutes without watering down the capability story.",
+      "services": ["Product Explainer", "UI Motion", "Script"],
+      "outcomes": [
+        "Clearer product narrative for sales and onboarding",
+        "Reusable UI motion assets for demos and ads",
+        "Higher comprehension in early customer conversations"
+      ],
+      "pain": {
+        "title": "Powerful product. Confusing story.",
+        "body": "CoreAI’s capabilities were real, but early demos jumped straight into features. Buyers could not see the job the product did, so sales conversations restarted from zero every time."
+      },
+      "solution": {
+        "title": "Show the workflow before naming the features.",
+        "body": "We rewrote the narrative around one user job — messy inputs to a reliable decision path — then paced UI motion so viewers understood the system before they heard the jargon."
+      },
+      "promise": {
+        "title": "A story sales can reuse.",
+        "body": "Chaptered cuts and stills plug into decks and landing pages. Sales drops the same narrative into demos without rebuilding it from scratch."
+      },
       "media": {
         "type": "video",
         "videoId": "mMMknEa2-E0"
@@ -71,6 +277,45 @@
         "number": "4",
         "label": "Product Explainer",
         "author": "Khairul Fayyad"
+      },
+      "screenshots": [
+        {
+          "src": "/Image-18.jpg",
+          "alt": "CoreAI interface motion",
+          "caption": "Product interface"
+        },
+        {
+          "src": "/Image-19.jpg",
+          "alt": "CoreAI workflow sequence",
+          "caption": "Workflow sequence"
+        },
+        {
+          "src": "/Image-17.jpg",
+          "alt": "CoreAI onboarding screen",
+          "caption": "Onboarding"
+        },
+        {
+          "src": "/Image-32.jpg",
+          "alt": "CoreAI dashboard",
+          "caption": "Dashboard"
+        }
+      ],
+      "content": {
+        "intro": "CoreAI’s product was powerful but hard to explain. The explainer had to show the workflow, not just claim intelligence.",
+        "sections": [
+          {
+            "heading": "Simplify without dumbing down",
+            "paragraphs": [
+              "We rewrote the narrative around a single user job: take messy inputs and turn them into a reliable decision path. Every scene answered what the product does for that job."
+            ]
+          },
+          {
+            "heading": "Sales-ready package",
+            "paragraphs": [
+              "Beyond the master film, we delivered chaptered cuts and stills for decks and landing pages. Sales could drop the same story into demos without rebuilding the narrative from scratch."
+            ]
+          }
+        ]
       }
     }
   ]

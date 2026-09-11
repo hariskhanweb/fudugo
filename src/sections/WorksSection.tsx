@@ -4,8 +4,8 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import data from "@/data/works.json";
-import type { Project } from "@/types";
 import { Container, ProjectCard } from "@/components/ui";
+import { getAllProjects } from "@/lib/works";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -24,7 +24,7 @@ function ChevronCircleIcon({ className = "" }: { className?: string }) {
 
 export default function WorksSection() {
   const sectionRef = useRef<HTMLElement>(null);
-  const projects = data.projects as Project[];
+  const projects = getAllProjects();
   const left = projects.filter((_, index) => index % 2 === 0);
   const right = projects.filter((_, index) => index % 2 === 1);
 
