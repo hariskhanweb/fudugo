@@ -399,9 +399,9 @@ export default function AiAutomationPage() {
       });
 
       // Section 4: Timeline Scroll Progress & Spotlight Effects
-      const timelineTrack = scope.querySelector("[data-tech-timeline='track']");
-      const progressBar = scope.querySelector("[data-tech-timeline='progress']");
-      const bead = scope.querySelector("[data-tech-timeline='bead']");
+      const timelineTrack = scope.querySelector<HTMLElement>("[data-tech-timeline='track']");
+      const progressBar = scope.querySelector<HTMLElement>("[data-tech-timeline='progress']");
+      const bead = scope.querySelector<HTMLElement>("[data-tech-timeline='bead']");
 
       if (timelineTrack && progressBar) {
         gsap.fromTo(
