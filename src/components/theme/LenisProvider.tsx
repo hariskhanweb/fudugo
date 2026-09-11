@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import Lenis from "lenis";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { setLenisInstance } from "@/lib/lenis-control";
 
 type LenisProviderProps = {
   children: React.ReactNode;
@@ -21,14 +22,17 @@ export default function LenisProvider({ children }: LenisProviderProps) {
       syncTouch: false,
       wheelMultiplier: 0.9,
       touchMultiplier: 1,
+      // Avoid fighting native overflow locks / fixed overlays
+      autoRaf: false,
     });
 
-    let frame = 0;
+    setLenisInstance(lenis);
 
     const onScroll = () => {
       ScrollTrigger.update();
     };
 
+    let frame = 0;
     const raf = (time: number) => {
       lenis.raf(time);
       frame = window.requestAnimationFrame(raf);
@@ -36,11 +40,17 @@ export default function LenisProvider({ children }: LenisProviderProps) {
 
     lenis.on("scroll", onScroll);
     frame = window.requestAnimationFrame(raf);
-    ScrollTrigger.refresh();
+
+    // Recalculate after layout settles so ST + Lenis stay in sync
+    const refreshId = window.requestAnimationFrame(() => {
+      ScrollTrigger.refresh();
+    });
 
     return () => {
       window.cancelAnimationFrame(frame);
+      window.cancelAnimationFrame(refreshId);
       lenis.off("scroll", onScroll);
+      setLenisInstance(null);
       lenis.destroy();
     };
   }, []);

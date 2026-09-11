@@ -231,6 +231,10 @@ html.lenis body {
   .animate-help-pop {
     animation: none;
   }
+
+  .lightbox-image-enter {
+    animation: none;
+  }
 }
 
 @keyframes help-pop {
@@ -247,4 +251,17 @@ html.lenis body {
 
 .animate-help-pop {
   animation: help-pop 420ms ease-out;
+}
+
+@keyframes lightbox-image-enter {
+  from {
+    opacity: 0.35;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.lightbox-image-enter {
+  animation: lightbox-image-enter 220ms ease-out;
 }

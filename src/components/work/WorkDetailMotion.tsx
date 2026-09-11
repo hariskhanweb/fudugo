@@ -63,6 +63,14 @@ function StoryPanel({
   );
 }
 
+const revealDefaults = {
+  duration: 0.55,
+  ease: "power2.out",
+  overwrite: "auto" as const,
+  immediateRender: false,
+  clearProps: "transform",
+};
+
 export function WorkStorySection({ items }: { items: StoryItem[] }) {
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -75,17 +83,15 @@ export function WorkStorySection({ items }: { items: StoryItem[] }) {
       if (header) {
         gsap.fromTo(
           header,
-          { y: 18, opacity: 0 },
+          { y: 12, autoAlpha: 0 },
           {
+            ...revealDefaults,
             y: 0,
-            opacity: 1,
-            duration: 0.6,
-            ease: "power2.out",
-            overwrite: "auto",
+            autoAlpha: 1,
             scrollTrigger: {
               trigger: section,
-              start: "top 80%",
-              toggleActions: "play none none none",
+              start: "top 82%",
+              once: true,
             },
           },
         );
@@ -94,18 +100,16 @@ export function WorkStorySection({ items }: { items: StoryItem[] }) {
       if (panels.length) {
         gsap.fromTo(
           panels,
-          { y: 32, opacity: 0 },
+          { y: 16, autoAlpha: 0 },
           {
+            ...revealDefaults,
             y: 0,
-            opacity: 1,
-            duration: 0.7,
-            stagger: 0.12,
-            ease: "power2.out",
-            overwrite: "auto",
+            autoAlpha: 1,
+            stagger: 0.08,
             scrollTrigger: {
               trigger: section.querySelector("[data-story='grid']") ?? section,
-              start: "top 82%",
-              toggleActions: "play none none none",
+              start: "top 84%",
+              once: true,
             },
           },
         );
@@ -156,14 +160,14 @@ export function WorkHeroMotion({ children }: { children: React.ReactNode }) {
 
       gsap.fromTo(
         items,
-        { y: 22, opacity: 0 },
+        { y: 14, autoAlpha: 0 },
         {
+          ...revealDefaults,
           y: 0,
-          opacity: 1,
-          duration: 0.75,
-          stagger: 0.08,
+          autoAlpha: 1,
+          duration: 0.65,
+          stagger: 0.06,
           ease: "power3.out",
-          overwrite: "auto",
         },
       );
     },
@@ -184,18 +188,16 @@ export function WorkMetaMotion({ children }: { children: React.ReactNode }) {
 
       gsap.fromTo(
         cells,
-        { y: 14, opacity: 0 },
+        { y: 10, autoAlpha: 0 },
         {
+          ...revealDefaults,
           y: 0,
-          opacity: 1,
-          duration: 0.55,
-          stagger: 0.06,
-          ease: "power2.out",
-          overwrite: "auto",
+          autoAlpha: 1,
+          stagger: 0.05,
           scrollTrigger: {
             trigger: scope,
-            start: "top 90%",
-            toggleActions: "play none none none",
+            start: "top 92%",
+            once: true,
           },
         },
       );

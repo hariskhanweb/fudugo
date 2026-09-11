@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import site from "@/data/site.json";
 import navigation from "@/data/navigation.json";
+import { startLenis, stopLenis } from "@/lib/lenis-control";
 
 type DropdownKey = keyof typeof navigation.dropdowns;
 
@@ -51,10 +52,12 @@ export default function Header() {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") setMobileMenuOpen(false);
     };
+    stopLenis();
     document.body.style.overflow = "hidden";
     window.addEventListener("keydown", onKey);
     return () => {
       document.body.style.overflow = "";
+      startLenis();
       window.removeEventListener("keydown", onKey);
     };
   }, [mobileMenuOpen]);
