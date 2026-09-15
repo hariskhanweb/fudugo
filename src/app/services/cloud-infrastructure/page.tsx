@@ -1,11 +1,8 @@
-import DedicatedServicePage, {
-  servicePageMetadata,
-} from "@/sections/services/DedicatedServicePage";
-
-const SLUG = "cloud-infrastructure";
-
-export const metadata = servicePageMetadata(SLUG);
+import ServiceStandardPage from "@/sections/services/ServiceStandardPage";
+import content from "@/data/cloud-infrastructure-page.json";
 
 export default function CloudInfrastructurePage() {
-  return <DedicatedServicePage slug={SLUG} />;
+  return (
+    <ServiceStandardPage slug="cloud-infrastructure" content={content} />
+  );
 }

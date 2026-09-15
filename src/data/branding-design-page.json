@@ -1,0 +1,136 @@
+{
+  "introSection": {
+    "eyebrow": "DESIGN, WITH PURPOSE",
+    "title": "Your Brand Is More Than a Logo.",
+    "lead": "A strong brand isn't just a nice-looking logo, it's the consistent visual language that makes your business instantly recognizable, whether someone finds you on your website, in an ad, or on social media.",
+    "paragraphs": [
+      "At FuduGo, we build brand identities and design systems around your actual business and audience, not generic templates. Whether you need a full brand identity from scratch, ongoing marketing assets, or video content, we design for consistency across everywhere your business shows up."
+    ],
+    "ctaLabel": "Discuss your brand",
+    "ctaHref": "/contact"
+  },
+  "whatWeOffer": {
+    "eyebrow": "What We Deliver",
+    "title": "One Consistent Brand, Everywhere It Matters.",
+    "items": [
+      {
+        "number": "01",
+        "title": "Brand Identity Design",
+        "description": "Logos, color systems, typography, and brand guidelines built to give your business a distinct, consistent look.",
+        "icon": "identity",
+        "image": "/Image-1.jpg"
+      },
+      {
+        "number": "02",
+        "title": "Marketing & Social Media Assets",
+        "description": "Ongoing graphic design for social media, ad campaigns, and marketing materials that stay on-brand.",
+        "icon": "social",
+        "image": "/Image-17.jpg"
+      },
+      {
+        "number": "03",
+        "title": "Video Editing & Production",
+        "description": "Promotional videos, social content, and brand films edited to match your visual identity.",
+        "icon": "video",
+        "image": "/Image-18.jpg"
+      },
+      {
+        "number": "04",
+        "title": "Print & Digital Collateral",
+        "description": "Business cards, brochures, presentation decks, and other materials designed to represent your brand professionally.",
+        "icon": "print",
+        "image": "/Image-19.jpg"
+      }
+    ]
+  },
+  "aiDevelopment": {
+    "eyebrow": "(AI + Development)",
+    "title": "Where AI Fits Into Our Design Process",
+    "lead": "Our development team uses AI-assisted tools every day to build cleaner, faster, more secure software, and we bring that same practical mindset to design: using AI where it genuinely speeds up the work, without letting it replace the judgment that makes a brand actually work.",
+    "features": [
+      {
+        "id": "concept-exploration",
+        "title": "Faster Concept Exploration",
+        "description": "AI-assisted tools help our designers quickly explore multiple visual directions early in a project, so you see more options before committing to a direction.",
+        "tag": "Creative Direction"
+      },
+      {
+        "id": "asset-production",
+        "title": "Efficient Asset Production",
+        "description": "For repetitive design tasks, like resizing assets across formats or generating first-draft variations, AI tools help our team move faster without sacrificing quality control.",
+        "tag": "Production Speed"
+      },
+      {
+        "id": "human-led",
+        "title": "Human-Led, AI-Assisted",
+        "description": "Every brand identity and design decision is reviewed and refined by our designers. AI helps us move faster, it doesn't make the creative decisions that define your brand.",
+        "tag": "Designer Judgment"
+      }
+    ]
+  },
+  "techStack": {
+    "eyebrow": "OUR DESIGN TOOLKIT",
+    "title": "Built With the Right Tools.",
+    "description": "We use industry-standard design and editing software, selected based on your project's format and deliverables.",
+    "categories": [
+      {
+        "step": "01",
+        "id": "design-prototyping",
+        "name": "Design & Prototyping",
+        "description": "Interface and identity tools for brand systems and design exploration.",
+        "skills": ["Figma", "Adobe Photoshop", "Adobe Illustrator"]
+      },
+      {
+        "step": "02",
+        "id": "video-editing",
+        "name": "Video Editing",
+        "description": "Professional editing for brand films, promos, and social video.",
+        "skills": ["Adobe Premiere Pro"]
+      },
+      {
+        "step": "03",
+        "id": "marketing-assets",
+        "name": "Marketing & Social Assets",
+        "description": "Fast production tools for ongoing campaign and social creatives.",
+        "skills": ["Canva"]
+      }
+    ]
+  },
+  "faqs": {
+    "eyebrow": "QUESTIONS & ANSWERS",
+    "title": "Frequently Asked Questions",
+    "description": "Clear answers about brand identity, ongoing design support, and how AI fits into our process.",
+    "items": [
+      {
+        "id": "faq-1",
+        "question": "What does FuduGo offer in branding and design?",
+        "answer": "FuduGo provides brand identity design, marketing and social media assets, video editing, and print and digital collateral design."
+      },
+      {
+        "id": "faq-2",
+        "question": "Can you build a complete brand identity from scratch?",
+        "answer": "Yes. We design full brand identities, including logo, color palette, typography, and brand guidelines, tailored to your business and audience."
+      },
+      {
+        "id": "faq-3",
+        "question": "Does FuduGo use AI in the design process?",
+        "answer": "Yes, selectively. AI-assisted tools help our designers explore concepts faster and speed up repetitive production work, but every creative decision is made and reviewed by our design team."
+      },
+      {
+        "id": "faq-4",
+        "question": "Can you design ongoing marketing content, or only one-time brand assets?",
+        "answer": "Both. We can deliver a one-time brand identity project or provide ongoing design support for social media, campaigns, and marketing materials."
+      },
+      {
+        "id": "faq-5",
+        "question": "Will my brand be consistent across my website and marketing materials?",
+        "answer": "Yes. Since we handle web development alongside branding and design, we can ensure visual consistency across your website, social presence, and marketing assets."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Let's Build a Brand That Actually Sticks.",
+    "label": "Get a Free Quote",
+    "href": "/contact"
+  }
+}

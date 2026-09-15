@@ -1,11 +1,6 @@
-import DedicatedServicePage, {
-  servicePageMetadata,
-} from "@/sections/services/DedicatedServicePage";
-
-const SLUG = "branding-design";
-
-export const metadata = servicePageMetadata(SLUG);
+import ServiceStandardPage from "@/sections/services/ServiceStandardPage";
+import content from "@/data/branding-design-page.json";
 
 export default function BrandingDesignPage() {
-  return <DedicatedServicePage slug={SLUG} />;
+  return <ServiceStandardPage slug="branding-design" content={content} />;
 }

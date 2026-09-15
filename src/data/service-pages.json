@@ -140,94 +140,94 @@
     },
     {
       "slug": "cloud-infrastructure",
-      "title": "Cloud & Infrastructure",
+      "title": "Build on Infrastructure That Scales With You.",
       "shortTitle": "Cloud",
-      "eyebrow": "(04 — Cloud & Infrastructure)",
-      "tagline": "Reliable foundations for growth.",
-      "description": "Cloud architecture, DevOps, and infrastructure that keep products fast, secure, and ready to scale — without surprise outages or runaway costs.",
+      "eyebrow": "CLOUD INFRASTRUCTURE",
+      "tagline": "Fast, secure, and reliable by design.",
+      "description": "We design, deploy, and manage cloud infrastructure that keeps your applications fast, secure, and reliable, built with AI-assisted engineering and monitored to catch problems before your customers do.",
       "heroImage": "/Image-4.jpg",
       "heroImagePosition": "center",
       "layout": "stack",
-      "ctaLabel": "Review your stack",
+      "ctaLabel": "Get a Free Quote",
       "highlights": [
-        { "label": "Uptime target", "value": "99.9%" },
-        { "label": "Cloud", "value": "AWS · GCP · Azure" },
-        { "label": "Delivery", "value": "CI/CD" }
+        { "label": "Platforms", "value": "AWS · GCP · Azure" },
+        { "label": "Delivery", "value": "CI/CD" },
+        { "label": "Focus", "value": "Reliability" }
       ],
       "capabilities": [
         {
-          "title": "Cloud architecture",
-          "description": "Right-sized environments with clear networking and security boundaries."
+          "title": "Cloud Deployment & Hosting",
+          "description": "Setup and management on AWS, Google Cloud, Azure, Vercel, or DigitalOcean, matched to your application's actual needs."
         },
         {
-          "title": "CI/CD pipelines",
-          "description": "Automated builds, tests, and safe releases on every merge."
+          "title": "Cloud Migration",
+          "description": "Moving existing applications and data to the cloud without disrupting the business running on top of them."
         },
         {
-          "title": "Observability",
-          "description": "Logging, metrics, and alerts so issues surface before users do."
+          "title": "Microservices Architecture",
+          "description": "Breaking monolithic systems into scalable, independently deployable services using AWS Lambda and Azure Functions."
         },
         {
-          "title": "Cost & performance",
-          "description": "Tune spend, caching, and scaling policies for real traffic."
+          "title": "CI/CD & DevOps Pipelines",
+          "description": "Automated build, test, and deployment pipelines that let your team ship updates faster and with fewer errors."
         }
       ],
       "process": [
-        { "step": "01", "title": "Assess", "description": "Audit current infra, risks, and cost drivers." },
-        { "step": "02", "title": "Blueprint", "description": "Target architecture with migration phases." },
-        { "step": "03", "title": "Harden", "description": "Security, backups, and disaster recovery in place." },
-        { "step": "04", "title": "Operate", "description": "Runbooks, monitoring, and continuous improvement." }
+        { "step": "01", "title": "Assess", "description": "Map usage patterns, risks, and growth plans." },
+        { "step": "02", "title": "Blueprint", "description": "Choose platform and architecture for your workload." },
+        { "step": "03", "title": "Deploy", "description": "Ship secure environments with CI/CD and monitoring." },
+        { "step": "04", "title": "Operate", "description": "Ongoing management, hardening, and scale planning." }
       ],
       "outcomes": [
-        "Predictable deploys with rollback paths",
-        "Clear visibility into health and spend",
-        "Infrastructure that grows with product demand"
+        "Infrastructure matched to real traffic and budget",
+        "Fewer deployment errors with automated pipelines",
+        "Systems that stay reliable as you grow"
       ]
     },
     {
       "slug": "branding-design",
-      "title": "Branding & Design",
+      "title": "Build a Brand People Actually Remember.",
       "shortTitle": "Brand",
-      "eyebrow": "(05 — Branding & Design)",
-      "tagline": "Identity that moves with your product.",
-      "description": "Visual systems, brand identities, and product UI that feel cohesive across every touchpoint — from logo to motion language.",
+      "eyebrow": "BRANDING & DESIGN",
+      "tagline": "Consistent across every touchpoint.",
+      "description": "We design visual identities, marketing assets, and brand systems that make your business look as credible as the work you actually do — consistent across every touchpoint, from your website to your social feed.",
       "heroImage": "/Image-1.jpg",
       "heroImagePosition": "center",
       "layout": "gallery",
-      "ctaLabel": "Book a brand session",
+      "ctaLabel": "Get a Free Quote",
       "highlights": [
-        { "label": "Deliverables", "value": "Systems" },
-        { "label": "Includes", "value": "Motion" },
-        { "label": "Format", "value": "Digital-first" }
+        { "label": "Identity", "value": "Full systems" },
+        { "label": "Includes", "value": "Video" },
+        { "label": "Format", "value": "Print + Digital" }
       ],
       "capabilities": [
         {
-          "title": "Brand identity",
-          "description": "Logo, type, color, and voice that hold up at every scale."
+          "title": "Brand Identity Design",
+          "description": "Logos, color systems, typography, and brand guidelines built to give your business a distinct, consistent look."
         },
         {
-          "title": "Design systems",
-          "description": "Reusable UI kits that keep product and marketing aligned."
+          "title": "Marketing & Social Media Assets",
+          "description": "Ongoing graphic design for social media, ad campaigns, and marketing materials that stay on-brand."
         },
         {
-          "title": "Motion branding",
-          "description": "Animation rules that make your brand feel alive and consistent."
+          "title": "Video Editing & Production",
+          "description": "Promotional videos, social content, and brand films edited to match your visual identity."
         },
         {
-          "title": "Campaign creatives",
-          "description": "Launch assets built for web, social, and product moments."
+          "title": "Print & Digital Collateral",
+          "description": "Business cards, brochures, presentation decks, and other materials designed to represent your brand professionally."
         }
       ],
       "process": [
-        { "step": "01", "title": "Brand audit", "description": "What resonates, what feels dated, what competitors own." },
-        { "step": "02", "title": "Direction", "description": "Mood, concepts, and a clear creative north star." },
-        { "step": "03", "title": "System build", "description": "Identity assets, guidelines, and component library." },
-        { "step": "04", "title": "Apply & train", "description": "Rollout across key surfaces with team enablement." }
+        { "step": "01", "title": "Discover", "description": "Understand your business, audience, and brand goals." },
+        { "step": "02", "title": "Direction", "description": "Explore visual concepts before committing." },
+        { "step": "03", "title": "System", "description": "Build identity assets and guidelines." },
+        { "step": "04", "title": "Apply", "description": "Roll out consistently across web and marketing." }
       ],
       "outcomes": [
-        "A brand system teams can actually use",
-        "Stronger recognition across channels",
-        "Design quality that scales with growth"
+        "A brand people recognize across channels",
+        "Marketing assets that stay on-brand",
+        "Design that matches the quality of your work"
       ]
     },
     {

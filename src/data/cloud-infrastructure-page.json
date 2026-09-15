@@ -1,0 +1,153 @@
+{
+  "introSection": {
+    "eyebrow": "INFRASTRUCTURE, WITH PURPOSE",
+    "title": "Your Application Is Only as Reliable as What It Runs On.",
+    "lead": "A great product can still fail its users if the infrastructure behind it can't handle real traffic, goes down at the wrong moment, or wasn't built to scale in the first place.",
+    "paragraphs": [
+      "At FuduGo, we design and manage cloud infrastructure around your actual usage patterns and growth plans, not a one-size-fits-all setup. Whether you need a new deployment pipeline, a migration to the cloud, or ongoing infrastructure management, we build systems designed to stay reliable as you grow."
+    ],
+    "ctaLabel": "Discuss your infrastructure",
+    "ctaHref": "/contact"
+  },
+  "whatWeOffer": {
+    "eyebrow": "What We Deliver",
+    "title": "Infrastructure That Doesn't Get in Your Way.",
+    "items": [
+      {
+        "number": "01",
+        "title": "Cloud Deployment & Hosting",
+        "description": "Setup and management on AWS, Google Cloud, Azure, Vercel, or DigitalOcean, matched to your application's actual needs.",
+        "icon": "cloud",
+        "image": "/Image-4.jpg"
+      },
+      {
+        "number": "02",
+        "title": "Cloud Migration",
+        "description": "Moving existing applications and data to the cloud without disrupting the business running on top of them.",
+        "icon": "migrate",
+        "image": "/Image-17.jpg"
+      },
+      {
+        "number": "03",
+        "title": "Microservices Architecture",
+        "description": "Breaking monolithic systems into scalable, independently deployable services using AWS Lambda and Azure Functions.",
+        "icon": "layers",
+        "image": "/Image-18.jpg"
+      },
+      {
+        "number": "04",
+        "title": "CI/CD & DevOps Pipelines",
+        "description": "Automated build, test, and deployment pipelines that let your team ship updates faster and with fewer errors.",
+        "icon": "pipeline",
+        "image": "/Image-19.jpg"
+      }
+    ]
+  },
+  "aiDevelopment": {
+    "eyebrow": "(AI + Development)",
+    "title": "How AI Makes Your Infrastructure Smarter",
+    "lead": "We use AI-enabled development tools as part of our everyday build process, and that same approach extends to how we design and manage infrastructure.",
+    "features": [
+      {
+        "id": "deployment-setup",
+        "title": "Faster, More Consistent Deployment Setup",
+        "description": "AI-assisted tooling helps our engineers standardize deployment configurations and infrastructure-as-code, reducing manual setup errors across environments.",
+        "tag": "Infrastructure as Code"
+      },
+      {
+        "id": "security-flagging",
+        "title": "Early Security Flagging",
+        "description": "The same AI-assisted checks we use across our development process help flag configuration and security gaps in infrastructure setup before they become production issues.",
+        "tag": "Security Reviews"
+      },
+      {
+        "id": "maintainable-pipelines",
+        "title": "Cleaner, More Maintainable Pipelines",
+        "description": "AI assists with writing and reviewing CI/CD scripts and infrastructure code, keeping pipelines standardized and easier for your team to maintain long-term.",
+        "tag": "CI/CD Quality"
+      },
+      {
+        "id": "ai-daily",
+        "title": "Built by a Team That Uses AI Daily",
+        "description": "The infrastructure we set up for you is built using the same AI-assisted workflow our developers rely on across every project, not a separate process for infrastructure work.",
+        "tag": "Consistent Engineering",
+        "result": "Same AI-assisted workflow across product and infrastructure — not a one-off process.",
+        "image": "/Image-32.jpg",
+        "imageBadge": "AI-Assisted Ops",
+        "imageMeta": "Daily Workflow"
+      }
+    ]
+  },
+  "techStack": {
+    "eyebrow": "OUR TECHNOLOGY STACK",
+    "title": "Built With the Right Technology.",
+    "description": "We select the right cloud platform and architecture based on your application's traffic, budget, and long-term scaling needs.",
+    "categories": [
+      {
+        "step": "01",
+        "id": "cloud-platforms",
+        "name": "Cloud Platforms",
+        "description": "Managed hosting and cloud environments matched to your workload.",
+        "skills": ["AWS", "Google Cloud", "Azure", "Vercel", "DigitalOcean"]
+      },
+      {
+        "step": "02",
+        "id": "microservices",
+        "name": "Microservices",
+        "description": "Serverless and function-based services for scalable workloads.",
+        "skills": ["AWS Lambda", "Azure Functions"]
+      },
+      {
+        "step": "03",
+        "id": "containers-cicd",
+        "name": "Containers & CI/CD",
+        "description": "Containerized delivery and automated pipelines for safer releases.",
+        "skills": ["Docker", "GitHub", "GitLab", "Bitbucket"]
+      },
+      {
+        "step": "04",
+        "id": "databases",
+        "name": "Databases",
+        "description": "Reliable data stores selected for your application's access patterns.",
+        "skills": ["MongoDB", "MySQL", "PostgreSQL", "SQLite"]
+      }
+    ]
+  },
+  "faqs": {
+    "eyebrow": "QUESTIONS & ANSWERS",
+    "title": "Frequently Asked Questions",
+    "description": "Clear answers about cloud deployment, migration, and how we use AI in infrastructure work.",
+    "items": [
+      {
+        "id": "faq-1",
+        "question": "What does FuduGo offer in cloud infrastructure?",
+        "answer": "FuduGo provides cloud deployment and hosting, cloud migration, microservices architecture, and CI/CD pipeline setup across AWS, Google Cloud, and Azure."
+      },
+      {
+        "id": "faq-2",
+        "question": "Can you migrate our existing application to the cloud without downtime?",
+        "answer": "In most cases, yes. We plan migrations in stages and test thoroughly at each step to minimize disruption to your live application."
+      },
+      {
+        "id": "faq-3",
+        "question": "Does FuduGo use AI in infrastructure work?",
+        "answer": "Yes. We use AI-assisted tools to help standardize deployment configurations, review infrastructure code, and flag potential security gaps during setup."
+      },
+      {
+        "id": "faq-4",
+        "question": "Which cloud provider do you recommend?",
+        "answer": "It depends on your application's requirements, existing tools, and budget. We assess your specific needs before recommending AWS, Google Cloud, Azure, or another platform."
+      },
+      {
+        "id": "faq-5",
+        "question": "Do you provide ongoing infrastructure management, or just initial setup?",
+        "answer": "Both. We can handle one-time deployment and migration work, or provide ongoing monitoring and management depending on what your team needs."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Let's Build Infrastructure That Grows With You.",
+    "label": "Get a Free Quote",
+    "href": "/contact"
+  }
+}
