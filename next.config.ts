@@ -106,6 +106,16 @@ const nextConfig: NextConfig = {
         destination: "/portfolio/:slug",
         statusCode: 301,
       },
+      {
+        source: "/about-us",
+        destination: "/about",
+        statusCode: 301,
+      },
+      {
+        source: "/about-us/",
+        destination: "/about",
+        statusCode: 301,
+      },
       ...webSolutionsRedirects,
       ...serviceLegacyRedirects,
     ];
