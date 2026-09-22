@@ -1,0 +1,109 @@
+{
+  "hero": {
+    "title": "Privacy Policy",
+    "image": "/Image-32.jpg",
+    "imageAlt": "FuduGo privacy policy",
+    "imagePosition": "center"
+  },
+  "updated": "September 2026",
+  "intro": "This Privacy Policy explains how FuduGo (“we”, “us”, or “our”) collects, uses, and protects information when you visit https://fudugo.com or contact us about our services.",
+  "sections": [
+    {
+      "heading": "Who we are",
+      "paragraphs": [
+        "Our website address is https://fudugo.com. FuduGo provides web development, mobile apps, digital marketing, SEO, and related technology services from our India and US offices."
+      ]
+    },
+    {
+      "heading": "What personal data we collect and why we collect it",
+      "paragraphs": [
+        "We collect information you voluntarily provide and limited technical data needed to run and improve the site."
+      ],
+      "subsections": [
+        {
+          "heading": "Contact forms and inquiries",
+          "paragraphs": [
+            "When you submit a contact, quote, career, or SEO inquiry form, we collect the details you enter — such as name, email, phone, message, and any files you upload (for example a résumé). We use this information to respond to your request and, where relevant, to evaluate applications."
+          ]
+        },
+        {
+          "heading": "Newsletter",
+          "paragraphs": [
+            "If you subscribe to our newsletter, we store your email address so we can send updates. You can unsubscribe at any time using the link in those emails or by contacting us."
+          ]
+        },
+        {
+          "heading": "Comments",
+          "paragraphs": [
+            "If visitors leave comments on the site, we may collect the data shown in the comments form, plus the visitor’s IP address and browser user agent string to help with spam detection.",
+            "An anonymized string created from your email address (a hash) may be provided to the Gravatar service to see if you are using it. The Gravatar privacy policy is available at https://automattic.com/privacy/. After approval of your comment, your profile picture may be visible publicly with your comment."
+          ]
+        },
+        {
+          "heading": "Media",
+          "paragraphs": [
+            "If you upload images to the website, you should avoid uploading images with embedded location data (EXIF GPS). Visitors to the website can download and extract any location data from images on the website."
+          ]
+        },
+        {
+          "heading": "Cookies",
+          "paragraphs": [
+            "We use cookies and similar technologies to operate the site, remember preferences, and understand how the site is used. Necessary cookies support basic functionality and security. Optional cookies (for example analytics) are used only where appropriate and, where required, with your consent.",
+            "You can control cookies through your browser settings. Blocking some cookies may affect how the site works."
+          ]
+        },
+        {
+          "heading": "Embedded content from other websites",
+          "paragraphs": [
+            "Pages on this site may include embedded content (for example videos, maps, or other media). Embedded content from other websites behaves as if you visited that other website.",
+            "Those websites may collect data about you, use cookies, embed third-party tracking, and monitor your interaction with that embedded content — including if you have an account and are logged in there."
+          ]
+        },
+        {
+          "heading": "Analytics",
+          "paragraphs": [
+            "We may use analytics tools to understand traffic, page performance, and how visitors use the site. This information is typically aggregated and used to improve content and experience."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Who we share your data with",
+      "paragraphs": [
+        "We do not sell your personal data. We may share information with trusted service providers who help us operate the website, deliver email, host infrastructure, or process applications — only as needed to provide those services. We may also disclose information if required by law or to protect our rights and users."
+      ]
+    },
+    {
+      "heading": "How long we retain your data",
+      "paragraphs": [
+        "Contact and inquiry data is kept for as long as needed to respond and manage the business relationship, and for a reasonable period afterward for legitimate business or legal reasons.",
+        "If you leave a comment, the comment and its metadata may be retained indefinitely so we can recognize and approve follow-up comments automatically.",
+        "For users that register on our website (if any), we store the personal information they provide in their profile. Users can request to see, edit, or delete their information (except where we must retain it for administrative, legal, or security purposes)."
+      ]
+    },
+    {
+      "heading": "What rights you have over your data",
+      "paragraphs": [
+        "Depending on applicable law, you may request access to, correction of, or deletion of personal data we hold about you, or ask for an export of data you have provided. Contact us using the details below to make a request. This does not include data we are obliged to keep for administrative, legal, or security purposes."
+      ]
+    },
+    {
+      "heading": "Where we send your data",
+      "paragraphs": [
+        "Visitor comments and form submissions may be checked through automated spam or security services. Data may be processed in India, the United States, or other locations where we or our service providers operate."
+      ]
+    },
+    {
+      "heading": "How we protect your data",
+      "paragraphs": [
+        "We take reasonable technical and organizational measures to protect personal data against unauthorized access, loss, or misuse. No method of transmission or storage is completely secure, and we cannot guarantee absolute security."
+      ]
+    },
+    {
+      "heading": "Contact",
+      "paragraphs": [
+        "For privacy questions or data requests, email info@fudugo.com or write to FuduGo, Beside Metro Hospital, Chhaoni Square, Koradi Road, Nagpur-440013, Maharashtra, India — or our US office at 11451 Katy Freeway #105, Houston, TX 77079."
+      ]
+    }
+  ]
+}

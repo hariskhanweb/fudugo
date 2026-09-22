@@ -67,8 +67,8 @@ export default function Header() {
     setMobileAccordion(null);
   };
 
-  const linksBeforeDropdown = navigation.links.slice(0, 2);
-  const linksAfterDropdown = navigation.links.slice(2);
+  const linksBeforeDropdown = navigation.links.slice(0, 1);
+  const linksAfterDropdown = navigation.links.slice(1);
 
   const navLinkClass =
     "text-[15px] font-semibold text-foreground transition-opacity outline-hidden hover:opacity-70 focus-visible:ring-2 focus-visible:ring-accent-alt/70";

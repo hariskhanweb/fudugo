@@ -4,7 +4,11 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BlogCard, Container } from "@/components/ui";
 import { CtaSection } from "@/sections";
-import { getAllBlogPosts, getBlogPostBySlug, getBlogStaticParams } from "@/lib/blog";
+import {
+  getAllBlogPosts,
+  getBlogPostBySlug,
+  getBlogStaticParams,
+} from "@/lib/blog";
 import JsonLd from "@/components/seo/JsonLd";
 import { blogPostingJsonLd, pageMetadata } from "@/lib/seo";
 
@@ -68,6 +72,9 @@ export default async function BlogPostPage({ params }: PageProps) {
               <span className="inline-flex rounded-full border border-accent px-3 py-1 font-sans text-[11px] font-medium text-accent-soft">
                 {post.category}
               </span>
+              {post.author ? (
+                <span className="font-sans text-sm text-muted">{post.author}</span>
+              ) : null}
               <time className="font-sans text-sm text-muted">{post.date}</time>
             </div>
 
@@ -90,20 +97,29 @@ export default async function BlogPostPage({ params }: PageProps) {
                 fill
                 sizes="100vw"
                 className="object-cover"
+                priority
               />
             </div>
           </div>
 
           <div className="mt-12 grid gap-10 lg:mt-16 lg:grid-cols-[minmax(0,0.28fr)_minmax(0,0.72fr)] lg:gap-16">
-            <div className="lg:pt-1">
+            <aside className="lg:sticky lg:top-28 lg:self-start lg:pt-1">
               <p className="font-sans text-xs font-semibold uppercase tracking-[0.18em] text-accent-alt">
                 Article
               </p>
-              <p className="mt-4 max-w-xs font-sans text-sm leading-relaxed text-muted">
-                Notes from the FuduGo team on product direction, digital
-                execution, and what helps ideas turn into measurable growth.
+              {post.author ? (
+                <p className="mt-4 font-sans text-base font-semibold text-foreground">
+                  {post.author}
+                </p>
+              ) : null}
+              <p className="mt-2 max-w-xs font-sans text-sm leading-relaxed text-muted">
+                Notes from FuduGo on SEO, analytics, marketing automation, and
+                digital growth.
               </p>
-            </div>
+              <time className="mt-4 block font-sans text-sm text-muted">
+                {post.date}
+              </time>
+            </aside>
 
             <div className="space-y-10">
               {post.content?.intro ? (
@@ -120,13 +136,25 @@ export default async function BlogPostPage({ params }: PageProps) {
                   <div className="space-y-4">
                     {section.paragraphs.map((paragraph) => (
                       <p
-                        key={paragraph}
+                        key={paragraph.slice(0, 48)}
                         className="font-sans text-sm leading-[1.85] text-muted sm:text-[15px]"
                       >
                         {paragraph}
                       </p>
                     ))}
                   </div>
+                  {section.list?.length ? (
+                    <ul className="space-y-2.5 border-l border-accent-alt/40 pl-5">
+                      {section.list.map((item) => (
+                        <li
+                          key={item.slice(0, 48)}
+                          className="font-sans text-sm leading-relaxed text-muted sm:text-[15px]"
+                        >
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
                 </section>
               ))}
             </div>

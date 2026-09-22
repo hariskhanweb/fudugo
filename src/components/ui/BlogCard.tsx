@@ -47,9 +47,16 @@ export default function BlogCard({ post, className }: BlogCardProps) {
           </div>
 
           <div className="max-w-md space-y-2">
-            <time className="block font-sans text-xs text-white/70 sm:text-sm">
-              {post.date}
-            </time>
+            <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+              {post.author ? (
+                <span className="font-sans text-xs text-white/70 sm:text-sm">
+                  {post.author}
+                </span>
+              ) : null}
+              <time className="block font-sans text-xs text-white/70 sm:text-sm">
+                {post.date}
+              </time>
+            </div>
             <h3 className="font-sans text-xl font-bold leading-snug tracking-tight text-white transition-colors duration-300 group-hover:text-accent-soft sm:text-2xl">
               {post.title}
             </h3>
@@ -84,9 +91,12 @@ export default function BlogCard({ post, className }: BlogCardProps) {
       </div>
 
       <div className="flex flex-1 flex-col px-3.5 pb-4 pt-1 sm:px-4 sm:pb-5">
-        <time className="mb-2 block font-sans text-xs text-muted">
-          {post.date}
-        </time>
+        <div className="mb-2 flex flex-wrap items-center gap-x-2 gap-y-1">
+          {post.author ? (
+            <span className="font-sans text-xs text-muted">{post.author}</span>
+          ) : null}
+          <time className="font-sans text-xs text-muted">{post.date}</time>
+        </div>
         <h3 className="mb-3 font-sans text-[15px] font-bold leading-snug tracking-tight text-foreground transition-colors duration-300 group-hover:text-accent-soft sm:text-base">
           {post.title}
         </h3>

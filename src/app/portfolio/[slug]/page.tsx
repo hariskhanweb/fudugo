@@ -40,7 +40,7 @@ export async function generateMetadata({
     return pageMetadata({
       title: "Project not found",
       description: "This project could not be found.",
-      path: `/work/${slug}`,
+      path: `/portfolio/${slug}`,
       noIndex: true,
     });
   }
@@ -48,7 +48,7 @@ export async function generateMetadata({
   return pageMetadata({
     title: project.title,
     description: project.summary ?? project.title,
-    path: `/work/${project.slug}`,
+    path: `/portfolio/${project.slug}`,
     image: getProjectCover(project),
   });
 }
@@ -61,7 +61,7 @@ function projectJsonLd(project: Project) {
     description: project.summary ?? project.title,
     dateCreated: project.year,
     image: absoluteUrl(getProjectCover(project)),
-    url: absoluteUrl(`/work/${project.slug}`),
+    url: absoluteUrl(`/portfolio/${project.slug}`),
     ...(project.liveUrl ? { sameAs: project.liveUrl } : {}),
     creator: {
       "@type": "Organization",
@@ -135,7 +135,7 @@ function ProjectMedia({ project }: { project: Project }) {
   );
 }
 
-export default async function WorkDetailPage({ params }: PageProps) {
+export default async function PortfolioDetailPage({ params }: PageProps) {
   const { slug } = await params;
   const project = getProjectBySlug(slug);
 
@@ -206,11 +206,11 @@ export default async function WorkDetailPage({ params }: PageProps) {
               className="flex flex-wrap items-center justify-between gap-4"
             >
               <Link
-                href="/#works"
+                href="/portfolio"
                 className="inline-flex cursor-pointer items-center gap-2 font-sans text-sm text-white/65 transition-colors outline-hidden hover:text-white focus-visible:ring-2 focus-visible:ring-white/40"
               >
                 <span aria-hidden>←</span>
-                Back to work
+                Back to portfolio
               </Link>
 
               {project.liveUrl ? (
@@ -428,7 +428,7 @@ export default async function WorkDetailPage({ params }: PageProps) {
                 </h2>
               </div>
               <Link
-                href="/#works"
+                href="/portfolio"
                 className="hidden cursor-pointer font-sans text-sm font-medium text-accent-alt transition-opacity outline-hidden hover:opacity-80 focus-visible:ring-2 focus-visible:ring-accent-alt/70 sm:inline"
               >
                 View all {allCount}

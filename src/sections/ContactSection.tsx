@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import contactData from "@/data/contact.json";
 import { Container } from "@/components/ui";
+import { submitNotify } from "@/lib/submit-notify";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -48,6 +49,7 @@ export default function ContactSection() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -76,17 +78,27 @@ export default function ContactSection() {
     return () => ctx.revert();
   }, []);
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) return;
 
     setIsSubmitting(true);
-    // Simulate submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitted(true);
-      setFormData({ name: "", email: "", message: "" });
-    }, 1000);
+    setError("");
+    const result = await submitNotify({
+      type: "contact",
+      name: formData.name,
+      email: formData.email,
+      message: formData.message,
+    });
+    setIsSubmitting(false);
+
+    if (!result.ok) {
+      setError(result.error);
+      return;
+    }
+
+    setSubmitted(true);
+    setFormData({ name: "", email: "", message: "" });
   };
 
   return (
@@ -115,8 +127,10 @@ export default function ContactSection() {
               </p>
               
               <h2 className="font-sans text-[clamp(44px,6.5vw,76px)] font-bold leading-[1.05] tracking-tight text-foreground">
-                Let’s Create
-                <span className="block text-foreground">Something Great</span>
+                {contactData.titleLines?.[0] ?? "Contact"}
+                <span className="block text-foreground">
+                  {contactData.titleLines?.[1] ?? "Us"}
+                </span>
               </h2>
 
               <p className="max-w-xl font-sans text-base leading-relaxed text-muted sm:text-lg sm:leading-relaxed">
@@ -224,6 +238,11 @@ export default function ContactSection() {
                   Thank you! Your message has been sent successfully. We will get back to you soon.
                 </div>
               )}
+              {error ? (
+                <div className="rounded-xl border border-red-500/30 bg-red-500/10 p-4 text-sm text-red-400">
+                  {error}
+                </div>
+              ) : null}
             </form>
 
             {/* Direct Contact Details Block */}

@@ -62,7 +62,7 @@ function MetaBar({
 }
 
 function MediaSurface({ project }: { project: Project }) {
-  const href = project.href ?? `/work/${project.slug}`;
+  const href = project.href ?? `/portfolio/${project.slug}`;
   const { media, badge, title } = project;
   const youtubeUrl =
     media.type === "video"
@@ -158,7 +158,7 @@ function MediaSurface({ project }: { project: Project }) {
 }
 
 export default function ProjectCard({ project, className }: ProjectCardProps) {
-  const href = project.href ?? `/work/${project.slug}`;
+  const href = project.href ?? `/portfolio/${project.slug}`;
   const meta = (
     <MetaBar title={project.title} year={project.year} href={href} />
   );

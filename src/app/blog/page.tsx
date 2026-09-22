@@ -8,7 +8,8 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata: Metadata = pageMetadata({
   title: "Blog",
   description:
-    "Insights from FuduGo on websites, mobile apps, product thinking, AI, and digital growth.",
+    data.description ??
+    "SEO, marketing automation, analytics, and digital growth notes from the FuduGo team.",
   path: "/blog",
 });
 
@@ -29,15 +30,17 @@ export default function BlogPage() {
               {data.title}
             </h1>
             <p className="mt-5 max-w-2xl font-sans text-sm leading-relaxed text-muted sm:text-[15px]">
-              Practical notes on product strategy, modern websites, mobile apps,
-              and growth systems that help businesses move faster.
+              {data.description}
             </p>
           </div>
 
           <div className="mt-12 grid gap-4 lg:mt-16 lg:grid-cols-4 lg:gap-5">
             {featured ? (
               <div className="min-h-full lg:col-span-2">
-                <BlogCard post={{ ...featured, featured: true }} className="h-full" />
+                <BlogCard
+                  post={{ ...featured, featured: true }}
+                  className="h-full"
+                />
               </div>
             ) : null}
 

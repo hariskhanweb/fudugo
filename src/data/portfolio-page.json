@@ -1,0 +1,11 @@
+{
+  "hero": {
+    "title": "Portfolio",
+    "image": "/Image-32.jpg",
+    "imageAlt": "FuduGo portfolio and selected work",
+    "imagePosition": "center"
+  },
+  "eyebrow": "(Our Works)",
+  "title": "All Projects",
+  "description": "Explore the digital products, platforms, and experiences we’ve created for businesses across industries."
+}

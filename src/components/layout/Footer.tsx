@@ -1,10 +1,11 @@
 "use client";
 
-import { FormEvent } from "react";
+import { FormEvent, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import site from "@/data/site.json";
 import footer from "@/data/footer.json";
+import { submitNotify } from "@/lib/submit-notify";
 
 function ChevronCircleIcon({ className = "" }: { className?: string }) {
   return (
@@ -20,8 +21,33 @@ function ChevronCircleIcon({ className = "" }: { className?: string }) {
 }
 
 export default function Footer() {
-  const handleSubscribe = (e: FormEvent<HTMLFormElement>) => {
+  const [newsletterStatus, setNewsletterStatus] = useState<
+    "idle" | "loading" | "success" | "error"
+  >("idle");
+  const [newsletterError, setNewsletterError] = useState("");
+
+  const handleSubscribe = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const form = e.currentTarget;
+    const emailInput = form.elements.namedItem("email") as HTMLInputElement | null;
+    const email = emailInput?.value?.trim() ?? "";
+    if (!email) return;
+
+    setNewsletterStatus("loading");
+    setNewsletterError("");
+    const result = await submitNotify({
+      type: "newsletter",
+      email,
+    });
+
+    if (!result.ok) {
+      setNewsletterStatus("error");
+      setNewsletterError(result.error);
+      return;
+    }
+
+    setNewsletterStatus("success");
+    form.reset();
   };
 
   return (
@@ -47,10 +73,18 @@ export default function Footer() {
             <div className="flex flex-col gap-6">
               <div className="flex flex-col gap-2">
                 <h5 className="font-sans text-[15px] font-semibold text-foreground">
-                  {footer.officeLabel}
+                  India Office
                 </h5>
                 <p className="max-w-xs font-sans text-sm leading-relaxed text-muted">
                   {site.address}
+                </p>
+              </div>
+              <div className="flex flex-col gap-2">
+                <h5 className="font-sans text-[15px] font-semibold text-foreground">
+                  US Office
+                </h5>
+                <p className="max-w-xs font-sans text-sm leading-relaxed text-muted">
+                  {site.usAddress}
                 </p>
               </div>
               <div className="flex flex-col gap-2">
@@ -62,6 +96,12 @@ export default function Footer() {
                   className="font-sans text-sm text-muted transition-colors hover:text-foreground"
                 >
                   {site.phone}
+                </a>
+                <a
+                  href={`mailto:${site.email}`}
+                  className="font-sans text-sm text-muted transition-colors hover:text-foreground"
+                >
+                  {site.email}
                 </a>
               </div>
             </div>
@@ -115,11 +155,22 @@ export default function Footer() {
                 />
                 <button
                   type="submit"
-                  className="shrink-0 cursor-pointer rounded-lg border border-border bg-transparent px-5 py-2.5 font-sans text-sm font-medium text-foreground transition-colors outline-hidden hover:border-border-hover hover:bg-foreground/5 focus-visible:ring-2 focus-visible:ring-accent-alt/70"
+                  disabled={newsletterStatus === "loading"}
+                  className="shrink-0 cursor-pointer rounded-lg border border-border bg-transparent px-5 py-2.5 font-sans text-sm font-medium text-foreground transition-colors outline-hidden hover:border-border-hover hover:bg-foreground/5 focus-visible:ring-2 focus-visible:ring-accent-alt/70 disabled:cursor-not-allowed disabled:opacity-60"
                 >
-                  {footer.newsletter.button}
+                  {newsletterStatus === "loading"
+                    ? "Sending..."
+                    : footer.newsletter.button}
                 </button>
               </form>
+              {newsletterStatus === "success" ? (
+                <p className="font-sans text-sm text-emerald-400">
+                  Thanks — you’re subscribed.
+                </p>
+              ) : null}
+              {newsletterStatus === "error" ? (
+                <p className="font-sans text-sm text-red-400">{newsletterError}</p>
+              ) : null}
             </div>
 
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
@@ -193,12 +244,12 @@ export default function Footer() {
                     |
                   </span>
                 ) : null}
-                <a
+                <Link
                   href={item.href}
                   className="transition-colors hover:text-foreground"
                 >
                   {item.label}
-                </a>
+                </Link>
               </span>
             ))}
           </nav>

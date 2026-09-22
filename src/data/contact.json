@@ -1,17 +1,20 @@
 {
-  "eyebrow": "Get in Touch",
-  "title": "Let’s Create Something Great",
-  "description": "Have an idea, a challenge, or a project waiting to happen? Let’s bring it to life with the right technology, creative thinking, and digital expertise.",
+  "eyebrow": "Contact Us",
+  "title": "Contact Us",
+  "titleLines": ["Contact", "Us"],
+  "description": "Please feel free to contact us any time — we will get back to you as soon as possible.",
   "phone": "+91 9923280712",
   "phoneHref": "tel:+919923280712",
   "phoneLabel": "(Phone)",
   "email": "info@fudugo.com",
   "emailHref": "mailto:info@fudugo.com",
   "emailLabel": "(Email)",
+  "hrEmail": "hr@fudugo.com",
+  "hrEmailHref": "mailto:hr@fudugo.com",
   "map": {
-    "location": "London Eye, London, UK",
-    "mapUrl": "https://maps.google.com/?q=London+Eye,+London,+UK",
-    "embedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.5464197992987!2d-0.1220993233802956!3d51.50329727181313!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604b900d26973%3A0x4291f3172409ea92!2slastminute.com%20London%20Eye!5e0!3m2!1sen!2suk!4v1716298371234!5m2!1sen!2suk"
+    "location": "FuduGo, Chhaoni Square, Koradi Road, Nagpur",
+    "mapUrl": "https://maps.google.com/?q=FuduGo,+Beside+Metro+Hospital,+Chhaoni+Square,+Koradi+Road,+Nagpur",
+    "embedUrl": "https://www.google.com/maps?q=FuduGo,+Beside+Metro+Hospital,+Chhaoni+Square,+Koradi+Road,+Nagpur+440013&output=embed"
   },
   "socials": [
     {
@@ -36,7 +39,9 @@
     }
   ],
   "findUs": {
+    "eyebrow": "Locations",
     "title": "Find Us",
+    "description": "Reach our India and US offices, call a direct line, or visit during office hours.",
     "cards": [
       {
         "type": "india",
@@ -44,8 +49,8 @@
         "company": "FuduGo",
         "lines": [
           "Beside Metro Hospital,",
-          "Chhaoni Square, Koradi Road, Nagpur-440013,",
-          "Maharashtra, India"
+          "Chhaoni Square, Koradi Road,",
+          "Nagpur-440013, Maharashtra, India"
         ]
       },
       {
@@ -62,7 +67,16 @@
         "title": "Phone and Fax",
         "phones": [
           { "number": "+91 9923280712", "href": "tel:+919923280712" },
-          { "number": "+91 9960560694", "href": "tel:+919960560694" }
+          { "number": "+91 9960560694", "href": "tel:+919960560694" },
+          { "number": "+1 561 730 3639", "href": "tel:+15617303639" }
+        ]
+      },
+      {
+        "type": "hours",
+        "title": "Office Hours",
+        "lines": [
+          "Monday to Saturday",
+          "10:00 AM – 06:30 PM IST"
         ]
       }
     ]

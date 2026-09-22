@@ -1,0 +1,156 @@
+{
+  "hero": {
+    "title": "SEO",
+    "image": "/marketing-seo.jpg",
+    "imageAlt": "SEO and digital marketing by FuduGo",
+    "imagePosition": "center"
+  },
+  "intro": {
+    "eyebrow": "SEO & DIGITAL MARKETING",
+    "title": "A tailored digital marketing service to upscale your website’s traffic and sales.",
+    "lead": "We plan and run SEO, content, paid search, and social campaigns that bring the right visitors — and turn visibility into measurable growth.",
+    "ctaLabel": "Get Started",
+    "ctaHref": "/contact"
+  },
+  "services": {
+    "eyebrow": "All Services",
+    "title": "Everything you need to grow search and paid performance.",
+    "items": [
+      {
+        "id": "content-marketing",
+        "title": "Content Marketing",
+        "description": "Useful content that answers search intent, builds authority, and supports rankings and conversions."
+      },
+      {
+        "id": "business-audit",
+        "title": "Detailed Business Audit",
+        "description": "A full review of your site, presence, and competitors to uncover gaps and priorities."
+      },
+      {
+        "id": "email-marketing",
+        "title": "Email Marketing",
+        "description": "Lifecycle and nurture campaigns that keep leads engaged and move them toward action."
+      },
+      {
+        "id": "off-page-seo",
+        "title": "Off Page SEO",
+        "description": "Authority building through relevant links, mentions, and external signals that search engines trust."
+      },
+      {
+        "id": "organic-seo",
+        "title": "Organic SEO",
+        "description": "Technical, on-page, and content work that improves rankings for the queries that matter."
+      },
+      {
+        "id": "ppc",
+        "title": "Search Engine Marketing (PPC)",
+        "description": "Paid search campaigns built around clear goals, targeting, and measurable ROI."
+      },
+      {
+        "id": "local-seo",
+        "title": "SEO for Local Businesses",
+        "description": "Local visibility for map packs, location pages, and customers searching nearby."
+      },
+      {
+        "id": "social-media",
+        "title": "Social Media Marketing",
+        "description": "Brand presence and campaigns across social channels that support reach and engagement."
+      }
+    ]
+  },
+  "stats": {
+    "eyebrow": "Results in numbers",
+    "items": [
+      { "value": "150", "label": "Total Business Managed" },
+      { "value": "80", "label": "SEO" },
+      { "value": "65", "label": "Social Media Campaigns" },
+      { "value": "70", "label": "PPC Campaigns" }
+    ]
+  },
+  "process": {
+    "eyebrow": "Our Process",
+    "title": "A clear path from analysis to reporting.",
+    "steps": [
+      {
+        "step": "01",
+        "title": "Website Analysis",
+        "description": "We audit your site structure, content, technical health, and current search performance."
+      },
+      {
+        "step": "02",
+        "title": "Competitor and Niche Analysis",
+        "description": "We map competitors, keywords, and niche opportunities so strategy starts from real demand."
+      },
+      {
+        "step": "03",
+        "title": "Creating The Best Strategy",
+        "description": "We define priorities across SEO, content, PPC, and social based on your goals and budget."
+      },
+      {
+        "step": "04",
+        "title": "Implementing Strategies",
+        "description": "We execute on-page fixes, content, campaigns, and outreach with clear ownership and timelines."
+      },
+      {
+        "step": "05",
+        "title": "Monitoring Website Performance",
+        "description": "We track rankings, traffic, conversions, and campaign health so issues surface early."
+      },
+      {
+        "step": "06",
+        "title": "Timely Reporting",
+        "description": "You get regular reports that explain what changed, what worked, and what we do next."
+      }
+    ]
+  },
+  "niches": {
+    "eyebrow": "Niches We Are Expert At",
+    "title": "Industry experience that shapes sharper campaigns.",
+    "items": [
+      "E-Commerce",
+      "Energy Sectors",
+      "Finance Industry",
+      "Health and Fitness Industry",
+      "Home and Accessories",
+      "Job Portals",
+      "Legal",
+      "Service Industry"
+    ]
+  },
+  "testimonial": {
+    "eyebrow": "What our clients say",
+    "quote": "FuduGo brought clarity to our SEO and paid search mix. Traffic quality improved, reporting stayed clear, and we finally had a strategy we could trust month to month.",
+    "author": "Denis Robinson",
+    "role": "UI Designer & CEO"
+  },
+  "featured": {
+    "eyebrow": "Featured service",
+    "title": "Interested in our featured SEO service?",
+    "body": "Tell us what you need — organic growth, local visibility, content, or paid search — and we’ll recommend a practical next step.",
+    "ctaLabel": "Contact Us",
+    "ctaHref": "#seo-contact"
+  },
+  "form": {
+    "id": "seo-contact",
+    "eyebrow": "Contact us for SEO",
+    "title": "Tell us what you’re interested in.",
+    "description": "Share a few details and we’ll get back to you as soon as possible.",
+    "services": [
+      "Corporate Identity",
+      "Internet Marketing",
+      "Backlinks Audit",
+      "Backlink Building",
+      "Content Audit",
+      "Content Marketing",
+      "Email Marketing",
+      "Google Maps SEO",
+      "Organic SEO",
+      "Search Engine Ads",
+      "SEO for local Business",
+      "Social Media Marketing",
+      "Website Technical Audit"
+    ],
+    "submitLabel": "Send Message",
+    "successMessage": "Thank you! Your message has been sent. We will get back to you soon."
+  }
+}

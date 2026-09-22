@@ -136,6 +136,12 @@ export type Testimonial = {
   };
 };
 
+export type BlogPostSection = {
+  heading: string;
+  paragraphs: string[];
+  list?: string[];
+};
+
 export type BlogPost = {
   slug: string;
   title: string;
@@ -145,12 +151,10 @@ export type BlogPost = {
   href: string;
   excerpt?: string;
   featured?: boolean;
+  author?: string;
   content?: {
     intro?: string;
-    sections: {
-      heading: string;
-      paragraphs: string[];
-    }[];
+    sections: BlogPostSection[];
   };
 };
 

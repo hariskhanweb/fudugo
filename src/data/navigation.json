@@ -1,9 +1,18 @@
 {
   "links": [
     { "label": "Home", "href": "/" },
-    { "label": "About", "href": "/about" }
+    { "label": "Portfolio", "href": "/portfolio" },
+    { "label": "Blog", "href": "/blog" },
+    { "label": "Contact Us", "href": "/contact" }
   ],
   "dropdowns": {
+    "about": {
+      "label": "About",
+      "items": [
+        { "label": "About Company", "href": "/about" },
+        { "label": "Career", "href": "/career" }
+      ]
+    },
     "services": {
       "label": "Services",
       "items": [
@@ -16,18 +25,6 @@
         { "label": "Branding & Design", "href": "/services/branding-design" },
         { "label": "Digital Marketing", "href": "/services/digital-marketing" },
         { "label": "AI & Automation", "href": "/services/ai-automation" }
-      ]
-    },
-    "portfolio": {
-      "label": "Portfolio",
-      "items": [
-        { "label": "Our Work", "href": "/#works" }
-      ]
-    },
-    "blog": {
-      "label": "Blog",
-      "items": [
-        { "label": "Our Blog", "href": "/blog" }
       ]
     }
   },

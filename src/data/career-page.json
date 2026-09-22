@@ -1,0 +1,145 @@
+{
+  "hero": {
+    "title": "Career",
+    "image": "/Image-32.jpg",
+    "imageAlt": "FuduGo team at work",
+    "imagePosition": "center"
+  },
+  "intro": {
+    "eyebrow": "WE ARE FUDUGO",
+    "title": "We let you be your true self at work.",
+    "lead": "Ever thought of a workplace where creative freedom comes first?",
+    "body": "At FuduGo you get to explore your technical skills in a unique way — where the team is not bound to conventional efforts alone, but empowered to step out of their comfort zone and excel. We believe our people are our assets, and with care and supervision one can reach their career goals. We offer a fair and enjoyable work environment with a real sense of belonging.",
+    "ctaLabel": "View open roles",
+    "ctaHref": "#openings"
+  },
+  "testimonial": {
+    "eyebrow": "Thoughts from our team",
+    "quote": "At FuduGo, we get the freedom of exploring the world of technology and the joy of working in the team, as well as individually. The support is great and the work atmosphere is just what is needed for overall growth.",
+    "author": "Team FuduGo"
+  },
+  "life": {
+    "eyebrow": "FuduGo Life",
+    "title": "Excel professionally and personally.",
+    "body": "Have you ever imagined working in an environment where you can grow in both your craft and your character? At FuduGo, we allow you to be the best version of yourself.",
+    "image": "/Image-17.jpg",
+    "imageAlt": "Life at FuduGo"
+  },
+  "openings": {
+    "eyebrow": "Current openings",
+    "title": "Roles waiting for the right people.",
+    "description": "Join a team that ships real products — web, mobile, design, and AI — for clients worldwide.",
+    "emptyLabel": "No openings right now — send an open application below.",
+    "jobs": [
+      {
+        "id": "graphic-designer",
+        "title": "Graphic Designer",
+        "location": "Nagpur",
+        "experience": "1–3 years",
+        "mode": "Office",
+        "summary": "Create brand systems, marketing assets, and visual stories that stay consistent across web and campaigns.",
+        "responsibilities": [
+          "Design brand and marketing assets for digital and print",
+          "Collaborate with developers and marketers on campaigns",
+          "Maintain visual consistency across client and internal work"
+        ],
+        "requirements": [
+          "1–3 years of professional design experience",
+          "Strong portfolio in branding or digital design",
+          "Comfortable with Figma and the Adobe Creative Suite"
+        ]
+      },
+      {
+        "id": "junior-web-developer",
+        "title": "Junior Web Developer",
+        "location": "Nagpur",
+        "experience": "6 months–1 year",
+        "mode": "Office",
+        "summary": "Build and maintain modern websites and web apps alongside senior engineers.",
+        "responsibilities": [
+          "Implement UI and features from designs and specs",
+          "Write clean, reviewed code in our stack",
+          "Support testing, fixes, and documentation"
+        ],
+        "requirements": [
+          "6 months–1 year of web development experience",
+          "Basics of HTML, CSS, JavaScript, and a modern framework",
+          "Willingness to learn and ship in a team environment"
+        ]
+      },
+      {
+        "id": "android-ios-developer",
+        "title": "Android & iOS Developer",
+        "location": "Nagpur",
+        "experience": "6 months–1 year",
+        "mode": "Office",
+        "summary": "Help build and ship mobile experiences for iOS and Android.",
+        "responsibilities": [
+          "Develop and maintain mobile app features",
+          "Work with designers on polished, usable interfaces",
+          "Participate in testing and store release cycles"
+        ],
+        "requirements": [
+          "6 months–1 year of mobile development experience",
+          "Familiarity with native or cross-platform stacks",
+          "Interest in product quality and performance"
+        ]
+      }
+    ]
+  },
+  "perks": {
+    "eyebrow": "Why FuduGo",
+    "title": "Perks to work with FuduGo.",
+    "description": "Benefits that support balance, growth, and a culture built around people.",
+    "items": [
+      {
+        "id": "flexible-hours",
+        "title": "Flexible working hours",
+        "description": "Schedules that respect focus time and real life outside work."
+      },
+      {
+        "id": "company-activities",
+        "title": "Company activities",
+        "description": "Team moments that build trust beyond standups and tickets."
+      },
+      {
+        "id": "coworkers",
+        "title": "Awesome co-workers",
+        "description": "Collaborate with people who care about craft and each other."
+      },
+      {
+        "id": "transparency",
+        "title": "Transparency top to bottom",
+        "description": "Clear communication and open process across the company."
+      },
+      {
+        "id": "salaries",
+        "title": "Competitive salaries",
+        "description": "Compensation that reflects skill, ownership, and impact."
+      },
+      {
+        "id": "growth",
+        "title": "Growth opportunity",
+        "description": "Room to learn, lead, and expand your technical horizon."
+      }
+    ]
+  },
+  "apply": {
+    "eyebrow": "Apply",
+    "title": "Send your application.",
+    "description": "Share a short intro and your resume. We review every submission and reply when there is a fit.",
+    "emailHint": "Applications go to hr@fudugo.com",
+    "fields": {
+      "name": "Full name",
+      "email": "Email",
+      "phone": "Phone",
+      "role": "Role you're applying for",
+      "message": "Tell us about yourself",
+      "resume": "Resume (DOC, DOCX, or PDF)",
+      "submit": "Submit application",
+      "submitting": "Sending…",
+      "success": "Thanks — your application was received. We'll be in touch."
+    },
+    "openApplicationLabel": "Open application / general interest"
+  }
+}

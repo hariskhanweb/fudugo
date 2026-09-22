@@ -154,8 +154,8 @@ export function blogPostingJsonLd(slug: string) {
     image: absoluteUrl(post.image),
     datePublished: post.date,
     author: {
-      "@type": "Organization",
-      name: SITE_NAME,
+      "@type": "Person",
+      name: post.author ?? SITE_NAME,
     },
     publisher: {
       "@type": "Organization",
@@ -173,9 +173,13 @@ export function sitemapEntries() {
   const staticPaths = [
     "/",
     "/about",
+    "/career",
     "/contact",
+    "/portfolio",
     "/blog",
     "/services",
+    "/terms",
+    "/privacy-policy",
   ];
 
   return [
@@ -201,7 +205,7 @@ export function sitemapEntries() {
       };
     }),
     ...getAllProjects().map((project) => ({
-      url: absoluteUrl(`/work/${project.slug}`),
+      url: absoluteUrl(`/portfolio/${project.slug}`),
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.65,

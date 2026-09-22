@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import contactData from "@/data/contact.json";
-import { Container } from "@/components/ui";
+import { AccentMark, Container } from "@/components/ui";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -59,6 +59,19 @@ function PhoneIcon() {
   );
 }
 
+function HoursIcon() {
+  return (
+    <div className="inline-flex h-8 w-12 items-center justify-center">
+      <div className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-accent-alt/10 text-accent-alt shadow-xs transition-transform duration-300 group-hover:scale-110 group-hover:bg-accent-alt group-hover:text-white">
+        <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
+          <circle cx="12" cy="12" r="10" />
+          <polyline points="12 6 12 12 16 14" />
+        </svg>
+      </div>
+    </div>
+  );
+}
+
 export default function FindUsSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const { findUs } = contactData;
@@ -73,13 +86,13 @@ export default function FindUsSection() {
     if (reduceMotion) return;
 
     const ctx = gsap.context(() => {
-      const title = section.querySelector("[data-findus='title']");
+      const header = section.querySelector("[data-findus='header']");
       const cards = gsap.utils.toArray<HTMLElement>(
         section.querySelectorAll("[data-findus='card']"),
       );
 
-      if (title) {
-        gsap.from(title, {
+      if (header) {
+        gsap.from(header, {
           y: 20,
           opacity: 0,
           duration: 0.6,
@@ -97,6 +110,7 @@ export default function FindUsSection() {
           opacity: 0,
           y: 20,
           duration: 0.6,
+          stagger: 0.08,
           clearProps: "transform,opacity",
           scrollTrigger: {
             trigger: section,
@@ -115,59 +129,63 @@ export default function FindUsSection() {
       ref={sectionRef}
       className="relative overflow-hidden bg-header py-20 sm:py-24 lg:py-28"
     >
-      {/* Background ambient lighting */}
       <div
-        className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-96 w-[48rem] rounded-full bg-accent-alt/5 blur-[120px]"
+        className="pointer-events-none absolute top-1/2 left-1/2 h-96 w-3xl -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent-alt/5 blur-[120px]"
         aria-hidden
       />
 
       <Container className="relative px-5 sm:px-8 lg:px-12">
-        {/* Section Title */}
-        <div className="mb-14 text-center sm:mb-16 lg:mb-20">
-          <h2
-            data-findus="title"
-            className="font-sans text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl"
-          >
+        <div
+          data-findus="header"
+          className="mb-12 max-w-2xl sm:mb-14 lg:mb-16"
+        >
+          <AccentMark className="mb-4 origin-left" />
+          <p className="font-sans text-sm font-semibold tracking-wider text-accent-alt uppercase">
+            {findUs.eyebrow}
+          </p>
+          <h2 className="mt-3 font-sans text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
             {findUs.title}
           </h2>
+          {findUs.description ? (
+            <p className="mt-4 font-sans text-base leading-relaxed text-muted">
+              {findUs.description}
+            </p>
+          ) : null}
         </div>
 
-        {/* 3 Location Cards */}
-        <div className="grid grid-cols-1 items-stretch gap-6 sm:gap-8 md:grid-cols-3">
+        <div className="grid grid-cols-1 items-stretch gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
           {findUs.cards.map((card) => (
             <div
               key={card.title}
               data-findus="card"
-              className="group relative flex h-full w-full flex-col items-center justify-start rounded-3xl border border-border/80 bg-surface/70 p-8 text-center shadow-(--card-shadow) backdrop-blur-xs transition-all duration-300 hover:-translate-y-1.5 hover:border-accent-alt/40 hover:bg-surface hover:shadow-[0_20px_50px_-15px_rgba(0,0,0,0.5)] sm:p-10"
+              className="group relative flex h-full w-full flex-col items-center justify-start rounded-3xl border border-border/80 bg-surface/70 p-7 text-center shadow-(--card-shadow) backdrop-blur-xs transition-all duration-300 hover:-translate-y-1.5 hover:border-accent-alt/40 hover:bg-surface hover:shadow-[0_20px_50px_-15px_rgba(0,0,0,0.5)] sm:p-8"
             >
-              {/* Icon / Flag Top Holder - Exact same h-8 w-12 frame for all 3 */}
               <div className="mb-6 flex h-8 w-full items-center justify-center">
                 {card.type === "india" && <IndiaFlag />}
                 {card.type === "us" && <USFlag />}
                 {card.type === "phone" && <PhoneIcon />}
+                {card.type === "hours" && <HoursIcon />}
               </div>
 
-              {/* Card Title - Exact same height & baseline */}
               <h3 className="mb-3 font-sans text-xl font-bold tracking-tight text-foreground sm:text-2xl">
                 {card.title}
               </h3>
 
-              {/* Card Content / Address / Phone */}
-              {card.company && (
-                <p className="font-sans text-sm font-semibold text-foreground mb-1 sm:text-[15px]">
+              {"company" in card && card.company ? (
+                <p className="mb-1 font-sans text-sm font-semibold text-foreground sm:text-[15px]">
                   {card.company}
                 </p>
-              )}
+              ) : null}
 
-              {card.lines && (
+              {"lines" in card && card.lines ? (
                 <div className="space-y-1 font-sans text-sm leading-relaxed text-muted sm:text-[15px]">
-                  {card.lines.map((line, idx) => (
-                    <p key={idx}>{line}</p>
+                  {card.lines.map((line) => (
+                    <p key={line}>{line}</p>
                   ))}
                 </div>
-              )}
+              ) : null}
 
-              {card.phones && (
+              {"phones" in card && card.phones ? (
                 <div className="space-y-1.5 pt-0.5 font-sans text-sm leading-relaxed text-muted sm:text-[15px]">
                   {card.phones.map((phone) => (
                     <a
@@ -179,7 +197,7 @@ export default function FindUsSection() {
                     </a>
                   ))}
                 </div>
-              )}
+              ) : null}
             </div>
           ))}
         </div>

@@ -6,8 +6,9 @@
   "quickLinks": [
     { "label": "Home", "href": "/" },
     { "label": "About Us", "href": "/about" },
+    { "label": "Career", "href": "/career" },
     { "label": "Services", "href": "/services" },
-    { "label": "Project", "href": "#works" },
+    { "label": "Portfolio", "href": "/portfolio" },
     { "label": "Blog", "href": "/blog" },
     { "label": "Contact", "href": "/contact" }
   ],
@@ -57,7 +58,7 @@
     "suffix": ". All rights reserved."
   },
   "legal": [
-    { "label": "Privacy & Policy", "href": "#" },
-    { "label": "Terms & Conditions", "href": "#" }
+    { "label": "Privacy Policy", "href": "/privacy-policy" },
+    { "label": "Terms & Conditions", "href": "/terms" }
   ]
 }

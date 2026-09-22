@@ -3,7 +3,7 @@ import type { Project } from "@/types";
 
 const projects = (data.projects as Project[]).map((project) => ({
   ...project,
-  href: `/work/${project.slug}`,
+  href: `/portfolio/${project.slug}`,
 }));
 
 export function getAllProjects() {
