@@ -1,3 +1,4 @@
+import nodemailer from "nodemailer";
 import type { NotifyType } from "@/lib/notify-types";
 
 export type { NotifyType };
