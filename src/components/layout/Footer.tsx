@@ -206,13 +206,12 @@ export default function Footer() {
               </h5>
               <div className="flex flex-wrap gap-2.5">
                 {footer.awards.map((award) => (
-                  <a
+                  <span
                     key={award}
-                    href="#"
                     className="inline-flex min-h-10 items-center rounded-full border border-border bg-transparent px-3.5 py-2.5 font-sans text-xs font-medium text-muted transition-colors outline-hidden hover:border-border-hover hover:text-foreground focus-visible:ring-2 focus-visible:ring-accent-alt/70"
                   >
                     {award}
-                  </a>
+                  </span>
                 ))}
               </div>
             </div>
