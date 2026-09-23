@@ -1,10 +1,10 @@
 import nodemailer from "nodemailer";
-import type { NotifyType } from "@/lib/notify-types";
+import type { ContactFormType } from "@/lib/contact-form-types";
 
-export type { NotifyType };
+export type { ContactFormType };
 
-export type NotifyPayload = {
-  type: NotifyType;
+export type ContactPayload = {
+  type: ContactFormType;
   name?: string;
   email: string;
   phone?: string;
@@ -55,7 +55,7 @@ function escapeHtml(value: string) {
     .replaceAll('"', "&quot;");
 }
 
-function subjectFor(payload: NotifyPayload) {
+function subjectFor(payload: ContactPayload) {
   switch (payload.type) {
     case "contact":
       return `New contact message from ${payload.name || payload.email}`;
@@ -68,11 +68,11 @@ function subjectFor(payload: NotifyPayload) {
   }
 }
 
-function recipientFor(payload: NotifyPayload, to: string, toHr: string) {
+function recipientFor(payload: ContactPayload, to: string, toHr: string) {
   return payload.type === "career" ? toHr : to;
 }
 
-function bodyLines(payload: NotifyPayload) {
+function bodyLines(payload: ContactPayload) {
   const lines: Array<[string, string]> = [["Type", payload.type]];
   if (payload.name) lines.push(["Name", payload.name]);
   lines.push(["Email", payload.email]);
@@ -84,8 +84,8 @@ function bodyLines(payload: NotifyPayload) {
   return lines;
 }
 
-export async function sendNotification(
-  payload: NotifyPayload,
+export async function sendContactEmail(
+  payload: ContactPayload,
   attachment?: { filename: string; content: Buffer; contentType?: string },
 ) {
   const { from, to, toHr } = getMailConfig();

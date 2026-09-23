@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import site from "@/data/site.json";
 import footer from "@/data/footer.json";
-import { submitNotify } from "@/lib/submit-notify";
+import { submitContact } from "@/lib/submit-contact";
 
 function ChevronCircleIcon({ className = "" }: { className?: string }) {
   return (
@@ -35,7 +35,7 @@ export default function Footer() {
 
     setNewsletterStatus("loading");
     setNewsletterError("");
-    const result = await submitNotify({
+    const result = await submitContact({
       type: "newsletter",
       email,
     });

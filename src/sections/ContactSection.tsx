@@ -5,7 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import contactData from "@/data/contact.json";
 import { Container } from "@/components/ui";
-import { submitNotify } from "@/lib/submit-notify";
+import { submitContact } from "@/lib/submit-contact";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -84,7 +84,7 @@ export default function ContactSection() {
 
     setIsSubmitting(true);
     setError("");
-    const result = await submitNotify({
+    const result = await submitContact({
       type: "contact",
       name: formData.name,
       email: formData.email,

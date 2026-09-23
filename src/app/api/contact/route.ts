@@ -1,10 +1,10 @@
 import { NextResponse } from "next/server";
-import { sendNotification, type NotifyPayload } from "@/lib/mail";
-import type { NotifyType } from "@/lib/notify-types";
+import { sendContactEmail, type ContactPayload } from "@/lib/mail";
+import type { ContactFormType } from "@/lib/contact-form-types";
 
 export const runtime = "nodejs";
 
-const ALLOWED_TYPES: NotifyType[] = [
+const ALLOWED_TYPES: ContactFormType[] = [
   "contact",
   "career",
   "seo",
@@ -21,10 +21,10 @@ function asString(value: FormDataEntryValue | null | undefined) {
   return typeof value === "string" ? value.trim() : "";
 }
 
-function parsePayloadFromJson(body: Record<string, unknown>): NotifyPayload {
-  const type = String(body.type ?? "") as NotifyType;
+function parsePayloadFromJson(body: Record<string, unknown>): ContactPayload {
+  const type = String(body.type ?? "") as ContactFormType;
   if (!ALLOWED_TYPES.includes(type)) {
-    throw new Error("Invalid notification type.");
+    throw new Error("Invalid contact form type.");
   }
 
   const email = String(body.email ?? "").trim();
@@ -45,12 +45,12 @@ function parsePayloadFromJson(body: Record<string, unknown>): NotifyPayload {
 }
 
 function parsePayloadFromForm(form: FormData): {
-  payload: NotifyPayload;
+  payload: ContactPayload;
   resume?: File;
 } {
-  const type = asString(form.get("type")) as NotifyType;
+  const type = asString(form.get("type")) as ContactFormType;
   if (!ALLOWED_TYPES.includes(type)) {
-    throw new Error("Invalid notification type.");
+    throw new Error("Invalid contact form type.");
   }
 
   const email = asString(form.get("email"));
@@ -82,7 +82,7 @@ function parsePayloadFromForm(form: FormData): {
 export async function POST(request: Request) {
   try {
     const contentType = request.headers.get("content-type") ?? "";
-    let payload: NotifyPayload;
+    let payload: ContactPayload;
     let attachment:
       | { filename: string; content: Buffer; contentType?: string }
       | undefined;
@@ -125,14 +125,14 @@ export async function POST(request: Request) {
       );
     }
 
-    await sendNotification(payload, attachment);
+    await sendContactEmail(payload, attachment);
 
     return NextResponse.json({ ok: true });
   } catch (error) {
     const message =
-      error instanceof Error ? error.message : "Unable to send notification.";
+      error instanceof Error ? error.message : "Unable to send message.";
     const isConfig = message.startsWith("Missing environment variable");
-    console.error("[notify]", message);
+    console.error("[contact]", message);
     return NextResponse.json(
       {
         ok: false,

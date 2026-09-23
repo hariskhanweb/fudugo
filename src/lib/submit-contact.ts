@@ -1,11 +1,11 @@
-import type { NotifyType } from "@/lib/notify-types";
+import type { ContactFormType } from "@/lib/contact-form-types";
 
-export type NotifyResult =
+export type ContactSubmitResult =
   | { ok: true }
   | { ok: false; error: string };
 
-type NotifyFields = {
-  type: NotifyType;
+type ContactSubmitFields = {
+  type: ContactFormType;
   email: string;
   name?: string;
   phone?: string;
@@ -15,9 +15,9 @@ type NotifyFields = {
   resume?: File | null;
 };
 
-export async function submitNotify(
-  fields: NotifyFields,
-): Promise<NotifyResult> {
+export async function submitContact(
+  fields: ContactSubmitFields,
+): Promise<ContactSubmitResult> {
   try {
     let response: Response;
 
@@ -32,12 +32,12 @@ export async function submitNotify(
       if (fields.service) form.set("service", fields.service);
       form.set("resume", fields.resume);
 
-      response = await fetch("/api/notify", {
+      response = await fetch("/api/contact", {
         method: "POST",
         body: form,
       });
     } else {
-      response = await fetch("/api/notify", {
+      response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

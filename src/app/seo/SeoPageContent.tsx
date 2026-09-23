@@ -9,7 +9,7 @@ import { Container, AccentMark } from "@/components/ui";
 import { CtaSection } from "@/sections";
 import PageHeroSection from "@/sections/PageHeroSection";
 import { useGsapContext } from "@/lib/use-gsap-context";
-import { submitNotify } from "@/lib/submit-notify";
+import { submitContact } from "@/lib/submit-contact";
 import { cn } from "@/lib/utils";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -80,7 +80,7 @@ export default function SeoPageContent() {
 
     setIsSubmitting(true);
     setError("");
-    const result = await submitNotify({
+    const result = await submitContact({
       type: "seo",
       name: formData.name,
       email: formData.email,
