@@ -137,7 +137,7 @@ export async function POST(request: Request) {
       {
         ok: false,
         error: isConfig
-          ? "Email is not configured yet. Add SMTP credentials on the server."
+          ? `${message}. Add SMTP_USER and SMTP_PASS in Hostinger → Environment variables, then Apply/Redeploy.`
           : message,
       },
       { status: isConfig ? 503 : 500 },
