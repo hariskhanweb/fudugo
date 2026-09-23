@@ -81,20 +81,21 @@ const serviceLegacyRedirects = permanentPathRedirects([
 
 const nextConfig: NextConfig = {
   reactCompiler: true,
-  // Let explicit redirects handle trailing-slash legacy URLs in one hop.
-  // General trailing-slash stripping is restored in src/proxy.ts.
+  // Avoid automatic trailing-slash redirects so Hostinger (or other hosts)
+  // cannot fight the app and create ERR_TOO_MANY_REDIRECTS loops.
+  // Legacy URLs still 301 via explicit slash + non-slash rules below.
   skipTrailingSlashRedirect: true,
   async redirects() {
     return [
       {
         source: "/jobs",
         destination: "/career",
-        permanent: true,
+        statusCode: 301,
       },
       {
-        source: "/jobs/:path*",
+        source: "/jobs/",
         destination: "/career",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/work/:slug",
