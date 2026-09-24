@@ -8,7 +8,7 @@
       "profile": {
         "name": "Nathan Diamond",
         "role": "Waymart",
-        "avatar": "https://pawzia.foxcreation.online/motex/wp-content/uploads/sites/13/2026/05/Image-8.jpg",
+        "avatar": "/testimonials/avatar-nd.svg",
         "socials": [
           { "label": "Instagram", "href": "#" },
           { "label": "Facebook", "href": "#" },
@@ -27,7 +27,7 @@
       "profile": {
         "name": "Elie Atalla",
         "role": "President, Divergent Devices",
-        "avatar": "https://pawzia.foxcreation.online/motex/wp-content/uploads/sites/13/2026/05/Image-7.jpg",
+        "avatar": "/testimonials/avatar-ea.svg",
         "socials": [
           { "label": "Instagram", "href": "#" },
           { "label": "Facebook", "href": "#" },
@@ -46,7 +46,7 @@
       "profile": {
         "name": "Chuck Michel",
         "role": "Senior Partner, Michel & Associates",
-        "avatar": "https://pawzia.foxcreation.online/motex/wp-content/uploads/sites/13/2026/05/Image-9.jpg",
+        "avatar": "/testimonials/avatar-cm.svg",
         "socials": [
           { "label": "Instagram", "href": "#" },
           { "label": "Facebook", "href": "#" },
@@ -67,10 +67,10 @@
     "stars": 5,
     "ratingLabel": "Average rating from 800+ clients",
     "avatars": [
-      "https://pawzia.foxcreation.online/motex/wp-content/uploads/sites/13/2026/05/Image-10.jpg",
-      "https://pawzia.foxcreation.online/motex/wp-content/uploads/sites/13/2026/05/Image-7.jpg",
-      "https://pawzia.foxcreation.online/motex/wp-content/uploads/sites/13/2026/05/Image-8.jpg",
-      "https://pawzia.foxcreation.online/motex/wp-content/uploads/sites/13/2026/05/Image-9.jpg"
+      "/testimonials/avatar-nd.svg",
+      "/testimonials/avatar-ea.svg",
+      "/testimonials/avatar-cm.svg",
+      "/testimonials/avatar-fg.svg"
     ],
     "clientsCount": "800+",
     "trustLabel": "Trusted by clients worldwide",

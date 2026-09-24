@@ -4,7 +4,7 @@
   "description": "For over eight years, businesses have trusted us to build websites and apps that don't just launch; they keep performing long after.",
   "meta": {
     "verified": "All figures verified as of 2026.",
-    "studio": "FuduGo Solutions - Est. 2018*"
+    "studio": "FuduGo Solutions - Est. 2012*"
   },
   "image": {
     "src": "/Image-4.jpg",
@@ -22,7 +22,7 @@
     {
       "id": "clients",
       "number": "02",
-      "value": 800,
+      "value": 750,
       "suffix": "+",
       "label": "Businesses we've helped",
       "description": "From first-time startups to global brands: real results, not promises."
@@ -38,7 +38,7 @@
     {
       "id": "projects",
       "number": "04",
-      "value": 300,
+      "value": 250,
       "suffix": "+",
       "label": "Apps in the App Store",
       "description": "Real apps people can download today - not prototypes stuck in dev."

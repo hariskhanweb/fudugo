@@ -186,7 +186,7 @@ export default function TestimonialsSection() {
               <div className="flex items-center">
                 {data.summary.avatars.map((avatar, index) => (
                   <div
-                    key={avatar}
+                    key={`summary-avatar-${index}`}
                     className="relative h-11 w-11 overflow-hidden rounded-xl border-2 border-background sm:h-12 sm:w-12"
                     style={{
                       marginLeft: index === 0 ? 0 : -8,

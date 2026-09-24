@@ -26,22 +26,32 @@ function LogoCard({
   name,
   src,
   alt,
+  href,
 }: {
   name: string;
   src: string;
   alt: string;
+  href: string;
 }) {
   return (
-    <div className="group flex h-20 w-40 shrink-0 items-center justify-center rounded-2xl border border-border bg-panel px-5 transition-colors duration-300 hover:bg-surface-hover sm:h-24 sm:w-50">
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group flex h-20 w-40 shrink-0 cursor-pointer items-center justify-center rounded-2xl border border-border bg-panel px-5 transition-colors duration-300 hover:bg-surface-hover sm:h-24 sm:w-50"
+      aria-label={`${name} (opens in a new tab)`}
+    >
       <Image
         src={src}
         alt={alt}
-        width={160}
-        height={40}
-        className="h-7 w-auto max-w-full object-contain opacity-60 transition-all duration-300 group-hover:opacity-100 sm:h-8 client-logo"
+        width={320}
+        height={80}
+        quality={100}
+        sizes="200px"
+        unoptimized
+        className="client-logo h-8 w-auto max-w-full object-contain opacity-70 transition-opacity duration-300 group-hover:opacity-100 sm:h-10"
       />
-      <span className="sr-only">{name}</span>
-    </div>
+    </a>
   );
 }
 
@@ -113,6 +123,7 @@ export default function ClientsSection() {
                 name={logo.name}
                 src={logo.src}
                 alt={logo.alt}
+                href={logo.href}
               />
             ))}
           </div>

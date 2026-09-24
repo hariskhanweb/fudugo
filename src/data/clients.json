@@ -1,35 +1,107 @@
 {
-  "label": "Trusted by leading brands worldwide",
+  "label": "Trusted by our esteemed clients",
   "logos": [
     {
-      "name": "Nexora",
-      "src": "/clients/Client-1.png",
-      "alt": "Nexora"
+      "name": "King Homes NSW",
+      "src": "/clients/kinghomesnsw.png",
+      "alt": "King Homes NSW",
+      "href": "https://kinghomesnsw.com.au/"
     },
     {
-      "name": "bravix",
-      "src": "/clients/Client-2.png",
-      "alt": "bravix"
+      "name": "MSP Werks",
+      "src": "/clients/MSPwerks.png",
+      "alt": "MSP Werks",
+      "href": "https://www.mspwerks.com/"
     },
     {
-      "name": "Adstrix",
-      "src": "/clients/Client-3.png",
-      "alt": "Adstrix"
+      "name": "Furniture Options",
+      "src": "/clients/furnitureoptions.png",
+      "alt": "Furniture Options",
+      "href": "https://www.furnitureoptions.com.au/"
     },
     {
-      "name": "zenvix",
-      "src": "/clients/Client-4.png",
-      "alt": "zenvix"
+      "name": "Phoenix Law",
+      "src": "/clients/phoenix-law.png",
+      "alt": "Phoenix Law",
+      "href": "https://www.phoenix-law.com.au/"
     },
     {
-      "name": "Glovix",
-      "src": "/clients/Client-5.png",
-      "alt": "Glovix"
+      "name": "Vrtual",
+      "src": "/clients/vrtual.png",
+      "alt": "Vrtual",
+      "href": "https://vrtual.ly/"
     },
     {
-      "name": "crevox",
-      "src": "/clients/Client-6.png",
-      "alt": "crevox"
+      "name": "Rama TMT",
+      "src": "/clients/ramatmt.png",
+      "alt": "Rama TMT",
+      "href": "https://ramatmt.com/"
+    },
+    {
+      "name": "nSight",
+      "src": "/clients/nsight-inc.png",
+      "alt": "nSight",
+      "href": "https://www.nsight-inc.com/"
+    },
+    {
+      "name": "Silver Cross Baby",
+      "src": "/clients/silvercrossbaby.png",
+      "alt": "Silver Cross Baby",
+      "href": "https://silvercrossbaby.in/"
+    },
+    {
+      "name": "Silver Cross US",
+      "src": "/clients/silvercrossus.png",
+      "alt": "Silver Cross US",
+      "href": "https://silvercrossus.com/"
+    },
+    {
+      "name": "Dent Tracks",
+      "src": "/clients/denttracks.png",
+      "alt": "Dent Tracks",
+      "href": "https://denttracks.com/"
+    },
+    {
+      "name": "Metalcorp Steel",
+      "src": "/clients/metalcorpsteel.png",
+      "alt": "Metalcorp Steel",
+      "href": "https://metalcorpsteel.com.au/"
+    },
+    {
+      "name": "Orrcon",
+      "src": "/clients/orrcon.png",
+      "alt": "Orrcon",
+      "href": "https://orrcon.com.au/"
+    },
+    {
+      "name": "Resurgence Gear",
+      "src": "/clients/resurgencegear.png",
+      "alt": "Resurgence Gear",
+      "href": "https://www.resurgencegear.com.au/"
+    },
+    {
+      "name": "WeChalet",
+      "src": "/clients/WeChalet.png",
+      "alt": "WeChalet",
+      "href": "https://wechalet.com/"
+    },
+    {
+      "name": "Pertinent HBS",
+      "src": "/clients/pertinenthbs.png",
+      "alt": "Pertinent HBS",
+      "href": "https://pertinenthbs.com/"
+    },
+    {
+      "name": "ANMTG",
+      "src": "/clients/anmtg.png",
+      "alt": "ANMTG",
+      "href": "https://www.anmtg.com/"
+    },
+    {
+      "name": "Noisy Pool",
+      "src": "/clients/noisypool.png",
+      "alt": "Noisy Pool",
+      "href": "https://noisypool.com/"
     }
   ]
 }
