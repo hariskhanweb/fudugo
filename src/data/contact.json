@@ -16,28 +16,6 @@
     "mapUrl": "https://maps.google.com/?q=FuduGo,+Beside+Metro+Hospital,+Chhaoni+Square,+Koradi+Road,+Nagpur",
     "embedUrl": "https://www.google.com/maps?q=FuduGo,+Beside+Metro+Hospital,+Chhaoni+Square,+Koradi+Road,+Nagpur+440013&output=embed"
   },
-  "socials": [
-    {
-      "name": "Instagram",
-      "href": "https://instagram.com",
-      "icon": "instagram"
-    },
-    {
-      "name": "LinkedIn",
-      "href": "https://linkedin.com",
-      "icon": "linkedin"
-    },
-    {
-      "name": "Facebook",
-      "href": "https://facebook.com",
-      "icon": "facebook"
-    },
-    {
-      "name": "YouTube",
-      "href": "https://youtube.com",
-      "icon": "youtube"
-    }
-  ],
   "findUs": {
     "eyebrow": "Locations",
     "title": "Find Us",
